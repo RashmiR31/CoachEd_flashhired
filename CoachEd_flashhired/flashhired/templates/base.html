@@ -1,1 +1,411 @@
-Hello world
+{% load static %}
+
+
+<style>
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #signup{
+        height:70px;
+        width:200px;
+        border-width: 1.25px;
+        border-color: black;
+        color:black;
+        font-size: 30px;
+        background-color:white;
+        margin-left: 770px;
+        margin-top: 30px;
+    }
+    #getstarted{
+        height:70px;
+        width:200px;
+        border-width: 1.25px;
+        border-color: black;
+        color:white;
+        font-size: 30px;
+        background-color:Black;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .head1{
+        width: 600px;
+    
+    }
+    #flash{
+        font-size: 40px;
+        font-family: cursive;
+        font-weight: lighter;
+        margin-top: 100px;
+        margin-left: 50px;
+    
+    }
+    #bold{
+        font-size: 40px;
+        font-family:Verdana;
+        margin-top: -75px;
+        margin-left: 150px;    
+        font-weight: bolder;
+    
+    }
+    #second{
+        font-size: 35px;
+        font-family:Helvetica;
+        margin-left: 50px;    
+        font-weight: normal;
+    
+    }
+    #getstartedup{
+        height:70px;
+        width:300px;
+        border-width: 1.25px;
+        border-color: black;
+        color:white;
+        font-size: 30px;
+        background-color:Black;
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+    #img1{
+        margin-top: -400px;
+    }
+    .row1 {
+        height: 10em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1000px; 
+        margin: 0 auto;
+    
+        }
+                
+    /* Create four equal columns that sits next to each other */
+    .column1 {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+        margin: 10 10 10 10;
+        
+        }
+    
+        #id1{
+            width: 500px;
+            margin-left: 600px;
+            margin-top: -180px;
+    
+        }
+    
+    
+        #id2{
+            width: 500px;
+            margin-left: 50px;
+            margin-top: -120px;
+    
+        }
+    
+    
+        #id3{
+            width: 500px;
+            margin-left: 600px;
+            margin-top: -150px;
+    
+        }
+    
+    
+        #id4{
+            width: 500px;
+            margin-left: 50px;
+            margin-top: -180px;
+            margin-bottom: 200px;
+    
+        }
+    
+        #questions{
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: Georgia;
+        }
+    
+        #answers{
+            font-size: 20px;
+            font-weight: normal;
+            font-family: Arial;
+        }
+        .support1{
+            width: 300px;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        .support2{
+            width: 300px;
+            margin-left: 450px;
+            margin-top: -140px;
+            
+        }
+        .support3{
+            width: 300px;
+            margin-left: 900px;
+            margin-top: -170px;
+            
+        }
+        #topic{
+            font-size: 30px;
+            font-family: cursive;
+            font-weight: bolder;
+        }
+        #content{
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        #subhead{
+            margin-top: 200px;
+            font-size: 40px;
+            font-family: Helvetica;
+            font-weight: lighter;
+        }
+        .cardimg{
+            border-radius: 50%;
+    
+        }
+        
+    </style>
+    <html>
+        <head class="flex-container">
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+            <title>CoachEd Recrution</title></head>
+        <body>
+            <header>
+                <button id="signup">Sign Up</button>
+                <button id="getstarted">Get Started</button>
+                <div class ="head1">
+                    <p id="flash">flash<p id="bold">hired is designed for one thing:</p></p>
+                    <p id ="second">Land your First/Second or Tenth job seamlessly</p>
+                    <button id="getstartedup">Get started - Its Free!</button>
+                </div>
+                <img id="img1" 
+                src="{% static 'mainheader.png' %}" width = "1250px">
+            </header>
+            <img src="{% static '1.png' %}" height="200px";width="100px">
+            <div id="id1">
+                <p id="questions">Tell us about yourself</p>
+                <p id="answers">With easy questions, tell us about yourself and your journey so far. </p>
+            </div>
+            <img src="{% static '2.png' %}" height="200px";width="100px" style="margin-left: 600px;margin-top: 100px;">
+            <div id="id2">
+                <p id="questions">Show off your skills</p>
+                <p id="answers">List your skills, interests and
+                take up tests to polish</p>
+            </div>
+            <img src="{% static '3.png' %}" height="200px";width="100px" style="margin-top: 100px;padding-left:50px;">
+            <div id="id3">
+                <p id="questions">Get shortlisted for
+                specific roles</p>
+                <p id="answers">Based on your likes and wants, get
+                shortlisted for the companies</p>
+            </div>
+            <img src="{% static '4.png' %}" height="200px";width="100px" style="margin-left: 600px;margin-top: 100px;">
+            <div id="id4">
+                <p id="questions">Get flashhired </p>
+                <p id="answers">Get hired for the roles and the
+                interested domains in the
+                companies you are excited to work
+                for!<p>
+    </p>
+            </div>
+    
+            <div class="support1">
+                <p id="topic">In Built ATS </p>
+                <p id="content">Get your resume
+                checked and refined
+                for the roles you want</p>
+            </div>
+             <div class="support2">
+                <p id="topic">Get ranked</p>
+                <p id="content">Get ranked and scored
+                by taking exclusive tests
+                as per your interests</p>
+            </div>
+             <div class="support3">
+                <p id="topic">48 hour turn around</p>
+                <p id="content">A lightening fast turn
+                around time for the status
+                of your applications</p>
+            </div>
+            <!--part 1-->
+              <h2 id="subhead" style="text-align: center; font-weight: bold;">Get hired by top companies</h2>
+              <div class="row1">
+                <div class="column1">
+                  <img src="{% static 'flashhired-5.jpg' %}" alt="pwc" width="125" height="100">
+                </div>
+                <div class="column1">
+                  <img src="{% static 'flashhired-6.png' %}" alt="abylle" width="125" height="100">
+                </div>
+                <div class="column1">
+                  <img src="{% static 'flashhired-7.jpg' %}" alt="byjus" width="160" height="100" >
+                </div>
+                <div class="column1">
+                  <img src="{% static 'flashhired-9.jpg' %}" alt="Hitachi" width="160" height="100">
+                </div>
+              </div>
+              <br>
+    
+            <!--part 2-->
+    
+            <h2 style="text-align: center; font-weight: bold;margin-top: 100px;">Explore Popular Jobs</h2><br>
+            <br>
+            <div class="card-deck">
+              
+              <!--1st card-->
+    
+            <div class="card" style="width: 18rem; ">
+                <div class="row">
+                  <div class="column">
+                    <img class="card-img-top" src="{% static 'flashhired-9.jpg' %}" alt="Card image cap" width="100" height="50" style="margin-left: 20px;margin-top: 2px;">
+                  </div>
+                  <div class="column">
+                    <div class="row" >
+                    <p style="margin-left:100px;">PWC</p>
+                    </div>
+                    <div class="row">
+                      <p style="margin-left:100px;margin-top: -20px;">2 days ago</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Associate Technology Consultant</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                  </div>
+                  32 applied of 60 open positions
+                </div>
+              </div>
+    
+              <!--2nd card-->
+    
+              <div class="card" style="width: 18rem; ">
+                <div class="row">
+                  <div class="column">
+                    <img class="card-img-top" src="{% static 'flashhired-7.jpg' %}" alt="Card image cap" width="50" height="35" style="margin-left:20px;margin-top: 5px;">
+                  </div>
+                  <div class="column">
+                    <div class="row">
+                    <p style="margin-left:200px;margin-top:-40px">Byju's</p>
+                    </div>
+                    <div class="row">
+                     <p style="margin-left:200px;margin-top: -20px;">2 days ago</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Associate Technology Consultant</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                  </div>
+                  32 applied of 60 open positions
+                </div>
+              </div>
+              
+              <!--3rd card-->
+    
+              <div class="card" style="width: 18rem; ">
+                <div class="row">
+                  <div class="column">
+                    <img class="card-img-top" src="{% static 'flashhired-6.png' %}" alt="Card image cap" width="50" height="40" style="margin-top: 5px;margin-left:20px;">
+                  </div>
+                  <div class="column">
+                    <div class="row">
+                    <p style="margin-left:50px;">Abylle</p>
+                    </div>
+                    <div class="row">
+                     <p style="margin-left:50px;margin-top: -20px;">2 days ago</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Associate Technology Consultant</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;" >
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                  </div>
+                  32 applied of 60 open positions
+                </div>
+              </div>
+    
+              <!--4th card-->
+    
+              <div class="card" style="width: 18rem; ">
+                <div class="row">
+                  <div class="column">
+                    <img class="card-img-top" src="{% static 'flashhired-9.jpg' %}" alt="Card image cap" width="50" height="40" style="margin-top: 5px;margin-left:20px;">
+                  </div>
+                  <div class="column">
+                    <div class="row">
+                    <p style="margin-left:50px;">Hitachi</p>
+                    </div>
+                    <div class="row">
+                      <p style="margin-left:50px;margin-top: -20px;">22 days ago</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Associate Technology Consultant</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;" >
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                  </div>
+                  32 applied of 60 open positions
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+    
+    
+            <!--3rd part-->
+            <center>
+            <div class="cardb">
+            <h2 style="text-align: center; font-family:Arial;margin-top: 100px; font-weight: 800;">Here’s what candidates are saying</h2><br>
+            <h3 style="text-align: center;">We have some very <b>happy</b> folks</h2>
+              <br>
+              <img class="cardimg" src="{% static 'flashhired-11.jpg' %}" alt="Card image" height="200px" width="200px">
+              <div style="margin-top: 2px;">
+                <div class="card" style="width: 350px; ">
+                
+                <div class="card-body" style="background-color:#D4A9F7;font-size: 20px;">
+                 " Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut
+                  enim ad minim veniam, quis
+                  nostrud exercitation ullamco
+                  laboris nisi "
+                  <br><br><b style="font-size: 15px;font-family: monospace;margin-top: 30px;margin-left: 200px;">  Brian Kelly</b><br>
+                  <b style="font-size: 15px;font-family: monospace;margin-left:50px;">Business Development Executive</b> 
+                
+                </div>
+                
+               </div> 
+    
+    </div>
+    
+              
+      </center>
+    <footer style="height:300px;background-color:#A9E4F7;margin-top:200px">
+        <p style="font-size: 30px;padding-top: 40px;margin-left: 20px;">flash<b>hired</b></p>
+        <p style="margin-left: 20px;font-size:20px ;margin-top: -20px;">Hiring for everyone</p>
+        <p style="font-size: 15px;margin-top:130px ;margin-left:20px"><span>&copy</span>2021 flashhired. All Rights Reserved.</p>
+    </footer>
+        </body>
+    </html>
