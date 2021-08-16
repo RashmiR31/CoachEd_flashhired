@@ -1,0 +1,201 @@
+{% load static %}
+
+<style>
+    .blueRectangle{
+        /* Blue Box Border */
+
+        position: absolute;
+        width: 694px;
+        height: 939px;
+        left: -152px;
+        top: 0px;
+
+        background: #461FBE;
+        border-radius: 30px;
+
+    }
+    .polygonShapes{
+                /* Polygon Shapes - 2 */
+
+        position: absolute;
+        width: 327px;
+        height: 355px;
+        left: -53px;
+        top: 624px;
+
+
+
+        /* Rectangle 1 */
+
+        position: absolute;
+        width: 137px;
+        height: 136.24px;
+        left: 0px;
+        top: 798.52px;
+
+        background: #301488;
+
+
+        /* Rectangle 2 */
+
+        position: absolute;
+        width: 137px;
+        height: 136.24px;
+        left: 25px;
+        top: 762.49px;
+
+        background: #40159B;
+
+
+        /* Polygon 1 */
+
+        position: absolute;
+        width: 157.83px;
+        height: 130.94px;
+        left: 40.65px;
+        top: 624px;
+
+        background: rgba(250, 246, 244, 0.72);
+        transform: matrix(0.65, 0.84, -0.68, 0.66, 0, 0);
+
+
+        /* Polygon 2 */
+
+        position: absolute;
+        width: 157.83px;
+        height: 130.94px;
+        left: 177.65px;
+        top: 762.49px;
+
+        background: #FAF6F4;
+        transform: matrix(0.65, 0.84, -0.68, 0.66, 0, 0);
+
+    }
+    #textInBlueBox{
+                /* Text-1 */
+
+        position: absolute;
+        width: 483px;
+        height: 105px;
+        margin-left: 42px;
+        top: 353px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 45px;
+
+        color: #FFFFFF;
+
+
+    }
+    #troubles{
+                /* Having Troubles? Get Help */
+
+        position: absolute;
+        width: 508px;
+        height: 41px;
+        left: 897px;
+        top: 24px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: right;
+
+        color: #000000;
+
+
+    }
+    #googlebtn{
+
+                /* Sign In with Google Button */
+
+        position: absolute;
+        width: 571.71px;
+        height: 99.6px;
+        left: 635px;
+        top: 100px;
+
+        /* Rectangle 5 */
+
+        position: absolute;
+        width: 562.23px;
+        height: 81.6px;
+        left: 635px;
+        top: 100px;
+
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+
+
+    }
+    #line1{
+        /* Line 1 */
+
+        position: absolute;
+        width: 144px;
+        height: 0px;
+        left: 635px;
+        top: 263px;
+
+        border: 1px solid rgba(0, 0, 0, 0.56);
+    }
+    #line2{
+        /* Line 2 */
+
+        position: absolute;
+        width: 167.56px;
+        height: 0px;
+        left: 1113px;
+        top: 263px;
+
+        border: 1px solid rgba(0, 0, 0, 0.56);
+    }
+    #emailSignIn{
+        /* or Sign In with Email */
+
+        position: absolute;
+        width: 466.9px;
+        height: 55px;
+        left: calc(50% - 466.9px/2 + 229.45px);
+        top: calc(50% - 55px/2 - 206px);
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 45px;
+        text-align: center;
+
+        color: rgba(0, 0, 0, 0.56);
+    }
+
+</style>
+<html>
+    <head class="flex-container">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="blueRectangle">
+            <p id="textInBlueBox">
+                Find your ideal fit
+            </p>
+        </div>
+        <p id="troubles">
+            Having Troubles?<a href="https://127.0.0.1:8000/">Get Help</a>
+        </p>
+        <button type="button" id="googlebtn"><img src="{% static 'googleLogo.png' %}">Sign In With Google</button>
+        <div>
+            <p>or Sign In With Email</p>
+                
+        </div>
+    </body>
+</html>
