@@ -2,31 +2,32 @@
 
 
 <style>
-    .flex-container {
-      display: flex;
-      flex-wrap: wrap;
+    
+    .btns{
+      padding-left: 50%;
+      width:50%;
     }
     #signup{
-        height:70px;
-        width:200px;
-        border-width: 1.25px;
+        height:80px;
+        width:220px;
+        border-width: 1.5px;
         border-color: black;
         color:black;
         font-size: 30px;
         background-color:white;
-        margin-left: 770px;
-        margin-top: 30px;
+        margin-top:20px;
+        
     }
     #getstarted{
-        height:70px;
-        width:200px;
-        border-width: 1.25px;
+        height:80px;
+        width:220px;
+        border-width: 1.5px;
         border-color: black;
         color:white;
         font-size: 30px;
         background-color:Black;
-        margin-top: 10px;
-        margin-left: 20px;
+        margin-top: -80px;
+        margin-left:240px;
     }
     .head1{
         width: 600px;
@@ -68,6 +69,7 @@
     }
     #img1{
         margin-top: -400px;
+        flex-wrap:wrap;
     }
     .row1 {
         height: 10em;
@@ -89,7 +91,7 @@
         }
     
         #id1{
-            width: 500px;
+            width: 50%;
             margin-left: 600px;
             margin-top: -180px;
     
@@ -97,7 +99,7 @@
     
     
         #id2{
-            width: 500px;
+            width: 50%;
             margin-left: 50px;
             margin-top: -120px;
     
@@ -105,7 +107,7 @@
     
     
         #id3{
-            width: 500px;
+            width: 50%;
             margin-left: 600px;
             margin-top: -150px;
     
@@ -113,7 +115,7 @@
     
     
         #id4{
-            width: 500px;
+            width: 50%;
             margin-left: 50px;
             margin-top: -180px;
             margin-bottom: 200px;
@@ -132,20 +134,20 @@
             font-family: Arial;
         }
         .support1{
-            width: 300px;
-            margin-left: 100px;
-            margin-top: 100px;
+            width: 350px;
+            margin-left: 5%;
+            margin-top: 300px;
         }
         .support2{
-            width: 300px;
-            margin-left: 450px;
+            width: 350px;
+            margin-left: 470px;
             margin-top: -140px;
             
         }
         .support3{
-            width: 300px;
+            width: 350px;
             margin-left: 900px;
-            margin-top: -170px;
+            margin-top: -140px;
             
         }
         #topic{
@@ -165,7 +167,6 @@
         }
         .cardimg{
             border-radius: 50%;
-    
         }
         
     </style>
@@ -177,12 +178,14 @@
             <title>CoachEd Recrution</title></head>
         <body>
             <header>
-                <button id="signup">Sign Up</button>
-                <button id="getstarted">Get Started</button>
+              <div class = "btns">
+                <button type="button" class="btn btn-light" id="signup">Sign Up</button>
+                <button type="button" class="btn btn-light" id="getstarted">Get Started</button>
+              </div>
                 <div class ="head1">
                     <p id="flash">flash<p id="bold">hired is designed for one thing:</p></p>
                     <p id ="second">Land your First/Second or Tenth job seamlessly</p>
-                    <button id="getstartedup">Get started - Its Free!</button>
+                    <button type="button" class="btn btn-light" id ="getstartedup">Get started - Its Free!</button>
                 </div>
                 <img id="img1" 
                 src="{% static 'mainheader.png' %}" width = "1250px">
@@ -192,7 +195,7 @@
                 <p id="questions">Tell us about yourself</p>
                 <p id="answers">With easy questions, tell us about yourself and your journey so far. </p>
             </div>
-            <img src="{% static '2.png' %}" height="200px";width="100px" style="margin-left: 600px;margin-top: 100px;">
+            <img src="{% static '2.png' %}" height="200px";width="100px" style="margin-left: 60%;margin-top: 100px;">
             <div id="id2">
                 <p id="questions">Show off your skills</p>
                 <p id="answers">List your skills, interests and
@@ -205,7 +208,7 @@
                 <p id="answers">Based on your likes and wants, get
                 shortlisted for the companies</p>
             </div>
-            <img src="{% static '4.png' %}" height="200px";width="100px" style="margin-left: 600px;margin-top: 100px;">
+            <img src="{% static '4.png' %}" height="200px";width="100px" style="margin-left: 60%;margin-top: 100px;">
             <div id="id4">
                 <p id="questions">Get flashhired </p>
                 <p id="answers">Get hired for the roles and the
@@ -402,7 +405,7 @@
     
               
       </center>
-    <footer style="height:300px;background-color:#A9E4F7;margin-top:200px">
+    <footer style="height:300px;background-color:#A9E4F7;margin-top:200px;width:100%">
         <p style="font-size: 30px;padding-top: 40px;margin-left: 20px;">flash<b>hired</b></p>
         <p style="margin-left: 20px;font-size:20px ;margin-top: -20px;">Hiring for everyone</p>
         <p style="font-size: 15px;margin-top:130px ;margin-left:20px"><span>&copy</span>2021 flashhired. All Rights Reserved.</p>
