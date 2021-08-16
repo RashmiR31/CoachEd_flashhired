@@ -20,4 +20,6 @@ from flashhired import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
+    path('rechome/',views.rechome,name='rechome'),
+
 ]
