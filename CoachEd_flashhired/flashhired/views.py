@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def home(request):
-    return render(request,'base.html',{})
+def pilot(request):
+    return render(request,'pilot.html',{})
 
 def rechome(request):
-    return render(request,'recbase.html',{})
+    return render(request,'rechome.html',{})
