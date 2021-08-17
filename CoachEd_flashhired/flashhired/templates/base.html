@@ -14,7 +14,7 @@
         border-color: black;
         color:white;
         font-size: 28px;
-        background-color:Black;
+        background-color:#461FBE;
         margin-top:20px;
         
         
@@ -38,7 +38,7 @@
         border-color: black;
         color:white;
         font-size: 28px;
-        background-color:Black;
+        background-color:#461FBE;
         margin-top: -80px;
         margin-left:440px;
     }
@@ -76,32 +76,18 @@
         border-color: black;
         color:white;
         font-size: 30px;
-        background-color:Black;
+        background-color:#461FBE;
         margin-top: 10px;
         margin-left: 100px;
     }
     #img1{
         margin-top: -400px;
-        width:100%;
+        width:1580px;
     }
-    .row1 {
-        height: 10em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 1000px; 
-        margin: 0 auto;
-    
-        }
+  
                 
     /* Create four equal columns that sits next to each other */
-    .column1 {
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px;
-        margin: 10 10 10 10;
-        
-        }
+  
     
         #id1{
             width: 30%;
@@ -147,19 +133,19 @@
             font-family: Arial;
         }
         .support1{
-            width: 350px;
+            width: 400px;
             margin-left: 5%;
             margin-top: 300px;
         }
         .support2{
-            width: 350px;
-            margin-left: 470px;
+            width: 400px;
+            margin-left: 600px;
             margin-top: -140px;
             
         }
         .support3{
-            width: 350px;
-            margin-left: 900px;
+            width: 400px;
+            margin-left: 1100px;
             margin-top: -140px;
             
         }
@@ -250,179 +236,107 @@
                 around time for the status
                 of your applications</p>
             </div>
-            <!--part 1-->
+           
+
+
               <h2 id="subhead" style="text-align: center; font-weight: bold;">Get hired by top companies</h2>
-              <div class="row1">
-                <div class="column1">
-                  <img src="{% static 'flashhired-5.jpg' %}" alt="pwc" width="125" height="100">
-                </div>
-                <div class="column1">
-                  <img src="{% static 'flashhired-6.png' %}" alt="abylle" width="125" height="100">
-                </div>
-                <div class="column1">
-                  <img src="{% static 'flashhired-7.jpg' %}" alt="byjus" width="160" height="100" >
-                </div>
-                <div class="column1">
-                  <img src="{% static 'flashhired-9.jpg' %}" alt="Hitachi" width="160" height="100">
+                      
+                  <img src="{% static 'pwc.jpg' %}" alt="pwc" width="125" height="100" style="margin-top:100px;margin-left:150px">
+                  <img src="{% static 'abylle.png' %}" alt="abylle" width="200" height="100" style="margin-top:100px;margin-left:200px" >
+                  <img src="{% static 'byjus.jpg' %}" alt="byjus" width="160" height="100" style="margin-top:100px;margin-left:200px" >
+                  <img src="{% static 'hitachi.png' %}" alt="Hitachi" width="160" height="100" style="margin-top:100px;margin-left:200px">
                 </div>
               </div>
               <br>
     
-            <!--part 2-->
-    
-            <h2 style="text-align: center; font-weight: bold;margin-top: 100px;">Explore Popular Jobs</h2><br>
-            <br>
-            <div class="card-deck">
-              
-              <!--1st card-->
-    
-            <div class="card" style="width: 18rem; ">
-                <div class="row">
-                  <div class="column">
-                    <img class="card-img-top" src="{% static 'flashhired-9.jpg' %}" alt="Card image cap" width="100" height="50" style="margin-left: 20px;margin-top: 2px;">
-                  </div>
-                  <div class="column">
-                    <div class="row" >
-                    <p style="margin-left:100px;">PWC</p>
-                    </div>
-                    <div class="row">
-                      <p style="margin-left:100px;margin-top: -20px;">2 days ago</p>
-                    </div>
-                  </div>
-                </div>
+   
+            <div class="cards" >
+              <center><h1 style="margin-top:100px"><b>Explore popular Jobs</b></h1></center>
+
+              <div id="crd1" >
+              <div class="card" style="width:400px;height:350px;margin-top:100px;margin-left:100px">
+                <center><img class="card-img-top" src="{% static 'logitech.png' %}" style="width:70%;margin-top:5px;margin-left: 5px;"></center>
                 <div class="card-body">
-                  <h5 class="card-title">Associate Technology Consultant</h5>
+                  <h3 class="card-title" style="margin-top:-20px">Associate Technology Consultant</h3>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;">
-                      <span class="sr-only">70% Complete</span>
-                    </div>
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
                   </div>
-                  32 applied of 60 open positions
-                </div>
+                  <p style="font-size:20px;margin-top: 10px;"><b>32 applied</b> out of 40 open positions</p>
+                  </div>
               </div>
-    
-              <!--2nd card-->
-    
-              <div class="card" style="width: 18rem; ">
-                <div class="row">
-                  <div class="column">
-                    <img class="card-img-top" src="{% static 'flashhired-7.jpg' %}" alt="Card image cap" width="50" height="35" style="margin-left:20px;margin-top: 5px;">
-                  </div>
-                  <div class="column">
-                    <div class="row">
-                    <p style="margin-left:200px;margin-top:-40px">Byju's</p>
-                    </div>
-                    <div class="row">
-                     <p style="margin-left:200px;margin-top: -20px;">2 days ago</p>
-                    </div>
-                  </div>
-                </div>
+              </div>
+
+
+              <div id="crd2" style="margin-left:500px;margin-top:-450px;">
+              <div class="card" style="width:400px;height:350px;margin-top:100px;margin-left:100px">
+                <center><img class="card-img-top" src="{% static 'abylle.png' %}" style="width:70%;margin-top:50px;margin-left:5px"></center>
                 <div class="card-body">
-                  <h5 class="card-title">Associate Technology Consultant</h5>
+                  <h3 class="card-title" style="margin-top: 40px;">Associate Technology Consultant</h3>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;">
-                      <span class="sr-only">70% Complete</span>
-                    </div>
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
                   </div>
-                  32 applied of 60 open positions
-                </div>
+                  <p style="font-size:20px;margin-top: 10px;"><b>30 applied</b> out of 50 open positions</p>
+                  </div>
               </div>
-              
-              <!--3rd card-->
-    
-              <div class="card" style="width: 18rem; ">
-                <div class="row">
-                  <div class="column">
-                    <img class="card-img-top" src="{% static 'flashhired-6.png' %}" alt="Card image cap" width="50" height="40" style="margin-top: 5px;margin-left:20px;">
-                  </div>
-                  <div class="column">
-                    <div class="row">
-                    <p style="margin-left:50px;">Abylle</p>
-                    </div>
-                    <div class="row">
-                     <p style="margin-left:50px;margin-top: -20px;">2 days ago</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Associate Technology Consultant</h5>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;" >
-                      <span class="sr-only">70% Complete</span>
-                    </div>
-                  </div>
-                  32 applied of 60 open positions
-                </div>
               </div>
-    
-              <!--4th card-->
-    
-              <div class="card" style="width: 18rem; ">
-                <div class="row">
-                  <div class="column">
-                    <img class="card-img-top" src="{% static 'flashhired-9.jpg' %}" alt="Card image cap" width="50" height="40" style="margin-top: 5px;margin-left:20px;">
-                  </div>
-                  <div class="column">
-                    <div class="row">
-                    <p style="margin-left:50px;">Hitachi</p>
+
+
+              <div id="crd3" style="margin-left:1000px;margin-top:-450px;">
+                <div class="card" style="width:400px;height:350px;margin-top:100px;margin-left:100px">
+                  <center><img class="card-img-top" src="{% static 'hitachi.png' %}" style="width:70%;margin-top:5px;margin-left:5px"></center>
+                  <div class="card-body">
+                    <h3 class="card-title">Associate Technology Consultant</h3>
+                    <div class="progress">
+                      <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
                     </div>
-                    <div class="row">
-                      <p style="margin-left:50px;margin-top: -20px;">22 days ago</p>
+                    <p style="font-size:20px;margin-top: 10px;"><b>8 applied</b> out of 20 open positions</p>
                     </div>
-                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Associate Technology Consultant</h5>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                    aria-valuemin="0" aria-valuemax="100" style="width:62%; background-color: tan !important;" >
-                      <span class="sr-only">70% Complete</span>
-                    </div>
-                  </div>
-                  32 applied of 60 open positions
                 </div>
-              </div>
+  
             </div>
-            <br>
-            <br>
+            
     
-    
-            <!--3rd part-->
+           
             <center>
             <div class="cardb">
-            <h2 style="text-align: center; font-family:Arial;margin-top: 100px; font-weight: 800;">Here’s what candidates are saying</h2><br>
-            <h3 style="text-align: center;">We have some very <b>happy</b> folks</h2>
+            <p style="text-align: center;font-size: 48px; font-family:Arial;margin-top: 100px; font-weight: 800;">Here’s what candidates are saying</p><br>
+            <p style="text-align: center;font-size: 36px;font-family:Helvetica;">We have some very <b>happy</b> folks</p>
               <br>
-              <img class="cardimg" src="{% static 'flashhired-11.jpg' %}" alt="Card image" height="200px" width="200px">
-              <div style="margin-top: 2px;">
-                <div class="card" style="width: 350px; ">
+              
+              
+              
+              
+                <div class="card" style="width: 450px;border-radius:25px;margin-top: 100px; ">
                 
-                <div class="card-body" style="background-color:#D4A9F7;font-size: 20px;">
-                 " Lorem ipsum dolor sit amet,
+                <div class="card-body" style="background-color:#6D63E7;font-size: 20px;background: rgba(109, 99, 231, 0.17);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);border-radius:25px;padding-top:100px">
+                <p style="font-size:25px;">
+                " Lorem ipsum dolor sit amet,
                   consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut
                   labore et dolore magna aliqua. Ut
                   enim ad minim veniam, quis
                   nostrud exercitation ullamco
-                  laboris nisi "
-                  <br><br><b style="font-size: 15px;font-family: monospace;margin-top: 30px;margin-left: 200px;">  Brian Kelly</b><br>
-                  <b style="font-size: 15px;font-family: monospace;margin-left:50px;">Business Development Executive</b> 
+                  laboris nisi "</p>
+                  <br><br><b style="font-size: 21px;font-family: monospace;margin-top: 30px;margin-left: 200px;">  Brian Kelly</b><br>
+                  <b style="font-size: 21px;font-family: monospace;margin-left:50px;">Business Development Executive</b> 
                 
                 </div>
                 
                </div> 
+               <div class="card" style="border-radius: 50%;height:200px ;width:200px;margin-top: -600px;">
+                <img class="cardimg" src="{% static 'flashhired-11.jpg' %}" alt="Card image" height="200px" width="200px">
+                </div>
     
     </div>
     
               
       </center>
-    <footer style="height:300px;background-color:#A9E4F7;margin-top:200px;width:100%">
-        <p style="font-size: 30px;padding-top: 40px;margin-left: 20px;">flash<b>hired</b></p>
-        <p style="margin-left: 20px;font-size:20px ;margin-top: -20px;">Hiring for everyone</p>
-        <p style="font-size: 15px;margin-top:130px ;margin-left:20px"><span>&copy</span>2021 flashhired. All Rights Reserved.</p>
+    <footer style="height:300px;background-color:#2217A6;margin-top:500px;background: rgba(34, 23, 166, 0.67);;width:100%">
+        <p style="font-size: 36px;padding-top: 40px;margin-left: 20px;color: white;">flash<b>hired</b></p>
+        <p style="margin-left: 20px;font-size:25px ;margin-top: -20px;color:white;color:white">Hiring for everyone</p>
+        <p style="font-size: 20px;margin-top:130px ;margin-left:20px;color:white"><span>&copy</span>2021 flashhired. All Rights Reserved.</p>
     </footer>
         </body>
     </html>

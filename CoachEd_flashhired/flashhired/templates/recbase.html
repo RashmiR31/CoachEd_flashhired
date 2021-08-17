@@ -18,17 +18,17 @@
         border-color:black;
         color:white;
         font-size: 28px;
-        background-color:black;
+        background-color:#461FBE;
         margin-top:-80px;
         margin-left:220px
         
     }
     .headbtns{
-        padding-left: 60%;
+        padding-left: 65%;
         width:50%;
     }
     .upperhead{
-        width:50%;
+        width:40%;
         margin-top: 200px;
         padding-left: 50px;
     }
@@ -56,13 +56,14 @@
         width: 320px;
         height:80px;
         color:white;
-        background-color:black;
+        background-color:#461FBE;
         font-size: 24px;
+        margin-top: 50px;
     }
     #main_img{
-        margin-left: 55%;
+        margin-left: 50%;
         margin-top:-500px;
-        width: 40%;
+        width: 50%;
     }
     #headerimg1{
         margin-top:50px;
@@ -70,17 +71,17 @@
     }
     #headerimg2{
         margin-top:50px;
-        margin-left: 15%;
+        margin-left: 10%;
     }
     #headerimg3{
         margin-top:50px;
-        margin-left: 15%;
+        margin-left: 10%;
     }
     #headerimg4{
         margin-top:50px;
-        margin-left: 15%;
+        margin-left: 10%;
     }
-    .middle{
+    .top{
         position: absolute;
         width: 100%;
         height: 800px;
@@ -99,6 +100,24 @@
     #smltxt{
         color: rgba(0, 0, 0, 0.58);
         font-size: 24px;
+    }
+    .l_half{
+        width:40%;
+        margin-left:10%;
+        margin-top:900px;
+    }
+    .r_half{
+        width:40%;
+        margin-left: 50%;
+        margin-top:-500px;
+    }
+    #mid_btn{
+        width: 320px;
+        height:80px;
+        color:white;
+        background-color:#0A1045;
+        font-size: 24px;
+        margin-top: 50px;
     }
 </style>
 
@@ -123,23 +142,24 @@
                    <p id="sline">For recruiters who do things differently</p>
                    <button type="button" class="btn btn-light" id="getstartedup1">Get Started - Its Free! </button> 
             </div>
+            <div style ="width:100%">
             <img id ="main_img"  src ="{% static 'h12.png' %}" height="700px" width="650px">
-            <img id="headerimg1" src="{% static 'flashhired-5.jpg' %}" height="100px", width="150px">
-            <img id="headerimg2" src="{% static 'flashhired-6.png' %}" height="80px", width="200px">
-            <img id="headerimg3" src="{% static 'flashhired-7.jpg' %}" height="70px", width="200px">
-            <img id="headerimg4" src="{% static 'flashhired-9.jpg' %}" height="80px", width="200px">
-
+            <img id="headerimg1" src="{% static 'pwc.jpg' %}"  width="13%">
+            <img id="headerimg2" src="{% static 'hitachi.png' %}"  width="13%">
+            <img id="headerimg3" src="{% static 'docket.png' %}"  width="13%">
+            <img id="headerimg4" src="{% static 'logitech.png' %}" width="13%">
+            </div>
             </header>
 
             <body>
-                <div class ="middle">
+                <div class ="top">
                     <div class = "theory">
-                    <p id="prpltxt">Get 6000+ Talented people</p>
+                    <p id="prpltxt"><b>Get 6000+ Talented people</b></p>
                     <p id="smltxt">A new project coming? Need top management people or an app developer? <br>
                     <br> In easy steps and seamless experience, hire the right candidates today!</p>
                     </div>
                 
-                <div class="card" style="width:550px;height:450px;margin-top: -15%;margin-left:60%;">
+                <div class="card" style="width:550px;height:450px;margin-top:-350px;margin-left:60%;">
                     
                     <div class="card-body">
                      <center><p class="card-title" style="font-size: 24px;font-family: initial; color: rgba(0, 0, 0, 0.64);">600 Possible Recruits, 15 Perfect Fits</p></center>
@@ -159,6 +179,23 @@
                         <img src="{% static 'ball.png' %}" height="50px" width="50px" style="border-radius:50%;margin-left: 30px;">
                     </div>
                   </div>
+                  </div>
+
+
+
+                  <div class="middle">
+                    <div class="l_half">
+                        <img src="{% static 'synopsys.jpg' %}" width="400px" style="margin-left: 70px;">
+                        <img src="{% static 'byjus.jpg' %}" width="200px" style="margin-right: 20px;">
+                        <img src="{% static 'abylle.png' %}" width="200px" style="margin-left:50px;">
+                        <img src="{% static 'printalytix.png' %}" width="300px" style="margin-top:70px;margin-left:100px">
+                    </div>
+                    <div class="r_half">
+                        <p style="color:#6D63E7;font-size:48px;"><b>Startups & Companies across India work with us</b></p>
+                        <p style="color: rgba(0, 0, 0, 0.58);font-size:24px;width:370px;"><b>Trusted by small teams to big corporates, we provide you 
+                            with the best talent in the easiest manner possible</b></p>
+                        <button id="mid_btn" class="btn btn-light">Post your first job today</button>
+                    </div>
                   </div>
             </body>
 </html>
