@@ -119,6 +119,87 @@
         font-size: 24px;
         margin-top: 50px;
     }
+    .bottom{
+        height:1000px;
+        background: rgba(196, 196, 196, 0.08);
+        margin-top:50px;
+    }
+    .ltxt{
+        margin-left:40%;
+        width:50%;
+    }
+    #bl_text{
+        font-size:36px;
+        color: rgba(0, 0, 0, 0.65);
+        margin-top:-150px;
+        margin-left: 100px;
+    }
+    #quote{
+        font-size:144px;
+        color: #221E6B;
+        margin-top:100px;
+        font-family:'Lucida Sans';
+    }
+    .dotted{
+        border-radius:50%;
+        width:425px;
+        height:425px;
+        border-width: 5px;
+        border-style:dashed;
+        margin-top: -500px;
+        margin-left:50px;
+    }
+    .thick{
+        border-radius:50%;
+        background: rgba(108, 99, 255, 0.71);
+        height: 315px;
+        width:315px;
+        margin-left:50px;
+       margin-top:50px;
+    }
+    .inner{
+        border-radius:50%;
+        background: white;
+        height: 208px;
+        width:208px;
+        margin-top:-315px;
+        margin-left:160px;
+        
+    }
+    #pop{
+        width:1200px;
+        height:310px;
+        background-color:black;
+        margin-left:150px;
+        margin-top:-600px;
+    }
+    #lasttxt{
+        width:400px;
+        font-size: 55px;
+        color:white;
+        margin-left:50px;
+        padding-top: 50px;
+    }
+    #email{
+        width:500px;
+        height:70px;
+        font-size:36px;
+        font-family: monospace;
+        padding-left: 20px;
+        margin-left:400px;
+        margin-top: -120px;
+    }
+    #join{
+        background-color:#6258DC;
+        color:white;
+        font-size:30px;
+        font-weight:bold;
+        font-family:Helvetica;
+        margin-left: 1070px;
+        margin-top: 10px;
+        width:200px;
+        height:70px;
+    }
 </style>
 
 <html>
@@ -197,5 +278,67 @@
                         <button id="mid_btn" class="btn btn-light">Post your first job today</button>
                     </div>
                   </div>
+                  <div class="bottom">
+                     <center><p style="font-size: 65px;font-weight: bold;padding-top: 50px;">How It Works</p></center>
+                      <div id="img1">
+                          <img src="{% static 'mob_frame.png' %}" width="550px" height="500px" style="margin-top:100px;margin-left:10px">
+                          <div class="card" style="width:300px; height:120px;margin-top: -300px;margin-left:250px">
+                            <center><p style="font-size:30px;margin-top:20px"><b>Rahul</b></p>
+                            <p style="font-size:30px;margin-top:-10px">Hiring Manager</p></center>
+                            </div>
+                            <p style="font-size:45px;width:300px;margin-top:250px;text-align:center;margin-left:130px">Register as a recruiter </p>
+                      </div>
+
+
+                      <div id="img2">
+                        <img src="{% static 'mob_frame.png' %}" width="550px" height="500px" style="margin-top:-720px;margin-left:500px">
+                        <div class="card" style="width:280px; height:170px;margin-top: -370px;margin-left:760px">
+                        <center><p style="font-size:20px;margin-top:20px"><b>Looking for an Android App Developer, with Kotlin</b></p>
+                            <p style="font-size:20px;margin-top:40px"><b>Experience: 4+ Years</b></p></center>
+                            </div>
+                            <p style="font-size:45px;width:300px;margin-top:50px;text-align:center;margin-left:630px">Post your job requirements </p>
+                            <img src="{% static 'andriod.jpg' %}" height="100px" width="100px" style="border-radius: 50%;margin-top:-480px;margin-left:900px">
+                    </div>
+
+
+                    <div id="img3">
+                        <img src="{% static 'mob_frame.png' %}" width="550px" height="500px" style="margin-top:-720px;margin-left:980px">
+                        <div class="card" style="width:260px; height:120px;margin-top: -600px;margin-left:1260px">
+                            <center><p style="font-size:20px;margin-top:30px"><b>Shortlisted & Scheduled for Final Round</b></p></center>
+                        </div>
+                        <img src="{% static 'support1.png' %}" width="100px" height="100px" style="border-radius: 50%;margin-left: 1400px;">
+                        <p style="font-size:45px;width:300px;margin-top:230px;text-align:center;margin-left:1110px">Hire from the best  </p>
+                    </div>
+                  </div>
+
+
+                  <div class="lastbottom">
+                      <center><p style="font-size: 64px;"><b>What Our Clients Say About Us</b></p></center>
+                      <div class="ltxt">
+                          <p id="quote"><b>“</b></p>
+                          <p id="bl_text">Hiring from Flashhired was incredibly easy and quick! My team was
+                            looking for a UI/UX Designer and we found the perfect fit in less than 48 hours!<br> <br>
+                            The team assisting us and the seamless flow of the process makes
+                            flashhired the next generation hiring platform!</p><br><br><br>
+                            <p style="font-size:36px;margin-left:100px"><b>Prabhu Kumar</b>, CEO, Aviana NRIT </p>
+                            <p></p>
+                      </div>
+                      <div class="dotted"><div class="thick">
+                        <img src="{% static 'michael_dam.jpg' %}" height="200px" width="200px" style="border-radius: 50%;margin-top: -600px;">
+                          <img src="{% static 'aatik_tasneem.jpg' %}" height="110px" width="110px" style="border-radius: 50%;margin-top:300px;margin-left: -250px;">
+                          <img src="{% static 'ben_parker.jpg' %}" height="210px" width="210px" style="border-radius: 50%;margin-left:200px;margin-top: -130px;">
+                      </div></div>
+                      <div class="inner"></div>
+                  </div>
+
+        
+                  <footer style="height:500px;background: #6C63FF;margin-top:500px">
+                    <button class="btn" id="join">Join</button>
+                  </footer>
+                  <div id ="pop">
+                    <p id="lasttxt">Ready to get started? </p>
+                    <input type="email" placeholder="Email Address" id="email">
+                </div>
+                
             </body>
 </html>
