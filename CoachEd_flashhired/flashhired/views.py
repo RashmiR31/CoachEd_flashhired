@@ -8,3 +8,6 @@ def pilot(request):
 
 def rechome(request):
     return render(request,'rechome.html',{})
+
+def studentlogin(request):
+    return render(request,'studentlogin.html',{})

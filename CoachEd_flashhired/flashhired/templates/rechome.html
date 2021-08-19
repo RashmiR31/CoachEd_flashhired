@@ -1,48 +1,58 @@
 {% load static %}
 
 <style>
-    #signup1{
-        height:80px;
-        width:200px;
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+    #signup1 {
+        height: 80px;
+        width: 200px;
         border-width: 1.5px;
         border-color: black;
-        color:black;
+        color: black;
         font-size: 28px;
-        background-color:white;
+        background-color: white;
         margin-top: 20px;
+        font-family: 'poppins',sans-serif;
     }
-    #getstarted1{
-        height:80px;
-        width:200px;
+
+    #getstarted1 {
+        height: 80px;
+        width: 200px;
         border-width: 1.5px;
-        border-color:black;
-        color:white;
+        border-color: black;
+        color: white;
         font-size: 28px;
-        background-color:#461FBE;
-        margin-top:-80px;
-        margin-left:220px
-        
+        background-color: #461FBE;
+        margin-top: -80px;
+        margin-left: 220px;
+        font-family: 'poppins',sans-serif;
+
     }
-    .headbtns{
+
+    .headbtns {
         padding-left: 65%;
-        width:50%;
+        width: 50%;
     }
-    .upperhead{
-        width:40%;
+
+    .upperhead {
+        width: 40%;
         margin-top: 200px;
         padding-left: 50px;
     }
-    #fbold{
-        font-weight:bold;
+
+    #fbold {
+        font-weight: bold;
         font-size: 48px;
     }
-    #fline{
+
+    #fline {
         font-size: 48px;
         font-family: cursive;
         margin-top: -30px;
     }
-    #sline{
-        font-family:Helvetica;
+
+    #sline {
+        font-family: Helvetica;
         font-style: normal;
         font-weight: normal;
         font-size: 38px;
@@ -52,293 +62,370 @@
         color: rgba(0, 0, 0, 0.47);
     }
 
-    #getstartedup1{
+    #getstartedup1 {
         width: 320px;
-        height:80px;
-        color:white;
-        background-color:#461FBE;
+        height: 80px;
+        color: white;
+        background-color: #461FBE;
         font-size: 24px;
         margin-top: 50px;
+        font-family: 'poppins',sans-serif;
+
     }
-    #main_img{
+
+    #main_img {
         margin-left: 50%;
-        margin-top:-500px;
+        margin-top: -500px;
         width: 50%;
     }
-    #headerimg1{
-        margin-top:50px;
+
+    #headerimg1 {
+        margin-top: 50px;
         margin-left: 10%;
     }
-    #headerimg2{
-        margin-top:50px;
+
+    #headerimg2 {
+        margin-top: 50px;
         margin-left: 10%;
     }
-    #headerimg3{
-        margin-top:50px;
+
+    #headerimg3 {
+        margin-top: 50px;
         margin-left: 10%;
     }
-    #headerimg4{
-        margin-top:50px;
+
+    #headerimg4 {
+        margin-top: 50px;
         margin-left: 10%;
     }
-    .top{
+
+    .top {
         position: absolute;
         width: 100%;
         height: 800px;
-        margin-top:50px;
+        margin-top: 50px;
         background: rgba(196, 196, 196, 0.08);
     }
-    .theory{
-        width:35%;
+
+    .theory {
+        width: 35%;
         margin-left: 15%;
-        margin-top:100px;
+        margin-top: 100px;
     }
-    #prpltxt{
+
+    #prpltxt {
         color: #6D63E7;
         font-size: 48px;
+        font-family: 'poppins',sans-serif;
+
     }
-    #smltxt{
+
+    #smltxt {
         color: rgba(0, 0, 0, 0.58);
         font-size: 24px;
+        font-family: 'poppins',sans-serif;
+
     }
-    .l_half{
-        width:40%;
-        margin-left:10%;
-        margin-top:900px;
+
+    .l_half {
+        width: 40%;
+        margin-left: 10%;
+        margin-top: 900px;
     }
-    .r_half{
-        width:40%;
+
+    .r_half {
+        width: 40%;
         margin-left: 50%;
-        margin-top:-500px;
+        margin-top: -500px;
     }
-    #mid_btn{
+
+    #mid_btn {
         width: 320px;
-        height:80px;
-        color:white;
-        background-color:#0A1045;
+        height: 80px;
+        color: white;
+        background-color: #0A1045;
         font-size: 24px;
         margin-top: 50px;
+        font-family: 'poppins',sans-serif;
+
     }
-    .bottom{
-        height:1000px;
+
+    .bottom {
+        height: 1000px;
         background: rgba(196, 196, 196, 0.08);
-        margin-top:50px;
+        margin-top: 50px;
     }
-    .ltxt{
-        margin-left:40%;
-        width:50%;
+
+    .ltxt {
+        margin-left: 40%;
+        width: 50%;
+        font-family: 'poppins',sans-serif;
+
     }
-    #bl_text{
-        font-size:36px;
+
+    #bl_text {
+        font-size: 36px;
         color: rgba(0, 0, 0, 0.65);
-        margin-top:-150px;
+        margin-top: -150px;
         margin-left: 100px;
+        font-family: 'poppins',sans-serif;
+
     }
-    #quote{
-        font-size:144px;
+
+    #quote {
+        font-size: 144px;
         color: #221E6B;
-        margin-top:100px;
-        font-family:'Lucida Sans';
+        margin-top: 100px;
+        font-family: 'poppins',sans-serif;
+
     }
-    .dotted{
-        border-radius:50%;
-        width:425px;
-        height:425px;
+
+    .dotted {
+        border-radius: 50%;
+        width: 425px;
+        height: 425px;
         border-width: 5px;
-        border-style:dashed;
+        border-style: dashed;
         margin-top: -500px;
-        margin-left:50px;
+        margin-left: 50px;
     }
-    .thick{
-        border-radius:50%;
+
+    .thick {
+        border-radius: 50%;
         background: rgba(108, 99, 255, 0.71);
         height: 315px;
-        width:315px;
-        margin-left:50px;
-       margin-top:50px;
+        width: 315px;
+        margin-left: 50px;
+        margin-top: 50px;
     }
-    .inner{
-        border-radius:50%;
+
+    .inner {
+        border-radius: 50%;
         background: white;
         height: 208px;
-        width:208px;
-        margin-top:-315px;
-        margin-left:160px;
-        
+        width: 208px;
+        margin-top: -315px;
+        margin-left: 160px;
+
     }
-    #pop{
-        width:1200px;
-        height:310px;
-        background-color:black;
-        margin-left:150px;
-        margin-top:-600px;
+
+    #pop {
+        width: 1200px;
+        height: 310px;
+        background-color: black;
+        margin-left: 150px;
+        margin-top: -600px;
     }
-    #lasttxt{
-        width:400px;
+
+    #lasttxt {
+        width: 400px;
         font-size: 55px;
-        color:white;
-        margin-left:50px;
+        color: white;
+        margin-left: 50px;
         padding-top: 50px;
     }
-    #email{
-        width:500px;
-        height:70px;
-        font-size:36px;
-        font-family: monospace;
+
+    #email {
+        width: 500px;
+        height: 70px;
+        font-size: 36px;
+        font-family: 'poppins',sans-serif;
         padding-left: 20px;
-        margin-left:400px;
+        margin-left: 400px;
         margin-top: -120px;
     }
-    #join{
-        background-color:#6258DC;
-        color:white;
-        font-size:30px;
-        font-weight:bold;
-        font-family:Helvetica;
+
+    #join {
+        background-color: #6258DC;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'poppins',sans-serif;
         margin-left: 1070px;
         margin-top: 10px;
-        width:200px;
-        height:70px;
+        width: 200px;
+        height: 70px;
     }
 </style>
 
 <html>
-    <head class="flex-container">
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   
-        
-        <title>
-            CoachEd recruitment
-        </title>
-    </head>
-    <header>
-        <div class = "headbtns"> 
-            <button type="button" class="btn btn-light" id="signup1">Sign Up</button>
-            <button type="button" class="btn btn-light" id="getstarted1">Get Started</button>   
+
+<head class="flex-container">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>
+        CoachEd recruitment
+    </title>
+</head>
+<header>
+    <div class="headbtns">
+        <button type="button" class="btn btn-light" id="signup1">Sign Up</button>
+        <button type="button" class="btn btn-light" id="getstarted1">Get Started</button>
+    </div>
+    <div class="upperHead">
+        <p id="fBold">Hire quality experts in </p>
+        <p id="fline"> a flash</p>
+        <p id="sline">For recruiters who do things differently</p>
+        <button type="button" class="btn btn-light" id="getstartedup1">Get Started - Its Free! </button>
+    </div>
+    <div style="width:100%">
+        <img id="main_img" src="{% static 'h12.png' %}" height="700px" width="650px">
+        <img id="headerimg1" src="{% static 'pwc.jpg' %}" width="13%">
+        <img id="headerimg2" src="{% static 'hitachi.png' %}" width="13%">
+        <img id="headerimg3" src="{% static 'docket.png' %}" width="13%">
+        <img id="headerimg4" src="{% static 'logitech.png' %}" width="13%">
+    </div>
+</header>
+
+<body>
+    <div class="top">
+        <div class="theory">
+            <p id="prpltxt"><b>Get 6000+ Talented people</b></p>
+            <p id="smltxt">A new project coming? Need top management people or an app developer? <br>
+                <br> In easy steps and seamless experience, hire the right candidates today!
+            </p>
+        </div>
+
+        <div class="card" style="width:550px;height:450px;margin-top:-350px;margin-left:60%;">
+
+            <div class="card-body">
+                <center>
+                    <p class="card-title" style="font-size: 24px;font-family: initial; color: rgba(0, 0, 0, 0.64);">600
+                        Possible Recruits, 15 Perfect Fits</p>
+                </center>
+                <img src="{% static 'michael_dam.jpg' %}" height="120px" width="120px"
+                    style="border-radius: 50%;margin-left: 30px;margin-top: 20px;">
+                <img src="{% static 'warren_wong.jpg' %}" height="120px" width="120px"
+                    style="border-radius: 50%;margin-left: 20px;margin-top: 20px;">
+                <img src="{% static 'shubham_patel.jpg' %}" height="120px" width="120px"
+                    style="border-radius: 50%;margin-left: 20px;margin-top: 20px;">
+                <img src="{% static 'pargat_dhillon.jpg' %}" height="120px" width="120px"
+                    style="border-radius: 50%;margin-left:190px;margin-top:50px;">
+                <img src="{% static 'aatik_tasneem.jpg' %}" height="120px" width="120px"
+                    style="border-radius: 50%;margin-left: 20px;margin-top: 50px;">
             </div>
-            <div class="upperHead">
-                <p id="fBold">Hire quality experts in </p>
-                   <p id="fline"> a flash</p>
-                   <p id="sline">For recruiters who do things differently</p>
-                   <button type="button" class="btn btn-light" id="getstartedup1">Get Started - Its Free! </button> 
+        </div>
+        <div class="card" style="width:300px;height:300px;margin-top: -180px;margin-left:52%;">
+            <div class="card-body">
+                <center>
+                    <p class="card-text" style="margin-top:130px"><b>Vikas Mehta</b></p>
+                    <p style="margin-top:-20px">UX designer</p>
+                    <p style="margin-top:-20px;font-family: -apple-system, BlinkMacSystemFont;">5 years</p>
+                </center>
+                <img src="{% static 'be.png' %}" height="50px" width="50px"
+                    style="border-radius:50%;margin-left: 20px;">
+                <img src="{% static 'ball.png' %}" height="50px" width="50px"
+                    style="border-radius:50%;margin-left: 30px;">
             </div>
-            <div style ="width:100%">
-            <img id ="main_img"  src ="{% static 'h12.png' %}" height="700px" width="650px">
-            <img id="headerimg1" src="{% static 'pwc.jpg' %}"  width="13%">
-            <img id="headerimg2" src="{% static 'hitachi.png' %}"  width="13%">
-            <img id="headerimg3" src="{% static 'docket.png' %}"  width="13%">
-            <img id="headerimg4" src="{% static 'logitech.png' %}" width="13%">
+        </div>
+    </div>
+
+
+
+    <div class="middle">
+        <div class="l_half">
+            <img src="{% static 'synopsys.jpg' %}" width="400px" style="margin-left: 70px;">
+            <img src="{% static 'byjus.jpg' %}" width="200px" style="margin-right: 20px;">
+            <img src="{% static 'abylle.png' %}" width="200px" style="margin-left:50px;">
+            <img src="{% static 'printalytix.png' %}" width="300px" style="margin-top:70px;margin-left:100px">
+        </div>
+        <div class="r_half">
+            <p style="color:#6D63E7;font-size:48px;"><b>Startups & Companies across India work with us</b></p>
+            <p style="color: rgba(0, 0, 0, 0.58);font-size:24px;width:370px;"><b>Trusted by small teams to big
+                    corporates, we provide you
+                    with the best talent in the easiest manner possible</b></p>
+            <button id="mid_btn" class="btn btn-light">Post your first job today</button>
+        </div>
+    </div>
+    <div class="bottom">
+        <center>
+            <p style="font-size: 65px;font-weight: bold;padding-top: 50px;">How It Works</p>
+        </center>
+        <div id="img1">
+            <img src="{% static 'mob_frame.png' %}" width="550px" height="500px"
+                style="margin-top:100px;margin-left:10px">
+            <div class="card" style="width:300px; height:120px;margin-top: -300px;margin-left:250px">
+                <center>
+                    <p style="font-size:30px;margin-top:20px"><b>Rahul</b></p>
+                    <p style="font-size:30px;margin-top:-10px">Hiring Manager</p>
+                </center>
             </div>
-            </header>
-
-            <body>
-                <div class ="top">
-                    <div class = "theory">
-                    <p id="prpltxt"><b>Get 6000+ Talented people</b></p>
-                    <p id="smltxt">A new project coming? Need top management people or an app developer? <br>
-                    <br> In easy steps and seamless experience, hire the right candidates today!</p>
-                    </div>
-                
-                <div class="card" style="width:550px;height:450px;margin-top:-350px;margin-left:60%;">
-                    
-                    <div class="card-body">
-                     <center><p class="card-title" style="font-size: 24px;font-family: initial; color: rgba(0, 0, 0, 0.64);">600 Possible Recruits, 15 Perfect Fits</p></center>
-                      <img src ="{% static 'michael_dam.jpg' %}" height="120px" width="120px" style="border-radius: 50%;margin-left: 30px;margin-top: 20px;">
-                      <img src ="{% static 'warren_wong.jpg' %}" height="120px" width="120px" style="border-radius: 50%;margin-left: 20px;margin-top: 20px;">
-                      <img src ="{% static 'shubham_patel.jpg' %}" height="120px" width="120px" style="border-radius: 50%;margin-left: 20px;margin-top: 20px;">
-                      <img src ="{% static 'pargat_dhillon.jpg' %}" height="120px" width="120px" style="border-radius: 50%;margin-left:190px;margin-top:50px;">
-                      <img src ="{% static 'aatik_tasneem.jpg' %}" height="120px" width="120px" style="border-radius: 50%;margin-left: 20px;margin-top: 50px;">
-                    </div>
-                  </div>
-                  <div class="card" style="width:300px;height:300px;margin-top: -180px;margin-left:52%;">
-                    <div class="card-body">
-                       <center><p class="card-text" style="margin-top:130px"><b>Vikas Mehta</b></p>
-                        <p style="margin-top:-20px">UX designer</p>
-                        <p style="margin-top:-20px;font-family: -apple-system, BlinkMacSystemFont;">5 years</p></center>
-                        <img src="{% static 'be.png' %}" height="50px" width="50px" style="border-radius:50%;margin-left: 20px;">
-                        <img src="{% static 'ball.png' %}" height="50px" width="50px" style="border-radius:50%;margin-left: 30px;">
-                    </div>
-                  </div>
-                  </div>
+            <p style="font-size:45px;width:300px;margin-top:250px;text-align:center;margin-left:130px">Register as a
+                recruiter </p>
+        </div>
 
 
-
-                  <div class="middle">
-                    <div class="l_half">
-                        <img src="{% static 'synopsys.jpg' %}" width="400px" style="margin-left: 70px;">
-                        <img src="{% static 'byjus.jpg' %}" width="200px" style="margin-right: 20px;">
-                        <img src="{% static 'abylle.png' %}" width="200px" style="margin-left:50px;">
-                        <img src="{% static 'printalytix.png' %}" width="300px" style="margin-top:70px;margin-left:100px">
-                    </div>
-                    <div class="r_half">
-                        <p style="color:#6D63E7;font-size:48px;"><b>Startups & Companies across India work with us</b></p>
-                        <p style="color: rgba(0, 0, 0, 0.58);font-size:24px;width:370px;"><b>Trusted by small teams to big corporates, we provide you 
-                            with the best talent in the easiest manner possible</b></p>
-                        <button id="mid_btn" class="btn btn-light">Post your first job today</button>
-                    </div>
-                  </div>
-                  <div class="bottom">
-                     <center><p style="font-size: 65px;font-weight: bold;padding-top: 50px;">How It Works</p></center>
-                      <div id="img1">
-                          <img src="{% static 'mob_frame.png' %}" width="550px" height="500px" style="margin-top:100px;margin-left:10px">
-                          <div class="card" style="width:300px; height:120px;margin-top: -300px;margin-left:250px">
-                            <center><p style="font-size:30px;margin-top:20px"><b>Rahul</b></p>
-                            <p style="font-size:30px;margin-top:-10px">Hiring Manager</p></center>
-                            </div>
-                            <p style="font-size:45px;width:300px;margin-top:250px;text-align:center;margin-left:130px">Register as a recruiter </p>
-                      </div>
+        <div id="img2">
+            <img src="{% static 'mob_frame.png' %}" width="550px" height="500px"
+                style="margin-top:-720px;margin-left:500px">
+            <div class="card" style="width:280px; height:170px;margin-top: -370px;margin-left:760px">
+                <center>
+                    <p style="font-size:20px;margin-top:20px"><b>Looking for an Android App Developer, with Kotlin</b>
+                    </p>
+                    <p style="font-size:20px;margin-top:40px"><b>Experience: 4+ Years</b></p>
+                </center>
+            </div>
+            <p style="font-size:45px;width:300px;margin-top:50px;text-align:center;margin-left:630px">Post your job
+                requirements </p>
+            <img src="{% static 'andriod.jpg' %}" height="100px" width="100px"
+                style="border-radius: 50%;margin-top:-480px;margin-left:900px">
+        </div>
 
 
-                      <div id="img2">
-                        <img src="{% static 'mob_frame.png' %}" width="550px" height="500px" style="margin-top:-720px;margin-left:500px">
-                        <div class="card" style="width:280px; height:170px;margin-top: -370px;margin-left:760px">
-                        <center><p style="font-size:20px;margin-top:20px"><b>Looking for an Android App Developer, with Kotlin</b></p>
-                            <p style="font-size:20px;margin-top:40px"><b>Experience: 4+ Years</b></p></center>
-                            </div>
-                            <p style="font-size:45px;width:300px;margin-top:50px;text-align:center;margin-left:630px">Post your job requirements </p>
-                            <img src="{% static 'andriod.jpg' %}" height="100px" width="100px" style="border-radius: 50%;margin-top:-480px;margin-left:900px">
-                    </div>
+        <div id="img3">
+            <img src="{% static 'mob_frame.png' %}" width="550px" height="500px"
+                style="margin-top:-720px;margin-left:980px">
+            <div class="card" style="width:260px; height:120px;margin-top: -600px;margin-left:1260px">
+                <center>
+                    <p style="font-size:20px;margin-top:30px"><b>Shortlisted & Scheduled for Final Round</b></p>
+                </center>
+            </div>
+            <img src="{% static 'support1.png' %}" width="100px" height="100px"
+                style="border-radius: 50%;margin-left: 1400px;">
+            <p style="font-size:45px;width:300px;margin-top:230px;text-align:center;margin-left:1110px">Hire from the
+                best </p>
+        </div>
+    </div>
 
 
-                    <div id="img3">
-                        <img src="{% static 'mob_frame.png' %}" width="550px" height="500px" style="margin-top:-720px;margin-left:980px">
-                        <div class="card" style="width:260px; height:120px;margin-top: -600px;margin-left:1260px">
-                            <center><p style="font-size:20px;margin-top:30px"><b>Shortlisted & Scheduled for Final Round</b></p></center>
-                        </div>
-                        <img src="{% static 'support1.png' %}" width="100px" height="100px" style="border-radius: 50%;margin-left: 1400px;">
-                        <p style="font-size:45px;width:300px;margin-top:230px;text-align:center;margin-left:1110px">Hire from the best  </p>
-                    </div>
-                  </div>
+    <div class="lastbottom">
+        <center>
+            <p style="font-size: 64px;"><b>What Our Clients Say About Us</b></p>
+        </center>
+        <div class="ltxt">
+            <p id="quote"><b>“</b></p>
+            <p id="bl_text">Hiring from Flashhired was incredibly easy and quick! My team was
+                looking for a UI/UX Designer and we found the perfect fit in less than 48 hours!<br> <br>
+                The team assisting us and the seamless flow of the process makes
+                flashhired the next generation hiring platform!</p><br><br><br>
+            <p style="font-size:36px;margin-left:100px"><b>Prabhu Kumar</b>, CEO, Aviana NRIT </p>
+            <p></p>
+        </div>
+        <div class="dotted">
+            <div class="thick">
+                <img src="{% static 'michael_dam.jpg' %}" height="200px" width="200px"
+                    style="border-radius: 50%;margin-top: -600px;">
+                <img src="{% static 'aatik_tasneem.jpg' %}" height="110px" width="110px"
+                    style="border-radius: 50%;margin-top:300px;margin-left: -250px;">
+                <img src="{% static 'ben_parker.jpg' %}" height="210px" width="210px"
+                    style="border-radius: 50%;margin-left:200px;margin-top: -130px;">
+            </div>
+        </div>
+        <div class="inner"></div>
+    </div>
 
 
-                  <div class="lastbottom">
-                      <center><p style="font-size: 64px;"><b>What Our Clients Say About Us</b></p></center>
-                      <div class="ltxt">
-                          <p id="quote"><b>“</b></p>
-                          <p id="bl_text">Hiring from Flashhired was incredibly easy and quick! My team was
-                            looking for a UI/UX Designer and we found the perfect fit in less than 48 hours!<br> <br>
-                            The team assisting us and the seamless flow of the process makes
-                            flashhired the next generation hiring platform!</p><br><br><br>
-                            <p style="font-size:36px;margin-left:100px"><b>Prabhu Kumar</b>, CEO, Aviana NRIT </p>
-                            <p></p>
-                      </div>
-                      <div class="dotted"><div class="thick">
-                        <img src="{% static 'michael_dam.jpg' %}" height="200px" width="200px" style="border-radius: 50%;margin-top: -600px;">
-                          <img src="{% static 'aatik_tasneem.jpg' %}" height="110px" width="110px" style="border-radius: 50%;margin-top:300px;margin-left: -250px;">
-                          <img src="{% static 'ben_parker.jpg' %}" height="210px" width="210px" style="border-radius: 50%;margin-left:200px;margin-top: -130px;">
-                      </div></div>
-                      <div class="inner"></div>
-                  </div>
+    <footer style="height:500px;background: #6C63FF;margin-top:500px">
+        <button class="btn" id="join">Join</button>
+    </footer>
+    <div id="pop">
+        <p id="lasttxt">Ready to get started? </p>
+        <input type="email" placeholder="Email Address" id="email">
+    </div>
 
-        
-                  <footer style="height:500px;background: #6C63FF;margin-top:500px">
-                    <button class="btn" id="join">Join</button>
-                  </footer>
-                  <div id ="pop">
-                    <p id="lasttxt">Ready to get started? </p>
-                    <input type="email" placeholder="Email Address" id="email">
-                </div>
-                
-            </body>
+</body>
+
 </html>
