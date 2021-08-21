@@ -11,3 +11,10 @@ def rechome(request):
 
 def studentlogin(request):
     return render(request,'studentlogin.html',{})
+
+def SignupChoice(request):
+    return render(request,'SignupChoice.html',{})
+
+
+def Signup(request):
+    return render(request,'Signup.html',{})
