@@ -1,10 +1,12 @@
 
-<html>
+{% load static %}
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+        
         .blueRectangle{
             /* Blue Box Border */
             position: absolute;
-            width: 43%;
+            width:700px;
             height: 100%;
             left: -152px;
             background: #461FBE;
@@ -13,8 +15,8 @@
         #flash{
             /* flashhired. */
             position: absolute;
-            left: 40%;
-            top: 40%;
+            left: 280px;
+            top: 330px;
             font-family: 'Italiana',serif;
             font-size: 40px;
             font-weight:lighter;
@@ -23,9 +25,9 @@
         #bold{
             /* flashhired. */
             position: absolute;
-            left: 52%;
-            top: 40%;
-            font-family: Verdana;
+            left: 355px;
+            top: 330px;
+            font-family:Roboto, sans-serif;
             font-size: 40px;
             font-weight: bolder;
             color: #FFFFFF;
@@ -87,8 +89,8 @@
         }
         #trouble{
             position: absolute;
-            left: 85%;
-            top: 10px;
+            left: 80%;
+            top: 45px;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
             color: #000000;
@@ -101,31 +103,61 @@
             height:5%; 
             font-size: 18px;
             font-weight: bolder;
+            font-family: 'poppins',sans-serif;
             color: rgba(70, 31, 190, 1);
         }
         #jobSeeker{
             position: absolute;
-            width: 30%;
-            left:50%;
+            width: 450px;
+            left:800px;
             top: 35%;
-            height:5%; 
+            height:50px; 
             font-size: 18px;
+            font-weight:bolder;
             background-color: #FFFFFF;
-            box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
             border-radius: 25px;
+            font-family: 'poppins',sans-serif;
+            border-color: #FFFFFF;
         }
         #recruiter{
             position: absolute;
-            width: 30%;
-            left:50%;
+            width:450px;
+            left:800px;
             top: 50%;
-            height:5%; 
+            height:50px; 
             font-size: 18px;
+            font-weight:bolder;
             background-color: #FFFFFF;
-            box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.25);
-            border-radius: 25px; 
+            box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            border-color: #FFFFFF;
+            font-family: 'poppins',sans-serif;
+            
+        }
+        #R-LID{
+            width:25px;
+            height:25px;
+            margin-right:25px;
+        }
+        #R-RID{
+            width:25px;
+            height:25px;
+            margin-left:200px;
+        }
+        #J-LID{
+            width:25px;
+            height:25px;
+            margin-right:25px;
+        }
+        #J-RID{
+            width:25px;
+            height:25px;
+            margin-left:200px;
         }
     </style>
+
+    <html>
     <head>
         <title>Signup Choice Page</title>
         <meta charset="UTF-8">
@@ -146,8 +178,8 @@
         <p id="trouble">Having Troubles? <a href="">Get Help</a></p>
         <div class="">
             <p id="situation">Tell us what's your situation</p>
-            <a href="{% url 'signup' %}"><button type="button" id="jobSeeker"><img src="" id="J-ID">A job seeker</button></a>
-            <a href="{% url 'signup' %}"><button type="button" id="recruiter"><img src="" id="R-ID">A recruiter</button></a>
+            <a href="{% url 'signup' %}"><button type="button" id="jobSeeker"><img src="{% static 'magnifying.jpg' %}" id="J-LID">A job seeker<img src="{% static 'greatertag.png' %}" id="J-RID"></button></a>
+            <a href="{% url 'signup' %}"><button type="button" id="recruiter"><img src="{% static 'target.png' %}" id="R-LID">A recruiter<img src="{% static 'greatertag.png' %}" id="R-RID"></button></a>
         </div>
     </body>
 </html>
