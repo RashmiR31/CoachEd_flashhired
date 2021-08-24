@@ -9,8 +9,8 @@ def pilot(request):
 def rechome(request):
     return render(request,'rechome.html',{})
 
-def studentlogin(request):
-    return render(request,'studentlogin.html',{})
+def login(request):
+    return render(request,'login.html',{})
 
 def SignupChoice(request):
     return render(request,'SignupChoice.html',{})
