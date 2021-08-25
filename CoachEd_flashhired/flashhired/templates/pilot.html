@@ -48,10 +48,16 @@
     }
 
     .head1 {
-        width: 600px;
+        width: 40%;
         margin-top: 200px
     }
-
+    .head2{
+        position: absolute;
+        width:60%;
+        left:40%;
+        padding-left: 10%;
+        margin-top: -33%;
+    }
     #flash {
         font-size: 40px;
         font-family: 'Italiana', serif;
@@ -260,7 +266,10 @@
             <p id="second">Land your First/Second or Tenth job seamlessly</p>
             <button type="button" class="btn btn-light" id="getstartedup">Get started - Its Free!</button>
         </div>
-        <img id="img1" src="{% static 'mainheader.png' %}" width="1250px">
+        <div class="head2">
+            <img src="{% static 'IMGoverWAVE.png' %}" width="90%">
+        </div>
+        <img src="{% static 'waves.png' %}" width="100%" style="margin-top:-30%;">
     </header>
     <img src="{% static '1.png' %}" height="250px" ;width="200px" style="margin-left: 150px;">
     <div id="id1">
