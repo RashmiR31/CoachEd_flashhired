@@ -1,4 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-admin.site.site_header = 'flashHired Administration'
+admin.site.site_header = 'flashHired Administration' 
+#username = admin
+#pw: CoachEdINAHAKPK.flashired21
