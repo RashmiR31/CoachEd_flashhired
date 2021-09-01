@@ -262,14 +262,14 @@
 </head>
 <header>
     <div class="headbtns">
-        <a href="{% url 'login' %}"><button type="button" class="btn btn-light" id="signup1">Sign In</button></a>
+        <a href="{% url 'login_view' %}"><button type="button" class="btn btn-light" id="signup1">Sign In</button></a>
         <a href="{% url 'signupchoice' %}"><button type="button" class="btn btn-light" id="getstarted1">Get Started</button></a>
     </div>
     <div class="upperHead">
         <p id="fBold">Hire quality experts in </p>
         <p id="fline"> a flash</p>
         <p id="sline">For recruiters who do things differently</p>
-        <button type="button" class="btn btn-light" id="getstartedup1">Get Started - Its Free! </button>
+        <a href="{% url 'signupchoice' %}"><button type="button" class="btn btn-light" id="getstartedup1">Get Started - Its Free! </button></a>
     </div>
     <div style="width:100%">
         <img id="main_img" src="{% static 'h12.png' %}" height="700px" width="650px">
@@ -337,7 +337,7 @@
             <p style="color: rgba(0, 0, 0, 0.58);font-size:24px;width:370px;"><b>Trusted by small teams to big
                     corporates, we provide you
                     with the best talent in the easiest manner possible</b></p>
-            <button id="mid_btn" class="btn btn-light">Post your first job today</button>
+            <a href="{% url 'signup' %}"><button id="mid_btn" class="btn btn-light">Post your first job today</button></a>
         </div>
     </div>
     <div class="bottom">

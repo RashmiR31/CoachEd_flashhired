@@ -130,13 +130,13 @@
             top: 22%;
             border: 1px solid rgba(0, 0, 0, 0.56);
         }
-        #Email{
+        #userName{
             position: absolute;
             left:50%;
             top: 30%;
             font-family: 'Poppins', sans-serif;
         }
-        #Email-field{
+        #userName-field{
             position: absolute;
             left:50%;
             top: 35%; 
@@ -208,18 +208,30 @@
         <area id="sq2"></area>
         <area id="pg1"></area>
         <area id="pg2"></area>
-        <p id="trouble">New to flashhired? <a href="">Signup</a></p>
+        <p id="trouble">New to flashhired? <a href="{% url 'signup' %}">Signup</a></p>
         <div class="form"> <!--class form not defined, just declared-->
             <button type="button" id="SignInWithGoogle"><img src="{% static 'googleLogo.png' %}" id="G-ID">     Sign In With Google</button>
             <hr id="line1">
             <p id="SignInWithEmail">or Sign In With Email</p>
             <hr id="line2">
-            <p id="Email">Email</p>
-            <input type="text" placeholder="Enter your Email" id="Email-field">
-            <p id="Password">Password</p>
-            <input type="text" placeholder="Enter your Password" id="Password-field">
-            <p id="fp">Forgot Password?</p>
-            <button type="button" id="Login"><img src="">Login</button>
+
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td id="userName">Username:</td>
+                        <td><input id="userName-field" placeholder="Enter your Username" {{ form.username }}</td>
+                    </tr>
+                    <tr>
+                        <td id="Password">Password:</td>
+                        <td><input id="Password-field" placeholder="Type your Password"{{ form.password }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button id="Login" type="submit" name="submit" value="Login" >Login</button></td>
+                    </tr>
+                </table>
+            </form>
         </div>
 
     </body>
