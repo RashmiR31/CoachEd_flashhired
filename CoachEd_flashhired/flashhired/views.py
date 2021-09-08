@@ -19,7 +19,7 @@ def login_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-            if user is not None and user.is_student:
+            if user is not None and user.is_candidate:
                 login(request,user)
                 return redirect('CandidateHome')
             if user is not None and user.is_recruiter:

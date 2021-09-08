@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
+from phonenumber_field.formfields import PhoneNumberField
 from .models import User
 
 class LoginForm(forms.Form):
@@ -23,19 +24,9 @@ class SignupForm(UserCreationForm):
     password2 = forms.CharField(
         widget=forms.PasswordInput(attrs={"class":"form-control"})
     )
+    phone_number = PhoneNumberField()
 
     class Meta:
         model = User
-        fields = ('username','email','password1','password2','is_student','is_recruiter')
+        fields = ('username','email','password1','password2','phone_number','is_candidate','is_recruiter')
 
-# class SignupChoice(UserCreationForm):
-#     is_student = forms.BooleanField(
-#         widget=forms.CheckboxInput(attrs={"class":"form-control"})
-#     )
-#     is_recruiter = forms.BooleanField(
-#         widget=forms.CheckboxInput(attrs={"class":"form-control"})
-#     )
-
-#     class Meta:
-#         model = User
-#         fields = ('is_student','is_recruiter')
