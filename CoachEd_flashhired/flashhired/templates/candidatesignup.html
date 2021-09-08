@@ -1,30 +1,382 @@
-Candidate Signup Page
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>Username:</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>email:</td>
-            <td>{{ form.email }}</td>
-        </tr>
-        <tr>
-            <td>Password1:</td>
-            <td>{{ form.password1 }}</td>
-        </tr>
-        <tr>
-            <td>Password2:</td>
-            <td>{{ form.password2 }}</td>
-        </tr>
-        <tr>
-            <td>Terms & Conditions:</td>
-            <td>{{ form.is_student }}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input id="SignUp" type="submit" name="submit" value="SIGN UP" /></td>
-        </tr>
-    </table>
-</form>
+{% load static %}
+
+    <style>    
+        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+        .blueRectangle{
+            /* Blue Box Border */
+            position: absolute;
+            width: 700px;
+            height: 100%;
+            left: -152px;
+            background: #461FBE;
+            border-radius: 30px;
+        }
+        #flash{
+            /* flashhired. */
+            position: absolute;
+            left: 40%;
+            top: 45%;
+            font-family: 'Italiana',serif;
+            font-size: 40px;
+            font-weight:lighter;
+            color: #FFFFFF;
+        }
+        #bold{
+            /* flashhired. */
+            position: absolute;
+            left: 51%;
+            top: 45%;
+            font-family: Roboto, sans-serif;
+            font-size: 40px;
+            font-weight: bolder;
+            color: #FFFFFF;
+        }
+        #sq1{
+            /* Rectangle 1 */
+            position: absolute;
+            width: 10%;
+            height: 20%;
+            left: -10px;
+            background: #301488;
+        }
+        #sq2{
+            /* Rectangle 2 */
+            position: absolute;
+            width: 10%;
+            height: 20%;
+            left: 20px;
+            top: 20px;
+            background: #40159B;
+        }
+        #pg1{
+            /* Polygon 1 */
+            position: absolute;
+            width: 8%;
+            height: 15%;
+            left: 115px;
+            top: -10px;
+            background: rgba(250, 246, 244, 0.72);
+            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
+        }
+        #pg2{
+            /* Polygon 2 */
+            position: absolute;
+            width: 8%;
+            height: 15%;
+            left: -10px;
+            top: 18%;
+            background: #FAF6F4;
+            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
+        }
+        #textInBlueBox{
+            position: absolute;
+            left: 40%;
+            top: 55%;
+            width: 40%;
+            font-family: 'Poppins',sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            color: #FFFFFF;
+        }
+        #trouble{
+            position: absolute;
+            left: 85%;
+            top: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #000000;
+        }
+        #SignupForFree{
+            position: absolute;
+            width: 30%;
+            left:45%;
+            top: 5%;
+            font-family:'poppins',sans-serif;
+            height:5%; 
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgba(70, 31, 190, 1);
+        }
+        
+        #headText{
+            
+            position: absolute;
+            width: 495px;
+            height: 30px;
+            left: 670px;
+            top: 108px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+
+            color: #000000;
+
+        }
+
+        #headDesc{
+            position: absolute;
+            width: 638px;
+            height: 48px;
+            left: 670px;
+            top: 139px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 22px;
+
+            color: #000000;
+        }
+
+        #firstName{
+            
+            position: absolute;
+            width: 328px;
+            height: 40px;
+            left: 669px;
+            top: 258px;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+            
+        }
+
+        #lastName{
+
+            position: absolute;
+            width: 321px;
+            height: 40px;
+            left: 1018px;
+            top: 258px;
+
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        #username{
+            position: absolute;
+            left:50%;
+            top: 10%;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #nineOne{
+            /*+91 */
+            position: absolute;
+            width: 50px;
+            height: 40px;
+            left: 668px;
+            top: 345px;
+            border: 1px solid #000000;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+        }  
+            
+        #phNo{
+            /* rectangle */
+            position: absolute;
+            width: 270px;
+            height: 40px;
+            left: 725px;
+            top: 345.10px;
+
+            background: rgba(251, 248, 248, 0.87);
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+        }
+        #Email{
+            position: absolute;
+            width: 321px;
+            height: 40px;
+            left: 1018px;
+            top: 345.10px;
+
+            background: rgba(251, 248, 248, 0.87);
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        } 
+        
+        #userName{
+            position: absolute;
+            width: 329px;
+            height: 40px;
+            left: 668px;
+            top: 438px;
+
+            font-size: 12px;
+            display: inline-block;
+            background: rgba(251, 248, 248, 0.87);
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+    
+        #CreatePassword{
+            position: absolute;
+            width: 328px;
+            height: 40px;
+            left: 668px;
+            top: 522px;
+
+            background: rgba(251, 248, 248, 0.87);
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+        }
+       
+        #ConfirmPassword{
+            position: absolute;
+            width: 328px;
+            height: 40px;
+            left: 1018px;
+            top: 522px;
+
+            background: rgba(251, 248, 248, 0.87);
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        
+        #createAccount{
+            position: absolute;
+            width: 171px;
+            height: 42px;
+            left: 669px;
+            top: 685px;
+            
+            color:white;
+            background: #461FBE;
+            border-radius: 5px;
+        }
+        #line1{
+            position: absolute;
+            width:125px;
+            left: 53%;
+            top: 85%;
+            border: 1px solid rgba(0,0,0, 0.5);
+            
+        }
+        #or{
+            position: absolute;
+            left: 65%;
+            top: 83%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        #line2{
+            position: absolute;
+            width: 125px;
+            left: 70%;
+            top: 85%;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+        }
+        #G-ID{
+            position: absolute;
+            left:20%;
+            width:25px;
+            height: 25px;
+        }
+        #SignUpWithGoogle{
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            width:500px;
+            height:50px;
+            font-size: 18px;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+        }
+        .formSignUp{
+            margin-left:50%;
+        }
+    </style>
+
+<hmml>
+    <head>
+        <title>Candidate Registration</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    </head>
+    <body>
+        <div class = "blueRectangle">
+            <shape id="vector"></shape>
+            <p id="flash">flash
+            <p id="bold">hired.</p>
+            <p id="textInBlueBox">A few clicks away from 
+                creating your account!
+                Let’s gooo!</p>
+        </div>
+        <area id="sq1"></area>
+        <area id="sq2"></area>
+        <area id="pg1"></area>
+        <area id="pg2"></area>
+        <p id="trouble">Having Troubles?  <a href="{% url 'login' %}">Get Help</a></p>
+        <form method="post" >
+            {% csrf_token %}
+            <p id="SignupForFree">Register</p>
+            <p id= "headText" > Landing your dream careers, made easier. </p>
+            <p id= "headDesc" > Let’s get you all set up so you can verify your personal account and begin setting up your profile. </p>
+            <div class= "formSignUp">
+           <table>
+                <tr>
+                    <td><input id="firstName" placeholder="First Name"{{ form.username }}</td>
+                    <td><input id="lastName" placeholder="Last Name"{{ form.username }}</td>
+
+                </tr>
+                <tr>
+                    <td><input id="nineOne" placeholder="+91"{{ form.email }}</td>
+                    <td><input id="phNo" type="tel" placeholder="Phone Number"{{ form.email }}</td>
+                    <td><input id="Email" type= "email" placeholder="Enter Email"{{ form.email }}</td>
+
+                </tr>
+
+                <tr>
+                     <td id="userName"> </td>
+                     <td><input id="userName" placeholder="Enter your username with 6 letters and a special character"{{ form.password1 }}</td>
+                </tr>
+
+
+                <tr>
+                <!--  <td id="CreatePassword">Password: </td>  </script>-->
+                    <td><input id="CreatePassword" placeholder="Create Password"{{ form.password1 }}</td>
+                </tr>
+                <tr>
+                <!--   <td id="ConfirmPassword">Re-type Password: </td>  </script>-->
+                    <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
+                </tr>
+                <tr>
+                   <td></td> 
+                   <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
+               </tr>
+
+               <tr>
+                <td></td> 
+                <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
+               </tr>
+
+            </table>
+        </form>
+    </div>
+
+
+<!--Candidate Signup Page </script>-->
+
+<script src="js/app.js"></script>
+</body>
+</html>
