@@ -1,0 +1,30 @@
+Recruiter Signup Page
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>email:</td>
+            <td>{{ form.email }}</td>
+        </tr>
+        <tr>
+            <td>Password1:</td>
+            <td>{{ form.password1 }}</td>
+        </tr>
+        <tr>
+            <td>Password2:</td>
+            <td>{{ form.password2 }}</td>
+        </tr>
+        <tr>
+            <td>Terms & Conditions:</td>
+            <td>{{ form.is_recruiter }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="SignUp" type="submit" name="submit" value="SIGN UP" /></td>
+        </tr>
+    </table>
+</form>

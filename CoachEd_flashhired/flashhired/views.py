@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from .forms import SignupForm,LoginForm
 from django.contrib.auth import authenticate,login
+from .models import User
+from django.http import HttpResponse
 # Create your views here.
 
 def pilot(request):
@@ -17,9 +19,12 @@ def login_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-            if user is not None:
+            if user is not None and user.is_student:
                 login(request,user)
-                return redirect('home')
+                return redirect('CandidateHome')
+            if user is not None and user.is_recruiter:
+                login(request,user)
+                return redirect('RecruiterHome')
             else:
                 msg='invalid credentials'
                 print(msg)
@@ -42,7 +47,41 @@ def Signup(request):
             msg='form is not valid'
     else: 
         form = SignupForm() 
-    return render(request,'Signup.html',{'form':form,'msg':msg})
+    return render(request,'blank.html',{'form':form,'msg':msg})
+
+def candidateSignup(request):
+    msg=None
+    if request.method=='POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            msg='user created successfully'
+            return redirect('login_view')
+        else: 
+            msg='form is not valid'
+    else: 
+        form = SignupForm() 
+    return render(request,'candidateSignup.html',{'form':form,'msg':msg})
+
+def recruiterSignup(request):
+    msg=None
+    if request.method=='POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            msg='user created successfully'
+            return redirect('login_view')
+        else: 
+            msg='form is not valid'
+    else: 
+        form = SignupForm() 
+    return render(request,'recruiterSignup.html',{'form':form,'msg':msg})
 
 def home(request):
-    return render(request,'home.html',{})
+    return render(request,'home.html')
+
+def CandidateHome(request):
+    return render(request,'CandidateHome.html')
+    
+def RecruiterHome(request):
+    return render(request,'RecruiterHome.html')

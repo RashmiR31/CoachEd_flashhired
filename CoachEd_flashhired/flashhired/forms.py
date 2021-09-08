@@ -26,5 +26,16 @@ class SignupForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username','email','password1','password2')
+        fields = ('username','email','password1','password2','is_student','is_recruiter')
 
+# class SignupChoice(UserCreationForm):
+#     is_student = forms.BooleanField(
+#         widget=forms.CheckboxInput(attrs={"class":"form-control"})
+#     )
+#     is_recruiter = forms.BooleanField(
+#         widget=forms.CheckboxInput(attrs={"class":"form-control"})
+#     )
+
+#     class Meta:
+#         model = User
+#         fields = ('is_student','is_recruiter')

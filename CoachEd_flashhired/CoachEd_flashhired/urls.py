@@ -14,16 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from flashhired import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.pilot,name='pilot'),
     path('rechome/',views.rechome,name='rechome'),
-    path('login/',views.login_view,name='login_view'),
+    path('login/',views.login_view,name='login'),
     path('signupchoice/',views.SignupChoice,name='signupchoice'),
     path('signup',views.Signup,name='signup'),
-    path('home/',views.home,name='home')
+    path('home/',views.home,name='home'),
+    path('accounts/', include('allauth.urls')),
+    path('candidatehome/',views.CandidateHome,name='CandidateHome'),
+    path('recruiterhome/',views.RecruiterHome,name='RecruiterHome'),
+    path('recruitersignup/',views.recruiterSignup,name='recruitersignup'),
+    path('candidatesignup/',views.candidateSignup,name='candidatesignup'),
 
 ]
