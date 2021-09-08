@@ -250,7 +250,33 @@
             box-sizing: border-box;
             border-radius: 5px;
         }
-        
+        #checkUser{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 668px;
+            top: 620px;
+
+            background: #C4C4C4;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        #TnC{
+            position: absolute;
+            width: 646px;
+            height: 40px;
+            left: 703px;
+            top: 617px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+
+            color: #000000;
+        }
         #createAccount{
             position: absolute;
             width: 171px;
@@ -262,46 +288,8 @@
             background: #461FBE;
             border-radius: 5px;
         }
-        #line1{
-            position: absolute;
-            width:125px;
-            left: 53%;
-            top: 85%;
-            border: 1px solid rgba(0,0,0, 0.5);
-            
-        }
-        #or{
-            position: absolute;
-            left: 65%;
-            top: 83%;
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            color: rgba(0, 0, 0, 0.5);
-        }
-        #line2{
-            position: absolute;
-            width: 125px;
-            left: 70%;
-            top: 85%;
-            border: 1px solid rgba(0, 0, 0, 0.5);
-        }
-        #G-ID{
-            position: absolute;
-            left:20%;
-            width:25px;
-            height: 25px;
-        }
-        #SignUpWithGoogle{
-            position: absolute;
-            left: 50%;
-            top: 90%;
-            width:500px;
-            height:50px;
-            font-size: 18px;
-            background-color: #FFFFFF;
-            box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
-        }
+        
+      
         .formSignUp{
             margin-left:50%;
         }
@@ -326,7 +314,7 @@
         <area id="sq2"></area>
         <area id="pg1"></area>
         <area id="pg2"></area>
-        <p id="trouble">Having Troubles?  <a href="{% url 'login' %}">Get Help</a></p>
+        <p id="trouble">Having Troubles?  <a href="{% url 'login_view' %}">Get Help</a></p>
         <form method="post" >
             {% csrf_token %}
             <p id="SignupForFree">Register</p>
@@ -335,20 +323,20 @@
             <div class= "formSignUp">
            <table>
                 <tr>
-                    <td><input id="firstName" placeholder="First Name"{{ form.username }}</td>
-                    <td><input id="lastName" placeholder="Last Name"{{ form.username }}</td>
+                    <td><input id="firstName" placeholder="First Name"{{ form.first_name }}</td>
+                    <td><input id="lastName" placeholder="Last Name"{{ form.last_name }}</td>
 
                 </tr>
                 <tr>
-                    <td><input id="nineOne" placeholder="+91"{{ form.email }}</td>
-                    <td><input id="phNo" type="tel" placeholder="Phone Number"{{ form.email }}</td>
+                    <td><input id="nineOne" placeholder="+91"></td>
+                    <td><input id="phNo" type="tel" placeholder="Phone Number"{{ form.phone_number }}</td>
                     <td><input id="Email" type= "email" placeholder="Enter Email"{{ form.email }}</td>
 
                 </tr>
 
                 <tr>
                      <td id="userName"> </td>
-                     <td><input id="userName" placeholder="Enter your username with 6 letters and a special character"{{ form.password1 }}</td>
+                     <td><input id="userName" placeholder="Enter your username with 6 letters and a special character"{{ form.username }}</td>
                 </tr>
 
 
@@ -361,14 +349,13 @@
                     <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
                 </tr>
                 <tr>
-                   <td></td> 
+                    <td><input id="checkUser" type="checkbox" {{ form.is_candidate }}></td>
+                    <td id="TnC">I agree to all the terms and privacy policy</td>
+                </tr>
+                <tr> 
                    <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
                </tr>
 
-               <tr>
-                <td></td> 
-                <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
-               </tr>
 
             </table>
         </form>
