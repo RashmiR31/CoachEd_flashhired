@@ -181,39 +181,7 @@
             <a href="{% url 'candidatesignup' %}"><button type="submit" id="jobSeeker"><img src="{% static 'magnifying.jpg' %}" id="J-LID">A job seeker<img src="{% static 'greatertag.png' %}" id="J-RID"></button></a>
             <a href="{% url 'recruitersignup' %}"><button type="submit" id="recruiter"><img src="{% static 'target.png' %}" id="R-LID">A recruiter<img src="{% static 'greatertag.png' %}" id="R-RID"></button></a>
            
-          <!-- <table>
-                <tr>
-                    <td>Job seeker</td>
-                    <td><input id="student" placeholder="Im a student"{{ form.is_student }}</td>
-                </tr>
-                <tr>
-                    <td>Recruiter</td>
-                    <td><input id="recuiter" placeholder="I'm a recruiter"{{ form.is_recruiter }}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input id="SignUp" type="submit" name="submit" value="SIGN UP" /></td>
-                </tr>
-           </table>
-        </form>
-            <script>
-
-function setGetParameter(){
-    
-    window.location.href = "{% url 'signup' %}" + "?search=student";
-}
-
-                function setGetParameter1(){
-                    $.ajax({
-                      type: "POST",
-                      url: "{% url 'signup' %}",
-                      data: "recruiter",
-                      success: function(result){
-                        alert("Success");
-                      }
-                    });
-                }
-                </script>-->
+        
         </div>
     </body>
 </html>

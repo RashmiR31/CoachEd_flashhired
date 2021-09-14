@@ -35,20 +35,6 @@ def login_view(request):
 def SignupChoice(request):
     return render(request,'SignupChoice.html',{})
 
-def Signup(request):
-    msg=None
-    if request.method=='POST':
-        form = SignupForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            msg='user created successfully'
-            return redirect('login_view')
-        else: 
-            msg='form is not valid'
-    else: 
-        form = SignupForm() 
-    return render(request,'blank.html',{'form':form,'msg':msg})
-
 def candidateSignup(request):
     msg=None
     if request.method=='POST':

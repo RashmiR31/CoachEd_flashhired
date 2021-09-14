@@ -314,7 +314,7 @@
         <area id="sq2"></area>
         <area id="pg1"></area>
         <area id="pg2"></area>
-        <p id="trouble">Having Troubles?  <a href="{% url 'login_view' %}">Get Help</a></p>
+        <p id="trouble">Having Troubles?  <a href="{% url 'CandidateHome' %}">Get Help</a></p>
         <form method="post" >
             {% csrf_token %}
             <p id="SignupForFree">Register</p>
@@ -325,27 +325,20 @@
                 <tr>
                     <td><input id="firstName" placeholder="First Name"{{ form.first_name }}</td>
                     <td><input id="lastName" placeholder="Last Name"{{ form.last_name }}</td>
-
                 </tr>
                 <tr>
                     <td><input id="nineOne" placeholder="+91"></td>
                     <td><input id="phNo" type="tel" placeholder="Phone Number"{{ form.phone_number }}</td>
                     <td><input id="Email" type= "email" placeholder="Enter Email"{{ form.email }}</td>
-
                 </tr>
-
                 <tr>
                      <td id="userName"> </td>
                      <td><input id="userName" placeholder="Enter your username with 6 letters and a special character"{{ form.username }}</td>
                 </tr>
-
-
                 <tr>
-                <!--  <td id="CreatePassword">Password: </td>  </script>-->
                     <td><input id="CreatePassword" placeholder="Create Password"{{ form.password1 }}</td>
                 </tr>
                 <tr>
-                <!--   <td id="ConfirmPassword">Re-type Password: </td>  </script>-->
                     <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
                 </tr>
                 <tr>

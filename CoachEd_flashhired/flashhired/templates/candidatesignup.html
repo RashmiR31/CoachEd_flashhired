@@ -314,7 +314,7 @@
         <area id="sq2"></area>
         <area id="pg1"></area>
         <area id="pg2"></area>
-        <p id="trouble">Having Troubles?  <a href="{% url 'login_view' %}">Get Help</a></p>
+        <p id="trouble">Having Troubles?  <a href="{% url 'CandidateHome' %}">Get Help</a></p>
         <form method="post" >
             {% csrf_token %}
             <p id="SignupForFree">Register</p>
@@ -349,7 +349,7 @@
                     <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
                 </tr>
                 <tr>
-                    <td><input id="checkUser" type="checkbox" {{ form.is_candidate }}></td>
+                    <td><input id="checkUser" type="checkbox" {{ form.is_candidate }}</td>
                     <td id="TnC">I agree to all the terms and privacy policy</td>
                 </tr>
                 <tr> 
