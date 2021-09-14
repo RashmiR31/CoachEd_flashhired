@@ -108,27 +108,16 @@
             box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.25);
             border-radius: 25px;
         }*/
-        #line1{
+        #login_user{
             position: absolute;
-            width: 105px;
-            left: 52%;
-            top: 22%;
-            border: 1px solid rgba(0, 0, 0, 0.56);
-        }
-        #SignIn{
-            position: absolute;
-            left: 63.5%;
-            top: 22%;
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            color: rgba(0, 0, 0, 0.56);
-        }
-        #line2{
-            position: absolute;
-            width: 105px;
-            left: 73%;
-            top: 22%;
-            border: 1px solid rgba(0, 0, 0, 0.56);
+            width: 30%;
+            left:50%;
+            top: 20%;
+            font-family:'poppins',sans-serif;
+            height:5%; 
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgba(70, 31, 190, 1);
         }
         #userName{
             position: absolute;
@@ -211,9 +200,7 @@
         <p id="trouble">New to flashhired? <a href="{% url 'signupchoice' %}">Signup</a></p>
         <div class="form"> <!--class form not defined, just declared-->
             
-            <hr id="line1">
-            <p id="SignIn">Sign In </p>
-            <hr id="line2">
+            <p id="login_user">Login</p>
 
             <form method="POST">
                 {% csrf_token %}

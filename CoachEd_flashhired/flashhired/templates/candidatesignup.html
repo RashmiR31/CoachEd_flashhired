@@ -82,7 +82,7 @@
         }
         #trouble{
             position: absolute;
-            left: 85%;
+            left: 80%;
             top: 10px;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
@@ -91,7 +91,7 @@
         #SignupForFree{
             position: absolute;
             width: 30%;
-            left:45%;
+            left:670px;
             top: 5%;
             font-family:'poppins',sans-serif;
             height:5%; 
@@ -137,9 +137,9 @@
         #firstName{
             
             position: absolute;
-            width: 328px;
+            width: 330px;
             height: 40px;
-            left: 669px;
+            left: 670px;
             top: 258px;
             border: 1px solid #000000;
             box-sizing: border-box;
@@ -150,9 +150,9 @@
         #lastName{
 
             position: absolute;
-            width: 321px;
+            width: 330px;
             height: 40px;
-            left: 1018px;
+            left: 1020px;
             top: 258px;
 
             border: 1px solid #000000;
@@ -165,29 +165,13 @@
             top: 10%;
             font-family: 'Poppins', sans-serif;
         }
-        
-        #nineOne{
-            /*+91 */
-            position: absolute;
-            width: 50px;
-            height: 40px;
-            left: 668px;
-            top: 345px;
-            border: 1px solid #000000;
-
-            font-family: Poppins;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 21px;
-        }  
             
         #phNo{
             /* rectangle */
             position: absolute;
-            width: 270px;
+            width: 330px;
             height: 40px;
-            left: 725px;
+            left: 670px;
             top: 345.10px;
 
             background: rgba(251, 248, 248, 0.87);
@@ -200,7 +184,7 @@
             position: absolute;
             width: 321px;
             height: 40px;
-            left: 1018px;
+            left: 1020px;
             top: 345.10px;
 
             background: rgba(251, 248, 248, 0.87);
@@ -213,7 +197,7 @@
             position: absolute;
             width: 329px;
             height: 40px;
-            left: 668px;
+            left: 670px;
             top: 438px;
 
             font-size: 12px;
@@ -228,7 +212,7 @@
             position: absolute;
             width: 328px;
             height: 40px;
-            left: 668px;
+            left: 670px;
             top: 522px;
 
             background: rgba(251, 248, 248, 0.87);
@@ -242,7 +226,7 @@
             position: absolute;
             width: 328px;
             height: 40px;
-            left: 1018px;
+            left: 1020px;
             top: 522px;
 
             background: rgba(251, 248, 248, 0.87);
@@ -254,7 +238,7 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            left: 668px;
+            left: 670px;
             top: 620px;
 
             background: #C4C4C4;
@@ -314,7 +298,7 @@
         <area id="sq2"></area>
         <area id="pg1"></area>
         <area id="pg2"></area>
-        <p id="trouble">Having Troubles?  <a href="{% url 'CandidateHome' %}">Get Help</a></p>
+        <p id="trouble">Already have an Account?  <a href="{% url 'login_view' %}">Login</a></p>
         <form method="post" >
             {% csrf_token %}
             <p id="SignupForFree">Register</p>
@@ -328,8 +312,7 @@
 
                 </tr>
                 <tr>
-                    <td><input id="nineOne" placeholder="+91"></td>
-                    <td><input id="phNo" type="tel" placeholder="Phone Number"{{ form.phone_number }}</td>
+                    <td><input id="phNo" type="tel" placeholder="Phone number (+910000011111)"{{ form.phone_number }}</td>
                     <td><input id="Email" type= "email" placeholder="Enter Email"{{ form.email }}</td>
 
                 </tr>
