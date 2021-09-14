@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import SignupForm,LoginForm
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from .models import User
 from django.http import HttpResponse
 # Create your views here.
@@ -71,3 +71,10 @@ def CandidateHome(request):
     
 def RecruiterHome(request):
     return render(request,'RecruiterHome.html')
+
+def logout_view(request):
+    logout(request)
+    if request.user.is_authenticated():
+        return redirect('CandidateHome')
+    else:
+        return render(request,'pilot.html')

@@ -299,7 +299,7 @@
 
 <hmml>
     <head>
-        <title>Candidate Registration</title>
+        <title>Recruiter Registration</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     </head>
@@ -325,8 +325,8 @@
             <div class= "formSignUp">
            <table>
                 <tr>
-                    <td><input id="firstName" placeholder="First Name"{{ form.first_name }}</td>
-                    <td><input id="lastName" placeholder="Last Name"{{ form.last_name }}</td>
+                    <td><input id="firstName" required placeholder="First Name"{{ form.first_name }}</td>
+                    <td><input id="lastName" required placeholder="Last Name"{{ form.last_name }}</td>
                 </tr>
                 <tr>
                     <td>
@@ -595,13 +595,13 @@
 
                 <tr>
                      <td id="userName"> </td>
-                     <td><input id="userName" placeholder="Enter your username with 6 letters and a special character"{{ form.username }}</td>
+                     <td><input id="userName" required placeholder="Enter your username with 6 letters and a special character"{{ form.username }}</td>
                 </tr>
                 <tr>
-                    <td><input id="CreatePassword" placeholder="Create Password"{{ form.password1 }}</td>
+                    <td><input id="CreatePassword" required placeholder="Create Password"{{ form.password1 }}</td>
                 </tr>
                 <tr>
-                    <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
+                    <td><input id="ConfirmPassword" required placeholder="Confirm Password"{{ form.password2 }}</td>
                 </tr>
                 <tr>
                     <td><input id="checkUser" type="checkbox" {{ form.is_recruiter }}</td>

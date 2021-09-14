@@ -1,1 +1,26 @@
+{% if user.is_authenticated %}
+
 {{ user.username }} is a student
+
+
+<li onclick="myFunction()">Logout</li>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var url;
+  if (confirm("Press a button!")) {
+    url = "{% url 'pilot' %}";
+  } else {
+    url = "{% url 'CandidateHome' %}";
+  }
+  document.location.href = url;
+}
+</script>
+
+ {% else %}
+
+ login
+
+ {% endif %}
