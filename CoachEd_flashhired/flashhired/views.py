@@ -47,7 +47,7 @@ def candidateSignup(request):
             msg='form is not valid'
     else: 
         form = SignupForm() 
-    return render(request,'candidateSignup.html',{'form':form,'msg':msg})
+    return render(request,'candidatesignup.html',{'form':form,'msg':msg})
 
 def recruiterSignup(request):
     msg=None
