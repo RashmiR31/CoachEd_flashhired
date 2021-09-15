@@ -9,6 +9,7 @@
             width: 700px;
             height: 100%;
             left: -152px;
+            top:-1px;
             background: #461FBE;
             border-radius: 30px;
         }
@@ -140,7 +141,7 @@
             width: 330px;
             height: 40px;
             left: 670px;
-            top: 258px;
+            top: 220px;
             background: rgba(251, 248, 248, 0.87);
             display: inline-block;
             border: 1px solid #000000;
@@ -155,20 +156,14 @@
             width: 330px;
             height: 40px;
             left: 1020px;
-            top: 258px;
+            top: 220px;
             display: inline-block;
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
             box-sizing: border-box;
             border-radius: 5px;
         }
-        #username{
-            position: absolute;
-            left:50%;
-            background: rgba(251, 248, 248, 0.87);
-            top: 10%;
-            font-family: 'Poppins', sans-serif;
-        }
+       
         
         #phone_prefix{
             
@@ -176,7 +171,7 @@
             width: 65px;
             height: 40px;
             left: 670px;
-            top: 345px;
+            top: 300px;
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
             box-sizing: border-box;
@@ -189,7 +184,7 @@
             width: 250px;
             height: 40px;
             left: 750px;
-            top: 345.10px;
+            top: 300px;
             display: inline-block;
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
@@ -200,10 +195,10 @@
 
         #Email{
             position: absolute;
-            width: 321px;
+            width: 330px;
             height: 40px;
             left: 1020px;
-            top: 345px;
+            top: 300px;
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
             box-sizing: border-box;
@@ -212,11 +207,11 @@
         
         #userName{
             position: absolute;
-            width: 329px;
+            width: 330px;
             height: 40px;
             left: 670px;
-            top: 438px;
-            font-size: 12px;
+            top: 380px;
+            
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
             box-sizing: border-box;
@@ -225,10 +220,10 @@
     
         #CreatePassword{
             position: absolute;
-            width: 328px;
+            width: 330px;
             height: 40px;
             left: 670px;
-            top: 522px;
+            top: 460px;
 
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
@@ -239,10 +234,10 @@
        
         #ConfirmPassword{
             position: absolute;
-            width: 328px;
+            width: 330px;
             height: 40px;
             left: 1020px;
-            top: 522px;
+            top: 460px;
 
             background: rgba(251, 248, 248, 0.87);
             border: 1px solid #000000;
@@ -254,7 +249,7 @@
             width: 20px;
             height: 20px;
             left: 670px;
-            top: 620px;
+            top: 630px;
 
             background: #C4C4C4;
             border: 1px solid #000000;
@@ -266,7 +261,7 @@
             width: 646px;
             height: 40px;
             left: 703px;
-            top: 617px;
+            top: 628px;
 
             font-family: Poppins;
             font-style: normal;
@@ -287,8 +282,7 @@
             background: #461FBE;
             border-radius: 5px;
         }
-        
-      
+       
         .formSignUp{
             margin-left:50%;
         }
@@ -316,6 +310,8 @@
         <p id="trouble">Already have an Account?  <a href="{% url 'login_view' %}">Login</a></p>
         <form method="post" >
             {% csrf_token %}
+
+            {{ form.non_field_errors }}
             <p id="SignupForFree">Register</p>
             <p id= "headText" > Landing your dream careers, made easier. </p>
             <p id= "headDesc" > Let’s get you all set up so you can verify your personal account and begin setting up your profile. </p>
@@ -324,7 +320,7 @@
                 <tr>
                     <td><input id="firstName" placeholder="First Name"{{ form.first_name }}</td>
                     <td><input id="lastName" placeholder="Last Name"{{ form.last_name }}</td>
-
+                    
                 </tr>
                 <tr>
                     <td>
@@ -585,28 +581,33 @@
                             <option value="+263"> +263 Zimbabwe</option>
                             <option value="+358"> +358 Åland Islands</option>
                         </select>
-                        <input id="phNo" type="text" name="phone_number_1" placeholder="Phone number" required id="id_phone_number_1" class="">
+                        <input id="phNo" type="tel" name="phone_number_1" placeholder="Phone number" required id="id_phone_number_1" class="">
+                        <p style="margin-top:-30px">{{ form.phone_number.errors }}</p>
                     </td>
                     <td><input id="Email" required type= "email" placeholder="Enter Email"{{ form.email }}</td>
+                    
 
                 </tr>
 
                 <tr>
                      <td id="userName"> </td>
-                     <td><input id="userName"  required placeholder="Enter your username with 6 letters and a special character"{{ form.username }}</td>
+                     <td><input id="userName"  required placeholder="Enter username with 6 letters & special characters"{{ form.username }}</td>
+                     <p style="padding-top:500px">{{ form.username.errors }}</p>
                 </tr>
 
 
                 <tr>
-                <!--  <td id="CreatePassword">Password: </td>  </script>-->
+                <!--  <td id="CreatePassword">Password: </td>  </scrip>-->
                     <td><input id="CreatePassword" placeholder="Create Password"{{ form.password1 }}</td>
+                    <p style="margin-top:-10px">{{ form.password1.errors }}</p>
                 </tr>
                 <tr>
                 <!--   <td id="ConfirmPassword">Re-type Password: </td>  </script>-->
                     <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
+                    <p style="margin-top:-10px">{{ form.password2.errors }}</p>
                 </tr>
                 <tr>
-                    <td><input id="checkUser" type="checkbox" {{ form.is_candidate }}</td>
+                    <td><input id="checkUser" type="checkbox" required {{ form.is_candidate }}</td>
                     <td id="TnC">I agree to all the terms and privacy policy</td>
                 </tr>
                 <tr> 
