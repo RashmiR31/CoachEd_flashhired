@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.contrib.auth import views as auth_views
 from flashhired import views
 
 urlpatterns = [
@@ -29,6 +30,11 @@ urlpatterns = [
     path('recruitersignup/',views.recruiterSignup,name='recruitersignup'),
     path('candidatesignup/',views.candidateSignup,name='candidatesignup'),
     path('logout/',views.logout_view,name='logout_view'),
+
+    path('password_reset/',auth_views.PasswordResetView.as_view(template_name='account/password_reset.html'),name="password_reset"),
+    path('password_reset_done/',auth_views.PasswordResetDoneView.as_view(template_name='account/password_reset_sent.html'),name="password_reset_done"),
+    path('password_reset_confirm/<uidb64>/<token>',auth_views.PasswordResetConfirmView.as_view(template_name='account/password_reset_form.html'),name="password_reset_confirm"),
+    path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(template_name='account/password_reset_complete.html'),name="password_reset_complete"),
 
 
 

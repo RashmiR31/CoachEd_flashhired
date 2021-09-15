@@ -30,10 +30,10 @@ def login_view(request):
                 print(msg)
         else:
             msg='error validating form'
-    return render(request,'login.html',{'form':form,'msg':msg})
+    return render(request,'account/login.html',{'form':form,'msg':msg})
 
 def SignupChoice(request):
-    return render(request,'SignupChoice.html',{})
+    return render(request,'account/SignupChoice.html',{})
 
 def candidateSignup(request):
     msg=None
@@ -47,7 +47,7 @@ def candidateSignup(request):
             msg='form is not valid'
     else: 
         form = SignupForm() 
-    return render(request,'candidatesignup.html',{'form':form,'msg':msg})
+    return render(request,'account/candidatesignup.html',{'form':form,'msg':msg})
 
 def recruiterSignup(request):
     msg=None
@@ -61,7 +61,7 @@ def recruiterSignup(request):
             msg='form is not valid'
     else: 
         form = SignupForm() 
-    return render(request,'recruiterSignup.html',{'form':form,'msg':msg})
+    return render(request,'account/recruiterSignup.html',{'form':form,'msg':msg})
 
 def home(request):
     return render(request,'home.html')
@@ -74,4 +74,4 @@ def RecruiterHome(request):
 
 def logout_view(request):
     logout(request)
-    return render(request,'logout.html')
+    return render(request,'account/logout.html')
