@@ -82,7 +82,7 @@
         }
         #trouble{
             position: absolute;
-            left: 85%;
+            left: 80%;
             top: 10px;
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
@@ -327,7 +327,7 @@
         <area id="sq2"></area>
         <area id="pg1"></area>
         <area id="pg2"></area>
-        <p id="trouble">Having Troubles?  <a href="{% url 'CandidateHome' %}">Get Help</a></p>
+        <p id="trouble">Already have an Account? <a href="{% url 'login_view' %}">Login</a></p>
         <form method="post" >
             {% csrf_token %}
             <p id="SignupForFree">Register</p>
