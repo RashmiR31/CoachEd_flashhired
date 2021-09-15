@@ -231,7 +231,7 @@
             border-radius: 5px;
 
         }
-       
+
         #ConfirmPassword{
             position: absolute;
             width: 330px;
@@ -244,6 +244,24 @@
             box-sizing: border-box;
             border-radius: 5px;
         }
+
+        
+        .eyeShow{
+            position: absolute;
+            color: #000000;
+            left: 965px;
+            top: 472px;
+
+        }
+       
+        .eyeHide{
+            position: absolute;
+            color: #000000;
+            left: 1314px;
+            top: 472px;
+
+        }
+
         #checkUser{
             position: absolute;
             width: 20px;
@@ -293,6 +311,8 @@
         <title>Candidate Registration</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+        <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
+        <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     </head>
     <body>
         <div class = "blueRectangle">
@@ -606,6 +626,40 @@
                     <td><input id="ConfirmPassword" placeholder="Confirm Password"{{ form.password2 }}</td>
                     <p style="margin-top:-10px">{{ form.password2.errors }}</p>
                 </tr>
+
+                <!-- show and hide create password and confirm password  --> 
+                <tr>
+                    <td onclick="toggle1()" class=eyeShow> <i id="eyeIcon1" class="fas fa-eye"></i> </td>
+                </tr>
+                <script>
+                    function toggle1() {
+                        var temp = document.getElementById("CreatePassword");
+                        if (temp.type === "password") {
+                            temp.type = "text";
+                        }
+                        else {
+                            temp.type = "password";
+                        }
+        
+                    }
+                </script>
+
+                <tr>
+                    <td onclick="toggle2()" class=eyeHide> <i id="eyeIcon2" class="fas fa-eye"></i> </td>
+                </tr>
+                <script>
+                    const togglePassword = document.querySelector('#eyeIcon2');
+                    const password = document.querySelector('#ConfirmPassword');
+
+                    togglePassword.addEventListener('click', function (e) {
+                    // toggle the type attribute
+                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password.setAttribute('type', type);
+                    // toggle the eye / eye slash icon
+                    this.classList.toggle('bi-eye');
+                });
+                </script>
+                
                 <tr>
                     <td><input id="checkUser" type="checkbox" required {{ form.is_candidate }}</td>
                     <td id="TnC">I agree to all the terms and privacy policy</td>
@@ -613,6 +667,7 @@
                 <tr> 
                    <td><input id="createAccount" type="submit" name="submit" value="Create Account" </td>
                </tr>
+               
 
 
             </table>
