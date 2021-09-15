@@ -319,6 +319,7 @@
         <p id="trouble">Having Troubles?  <a href="{% url 'CandidateHome' %}">Get Help</a></p>
         <form method="post" >
             {% csrf_token %}
+            {{ form.non_field_errors }}
             <p id="SignupForFree">Register</p>
             <p id= "headText" > Hiring the right candidate, made easier. </p>
             <p id= "headDesc" > Let’s get you all set up so you can verify your personal account and begin setting up your profile. </p>
@@ -326,7 +327,9 @@
            <table>
                 <tr>
                     <td><input id="firstName" required placeholder="First Name"{{ form.first_name }}</td>
+                    {{ form.first_name.errors }}
                     <td><input id="lastName" required placeholder="Last Name"{{ form.last_name }}</td>
+                    {{ form.last_name.errors }}
                 </tr>
                 <tr>
                     <td>
@@ -590,28 +593,30 @@
                         <input id="phNo" type="text" name="phone_number_1" placeholder="Phone number" required id="id_phone_number_1" class="">
                     </td>
                     <td><input id="Email" required type= "email" placeholder="Enter Email"{{ form.email }}</td>
+                    {{ form.email.errors }}
 
                 </tr>
 
                 <tr>
                      <td id="userName"> </td>
                      <td><input id="userName" required placeholder="Enter your username with 6 letters and a special character"{{ form.username }}</td>
+                     {{ form.username.errors }}
                 </tr>
                 <tr>
                     <td><input id="CreatePassword" required placeholder="Create Password"{{ form.password1 }}</td>
+                    {{ form.password1.errors }}
                 </tr>
                 <tr>
                     <td><input id="ConfirmPassword" required placeholder="Confirm Password"{{ form.password2 }}</td>
+                    {{ form.password2.errors }}
                 </tr>
                 <tr>
-                    <td><input id="checkUser" type="checkbox" {{ form.is_recruiter }}</td>
+                    <td><input id="checkUser" type="checkbox" required {{ form.is_recruiter }}</td>
                     <td id="TnC">I agree to all the terms and privacy policy</td>
                 </tr>
                 <tr> 
                    <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
                </tr>
-
-
             </table>
         </form>
     </div>
