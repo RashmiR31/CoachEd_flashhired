@@ -1,26 +1,169 @@
-{% if user.is_authenticated %}
+<style>
 
-{{ user.username }} is a student
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-
-<button onclick="myFunction()">Logout</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  var url;
-  if (confirm("Are you sure?")) {
-    url = "{% url 'logout_view' %}";
-  } else {
-    url = "{% url 'CandidateHome' %}";
+  .headingSpace{
+    height:85px;
   }
-  document.location.href = url;
+
+  #heading{
+   font-weight:600;
+   font-family: 'Poppins', sans-serif;
+   font-size:15px;
+   padding-left:250px;
+   padding-top:25px;
+ }
+ .sideNav{
+  width:200px;
+  border-radius:10px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height:100%;
+  margin-left:-20px;
+  padding-top:100px;
+  margin-top:-100px;
+ }
+ 
+ #supportingText{
+   font-size:15px;
+   font-family: 'Poppins', sans-serif;
+   padding-left:30px;
+   padding-top: 30px;
+ }
+
+ #list {
+  
+  list-style-type: none;
+  padding-left: 10px;
+  border-radius:10px;
+  width: 180px;
+  background: rgba(255, 255, 255, 0.85);
 }
-</script>
 
- {% else %}
+#navBar a {
+  font-size: 15px;
+  display: block;
+  color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left:-20px;
+  text-decoration:none;
+  padding-left: 50px;
+  font-family: 'Poppins', sans-serif;
+  border-radius:10px;
+}
 
- login
+#navBar a.active {
+  background: rgba(64, 21, 155, 0.08);
+  color: black;
+  border-radius:10px;
+}
 
- {% endif %}
+#navBar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+  border-radius:10px;
+}
+.bodyContent{
+  height:600px;
+  background: #FBFBFB;
+  margin-top: -800px;
+  margin-left:185px;
+}
+#bodyText{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  padding-top: 50px;
+  padding-left:100px;
+}
+.buttonAdjust{
+  width:220px;
+  height:40px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background: rgba(224, 210, 210, 0.25);
+  
+
+  margin-left: 130px;
+  margin-top:50px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.buttonAdjust:hover{
+  box-shadow: 2px 2px 8px 0 rgb(91, 142, 218);
+}
+</style>
+
+
+
+
+
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
+    <title>CandidateHome</title>
+    <div class="headingSpace">
+      <p id="heading">Let's setup you ASAP!</p>
+    </div>
+    <div class="sideNav">
+      <ul id="list">
+        <p id="supportingText">Tools</p>
+        <li id="navBar"><a class="active" href="#home"><i class="fas fa-rocket"> </i> Onboarding</a></li>
+        <li id="navBar"><a href="#news"><i class="fas fa-home"> </i> Home</a></li>
+        <li id="navBar"><a href="#contact"><i class="fas fa-chalkboard-teacher"> </i>Jobs</a></li>
+        <li id="navBar"><a href="#about"><i class="far fa-chart-bar"> </i> Assessments</a></li>
+        <li id="navBar"><a href="#news"><i class="fas fa-file"> </i> Documents</a></li>
+
+        <p id="supportingText">Other</p>
+        <li id="navBar"><a href="#news"><i class="fas fa-comments"> </i> Chat</a></li>
+        <li id="navBar"><a href="#contact"><i class="fas fa-question-circle"> </i> Support</a></li>
+        <li id="navBar"><a href="#about"><i class="fas fa-calendar"> </i> Calender</a></li>
+      </ul>
+    </div>
+
+  </head>
+  <body>
+    
+    <div class="bodyContent">
+      <p id="bodyText">Here is a list of your onboarding topics</p>
+      <button class="buttonAdjust">Basic Details</button><br>
+      <button class="buttonAdjust">Education</button><br>
+      <button class="buttonAdjust">Experience</button><br>
+      <button class="buttonAdjust">Projects</button><br>
+      <button class="buttonAdjust">Accomplishments</button>
+    </div>
+
+    {% if user.is_authenticated %}
+
+    <button style="margin-top:100px;margin-left: 500px;" onclick="myFunction()">Logout</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    var url;
+    if (confirm("Are you sure?")) {
+      url = "{% url 'logout_view' %}";
+    } else {
+      url = "{% url 'CandidateHome' %}";
+    }
+    document.location.href = url;
+  }
+  </script>
+
+  {% else %}
+
+    login
+
+  {% endif %}
+        
+  </body>
+</html>
+
+
+
+
