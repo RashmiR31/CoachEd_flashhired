@@ -10,10 +10,10 @@
 <script>
 function myFunction() {
   var url;
-  if (confirm("Press a button!")) {
+  if (confirm("Are you sure?")) {
     url = "{% url 'logout_view' %}";
   } else {
-    url = "{% url 'rechome' %}";
+    url = "{% url 'RecruiterHome' %}";
   }
   document.location.href = url;
 }
