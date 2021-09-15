@@ -3,7 +3,7 @@
 {{ user.username }} is a student
 
 
-<li onclick="myFunction()">Logout</li>
+<button onclick="myFunction()">Logout</button>
 
 <p id="demo"></p>
 
@@ -11,7 +11,7 @@
 function myFunction() {
   var url;
   if (confirm("Press a button!")) {
-    url = "{% url 'pilot' %}";
+    url = "{% url 'logout_view' %}";
   } else {
     url = "{% url 'CandidateHome' %}";
   }

@@ -28,5 +28,8 @@ urlpatterns = [
     path('recruiterhome/',views.RecruiterHome,name='RecruiterHome'),
     path('recruitersignup/',views.recruiterSignup,name='recruitersignup'),
     path('candidatesignup/',views.candidateSignup,name='candidatesignup'),
+    path('logout/',views.logout_view,name='logout_view'),
+
+
 
 ]

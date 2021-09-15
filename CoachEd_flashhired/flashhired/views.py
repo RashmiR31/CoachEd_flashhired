@@ -74,7 +74,4 @@ def RecruiterHome(request):
 
 def logout_view(request):
     logout(request)
-    if request.user.is_authenticated():
-        return redirect('CandidateHome')
-    else:
-        return render(request,'pilot.html')
+    return render(request,'logout.html')

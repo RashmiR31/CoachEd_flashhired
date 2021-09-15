@@ -1,1 +1,26 @@
+{% if user.is_authenticated %}
+
 {{ user.username }} is a recruiter
+
+
+<button onclick="myFunction()">Logout</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var url;
+  if (confirm("Press a button!")) {
+    url = "{% url 'logout_view' %}";
+  } else {
+    url = "{% url 'rechome' %}";
+  }
+  document.location.href = url;
+}
+</script>
+
+ {% else %}
+
+ login
+
+ {% endif %}
