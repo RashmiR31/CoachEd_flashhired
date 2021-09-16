@@ -20,7 +20,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       height:100%;
       margin-left:-20px;
-      padding-top:100px;
+      padding-top:80px;
       margin-top:-100px;
      }
      
@@ -70,32 +70,7 @@
       margin-top: -800px;
       margin-left:185px;
     }
-    #bodyText{
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 22px;
-      padding-top: 50px;
-      padding-left:100px;
-    }
-    .buttonAdjust{
-      width:220px;
-      height:40px;
-      font-size: 15px;
-      font-family: 'Poppins', sans-serif;
-      background: rgba(224, 210, 210, 0.25);
-      
     
-      margin-left: 130px;
-      margin-top:50px;
-      border: 1px solid #000000;
-      box-sizing: border-box;
-      border-radius: 5px;
-    }
-    
-    .buttonAdjust:hover{
-      box-shadow: 2px 2px 8px 0 rgb(91, 142, 218);
-    }
     </style>
     
     
@@ -106,7 +81,9 @@
       <head>
         <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
         <title>{% block title %} {% endblock %}</title>
-        
+        <div class="headingSpace">
+          <p id="heading">Let's setup you ASAP!</p>
+        </div>
         <div class="sideNav">
           <ul id="list">
             <p id="supportingText">Tools</p>
@@ -120,9 +97,25 @@
             <li id="navBar"><a href="#news"><i class="fas fa-comments"> </i> Chat</a></li>
             <li id="navBar"><a href="#contact"><i class="fas fa-question-circle"> </i> Support</a></li>
             <li id="navBar"><a href="#about"><i class="fas fa-calendar"> </i> Calender</a></li>
+            <li id="navBar" onclick="myFunction()"><a href="#about"><i class="fas fa-sign-out-alt"> </i> Logout</a></li>
+            
           </ul>
         </div>
-    
+        
+
+        
+
+        <script>
+        function myFunction() {
+        var url;
+        if (confirm("Are you sure?")) {
+          url = "{% url 'logout_view' %}";
+        } else {
+          url = "{% url 'CandidateHome' %}";
+        }
+        document.location.href = url;
+        }
+        </script>
       </head>
       <body>
         {% block content %}
