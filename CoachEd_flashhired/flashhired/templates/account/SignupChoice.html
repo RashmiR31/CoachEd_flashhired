@@ -1,100 +1,8 @@
-
+{% extends 'account/acc_base.html' %}
 {% load static %}
+{% block content %} 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-        
-        .blueRectangle{
-            /* Blue Box Border */
-            position: absolute;
-            width:700px;
-            height: 100%;
-            left: -152px;
-            background: #461FBE;
-            border-radius: 30px;
-        }
-        #flash{
-            /* flashhired. */
-            position: absolute;
-            left: 280px;
-            top: 45%;
-            font-family: 'Italiana',serif;
-            font-size: 40px;
-            font-weight:lighter;
-            color: #FFFFFF;
-        }
-        #bold{
-            /* flashhired. */
-            position: absolute;
-            left: 355px;
-            top: 45%;
-            font-family:Roboto, sans-serif;
-            font-size: 40px;
-            font-weight: bolder;
-            color: #FFFFFF;
-        }
-        #sq1{
-            /* Rectangle 1 */
-            position: absolute;
-            width: 10%;
-            height: 20%;
-            left: -10px;
-            background: #301488;
-        }
-        #sq2{
-            /* Rectangle 2 */
-            position: absolute;
-            width: 10%;
-            height: 20%;
-            left: 20px;
-            top: 20px;
-            background: #40159B;
-        }
-        #pg1{
-            /* Polygon 1 */
-            position: absolute;
-            width: 8%;
-            height: 15%;
-            left: 115px;
-            top: -10px;
-            background: rgba(250, 246, 244, 0.72);
-            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
-        }
-        #pg2{
-            /* Polygon 2 */
-            position: absolute;
-            width: 8%;
-            height: 15%;
-            left: -10px;
-            top: 18%;
-            background: #FAF6F4;
-            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
-        }
-        #textInBlueBox{
-            position: absolute;
-            left: 40%;
-            top: 55%;
-            font-family: 'Poppins',sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 24px;
-            color: #FFFFFF;
-        }
-        #paraInBlueBox{
-            position: absolute;
-            left:40%;
-            top:60%;
-            font-family: 'Poppins',sans-serif;
-            font-size: 15px;
-            color: #FFFFFF;
-        }
-        #trouble{
-            position: absolute;
-            left: 80%;
-            top: 10px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #000000;
-        }
         #situation{
             position: absolute;
             width: 30%;
@@ -158,24 +66,9 @@
     </style>
 
     <html>
-    <head>
-        <title>Signup Choice Page</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
-    </head>
-    <body>
-        <div class = "blueRectangle">
-            <shape id="vector"></shape>
-            <p id="flash">flash
-            <p id="bold">hired.</p>
-            <p id="textInBlueBox">Find your ideal fit</p>
-            <p id="paraInBlueBox">A few clicks away from finding your potential<br>employer or employee</p>
-        </div>
-        <area id="sq1"></area>
-        <area id="sq2"></area>
-        <area id="pg1"></area>
-        <area id="pg2"></area>
-        <p id="trouble">Already have an Account? <a href="{% url 'login_view' %}">Login</a></p>
+        {% block title %} Candidate Signup {% endblock %}
+        {% block text_in_blue_box %} A few clicks away from finding your potential <br>employer or employee {% endblock %}
+        {% block user_question %} Already have an Account? <a href="{% url 'login_view' %}">Login </a>{% endblock %}
         <div class="">
             <p id="situation">Tell us what's your situation</p>
             <a href="{% url 'candidatesignup' %}"><button type="submit" id="jobSeeker"><img src="{% static 'magnifying.jpg' %}" id="J-LID">A job seeker<img src="{% static 'greatertag.png' %}" id="J-RID"></button></a>
@@ -185,3 +78,4 @@
         </div>
     </body>
 </html>
+{% endblock %}
