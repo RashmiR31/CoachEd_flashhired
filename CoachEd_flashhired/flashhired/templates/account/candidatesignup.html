@@ -220,12 +220,20 @@
         .formSignUp{
             margin-left:50%;
         }
+        #trouble{
+        position: absolute;
+        left: 85%;
+        top: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        color: #000000;
+    }
     </style>
 
 <hmml>
     {% block title %} Candidate Signup {% endblock %}
         {% block text_in_blue_box %} A few clicks away from creating your account! Let’s gooo! {% endblock %}
-        {% block user_question %} Already have an Account? <a href="{% url 'login_view' %}">Login </a>{% endblock %}
+        <p id="trouble"> Already have an Account? <a href="{% url 'login_view' %}">Login </a></p>
         <form method="post" >
             {% csrf_token %}
 
