@@ -55,22 +55,15 @@
         .eyeShow{
             position: absolute;
             color: #000000;
-            left: 1218px;
+            left: 1150px;
             top: 425px;
 
         }
 
-        #fp{
-            position: absolute;
-            left:72%;
-            top:58%;
-            color: rgba(0, 0, 0, 0.56);
-            font-family: 'Poppins', sans-serif;
-        }
         #Login{
             position: absolute;
             left: 50%;
-            top: 68%;
+            top: 550px;
             width:500px;
             height:50px;
             padding-left: 20px;
@@ -82,7 +75,13 @@
             font-size: 18px;
             color: #FFFFFF;
         }
-       
+       #forgot{
+        position: absolute;
+            left:70%;
+            top: 470px; 
+            font-size: 17px;
+            font-family:'poppins',sans-serif;
+       }
 </style>
 
 <html>
@@ -109,6 +108,7 @@
                     <tr>
                         <td id="Password">Password:</td>
                         <td><input id="Password-field" placeholder="Type your Password"{{ form.password }}</td>
+                        <td><a href="{% url 'password_reset' %}" id="forgot">Forgot Password?</a></td>
                     </tr>
                     <tr>
 
