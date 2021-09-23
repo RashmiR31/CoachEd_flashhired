@@ -31,7 +31,7 @@ urlpatterns = [
     path('candidatesignup/',views.candidateSignup,name='candidatesignup'),
     path('logout/',views.logout_view,name='logout_view'),
 
-    path('password_reset/',auth_views.PasswordResetView.as_view(template_name='account/password_reset.html'),name="password_reset"),
+    path('password_reset/',views.password_reset_request,name="password_reset"),
     path('password_reset_done/',auth_views.PasswordResetDoneView.as_view(template_name='account/password_reset_sent.html'),name="password_reset_done"),
     path('password_reset_confirm/<uidb64>/<token>',auth_views.PasswordResetConfirmView.as_view(template_name='account/password_reset_form.html'),name="password_reset_confirm"),
     path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(template_name='account/password_reset_complete.html'),name="password_reset_complete"),
