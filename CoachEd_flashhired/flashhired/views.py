@@ -112,3 +112,7 @@ def password_reset_request(request):
     password_reset_form=PasswordResetForm()
 
     return render(request,'account/password_reset.html',{"form":password_reset_form})
+
+
+def error_404(request, exception):
+    return render(request, 'error404.html')

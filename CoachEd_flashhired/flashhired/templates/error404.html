@@ -1,0 +1,109 @@
+{% load static %}
+
+<style>
+    #script1{
+        position:absolute;
+        position: absolute;
+        width: 596px;
+        height: 168px;
+        left: 470px;
+        top: 208px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 64px;
+        line-height: 75px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+
+    #script2{
+        position:absolute;
+        position: absolute;
+        width: 596px;
+        height: 168px;
+        left: 470px;
+        top: 280px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 64px;
+        line-height: 75px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    }
+
+    #script3{
+        position: absolute;
+        width: 765px;
+        height: 138px;
+        left: 385px;
+        top: 432px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    #script4{
+        position: absolute;
+        width: 765px;
+        height: 138px;
+        left: 385px;
+        top: 485px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+
+</style>
+<html>
+
+<head class="flex-container">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title> Error404 </title>
+</head>
+
+<body>
+   <p id="script1"> Uh oh... </p>
+   <p id="script2"> Error 404!! </p>
+   <p id="script3"> Something happened in this universe.... </p>
+   <!-- <p id="script4"> Wanna go back to the homepage? </p> -->
+   <a id="script4" href="{%url 'pilot' %}"> Wanna go back to the homepage? </a>
+
+<div class="errorImg">
+    <img src="{% static 'errorSpace.jpg' %}" height="100%" width="100%">
+</div>
+
+</body>
+
+</html>
+

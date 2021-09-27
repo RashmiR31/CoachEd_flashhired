@@ -39,3 +39,5 @@ urlpatterns = [
 
 
 ]
+
+handler404= 'flashhired.views.error_404'
