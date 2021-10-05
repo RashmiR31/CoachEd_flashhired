@@ -97,7 +97,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'django-mongo',
         'CLIENT': {
-           'host': 'mongodb+srv://rashmi:admin-123@django-mongo.skbct.mongodb.net/test',
+           'host': 'mongodb+srv://rashmi:admin-123@django-mongo.skbct.mongodb.net/test?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true',
         }
     }
 }
