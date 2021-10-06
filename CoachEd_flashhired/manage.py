@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+from importlib import import_module#!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
