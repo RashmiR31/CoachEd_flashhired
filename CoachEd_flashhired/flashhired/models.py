@@ -69,38 +69,38 @@ class JobPosting(models.Model):
     job_location = models.TextField()
     upload_doc = models.FileField(upload_to='uploads/jp/docs/')
 
-class Candidate(models.Model):
-    about = models.EmbeddedField(
-        model_container = About,
-        null=False
-    )
-    education = models.EmbeddedField(
-        model_container = Education,
-        null=False
-    )
-    work_experience = models.EmbeddedField(
-        model_container = WorkExperience,
-        null=False
-    )
-    accomplishments = models.EmbeddedField(
-        model_container = Accomplishments,
-        null=False
-    )
-    languages = models.EmbeddedField(
-        model_container = Languages,
-        null=False
-    )
-    projects = models.EmbeddedField(
-        model_container = Projects,
-        null=False
-    )
-    skills = models.EmbeddedField(
-        model_container = Skills,
-        null=False
-    )
-    social_handles = models.EmbeddedField(
-        model_container = SocialHandles,
-        null=False
-    )
-    resume = models.FileField(upload_to="upload/candidate/resumes/")
+# class Candidate(models.Model):
+#     about = models.EmbeddedField(
+#         model_container = About,
+#         null=False
+#     )
+#     education = models.EmbeddedField(
+#         model_container = Education,
+#         null=False
+#     )
+#     work_experience = models.EmbeddedField(
+#         model_container = WorkExperience,
+#         null=False
+#     )
+#     accomplishments = models.EmbeddedField(
+#         model_container = Accomplishments,
+#         null=False
+#     )
+#     languages = models.EmbeddedField(
+#         model_container = Languages,
+#         null=False
+#     )
+#     projects = models.EmbeddedField(
+#         model_container = Projects,
+#         null=False
+#     )
+#     skills = models.EmbeddedField(
+#         model_container = Skills,
+#         null=False
+#     )
+#     social_handles = models.EmbeddedField(
+#         model_container = SocialHandles,
+#         null=False
+#     )
+#     resume = models.FileField(upload_to="upload/candidate/resumes/")
 

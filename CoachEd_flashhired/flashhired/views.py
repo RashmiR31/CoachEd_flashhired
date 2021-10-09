@@ -113,3 +113,10 @@ def password_reset_request(request):
     password_reset_form=PasswordResetForm()
 
     return render(request,'account/password_reset.html',{"form":password_reset_form})
+
+def recruiter_form(request):
+    if request.method=='POST':
+        form = RecruiterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            msg='user created successfully'

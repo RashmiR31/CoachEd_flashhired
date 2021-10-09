@@ -2,6 +2,44 @@
 
 {{ user.username }} is a recruiter
 
+<form method = 'post'>
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>name:</td>
+      <td><input id="userName-field" placeholder="Enter your Username" {{ form.name }}</td>
+    </tr>
+    <tr>
+      <td>gender:</td>
+      <td><select id="gender-field"  placeholder="Enter your Email" required>
+        <option value = "Male">Male</option>
+        <option value = "Female">Female</option>
+        <option value = "Other">Other</option></select>
+      </td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td><input id="email-field" type= "Email" placeholder="Enter your Email" {{ form.work_email }}</td>
+    </tr>
+      <td>DOB:</td>
+      <td><input id="date-field" type= "Date" placeholder="Date of Birth" {{ form.dob }}</td>
+    <tr>
+      <td>role:</td>
+      <td><input id="userName-field" placeholder="Enter your Username" {{ form.role }}</td>
+    </tr>
+    <tr>
+      <td>company_name:</td>
+      <td><input id="userName-field" placeholder="Enter your Username" {{ form.company_name }}</td>
+    </tr>
+    <tr>
+      <td>experience:</td>
+      <td><input id="userName-field" placeholder="Enter your Username" {{ form.experience }}</td>
+    </tr>
+    <tr> 
+      <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
+  </tr>
+  </table>
+</form>
 
 <button onclick="myFunction()">Logout</button>
 
