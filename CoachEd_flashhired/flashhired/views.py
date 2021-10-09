@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm,LoginForm
+from .forms import SignupForm,LoginForm,CandidateForm
 from django.contrib.auth import authenticate,login,logout
 from .models import User
 from django.http import HttpResponse
@@ -76,7 +76,16 @@ def home(request):
     return render(request,'home.html')
 
 def CandidateHome(request):
-    return render(request,'CandidateHome.html')
+    if request.method=='POST':
+        form = CandidateForm(request.POST)
+        if form.is_valid():
+            candidate = form.save()
+            return redirect('pilot')
+        else:
+            return HttpResponse('form not valid')
+    else:
+        form = CandidateForm()
+    return render(request,'candidateform.html',{'form':form})
     
 def RecruiterHome(request):
     return render(request,'RecruiterHome.html')
