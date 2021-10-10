@@ -1,8 +1,4 @@
-{% if user.is_authenticated %}
-
-{{ user.username }} is a recruiter
-
-<form method = 'post'>
+<form method = 'post' enctype="multipart/form-data">
   {% csrf_token %}
   <table>
     <tr>
@@ -11,11 +7,7 @@
     </tr>
     <tr>
       <td>gender:</td>
-      <td><select id="gender-field"  placeholder="Enter your Email" required>
-        <option value = "Male">Male</option>
-        <option value = "Female">Female</option>
-        <option value = "Other">Other</option></select>
-      </td>
+      <td>{{ form.gender }}</td>
     </tr>
     <tr>
       <td>email</td>
@@ -36,29 +28,9 @@
       <td><input id="userName-field" placeholder="Enter your Username" {{ form.experience }}</td>
     </tr>
     <tr> 
-      <td><input id="createAccount" type="submit" name="submit" value="Create Account" /></td>
+      <td><input id="createAccount" type="submit"  />Save</td>
   </tr>
   </table>
 </form>
 
-<button onclick="myFunction()">Logout</button>
 
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  var url;
-  if (confirm("Are you sure?")) {
-    url = "{% url 'logout_view' %}";
-  } else {
-    url = "{% url 'RecruiterHome' %}";
-  }
-  document.location.href = url;
-}
-</script>
-
- {% else %}
-
- login
-
- {% endif %}

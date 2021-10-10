@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm,LoginForm,CandidateForm
+from .forms import SignupForm,LoginForm,CandidateForm,RecruiterForm
 from django.contrib.auth import authenticate,login,logout
-from .models import User
+from .models import User,Candidate, Recruiter, JobPosting
 from django.http import HttpResponse
 
 from django.core.mail import send_mail, BadHeaderError
@@ -14,12 +14,14 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 # Create your views here.
 
+######################## Landing Page View #####################
 def pilot(request):
     return render(request,'pilot.html',{})
 
 def rechome(request):
     return render(request,'rechome.html',{})
 
+######################## Registration/login and authentication section ###########
 def login_view(request):
     msg=None
     form = LoginForm(request.POST or None)
@@ -72,24 +74,6 @@ def recruiterSignup(request):
         form = SignupForm() 
     return render(request,'account/recruiterSignup.html',{'form':form,'msg':msg})
 
-def home(request):
-    return render(request,'home.html')
-
-def CandidateHome(request):
-    if request.method=='POST':
-        form = CandidateForm(request.POST)
-        if form.is_valid():
-            candidate = form.save()
-            return redirect('pilot')
-        else:
-            return HttpResponse('form not valid')
-    else:
-        form = CandidateForm()
-    return render(request,'candidateform.html',{'form':form})
-    
-def RecruiterHome(request):
-    return render(request,'RecruiterHome.html')
-
 def logout_view(request):
     logout(request)
     return render(request,'account/logout.html')
@@ -123,9 +107,29 @@ def password_reset_request(request):
 
     return render(request,'account/password_reset.html',{"form":password_reset_form})
 
-def recruiter_form(request):
+######################## Candidate Section #####################
+def CandidateHome(request):
+    return render(request,'candidate/CandidateHome.html')
+######################## Recruiter Section #####################
+ 
+def RecruiterHome(request):
+    return render(request,'recruiter/RecruiterHome.html')
+
+def recruiterCreateProfile(request):
     if request.method=='POST':
         form = RecruiterForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            msg='user created successfully'
+            recruiter = form.save()
+            return redirect('RecruiterHome')
+        else:
+            return HttpResponse('form not valid')
+    else:
+        form = RecruiterForm()
+    
+    return render(request,'recruiter/createprofile.html',{'form':form})
+
+def recruiterProfile(request,r_id):
+    r_id = int(r_id)
+    person = Recruiter.objects.get(id=r_id)
+    return render(request,'recruiter/recruiterProfile.html',{'person':person})
+    

@@ -61,8 +61,10 @@ class Recruiter(models.Model):
     company_name = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
     experience = models.IntegerField()
-    auth_doc = models.FileField(upload_to='uploads/rec/docs/')
-    profile_pic = models.ImageField(upload_to='uploads/rec/pp/')
+    # auth_doc = models.FileField(upload_to='uploads/rec/docs/')
+    # profile_pic = models.ImageField(upload_to='uploads/rec/pp/')
+    def __str__(self):
+        return self.name
 
 class JobPosting(models.Model):
     recruiter = models.ForeignKey("Recruiter",on_delete=models.CASCADE)
@@ -76,7 +78,9 @@ class JobPosting(models.Model):
     salary = models.IntegerField()
     is_negotiable = models.BooleanField(default=False)
     job_location = models.TextField()
-    upload_doc = models.FileField(upload_to='uploads/jp/docs/')
+    date_posted = models.DateField()
+    # upload_doc = models.FileField(upload_to='uploads/jp/docs/')
+    
 
 #################################################################################
 ##################### Candidate Side ############################################
