@@ -35,9 +35,15 @@ urlpatterns = [
     ######## Candidate Section #####################
     path('candidatehome/',views.CandidateHome,name='CandidateHome'),
     ######## Recruiter Section #####################
-    path('recruiterhome/',views.RecruiterHome,name='RecruiterHome'),
+    path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
     path('recruiter/profile',views.recruiterProfile,name='recruiterProfile'),
+    path('recruiter/profile/edit',views.recruiterEditProfile,name='recruiterEditProfile'),
+    path('recruiter/addjob',views.addJob,name="addJob"),
+    path('recruiter/editjob/<int:job_id>',views.editJob,name="editJob"),
+    path('recruiter/deletejob/<int:job_id>',views.deleteJob,name="deleteJob"),
+
+
 
 
 ]

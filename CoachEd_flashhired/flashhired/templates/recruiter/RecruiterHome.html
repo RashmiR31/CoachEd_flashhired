@@ -8,6 +8,17 @@
 <br>
 <a href="{% url 'recruiterProfile' %}">Profile Page</a>
 <br>
+<a href="{% url 'addJob' %}">Add Job</a>
+<br>
+<hr>
+{% for job in jobs %}
+<p>{{job.job_title}} / {{job.job_type}} / {{job.functional_area}}</p>
+<a href="editjob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>edit</a>
+<a href="deletejob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>delete</a>
+
+<hr>
+{% endfor %}
+<hr>
 <button onclick="myFunction()">Logout</button>
 
 <p id="demo"></p>

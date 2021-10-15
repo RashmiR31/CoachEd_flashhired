@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm,LoginForm,CandidateForm,RecruiterForm
+from .forms import SignupForm,LoginForm,CandidateForm,RecruiterForm,JobPostingForm
 from django.contrib.auth import authenticate,login,logout
 from .models import User,Candidate, Recruiter, JobPosting
 from django.http import HttpResponse
@@ -110,19 +110,19 @@ def password_reset_request(request):
 ######################## Candidate Section #####################
 def CandidateHome(request):
     return render(request,'candidate/CandidateHome.html')
+
 ######################## Recruiter Section #####################
  
 def RecruiterHome(request):
     if request.user.is_authenticated:
         try:
             details = Recruiter.objects.get(pk=request.user)
+            jobs = JobPosting.objects.all().filter(recruiter=details)
         except Recruiter.DoesNotExist:
             return HttpResponse("Create profile to continue")
-        return render(request,'recruiter/RecruiterHome.html',{'details':details})
+        return render(request,'recruiter/RecruiterHome.html',{'details':details,'jobs':jobs})
     else:
         return HttpResponse("Login to continue")
-
-    
 
 def recruiterCreateProfile(request):
     if request.method=='POST':
@@ -145,4 +145,52 @@ def recruiterProfile(request):
     if request.user.is_authenticated:
         details = Recruiter.objects.get(pk=request.user)
     return render(request,'recruiter/recruiterProfile.html',{'details':details})
-    
+
+def recruiterEditProfile(request):
+    try:
+        details = Recruiter.objects.get(pk=request.user)
+    except Recruiter.DoesNotExist:
+        return redirect("RecruiterHome")
+    update_form = RecruiterForm(request.POST or None, instance = details)
+    if update_form.is_valid():
+        update_form.save()
+        return redirect("recruiterProfile")
+    return render(request,'recruiter/createprofile.html',{'form':update_form})
+
+def addJob(request):
+    if request.method =="POST":
+        jobForm = JobPostingForm(request.POST)
+        if jobForm.is_valid():
+            saveInfo = jobForm.save(commit=False)
+            recruiter = Recruiter.objects.get(pk=request.user)
+            saveInfo.recruiter = recruiter
+            saveInfo.save()
+            return redirect("RecruiterHome")
+        else:
+            return HttpResponse("Form is invalid")
+    else:
+        jobForm = JobPostingForm()
+    return render(request,'recruiter/addJob.html',{'form':jobForm})
+
+def editJob(request,job_id):
+    job_id=int(job_id)
+    try:
+        job_details = JobPosting.objects.get(id=job_id)
+    except JobPosting.DoesNotExist:
+        return redirect("RecruiterHome")
+    update_jobform = JobPostingForm(request.POST or None,instance=job_details)
+    if update_jobform.is_valid():
+        update_jobform.save()
+        return redirect("RecruiterHome")
+    else:
+        print("form not valid")
+    return render(request,'recruiter/addJob.html',{'form':update_jobform})
+
+def deleteJob(request,job_id):
+    job_id=int(job_id)
+    try:
+        job_details = JobPosting.objects.get(id=job_id)
+    except JobPosting.DoesNotExist:
+        return redirect("RecruiterHome")
+    job_details.delete()
+    return redirect("RecruiterHome")
