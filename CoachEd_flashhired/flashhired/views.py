@@ -113,23 +113,36 @@ def CandidateHome(request):
 ######################## Recruiter Section #####################
  
 def RecruiterHome(request):
-    return render(request,'recruiter/RecruiterHome.html')
+    if request.user.is_authenticated:
+        try:
+            details = Recruiter.objects.get(pk=request.user)
+        except Recruiter.DoesNotExist:
+            return HttpResponse("Create profile to continue")
+        return render(request,'recruiter/RecruiterHome.html',{'details':details})
+    else:
+        return HttpResponse("Login to continue")
+
+    
 
 def recruiterCreateProfile(request):
     if request.method=='POST':
-        form = RecruiterForm(request.POST)
-        if form.is_valid():
-            recruiter = form.save()
-            return redirect('RecruiterHome')
-        else:
-            return HttpResponse('form not valid')
+        if request.user.is_authenticated:
+            print("user is authenticated")
+            form = RecruiterForm(request.POST)
+            if form.is_valid():
+                print("in form valid section")
+                saveInfo = form.save(commit=False) 
+                saveInfo.user = request.user
+                saveInfo.save()
+                return redirect('RecruiterHome')             
+            else:
+                return HttpResponse('form not valid')
     else:
         form = RecruiterForm()
-    
     return render(request,'recruiter/createprofile.html',{'form':form})
 
-def recruiterProfile(request,r_id):
-    r_id = int(r_id)
-    person = Recruiter.objects.get(id=r_id)
-    return render(request,'recruiter/recruiterProfile.html',{'person':person})
+def recruiterProfile(request):
+    if request.user.is_authenticated:
+        details = Recruiter.objects.get(pk=request.user)
+    return render(request,'recruiter/recruiterProfile.html',{'details':details})
     

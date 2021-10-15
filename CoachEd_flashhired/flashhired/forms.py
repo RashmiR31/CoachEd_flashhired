@@ -43,3 +43,4 @@ class RecruiterForm(forms.ModelForm):
     class Meta:
         model = Recruiter
         fields = '__all__'
+        exclude =('user',)

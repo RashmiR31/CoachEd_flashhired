@@ -37,7 +37,7 @@ urlpatterns = [
     ######## Recruiter Section #####################
     path('recruiterhome/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
-    path('recruiter/profile/<int:r_id>',views.recruiterProfile,name='recruiterProfile'),
+    path('recruiter/profile',views.recruiterProfile,name='recruiterProfile'),
 
 
 ]

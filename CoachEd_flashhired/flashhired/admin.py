@@ -10,9 +10,10 @@ admin.site.unregister(Group)
 admin.site.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display=['username','email']
+    list_filter =['is_recruiter']
 
 class RecruiterAdmin(admin.ModelAdmin):
-    list_display=['name','id']
+    list_display=['name']
 admin.site.register(Recruiter,RecruiterAdmin)
 
 class JobPostingAdmin(admin.ModelAdmin):

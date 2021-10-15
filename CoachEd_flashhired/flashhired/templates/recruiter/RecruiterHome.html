@@ -1,10 +1,12 @@
 {% if user.is_authenticated %}
 
 {{ user.username }} is a recruiter
+{{ user.id }} is the userID
+
+{{details.name}}
+
 <br>
-
-
-
+<a href="{% url 'recruiterProfile' %}">Profile Page</a>
 <br>
 <button onclick="myFunction()">Logout</button>
 
