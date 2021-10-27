@@ -1,11 +1,196 @@
-<title>Recruiter Profile</title>
 
-<p>{{ details.name }}</p>
-<p>{{ details.gender }}</p>
-<p>{{ details.work_email }}</p>
-<p>{{ details.company_name }}</p>
-<p>{{ details.role }}</p>
-<p>{{ details.experience }}</p>
+{% load static %}
 
-<p><a href="{% url 'recruiterEditProfile' %}">Edit</a></p>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    
+
+#left_rect{
+    height:650px;
+    margin-top:140px;
+    width:1000px;
+    margin-left: -10px;
+}
+
+      
+    
+     
+    .sideNav{
+     width:200px;
+     border-radius:10px;
+     background: rgba(255, 255, 255, 0.918);
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     height:100%;
+     opacity: .85;
+     margin-left:-20px;
+     padding-top:80px;
+     margin-top:-870px;
+    }
+    
+    #supportingText{
+      font-size:15px;
+      font-family: 'Poppins', sans-serif;
+      padding-left:30px;
+      padding-top: 30px;
+    }
+   
+    #list {
+     
+     list-style-type: none;
+     padding-left: 10px;
+     border-radius:10px;
+     width: 180px;
+     background: rgba(255, 255, 255, 0.85);
+   }
+   
+   #navBar a {
+     font-size: 15px;
+     display: block;
+     color: #000;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     margin-left:-20px;
+     text-decoration:none;
+     padding-left: 50px;
+     font-family: 'Poppins', sans-serif;
+     border-radius:10px;
+   }
+   
+   #navBar a.active {
+    background: rgba(76, 5, 230, 0.644);
+     color: black;
+     border-radius:10px;
+   }
+   
+   #navBar a:hover:not(.active) {
+     background-color: #555;
+     color: white;
+     border-radius:10px;
+   }
+   .bodyContent{
+     height:600px;
+     background: #FBFBFB;
+     margin-top: -800px;
+     margin-left:185px;
+   }
+   #right_rect{
+       position:absolute;
+       margin-left:1030px;
+       margin-top:-800px;
+       height:750px;
+   }
+   #name{
+    position:absolute;
+    font-family: Roboto;
+    font-size: 64px;
+    line-height: 75px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -640px;
+    padding-left:320px;
+   }
+
+   #role{
+    position:absolute;
+    font-family: Roboto;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -570px;
+    padding-left:380px;
+   }
+   #mail{
+    position:absolute;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -445px;
+    padding-left:480px;
+   }
+   #company_name{
+    position:absolute;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -400px;
+    padding-left:540px;
+   }
+   #gender{
+    position:absolute;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -360px;
+    padding-left:600px;
+   }
+   #experience{
+    position:absolute;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: -320px;
+    padding-left:650px;
+   }
+
+
+</style>
+<html>
+    <body>
+        <img id="left_rect" src="{% static 'left_rectangle.png' %}">
+        <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
+        <div class="sideNav">
+          <ul id="list">
+            <p id="supportingText">Tools</p>
+            <li id="navBar"><a href="{% url 'RecruiterHome' %}"><i class="fas fa-home"> </i> Home</a></li>
+            <li id="navBar"><a class="active" href="{% url 'recruiterProfile' %}"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li id="navBar"><a href ="#home" ><i class="fas fa-rocket"> </i> Onboarding</a></li>
+            <li id="navBar"><a href="#contact"><i class="fas fa-chalkboard-teacher"> </i>Jobs</a></li>
+            <li id="navBar"><a href="#about"><i class="far fa-chart-bar"> </i> Assessments</a></li>
+            <li id="navBar"><a href="#news"><i class="fas fa-file"> </i> Documents</a></li>
+    
+            <p id="supportingText">Other</p>
+            <li id="navBar"><a href="#news"><i class="fas fa-comments"> </i> Chat</a></li>
+            <li id="navBar"><a href="#contact"><i class="fas fa-question-circle"> </i> Support</a></li>
+            <li id="navBar"><a href="#about"><i class="fas fa-calendar"> </i> Calender</a></li>
+            <li id="navBar" onclick="myFunction()"><a href="#about"><i class="fas fa-sign-out-alt"> </i> Logout</a></li>
+            
+          </ul>
+        </div>
+        <img id="right_rect" src="{% static 'pp_right_temp.png' %}">
+
+        <p id="name">{{ details.name }} <a href="{% url 'recruiterEditProfile' %}"><i class="fas fa-edit" style="color:black;font-size: 20px;"></i></a></p>
+        
+        <p id="role">{{ details.role }}</p>
+        <p id="mail"><i class="far fa-envelope"></i> {{ details.work_email }}</p>
+        <p id="company_name"><i class="far fa-building"></i> {{ details.company_name }}</p>
+        <p id="gender"><i class="fas fa-male"></i> {{ details.gender }}</p>
+        <p id="experience"><i class="fas fa-chart-line"></i> {{ details.experience }} Months</p>
+    </body>
+</html>
+        <!--
+               
+        <div id="notification"><i class="far fa-bell"></i></div>
+        
+        
+        
+        
+        
+        
+
+         -->
+
 
