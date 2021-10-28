@@ -128,7 +128,7 @@ def recruiterCreateProfile(request):
     if request.method=='POST':
         if request.user.is_authenticated:
             print("user is authenticated")
-            form = RecruiterForm(request.POST)
+            form = RecruiterForm(request.POST,request.FILES)
             if form.is_valid():
                 print("in form valid section")
                 saveInfo = form.save(commit=False) 
@@ -159,7 +159,7 @@ def recruiterEditProfile(request):
 
 def addJob(request):
     if request.method =="POST":
-        jobForm = JobPostingForm(request.POST)
+        jobForm = JobPostingForm(request.POST,request.FILES)
         if jobForm.is_valid():
             saveInfo = jobForm.save(commit=False)
             recruiter = Recruiter.objects.get(pk=request.user)
