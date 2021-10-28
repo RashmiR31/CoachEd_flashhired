@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import SignupForm,LoginForm,CandidateForm,RecruiterForm,JobPostingForm
+from .forms import *
 from django.contrib.auth import authenticate,login,logout
 from .models import User,Candidate, Recruiter, JobPosting
 from django.http import HttpResponse
@@ -109,12 +109,176 @@ def password_reset_request(request):
 
 ######################## Candidate Section #####################
 def CandidateHome(request):
-    return render(request,'candidate/CandidateHome.html')
+    if request.user.is_authenticated and request.user.is_candidate:
+        try:
+            details = Candidate.objects.get(pk=request.user)
+        except Candidate.DoesNotExist:
+            return HttpResponse("Create profile to continue")
+        return render(request,'candidate/CandidateHome.html',{'details':details})
+    else:
+        return HttpResponse("Login as Candidate to continue")
+
+def candidateCreateProfile(request):
+    if request.method=="POST":
+        form=CandidateForm(request.POST,request.FILES)
+        if form.is_valid():
+            print("inside form valid")
+            saveInfo=form.save(commit=False)
+            saveInfo.user=request.user
+            saveInfo.save()
+            # return redirect('CandidateHome')
+        else:
+            return HttpResponse("Form is not valid")
+    else:
+        form=CandidateForm()
+    return render(request,'candidate/createprofile.html',{'form':form})
+
+def candidateProfile(request):
+    if request.user.is_authenticated:
+        details = Candidate.objects.get(pk=request.user)
+        work_details = WorkExperience.objects.all().filter(candidate=details)
+        acc_details = Accomplishments.objects.all().filter(candidate=details)
+        project_details = Projects.objects.all().filter(candidate=details)
+    context={
+        'details':details,
+        'work_details':work_details,
+        'acc_details':acc_details,
+        'project_details':project_details,
+    }
+    return render(request,'candidate/candidateProfile.html',context)
+
+def candidateEditProfile(request):
+    try:
+        details = Candidate.objects.get(pk=request.user)
+    except Candidate.DoesNotExist:
+        return redirect("CandidateHome")
+    update_form = CandidateForm(request.POST or None, instance = details)
+    if update_form.is_valid():
+        update_form.save()
+        return redirect("candidateProfile")
+    return render(request,'candidate/createprofile.html',{'form':update_form})
+
+######## WORK EXPERIENCE ###############
+def candidateWorkExperience(request):
+    if request.method=="POST":
+        workexp_form = CandidateWorkExperienceForm(request.POST,request.FILES)
+        if workexp_form.is_valid():
+            saveInfo=workexp_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        workexp_form = CandidateWorkExperienceForm()
+    return render(request,'candidate/workexperience.html',{'form':workexp_form})
+
+def editWorkExperience(request,work_id):
+    work_id=int(work_id)
+    try:
+        work_details = WorkExperience.objects.get(id=work_id)
+    except WorkExperience.DoesNotExist:
+        return redirect("candidateProfile")
+    update_workform = CandidateWorkExperienceForm(request.POST or None,instance=work_details)
+    if update_workform.is_valid():
+        update_workform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/workexperience.html',{'form':update_workform})
+
+def deleteWorkExperience(request,work_id):
+    work_id=int(work_id)
+    try:
+        work_details = WorkExperience.objects.get(id=work_id)
+    except WorkExperience.DoesNotExist:
+        return redirect("candidateProfile")
+    work_details.delete()
+    return redirect("candidateProfile")
+############### PROJECTS ##################
+def candidateProjects(request):
+    if request.method=="POST":
+        projects_form = CandidateProjectsForm(request.POST,request.FILES)
+        if projects_form.is_valid():
+            saveInfo=projects_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        projects_form = CandidateProjectsForm()
+    return render(request,'candidate/projects.html',{'form':projects_form})
+
+def editProjects(request,project_id):
+    project_id=int(project_id)
+    try:
+        project_details = Projects.objects.get(id=project_id)
+    except Projects.DoesNotExist:
+        return redirect("candidateProfile")
+    update_projectform = CandidateProjectsForm(request.POST or None,instance=project_details)
+    if update_projectform.is_valid():
+        update_projectform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/projects.html',{'form':update_projectform})
+
+def deleteProjects(request,project_id):
+    project_id=int(project_id)
+    try:
+        project_details = Projects.objects.get(id=project_id)
+    except Projects.DoesNotExist:
+        return redirect("candidateProfile")
+    project_details.delete()
+    return redirect("candidateProfile")
+######## ACCOMPLISHMENTS ###############
+
+def candidateAccomplishments(request):
+    if request.method=="POST":
+        acc_form = CandidateAccomplishmentsForm(request.POST,request.FILES)
+        if acc_form.is_valid():
+            saveInfo=acc_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        acc_form = CandidateAccomplishmentsForm()
+    return render(request,'candidate/accomplishments.html',{'form':acc_form})
+
+def editAccomplishments(request,acc_id):
+    acc_id=int(acc_id)
+    try:
+        acc_details = Accomplishments.objects.get(id=acc_id)
+    except Accomplishments.DoesNotExist:
+        return redirect("candidateProfile")
+    update_accform = CandidateAccomplishmentsForm(request.POST or None,instance=acc_details)
+    if update_accform.is_valid():
+        update_accform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/accomplishments.html',{'form':update_accform})
+
+def deleteAccomplishments(request,acc_id):
+    acc_id=int(acc_id)
+    try:
+        acc_details = Accomplishments.objects.get(id=acc_id)
+    except Accomplishments.DoesNotExist:
+        return redirect("candidateProfile")
+    acc_details.delete()
+    return redirect("candidateProfile")
+
 
 ######################## Recruiter Section #####################
  
 def RecruiterHome(request):
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and request.user.is_recruiter:
         try:
             details = Recruiter.objects.get(pk=request.user)
             jobs = JobPosting.objects.all().filter(recruiter=details)
@@ -123,6 +287,7 @@ def RecruiterHome(request):
         return render(request,'recruiter/RecruiterHome.html',{'details':details,'jobs':jobs})
     else:
         return HttpResponse("Login to continue")
+
 
 def recruiterCreateProfile(request):
     if request.method=='POST':

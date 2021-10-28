@@ -1,49 +1,6 @@
-{% extends 'base.html' %}
+<title>Candidate Home</title>
+<h1>Candidate Home</h1>
 
-{% block title %} CandidateHome {% endblock %}
-{% block content %}
-<style>
-  #bodyText{
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 22px;
-      padding-top: 50px;
-      padding-left:100px;
-    }
-    .buttonAdjust{
-      width:220px;
-      height:40px;
-      font-size: 15px;
-      font-family: 'Poppins', sans-serif;
-      background: rgba(224, 210, 210, 0.25);
-      
-    
-      margin-left: 130px;
-      margin-top:50px;
-      border: 1px solid #000000;
-      box-sizing: border-box;
-      border-radius: 5px;
-    }
-    
-    .buttonAdjust:hover{
-      box-shadow: 2px 2px 8px 0 rgb(91, 142, 218);
-    }
-</style>
-<html>
-  <body>
-<div class="bodyContent">
-  <p id="bodyText">Here is a list of your onboarding topics</p>
-  <button class="buttonAdjust">Basic Details</button><br>
-  <button class="buttonAdjust">Education</button><br>
-  <button class="buttonAdjust">Experience</button><br>
-  <button class="buttonAdjust">Projects</button><br>
-  <button class="buttonAdjust">Accomplishments</button>
-</div>
-
-
-
-
-{% endblock %}
-</body>
-</html>
+{{details.first_name}} is the candidate
+<br>
+<a href="{% url 'candidateProfile' %}">Profile</a>

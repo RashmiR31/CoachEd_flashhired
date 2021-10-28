@@ -35,7 +35,23 @@ urlpatterns = [
     path('password_reset_confirm/<uidb64>/<token>',auth_views.PasswordResetConfirmView.as_view(template_name='account/password_reset_form.html'),name="password_reset_confirm"),
     path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(template_name='account/password_reset_complete.html'),name="password_reset_complete"),
     ######## Candidate Section #####################
-    path('candidatehome/',views.CandidateHome,name='CandidateHome'),
+
+    path('candidate/',views.CandidateHome,name='CandidateHome'),
+    path('candidate/createprofile',views.candidateCreateProfile,name='candidateCreateProfile'),
+    path('candidate/profile',views.candidateProfile,name='candidateProfile'),
+    path('candidate/profile/edit',views.candidateEditProfile,name='candidateEditProfile'),
+    # work experience
+    path('candidate/workexperience',views.candidateWorkExperience,name='candidateWorkExperience'),
+    path('candidate/editworkexperience/<int:work_id>',views.editWorkExperience,name="editWorkExperience"),
+    path('candidate/deleteworkexperience/<int:work_id>',views.deleteWorkExperience,name="deleteWorkExperience"),
+    # accomplishments
+    path('candidate/accomplishments',views.candidateAccomplishments,name='candidateAccomplishments'),
+    path('candidate/editaccomplishments/<int:acc_id>',views.editAccomplishments,name="editAccomplishments"),
+    path('candidate/deleteaccomplishments/<int:acc_id>',views.deleteAccomplishments,name="deleteAccomplishments"),
+    # projects
+    path('candidate/projects',views.candidateProjects,name='candidateProjects'),
+    path('candidate/editprojects/<int:project_id>',views.editProjects,name="editProjects"),
+    path('candidate/deleteprojects/<int:project_id>',views.deleteProjects,name="deleteProjects"),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),

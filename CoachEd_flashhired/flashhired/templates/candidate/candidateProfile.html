@@ -1,0 +1,37 @@
+<h1>Candidate Profile</h1>
+
+<p>{{details.first_name}}</p>
+<p>{{details.gender}}</p>
+<p>{{details.dob}}</p>
+<p>{{details.recent_college_name}}</p>
+<p>{{details.recent_cgpa_equivalent}}</p>
+<p>{{details.pu_yop}}</p>
+<img src="{{details.profile_pic.url}}" alt="profile_pic" width="100px" height="100px">
+
+<p>------------------------------------------------<p>
+<a href="{% url 'candidateWorkExperience' %}">Add Work Experience</a>
+{% for work in work_details %}
+<p>{{work.id}}/{{work.company_name}}/{{work.role}}</p>
+<a href="editworkexperience/{{work.id}}" class="btn btn-warning" id = '{{work.id}}'>edit</a>
+<a href="deleteworkexperience/{{work.id}}" class="btn btn-warning" id = '{{work.id}}'>delete</a>
+{% endfor %}
+<br>
+<p>--------------------------------</p>
+
+<a href="{% url 'candidateAccomplishments' %}">Add Accomplishments</a>
+{% for acc in acc_details %}
+<p>{{acc.id}}/{{acc.certificate_name}}/{{acc.certificate_issued_by}}</p>
+<a href="editaccomplishments/{{acc.id}}" class="btn btn-warning" id = '{{acc.id}}'>edit</a>
+<a href="deleteaccomplishments/{{acc.id}}" class="btn btn-warning" id = '{{acc.id}}'>delete</a>
+{% endfor %}
+<br>
+<p>---------------------------------------</p>
+<a href="{% url 'candidateProjects' %}">Add Projects</a>
+{% for p in project_details %}
+<p>{{p.id}}/{{p.project_name}}/{{p.technologies_used}}</p>
+<a href="editprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'>edit</a>
+<a href="deleteprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'>delete</a>
+{% endfor %}
+<p>---------------------------------------</p>
+<br>
+<a href="{% url 'candidateEditProfile' %}">Edit Entire Profile</a>

@@ -5,6 +5,8 @@ from djongo import models
 from django import forms
 from django.forms import ModelForm
 from CoachEd_flashhired import settings
+from django.utils import timezone
+import uuid
 # Create your models here.
 
 class User(AbstractUser):
@@ -62,6 +64,7 @@ class Recruiter(models.Model):
     name = models.CharField(max_length=255)
     gender = models.CharField(max_length=25,choices=GENDER_CHOICES,blank=True)
     work_email = models.EmailField(max_length=254,blank=True)
+    phone_number =PhoneNumberField()
     dob = models.DateField()
     company_name = models.CharField(max_length=255)
     role = models.CharField(max_length=255)
@@ -83,7 +86,7 @@ class JobPosting(models.Model):
     salary = models.IntegerField()
     is_negotiable = models.BooleanField(default=False)
     job_location = models.TextField()
-    date_posted = models.DateField()
+    date_posted = models.DateField(default=timezone.now)
     upload_doc = models.FileField(upload_to='recruiter/jobs/docs/')
     
 
@@ -93,4 +96,69 @@ class JobPosting(models.Model):
 
 
 class Candidate(models.Model):
-    name= models.CharField(max_length=255)
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete = models.CASCADE,
+        primary_key=True,
+        default=id
+    )
+    #About
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    dob = models.DateField(default=timezone.now)
+    gender = models.CharField(max_length=25,choices=GENDER_CHOICES,blank=True)
+    phone_number = PhoneNumberField()
+    email_id = models.EmailField(max_length=254)
+    alternate_email_id = models.EmailField(max_length=254)
+    current_address = models.TextField()
+    permanent_address = models.TextField()
+    profile_pic = models.ImageField(upload_to='candidate/profile_pic/',null=True)
+    #Education 
+    #recent
+    recent_degree = models.CharField(max_length=10)
+    recent_stream = models.CharField(max_length=255)
+    recent_college_name = models.CharField(max_length=255)
+    recent_yop = models.DateField(default=timezone.now)
+    recent_cgpa_equivalent = models.DecimalField(max_digits=4,decimal_places=2)
+    recent_marks_card = models.FileField(upload_to='candidate/recent/marks_card/')
+    #PU
+    pu_combination = models.CharField(max_length=100)
+    pu_college_name = models.CharField(max_length=100)
+    pu_yop = models.DateField(default=timezone.now)
+    pu_percentage = models.DecimalField(max_digits=4,decimal_places=2)
+    pu_marks_card = models.FileField(upload_to='candidate/pu/marks_card/')
+    #10th
+    tenth_school_name = models.CharField(max_length=100)
+    tenth_yop = models.DateField(default=timezone.now)
+    tenth_percentage = models.DecimalField(max_digits=4,decimal_places=2)
+    tenth_marks_card = models.FileField(upload_to='candidate/tenth/marks_card/')
+    #Work Experience
+
+
+class Accomplishments(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    certificate_name = models.CharField(max_length=255,null=True)
+    certificate_issued_by = models.CharField(max_length=100,null=True)
+    certificate_issue_date= models.DateField(default=timezone.now,null=True)
+    certificate_link = models.CharField(max_length=5000,null=True)
+    certificate_doc = models.FileField(upload_to='candidate/certificates/')
+    award_name = models.CharField(max_length=255)
+    award_issued_by = models.CharField(max_length=255)
+
+class WorkExperience(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    company_name = models.CharField(max_length=255,null=True)
+    role=models.CharField(max_length=100,null=True)
+    duration = models.IntegerField(null=True)
+    work_description = models.TextField(null=True)
+    supporting_doc=models.FileField(upload_to='candidate/work_doc/',null=True)
+
+class Projects(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    project_name = models.CharField(max_length=255)
+    technologies_used = models.CharField(max_length=255)
+    start_date=models.DateField(default=timezone.now)
+    end_date=models.DateField(default=timezone.now)
+    description = models.TextField()
+    supporting_media_or_link = models.CharField(max_length=5000)
+
