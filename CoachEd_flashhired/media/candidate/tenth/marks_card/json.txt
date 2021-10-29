@@ -1,0 +1,316 @@
+{
+    "_id": {
+        "$oid": "615bca64326990d8ee1ccdda"
+    },
+    "About": {
+        "first_name": "Rashmi",
+        "last_name": "R",
+        "D.O.B": {
+            "$date": "2000-07-29T18:30:00.000Z"
+        },
+        "Gender": "Female",
+        "Contact": {
+            "phone_number": "9945841082",
+            "email_id": "rashmir3107@gmail.com",
+            "alternate_email": "rashmi.shantha.r@gmail.com"
+        },
+        "Address": {
+            "current_address": "103, 3rd main road, Eshwara Layout",
+            "permanent_address": "103, 3rd main road, Eshwara Layout"
+        }
+    },
+    "Education": {
+        "Recent": {
+            "degree": "B.E",
+            "stream": "Computer Science and Engineering",
+            "college_name": "AMC Engineering College",
+            "year_of_passing": 2022,
+            "cgpa_equivalent": {
+                "$numberDecimal": "8.63"
+            }
+        },
+        "Pre_university/Diploma": {
+            "combination": "PCMCs",
+            "college_name": "Sri Chaitanya PU College",
+            "year_of_passing": 2018,
+            "percentage/cgpa": "93.8%",
+            "marks_card": null
+        },
+        "10th_grade": {
+            "school_name": "VET School",
+            "year_of_passing": 2016,
+            "percentage/cgpa": "93.6%",
+            "marks_card": null
+        }
+    },
+    "Work_Experience": {
+        "company_name": "Coached",
+        "role": "Django developer",
+        "duration": "2 months",
+        "work_description": "Backend developer",
+        "supporting_doc": null,
+        "poc_name": null,
+        "poc_phone_number": null
+    },
+    "Accomplishments": {
+        "certifications": {
+            "name": "Python for Everybody Specialization",
+            "issued_by": "University of Michigan",
+            "issue_date": "2020",
+            "link": null,
+            "supporting_doc": null
+        },
+        "awards/recognitions": {
+            "name": "Best in Scientific Talent",
+            "isuued_by": "VET School"
+        },
+        "patents/publications": {
+            "name": "",
+            "issued_by": "",
+            "issue_date": "",
+            "validity": "",
+            "supporting_doc/link": null
+        },
+        "other": null
+    },
+    "Languages": {
+        "language": "Kannada",
+        "proficiency": "Native"
+    },
+    "Projects": {
+        "project_name": "CoffeeBrowser",
+        "technologies_used": "Django,Social auth, HTML5,CSS3, JS",
+        "start_date": "",
+        "end_date": "",
+        "current": true,
+        "description": "Import and Export Management System",
+        "supporting_media/link": ""
+    },
+    "Resume_upload": null,
+    "Skills": {
+        "skill_name": "Python",
+        "rating": 5,
+        "supporting_doc": null
+    },
+    "Social_Handles": {
+        "facebook": "",
+        "instagram": "",
+        "linkedin": null,
+        "github": "",
+        "personal_website": "",
+        "codechef": "",
+        "hackerrank": "",
+        "Kaggle": "",
+        "Twitter": "",
+        "Dribble": "",
+        "other": ""
+    }
+}
+
+---------------------
+views.py
+----------------------
+def candidateWorkExperience(request):
+    if request.method=="POST":
+        workexp_form = CandidateWorkExperienceForm(request.POST,request.FILES)
+        if workexp_form.is_valid():
+            saveInfo=workexp_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        workexp_form = CandidateWorkExperienceForm()
+    return render(request,'candidate/workexperience.html',{'form':workexp_form})
+
+def editWorkExperience(request,work_id):
+    work_id=int(work_id)
+    try:
+        work_details = WorkExperience.objects.get(id=work_id)
+    except WorkExperience.DoesNotExist:
+        return redirect("candidateProfile")
+    update_workform = CandidateWorkExperienceForm(request.POST or None,instance=work_details)
+    if update_workform.is_valid():
+        update_workform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'recruiter/addJob.html',{'form':update_workform})
+
+def deleteWorkExperience(request,work_id):
+    work_id=int(work_id)
+    try:
+        work_details = WorkExperience.objects.get(id=work_id)
+    except WorkExperience.DoesNotExist:
+        return redirect("candidateProfile")
+    work_details.delete()
+    return redirect("candidateProfile")
+---------------------------------------------
+urls.py
+----------------
+path('candidate/workexperience',views.candidateWorkExperience,name='candidateWorkExperience'),
+path('recruiter/editworkexperience/<int:work_id>',views.editWorkExperience,name="editWorkExperience"),
+path('recruiter/deleteworkexperience/<int:work_id>',views.deleteWorkExperience,name="deleteWorkExperience"),
+
+-----------------------------------------------
+models.py
+--------------------
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from phonenumber_field.modelfields import PhoneNumberField
+from djongo import models
+from django import forms
+from django.forms import ModelForm
+from CoachEd_flashhired import settings
+from django.utils import timezone
+# Create your models here.
+
+class User(AbstractUser):
+    phone_number = PhoneNumberField()
+    is_admin=models.BooleanField(default=False)
+    is_candidate=models.BooleanField(default=False)
+    is_recruiter=models.BooleanField(default=False)
+
+
+##################### CHOICES ############################################
+
+GENDER_CHOICES = (
+    ('male','Male'),
+    ('female','Female'),
+    ('other','Other'),
+)
+
+JOB_TYPE=(
+    ('fulltime','Full Time'),
+    ('internship','Internship'),
+    ('contract','Contract'),
+)
+
+DEGREE_CHOICES = (
+    ('b.e','B.E'),
+    ('b.tech','B.Tech'),
+    ('m.tech','M.Tech'),
+    ('msc','MSc'),
+)
+
+BRANCH_CHOICES = (
+    ('computerscience','Computer Science'),
+    ('informationscience','Information Science'),
+    ('electronicsandcommunication','Electronics and Communication'),
+    ('mechanical','Mechanical'),
+    ('civil','Civil'),
+)
+
+COMBINATION_CHOICES= (
+    ('pcmb','PCMB'),
+    ('pcmcs','PCMCs'),
+    ('pcme','PCME'),
+)
+
+#################################################################################
+##################### Recruiter Side ############################################
+#################################################################################
+
+class Recruiter(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete = models.CASCADE,
+        primary_key=True,
+    )
+    name = models.CharField(max_length=255)
+    gender = models.CharField(max_length=25,choices=GENDER_CHOICES,blank=True)
+    work_email = models.EmailField(max_length=254,blank=True)
+    phone_number =PhoneNumberField()
+    dob = models.DateField()
+    company_name = models.CharField(max_length=255)
+    role = models.CharField(max_length=255)
+    experience = models.IntegerField()
+    auth_doc = models.FileField(upload_to='recruiter/auth_doc/')
+    profile_pic = models.ImageField(upload_to='recruiter/profile_pic/')
+    def __str__(self):
+        return self.name
+
+class JobPosting(models.Model):
+    recruiter = models.ForeignKey("Recruiter",on_delete=models.CASCADE)
+    job_type = models.CharField(max_length=25,choices=JOB_TYPE)
+    job_title = models.CharField(max_length=255)
+    functional_area = models.CharField(max_length=255)
+    jd = models.TextField()
+    required_skills = models.TextField()
+    required_experience = models.IntegerField()
+    required_education = models.TextField()
+    salary = models.IntegerField()
+    is_negotiable = models.BooleanField(default=False)
+    job_location = models.TextField()
+    date_posted = models.DateField(default=timezone.now)
+    upload_doc = models.FileField(upload_to='recruiter/jobs/docs/')
+    
+
+#################################################################################
+##################### Candidate Side ############################################
+#################################################################################
+
+
+class Candidate(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete = models.CASCADE,
+        primary_key=True,
+        default=id
+    )
+    #About
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    dob = models.DateField(default=timezone.now)
+    gender = models.CharField(max_length=25,choices=GENDER_CHOICES,blank=True)
+    phone_number = PhoneNumberField()
+    email_id = models.EmailField(max_length=254)
+    alternate_email_id = models.EmailField(max_length=254)
+    current_address = models.TextField()
+    permanent_address = models.TextField()
+    profile_pic = models.ImageField(upload_to='candidate/profile_pic/',null=True)
+    #Education 
+    #recent
+    recent_degree = models.CharField(max_length=10)
+    recent_stream = models.CharField(max_length=255)
+    recent_college_name = models.CharField(max_length=255)
+    recent_yop = models.DateField(default=timezone.now)
+    recent_cgpa_equivalent = models.DecimalField(max_digits=4,decimal_places=2)
+    recent_marks_card = models.FileField(upload_to='candidate/recent/marks_card/')
+    #PU
+    pu_combination = models.CharField(max_length=100)
+    pu_college_name = models.CharField(max_length=100)
+    pu_yop = models.DateField(default=timezone.now)
+    pu_percentage = models.DecimalField(max_digits=4,decimal_places=2)
+    pu_marks_card = models.FileField(upload_to='candidate/pu/marks_card/')
+    #10th
+    tenth_school_name = models.CharField(max_length=100)
+    tenth_yop = models.DateField(default=timezone.now)
+    tenth_percentage = models.DecimalField(max_digits=4,decimal_places=2)
+    tenth_marks_card = models.FileField(upload_to='candidate/tenth/marks_card/')
+    #Work Experience
+
+class WorkExperience(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    company_name = models.CharField(max_length=255,null=True)
+    role=models.CharField(max_length=100,null=True)
+    duration = models.IntegerField(null=True)
+    work_description = models.TextField(null=True)
+    supporting_doc=models.FileField(upload_to='candidate/work_doc/',null=True)
+    poc_name = models.CharField(max_length=100,null=True)
+    poc_phone_number = PhoneNumberField(null=True)
+
+class Accomplishments(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    certificate_name = models.CharField(max_length=255,null=True)
+    certificate_issued_by = models.CharField(max_length=100,null=True)
+    certificate_issue_date= models.DateField(default=timezone.now,null=True)
+    certificate_link = models.CharField(max_length=5000,null=True)
+    certificate_doc = models.FileField(upload_to='candidate/certificates/')
+    award_name = models.CharField(max_length=255)
+    award_issued_by = models.CharField(max_length=255)
+
+
+

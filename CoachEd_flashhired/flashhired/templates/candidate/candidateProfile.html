@@ -47,7 +47,14 @@
 <a href="deletelanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'>delete</a>
 {% endfor %}
 <p>---------------------------------------</p>
-
+{% if social_links.exists %}
+{% for sl in social_links %}
+<p>{{sl.id}} / {{sl.linkedin}} / {{sl.github}}</p>
+<a href="editsociallinks/{{sl.id}}" class="btn btn-warning" id = '{{sl.id}}'>edit</a>
+{% endfor %}
+{% else %}
+<a href="{% url 'candidateSocialLinks' %}">Add Social Links</a>
+{% endif %}
 <p>----------------------------------------</p>
 <br>
 <a href="{% url 'candidateEditProfile' %}">Edit Entire Profile</a>

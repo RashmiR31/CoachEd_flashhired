@@ -100,7 +100,6 @@ class Candidate(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete = models.CASCADE,
         primary_key=True,
-        default=id
     )
     #About
     first_name = models.CharField(max_length=255)
@@ -173,16 +172,16 @@ class Languages(models.Model):
     language = models.CharField(max_length=50)
     proficiency = models.CharField(max_length=50)
 
-# class SocialHandles(models.Model):
-#     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
-#     facebook = models.URLField(max_length=500,blank=True)
-#     instagram = models.URLField(max_length=500,blank=True)
-#     linkedin =models.URLField(max_length=500,blank=True)
-#     github = models.URLField(max_length=500,blank=True)
-#     personal_website = models.URLField(max_length=500,blank=True)
-#     codechef = models.URLField(max_length=500,blank=True)
-#     hackerrank = models.URLField(max_length=500,blank=True)
-#     kaggle =models.URLField(max_length=500,blank=True)
-#     twitter = models.URLField(max_length=500,blank=True)
-#     dribble =models.URLField(max_length=500,blank=True)
-#     other =models.URLField(max_length=500,blank=True)
+class SocialLinks(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete=models.CASCADE)
+    facebook = models.URLField(max_length=500,blank=True)
+    instagram =models.URLField(max_length=500,blank=True)
+    linkedin =models.URLField(max_length=500,blank=True)
+    github =models.URLField(max_length=500,blank=True)
+    personal_website =models.URLField(max_length=500,blank=True)
+    codechef =models.URLField(max_length=500,blank=True)
+    hackerrank =models.URLField(max_length=500,blank=True)
+    kaggle=models.URLField(max_length=500,blank=True)
+    twitter=models.URLField(max_length=500,blank=True)
+    dribble=models.URLField(max_length=500,blank=True)
+    other=models.URLField(max_length=500,blank=True)

@@ -3,7 +3,7 @@ from .forms import *
 from django.contrib.auth import authenticate,login,logout
 from .models import User,Candidate, Recruiter, JobPosting
 from django.http import HttpResponse
-
+import os
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.forms import PasswordResetForm
 
@@ -126,7 +126,7 @@ def candidateCreateProfile(request):
             saveInfo=form.save(commit=False)
             saveInfo.user=request.user
             saveInfo.save()
-            # return redirect('CandidateHome')
+            return redirect('CandidateHome')
         else:
             return HttpResponse("Form is not valid")
     else:
@@ -141,7 +141,7 @@ def candidateProfile(request):
         project_details = Projects.objects.all().filter(candidate=details)
         skill_details = Skills.objects.all().filter(candidate=details)
         language_details = Languages.objects.all().filter(candidate=details)
-        # social_handles = SocialHandles.objects.all().filter(candidate=details)
+        social_links = SocialLinks.objects.all().filter(candidate=details)
     context={
         'details':details,
         'exp_details':exp_details,
@@ -149,7 +149,7 @@ def candidateProfile(request):
         'project_details':project_details,
         'skill_details':skill_details,
         'language_details':language_details,
-        # 'social_handles':social_handles,
+        'social_links':social_links,
     }
     return render(request,'candidate/candidateProfile.html',context)
 
@@ -160,6 +160,22 @@ def candidateEditProfile(request):
         return redirect("CandidateHome")
     update_form = CandidateForm(request.POST or None, instance = details)
     if update_form.is_valid():
+        if len(request.FILES) != 0:
+            if len(request.FILES['profile_pic']) > 0:
+                os.remove(details.profile_pic.path)
+            details.profile_pic = request.FILES['profile_pic']
+
+            # if len(request.FILES['recent_marks_card']) > 0:
+            #     os.remove(details.recent_marks_card.path)
+            # details.recent_marks_card = request.FILES['recent_marks_card']
+       
+            # if len(details.pu_marks_card) > 0:
+            #     os.remove(details.pu_marks_card.path)
+            # details.pu_marks_card = request.FILES['pu_marks_card']
+        
+            # if len(details.tenth_marks_card) > 0 :
+            #     os.remove(details.tenth_marks_card.path)
+            # details.tenth_marks_card = request.FILES['tenth_marks_card']
         update_form.save()
         return redirect("candidateProfile")
     return render(request,'candidate/createprofile.html',{'form':update_form})
@@ -228,6 +244,12 @@ def editAccomplishments(request,acc_id):
         return redirect("candidateProfile")
     update_accform = CandidateAccomplishmentsForm(request.POST or None,instance=acc_details)
     if update_accform.is_valid():
+        print("inside form valid")
+        if len(request.FILES) != 0:
+            if len(acc_details.certificate_doc) > 0:
+                print("inside cert_doc>0")
+                os.remove(acc_details.certificate_doc.path)
+                acc_details.upload_doc = request.FILES['certificate_doc']
         update_accform.save()
         return redirect("candidateProfile")
     else:
@@ -240,6 +262,8 @@ def deleteAccomplishments(request,acc_id):
         acc_details = Accomplishments.objects.get(id=acc_id)
     except Accomplishments.DoesNotExist:
         return redirect("candidateProfile")
+    if len(acc_details.certificate_doc)>0:
+        os.remove(acc_details.certificate_doc.path)
     acc_details.delete()
     return redirect("candidateProfile")
 ######## CANDIDATE WORK EXPERIENCE ###############
@@ -305,6 +329,10 @@ def editSkills(request,skill_id):
         return redirect("candidateProfile")
     update_skillform = CandidateSkillsForm(request.POST or None,instance=skill_details)
     if update_skillform.is_valid():
+        if len(request.FILES) != 0:
+            if len(skill_details.supporting_doc)>0:
+                os.remove(skill_details.supporting_doc.path)
+            skill_details.supporting_doc = request.FILES['supporting_doc']
         update_skillform.save()
         return redirect("candidateProfile")
     else:
@@ -317,6 +345,8 @@ def deleteSkills(request,skill_id):
         skill_details = Skills.objects.get(id=skill_id)
     except Skills.DoesNotExist:
         return redirect("candidateProfile")
+    if len(skill_details.supporting_doc)>0:
+        os.remove(skill_details.supporting_doc.path)
     skill_details.delete()
     return redirect("candidateProfile")
 ############ CANDIDATE LANGUAGES KNOWN ################
@@ -358,34 +388,34 @@ def deleteLanguages(request,lan_id):
     lan_details.delete()
     return redirect("candidateProfile")
 ############## CANDIDATE SOCIAL HANDLES ###############
-# def candidateSocialHandles(request):
-#     if request.method=="POST":
-#         sh_form = CandidateSocialHandlesForm(request.POST)
-#         if sh_form.is_valid():
-#             saveInfo=sh_form.save(commit=False)
-#             candidate = Candidate.objects.get(pk=request.user)
-#             saveInfo.candidate = candidate
-#             saveInfo.save()
-#             return redirect('candidateProfile')
-#         else:
-#             return HttpResponse("Form not valid")
-#     else:
-#         sh_form = CandidateSocialHandlesForm()
-#     return render(request,'candidate/socialhandles.html',{'form':sh_form})
+def candidateSocialLinks(request):
+    if request.method=="POST":
+        sl_form = CandidateSocialLinksForm(request.POST,request.FILES)
+        if sl_form.is_valid():
+            saveInfo=sl_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        sl_form = CandidateSocialLinksForm()
+    return render(request,'candidate/sociallinks.html',{'form':sl_form})
 
-# def editSocialHandles(request,sh_id):
-#     sh_id=int(sh_id)
-#     try:
-#         sh_details = SocialHandles.objects.get(id=sh_id)
-#     except SocialHandles.DoesNotExist:
-#         return redirect("candidateProfile")
-#     update_shform = CandidateSocialHandlesForm(request.POST or None,instance=sh_details)
-#     if update_shform.is_valid():
-#         update_shform.save()
-#         return redirect("candidateProfile")
-#     else:
-#         print("form not valid")
-#     return render(request,'candidate/socialhandles.html',{'form':update_shform})
+def editSocialLinks(request,sl_id):
+    sl_id=int(sl_id)
+    try:
+        sl_details = SocialLinks.objects.get(id=sl_id)
+    except SocialLinks.DoesNotExist:
+        return redirect("candidateProfile")
+    update_slform = CandidateSocialLinksForm(request.POST or None,instance=sl_details)
+    if update_slform.is_valid():
+        update_slform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/sociallinks.html',{'form':update_slform})
 
 ######################## Recruiter Section #####################
  
@@ -430,6 +460,10 @@ def recruiterEditProfile(request):
         return redirect("RecruiterHome")
     update_form = RecruiterForm(request.POST or None, instance = details)
     if update_form.is_valid():
+        if len(request.FILES) != 0:
+            if len(details.profile_pic) > 0:
+                os.remove(details.profile_pic.path)
+            details.profile_pic = request.FILES['profile_pic']
         update_form.save()
         return redirect("recruiterProfile")
     return render(request,'recruiter/createprofile.html',{'form':update_form})
@@ -457,6 +491,10 @@ def editJob(request,job_id):
         return redirect("RecruiterHome")
     update_jobform = JobPostingForm(request.POST or None,instance=job_details)
     if update_jobform.is_valid():
+        if len(request.FILES) != 0:
+            if len(job_details.upload_doc) > 0:
+                os.remove(job_details.upload_doc.path)
+            job_details.upload_doc = request.FILES['upload_doc']
         update_jobform.save()
         return redirect("RecruiterHome")
     else:
@@ -469,5 +507,7 @@ def deleteJob(request,job_id):
         job_details = JobPosting.objects.get(id=job_id)
     except JobPosting.DoesNotExist:
         return redirect("RecruiterHome")
+    if len(job_details.upload_doc)>0:
+        os.remove(job_details.upload_doc.path)
     job_details.delete()
     return redirect("RecruiterHome")

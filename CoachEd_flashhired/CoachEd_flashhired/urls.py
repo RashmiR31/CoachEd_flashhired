@@ -60,9 +60,9 @@ urlpatterns = [
     path('candidate/languages',views.candidateLanguages,name='candidateLanguages'),
     path('candidate/editlanguages/<int:lan_id>',views.editLanguages,name="editLanguages"),
     path('candidate/deletelanguages/<int:lan_id>',views.deleteLanguages,name="deleteLanguages"),
-    # socialhandles
-    # path('candidate/socialhandles',views.candidateSocialHandles,name='candidateSocialHandles'),
-    # path('candidate/editsocialhandles/<int:sh_id>',views.editSocialHandles,name="editSocialHandles"),
+    # sociallinks
+    path('candidate/sociallinks',views.candidateSocialLinks,name='candidateSocialLinks'),
+    path('candidate/editsociallinks/<int:sl_id>',views.editSocialLinks,name="editSocialLinks"),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),

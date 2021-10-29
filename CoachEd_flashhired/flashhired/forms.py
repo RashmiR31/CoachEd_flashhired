@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
-from .models import User,Candidate, Recruiter, JobPosting,Accomplishments,Projects,Experience,Languages,Skills
+from .models import User,Candidate, Recruiter, JobPosting,Accomplishments,Projects,Experience,Languages,Skills,SocialLinks
 
 class LoginForm(forms.Form):
     username = forms.CharField(
@@ -88,3 +88,8 @@ class CandidateLanguagesForm(forms.ModelForm):
         fields = '__all__'
         exclude=('candidate',)
 
+class CandidateSocialLinksForm(forms.ModelForm):
+    class Meta:
+        model= SocialLinks
+        fields ='__all__'
+        exclude = ('candidate',)
