@@ -1,0 +1,15 @@
+<h1>Job Portal</h1>
+<table>
+    {% for job in job_details %}
+    <tr>
+        <td>{{job.job_type}}</td>
+        <td>{{job.job_title}}</td>
+        <td>{{job.functional_area}}</td>
+        <td>{{job.salary}}</td>
+        <td><a href="jobportal/viewjob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    {% endfor %}
+</table>

@@ -63,6 +63,9 @@ urlpatterns = [
     # sociallinks
     path('candidate/sociallinks',views.candidateSocialLinks,name='candidateSocialLinks'),
     path('candidate/editsociallinks/<int:sl_id>',views.editSocialLinks,name="editSocialLinks"),
+    # Job Portal
+    path('candidate/jobportal',views.candidateJobPortal,name="candidateJobPortal"),
+    path('candidate/jobportal/viewjob/<int:job_id>',views.candidateViewJob,name="candidateViewJob"),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
@@ -71,8 +74,7 @@ urlpatterns = [
     path('recruiter/addjob',views.addJob,name="addJob"),
     path('recruiter/editjob/<int:job_id>',views.editJob,name="editJob"),
     path('recruiter/deletejob/<int:job_id>',views.deleteJob,name="deleteJob"),
-
-
+    path('recruiter/viewjob/<int:job_id>',views.viewJob,name='viewJob')
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

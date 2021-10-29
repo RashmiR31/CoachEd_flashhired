@@ -249,7 +249,7 @@ def editAccomplishments(request,acc_id):
             if len(acc_details.certificate_doc) > 0:
                 print("inside cert_doc>0")
                 os.remove(acc_details.certificate_doc.path)
-                acc_details.upload_doc = request.FILES['certificate_doc']
+            acc_details.upload_doc = request.FILES['certificate_doc']
         update_accform.save()
         return redirect("candidateProfile")
     else:
@@ -417,6 +417,24 @@ def editSocialLinks(request,sl_id):
         print("form not valid")
     return render(request,'candidate/sociallinks.html',{'form':update_slform})
 
+########## JOB PORTAL ###############
+def candidateJobPortal(request):
+    if request.user.is_authenticated and request.user.is_candidate:
+        try:
+            job_details = JobPosting.objects.all()
+        except JobPosting.DoesNotExist:
+            return redirect("candidateHome")
+    return render(request,'candidate/candidatejobportal.html',{'job_details':job_details})
+
+def candidateViewJob(request,job_id):
+    job_id=int(job_id)
+    if request.user.is_authenticated and request.user.is_candidate:
+        try:
+            job_details = JobPosting.objects.get(id=job_id)
+        except JobPosting.DoesNotExist:
+            return redirect('candidateJobPortal')
+    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details})
+
 ######################## Recruiter Section #####################
  
 def RecruiterHome(request):
@@ -428,7 +446,7 @@ def RecruiterHome(request):
             return HttpResponse("Create profile to continue")
         return render(request,'recruiter/RecruiterHome.html',{'details':details,'jobs':jobs})
     else:
-        return HttpResponse("Login to continue")
+        return HttpResponse("Login as recruiter to continue")
 
 
 def recruiterCreateProfile(request):
@@ -511,3 +529,11 @@ def deleteJob(request,job_id):
         os.remove(job_details.upload_doc.path)
     job_details.delete()
     return redirect("RecruiterHome")
+
+def viewJob(request,job_id):
+    job_id = int(job_id)
+    try:
+        job_details = JobPosting.objects.get(id=job_id)
+    except JobPosting.DoesNotExist:
+        return redirect("RecruiterHome")
+    return render(request,'recruiter/viewjob.html',{'job_details':job_details})
