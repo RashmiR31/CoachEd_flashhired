@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
 from flashhired import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,7 +35,34 @@ urlpatterns = [
     path('password_reset_confirm/<uidb64>/<token>',auth_views.PasswordResetConfirmView.as_view(template_name='account/password_reset_form.html'),name="password_reset_confirm"),
     path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(template_name='account/password_reset_complete.html'),name="password_reset_complete"),
     ######## Candidate Section #####################
-    path('candidatehome/',views.CandidateHome,name='CandidateHome'),
+
+    path('candidate/',views.CandidateHome,name='CandidateHome'),
+    path('candidate/createprofile',views.candidateCreateProfile,name='candidateCreateProfile'),
+    path('candidate/profile',views.candidateProfile,name='candidateProfile'),
+    path('candidate/profile/edit',views.candidateEditProfile,name='candidateEditProfile'),
+    # work experience
+    path('candidate/experience',views.candidateExperience,name='candidateExperience'),
+    path('candidate/editexperience/<int:exp_id>',views.editExperience,name="editExperience"),
+    path('candidate/deleteexperience/<int:exp_id>',views.deleteExperience,name="deleteExperience"),
+    # accomplishments
+    path('candidate/accomplishments',views.candidateAccomplishments,name='candidateAccomplishments'),
+    path('candidate/editaccomplishments/<int:acc_id>',views.editAccomplishments,name="editAccomplishments"),
+    path('candidate/deleteaccomplishments/<int:acc_id>',views.deleteAccomplishments,name="deleteAccomplishments"),
+    # projects
+    path('candidate/projects',views.candidateProjects,name='candidateProjects'),
+    path('candidate/editprojects/<int:project_id>',views.editProjects,name="editProjects"),
+    path('candidate/deleteprojects/<int:project_id>',views.deleteProjects,name="deleteProjects"),
+    # skills
+    path('candidate/skills',views.candidateSkills,name='candidateSkills'),
+    path('candidate/editskills/<int:skill_id>',views.editSkills,name="editSkills"),
+    path('candidate/deleteskills/<int:skill_id>',views.deleteSkills,name="deleteSkills"),
+    # languages 
+    path('candidate/languages',views.candidateLanguages,name='candidateLanguages'),
+    path('candidate/editlanguages/<int:lan_id>',views.editLanguages,name="editLanguages"),
+    path('candidate/deletelanguages/<int:lan_id>',views.deleteLanguages,name="deleteLanguages"),
+    # sociallinks
+    path('candidate/sociallinks',views.candidateSocialLinks,name='candidateSocialLinks'),
+    path('candidate/editsociallinks/<int:sl_id>',views.editSocialLinks,name="editSocialLinks"),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
@@ -46,4 +75,4 @@ urlpatterns = [
 
 
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

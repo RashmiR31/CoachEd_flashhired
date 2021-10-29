@@ -1,0 +1,60 @@
+<h1>Candidate Profile</h1>
+
+<p>{{details.first_name}}</p>
+<p>{{details.gender}}</p>
+<p>{{details.dob}}</p>
+<p>{{details.recent_college_name}}</p>
+<p>{{details.recent_cgpa_equivalent}}</p>
+<p>{{details.pu_yop}}</p>
+<img src="{{details.profile_pic.url}}" alt="profile_pic" width="100px" height="100px">
+
+<p>------------------------------------------------<p>
+
+<a href="{% url 'candidateAccomplishments' %}">Add Accomplishments</a>
+{% for acc in acc_details %}
+<p>{{acc.id}}/{{acc.certificate_name}}/{{acc.certificate_issued_by}}</p>
+<a href="editaccomplishments/{{acc.id}}" class="btn btn-warning" id = '{{acc.id}}'>edit</a>
+<a href="deleteaccomplishments/{{acc.id}}" class="btn btn-warning" id = '{{acc.id}}'>delete</a>
+{% endfor %}
+<br>
+<p>---------------------------------------</p>
+<a href="{% url 'candidateProjects' %}">Add Projects</a>
+{% for p in project_details %}
+<p>{{p.id}}/{{p.project_name}}/{{p.technologies_used}}</p>
+<a href="editprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'>edit</a>
+<a href="deleteprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'>delete</a>
+{% endfor %}
+<p>---------------------------------------</p>
+<a href="{% url 'candidateSkills' %}">Add Skills</a>
+{% for s in skill_details %}
+<p>{{s.id}}/{{s.skill_name}}/{{s.rating}}</p>
+<a href="editskills/{{s.id}}" class="btn btn-warning" id = '{{s.id}}'>edit</a>
+<a href="deleteskills/{{s.id}}" class="btn btn-warning" id = '{{s.id}}'>delete</a>
+{% endfor %}
+<p>---------------------------------------</p>
+<a href="{% url 'candidateExperience' %}">Add Experience</a>
+{% for exp in exp_details %}
+<p>{{exp.id}}/{{exp.company_name}}/{{exp.duration}} </p>
+<a href="editexperience/{{exp.id}}" class="btn btn-warning" id = '{{exp.id}}'>edit</a>
+<a href="deleteexperience/{{exp.id}}" class="btn btn-warning" id = '{{exp.id}}'>delete</a>
+
+{% endfor %}
+<p>--------------------------------</p>
+<a href="{% url 'candidateLanguages' %}">Add Languages</a>
+{% for l in language_details %}
+<p>{{l.id}}/{{l.language}}/{{l.proficiency}}</p>
+<a href="editlanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'>edit</a>
+<a href="deletelanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'>delete</a>
+{% endfor %}
+<p>---------------------------------------</p>
+{% if social_links.exists %}
+{% for sl in social_links %}
+<p>{{sl.id}} / {{sl.linkedin}} / {{sl.github}}</p>
+<a href="editsociallinks/{{sl.id}}" class="btn btn-warning" id = '{{sl.id}}'>edit</a>
+{% endfor %}
+{% else %}
+<a href="{% url 'candidateSocialLinks' %}">Add Social Links</a>
+{% endif %}
+<p>----------------------------------------</p>
+<br>
+<a href="{% url 'candidateEditProfile' %}">Edit Entire Profile</a>
