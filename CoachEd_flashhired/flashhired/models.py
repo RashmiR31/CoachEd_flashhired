@@ -145,14 +145,6 @@ class Accomplishments(models.Model):
     award_name = models.CharField(max_length=255)
     award_issued_by = models.CharField(max_length=255)
 
-class WorkExperience(models.Model):
-    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
-    company_name = models.CharField(max_length=255,null=True)
-    role=models.CharField(max_length=100,null=True)
-    duration = models.IntegerField(null=True)
-    work_description = models.TextField(null=True)
-    supporting_doc=models.FileField(upload_to='candidate/work_doc/',null=True)
-
 class Projects(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
     project_name = models.CharField(max_length=255)
@@ -162,3 +154,35 @@ class Projects(models.Model):
     description = models.TextField()
     supporting_media_or_link = models.CharField(max_length=5000)
 
+class Experience(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    company_name = models.CharField(max_length=255)
+    role = models.CharField(max_length=100)
+    duration = models.IntegerField(default=0)
+    description = models.TextField(blank=True)
+    supporting_doc = models.FileField(upload_to='candidate/experience/')
+
+class Skills(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    skill_name = models.CharField(max_length=50)
+    rating = models.IntegerField()
+    supporting_doc = models.FileField(upload_to='candidate/skills')
+
+class Languages(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+    language = models.CharField(max_length=50)
+    proficiency = models.CharField(max_length=50)
+
+# class SocialHandles(models.Model):
+#     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
+#     facebook = models.URLField(max_length=500,blank=True)
+#     instagram = models.URLField(max_length=500,blank=True)
+#     linkedin =models.URLField(max_length=500,blank=True)
+#     github = models.URLField(max_length=500,blank=True)
+#     personal_website = models.URLField(max_length=500,blank=True)
+#     codechef = models.URLField(max_length=500,blank=True)
+#     hackerrank = models.URLField(max_length=500,blank=True)
+#     kaggle =models.URLField(max_length=500,blank=True)
+#     twitter = models.URLField(max_length=500,blank=True)
+#     dribble =models.URLField(max_length=500,blank=True)
+#     other =models.URLField(max_length=500,blank=True)

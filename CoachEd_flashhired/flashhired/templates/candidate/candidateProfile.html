@@ -9,14 +9,6 @@
 <img src="{{details.profile_pic.url}}" alt="profile_pic" width="100px" height="100px">
 
 <p>------------------------------------------------<p>
-<a href="{% url 'candidateWorkExperience' %}">Add Work Experience</a>
-{% for work in work_details %}
-<p>{{work.id}}/{{work.company_name}}/{{work.role}}</p>
-<a href="editworkexperience/{{work.id}}" class="btn btn-warning" id = '{{work.id}}'>edit</a>
-<a href="deleteworkexperience/{{work.id}}" class="btn btn-warning" id = '{{work.id}}'>delete</a>
-{% endfor %}
-<br>
-<p>--------------------------------</p>
 
 <a href="{% url 'candidateAccomplishments' %}">Add Accomplishments</a>
 {% for acc in acc_details %}
@@ -33,5 +25,29 @@
 <a href="deleteprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'>delete</a>
 {% endfor %}
 <p>---------------------------------------</p>
+<a href="{% url 'candidateSkills' %}">Add Skills</a>
+{% for s in skill_details %}
+<p>{{s.id}}/{{s.skill_name}}/{{s.rating}}</p>
+<a href="editskills/{{s.id}}" class="btn btn-warning" id = '{{s.id}}'>edit</a>
+<a href="deleteskills/{{s.id}}" class="btn btn-warning" id = '{{s.id}}'>delete</a>
+{% endfor %}
+<p>---------------------------------------</p>
+<a href="{% url 'candidateExperience' %}">Add Experience</a>
+{% for exp in exp_details %}
+<p>{{exp.id}}/{{exp.company_name}}/{{exp.duration}} </p>
+<a href="editexperience/{{exp.id}}" class="btn btn-warning" id = '{{exp.id}}'>edit</a>
+<a href="deleteexperience/{{exp.id}}" class="btn btn-warning" id = '{{exp.id}}'>delete</a>
+
+{% endfor %}
+<p>--------------------------------</p>
+<a href="{% url 'candidateLanguages' %}">Add Languages</a>
+{% for l in language_details %}
+<p>{{l.id}}/{{l.language}}/{{l.proficiency}}</p>
+<a href="editlanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'>edit</a>
+<a href="deletelanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'>delete</a>
+{% endfor %}
+<p>---------------------------------------</p>
+
+<p>----------------------------------------</p>
 <br>
 <a href="{% url 'candidateEditProfile' %}">Edit Entire Profile</a>

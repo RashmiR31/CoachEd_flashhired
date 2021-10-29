@@ -136,14 +136,20 @@ def candidateCreateProfile(request):
 def candidateProfile(request):
     if request.user.is_authenticated:
         details = Candidate.objects.get(pk=request.user)
-        work_details = WorkExperience.objects.all().filter(candidate=details)
+        exp_details = Experience.objects.all().filter(candidate=details)
         acc_details = Accomplishments.objects.all().filter(candidate=details)
         project_details = Projects.objects.all().filter(candidate=details)
+        skill_details = Skills.objects.all().filter(candidate=details)
+        language_details = Languages.objects.all().filter(candidate=details)
+        # social_handles = SocialHandles.objects.all().filter(candidate=details)
     context={
         'details':details,
-        'work_details':work_details,
+        'exp_details':exp_details,
         'acc_details':acc_details,
         'project_details':project_details,
+        'skill_details':skill_details,
+        'language_details':language_details,
+        # 'social_handles':social_handles,
     }
     return render(request,'candidate/candidateProfile.html',context)
 
@@ -158,44 +164,6 @@ def candidateEditProfile(request):
         return redirect("candidateProfile")
     return render(request,'candidate/createprofile.html',{'form':update_form})
 
-######## WORK EXPERIENCE ###############
-def candidateWorkExperience(request):
-    if request.method=="POST":
-        workexp_form = CandidateWorkExperienceForm(request.POST,request.FILES)
-        if workexp_form.is_valid():
-            saveInfo=workexp_form.save(commit=False)
-            candidate = Candidate.objects.get(pk=request.user)
-            saveInfo.candidate = candidate
-            saveInfo.save()
-            return redirect('candidateProfile')
-        else:
-            return HttpResponse("Form not valid")
-    else:
-        workexp_form = CandidateWorkExperienceForm()
-    return render(request,'candidate/workexperience.html',{'form':workexp_form})
-
-def editWorkExperience(request,work_id):
-    work_id=int(work_id)
-    try:
-        work_details = WorkExperience.objects.get(id=work_id)
-    except WorkExperience.DoesNotExist:
-        return redirect("candidateProfile")
-    update_workform = CandidateWorkExperienceForm(request.POST or None,instance=work_details)
-    if update_workform.is_valid():
-        update_workform.save()
-        return redirect("candidateProfile")
-    else:
-        print("form not valid")
-    return render(request,'candidate/workexperience.html',{'form':update_workform})
-
-def deleteWorkExperience(request,work_id):
-    work_id=int(work_id)
-    try:
-        work_details = WorkExperience.objects.get(id=work_id)
-    except WorkExperience.DoesNotExist:
-        return redirect("candidateProfile")
-    work_details.delete()
-    return redirect("candidateProfile")
 ############### PROJECTS ##################
 def candidateProjects(request):
     if request.method=="POST":
@@ -234,6 +202,7 @@ def deleteProjects(request,project_id):
         return redirect("candidateProfile")
     project_details.delete()
     return redirect("candidateProfile")
+
 ######## ACCOMPLISHMENTS ###############
 
 def candidateAccomplishments(request):
@@ -273,7 +242,150 @@ def deleteAccomplishments(request,acc_id):
         return redirect("candidateProfile")
     acc_details.delete()
     return redirect("candidateProfile")
+######## CANDIDATE WORK EXPERIENCE ###############
+def candidateExperience(request):
+    if request.method=="POST":
+        exp_form = CandidateExperienceForm(request.POST,request.FILES)
+        if exp_form.is_valid():
+            saveInfo=exp_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        exp_form = CandidateExperienceForm()
+    return render(request,'candidate/experience.html',{'form':exp_form})
 
+def editExperience(request,exp_id):
+    exp_id=int(exp_id)
+    try:
+        exp_details = Experience.objects.get(id=exp_id)
+    except Experience.DoesNotExist:
+        return redirect("candidateProfile")
+    update_expform = CandidateExperienceForm(request.POST or None,instance=exp_details)
+    if update_expform.is_valid():
+        update_expform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/experience.html',{'form':update_expform})
+
+def deleteExperience(request,exp_id):
+    exp_id=int(exp_id)
+    try:
+        exp_details = Experience.objects.get(id=exp_id)
+    except Experience.DoesNotExist:
+        return redirect("candidateProfile")
+    exp_details.delete()
+    return redirect("candidateProfile")
+
+############## CANDIDATE SKILLS ##############
+def candidateSkills(request):
+    if request.method=="POST":
+        skill_form = CandidateSkillsForm(request.POST,request.FILES)
+        if skill_form.is_valid():
+            saveInfo=skill_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        skill_form = CandidateSkillsForm()
+    return render(request,'candidate/skills.html',{'form':skill_form})
+
+def editSkills(request,skill_id):
+    skill_id=int(skill_id)
+    try:
+        skill_details = Skills.objects.get(id=skill_id)
+    except Skills.DoesNotExist:
+        return redirect("candidateProfile")
+    update_skillform = CandidateSkillsForm(request.POST or None,instance=skill_details)
+    if update_skillform.is_valid():
+        update_skillform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/skills.html',{'form':update_skillform})
+
+def deleteSkills(request,skill_id):
+    skill_id=int(skill_id)
+    try:
+        skill_details = Skills.objects.get(id=skill_id)
+    except Skills.DoesNotExist:
+        return redirect("candidateProfile")
+    skill_details.delete()
+    return redirect("candidateProfile")
+############ CANDIDATE LANGUAGES KNOWN ################
+def candidateLanguages(request):
+    if request.method=="POST":
+        lan_form = CandidateLanguagesForm(request.POST,request.FILES)
+        if lan_form.is_valid():
+            saveInfo=lan_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            saveInfo.candidate = candidate
+            saveInfo.save()
+            return redirect('candidateProfile')
+        else:
+            return HttpResponse("Form not valid")
+    else:
+        lan_form = CandidateLanguagesForm()
+    return render(request,'candidate/languages.html',{'form':lan_form})
+
+def editLanguages(request,lan_id):
+    lan_id=int(lan_id)
+    try:
+        lan_details = Languages.objects.get(id=lan_id)
+    except Languages.DoesNotExist:
+        return redirect("candidateProfile")
+    update_lanform = CandidateLanguagesForm(request.POST or None,instance=lan_details)
+    if update_lanform.is_valid():
+        update_lanform.save()
+        return redirect("candidateProfile")
+    else:
+        print("form not valid")
+    return render(request,'candidate/languages.html',{'form':update_lanform})
+
+def deleteLanguages(request,lan_id):
+    lan_id=int(lan_id)
+    try:
+        lan_details = Languages.objects.get(id=lan_id)
+    except Languages.DoesNotExist:
+        return redirect("candidateProfile")
+    lan_details.delete()
+    return redirect("candidateProfile")
+############## CANDIDATE SOCIAL HANDLES ###############
+# def candidateSocialHandles(request):
+#     if request.method=="POST":
+#         sh_form = CandidateSocialHandlesForm(request.POST)
+#         if sh_form.is_valid():
+#             saveInfo=sh_form.save(commit=False)
+#             candidate = Candidate.objects.get(pk=request.user)
+#             saveInfo.candidate = candidate
+#             saveInfo.save()
+#             return redirect('candidateProfile')
+#         else:
+#             return HttpResponse("Form not valid")
+#     else:
+#         sh_form = CandidateSocialHandlesForm()
+#     return render(request,'candidate/socialhandles.html',{'form':sh_form})
+
+# def editSocialHandles(request,sh_id):
+#     sh_id=int(sh_id)
+#     try:
+#         sh_details = SocialHandles.objects.get(id=sh_id)
+#     except SocialHandles.DoesNotExist:
+#         return redirect("candidateProfile")
+#     update_shform = CandidateSocialHandlesForm(request.POST or None,instance=sh_details)
+#     if update_shform.is_valid():
+#         update_shform.save()
+#         return redirect("candidateProfile")
+#     else:
+#         print("form not valid")
+#     return render(request,'candidate/socialhandles.html',{'form':update_shform})
 
 ######################## Recruiter Section #####################
  

@@ -41,9 +41,9 @@ urlpatterns = [
     path('candidate/profile',views.candidateProfile,name='candidateProfile'),
     path('candidate/profile/edit',views.candidateEditProfile,name='candidateEditProfile'),
     # work experience
-    path('candidate/workexperience',views.candidateWorkExperience,name='candidateWorkExperience'),
-    path('candidate/editworkexperience/<int:work_id>',views.editWorkExperience,name="editWorkExperience"),
-    path('candidate/deleteworkexperience/<int:work_id>',views.deleteWorkExperience,name="deleteWorkExperience"),
+    path('candidate/experience',views.candidateExperience,name='candidateExperience'),
+    path('candidate/editexperience/<int:exp_id>',views.editExperience,name="editExperience"),
+    path('candidate/deleteexperience/<int:exp_id>',views.deleteExperience,name="deleteExperience"),
     # accomplishments
     path('candidate/accomplishments',views.candidateAccomplishments,name='candidateAccomplishments'),
     path('candidate/editaccomplishments/<int:acc_id>',views.editAccomplishments,name="editAccomplishments"),
@@ -52,6 +52,17 @@ urlpatterns = [
     path('candidate/projects',views.candidateProjects,name='candidateProjects'),
     path('candidate/editprojects/<int:project_id>',views.editProjects,name="editProjects"),
     path('candidate/deleteprojects/<int:project_id>',views.deleteProjects,name="deleteProjects"),
+    # skills
+    path('candidate/skills',views.candidateSkills,name='candidateSkills'),
+    path('candidate/editskills/<int:skill_id>',views.editSkills,name="editSkills"),
+    path('candidate/deleteskills/<int:skill_id>',views.deleteSkills,name="deleteSkills"),
+    # languages 
+    path('candidate/languages',views.candidateLanguages,name='candidateLanguages'),
+    path('candidate/editlanguages/<int:lan_id>',views.editLanguages,name="editLanguages"),
+    path('candidate/deletelanguages/<int:lan_id>',views.deleteLanguages,name="deleteLanguages"),
+    # socialhandles
+    # path('candidate/socialhandles',views.candidateSocialHandles,name='candidateSocialHandles'),
+    # path('candidate/editsocialhandles/<int:sh_id>',views.editSocialHandles,name="editSocialHandles"),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
