@@ -16,6 +16,7 @@
 <hr>
 {% for job in jobs %}
 <p>{{job.job_title}} / {{job.job_type}} / {{job.functional_area}}</p>
+<a href="viewjob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>view</a>
 <a href="editjob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>edit</a>
 <a href="deletejob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>delete</a>
 
