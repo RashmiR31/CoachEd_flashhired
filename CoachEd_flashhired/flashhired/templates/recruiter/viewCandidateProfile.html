@@ -1,0 +1,52 @@
+<h1>Candidate Profile</h1>
+<h3>Details</h3>
+<p>{{details.first_name}}</p>
+<p>{{details.gender}}</p>
+<p>{{details.dob}}</p>
+<p>{{details.recent_college_name}}</p>
+<p>{{details.recent_cgpa_equivalent}}</p>
+<p>{{details.pu_yop}}</p>
+<img src="{{details.profile_pic.url}}" alt="profile_pic" width="100px" height="100px">
+
+{% if acc_details.exists %}
+<h3>Accomplishments</h3>
+{% for acc in acc_details %}
+<p>{{acc.id}}/{{acc.certificate_name}}/{{acc.certificate_issued_by}}</p>
+{% endfor %}
+{% endif %}
+<br>
+{% if project_details.exists %}
+<h3>Projects</h3>
+{% for p in project_details %}
+<p>{{p.id}}/{{p.project_name}}/{{p.technologies_used}}</p>
+{% endfor %}
+{% endif %}
+<h3>Skills</h3>
+{% if skill_details.exists %}
+{% for s in skill_details %}
+<p>{{s.id}}/{{s.skill_name}}/{{s.rating}}</p>
+{% endfor %}
+{% endif %}
+<h3>Experience</h3>
+{% if exp_details.exists %}
+{% for exp in exp_details %}
+<p>{{exp.id}}/{{exp.company_name}}/{{exp.duration}} </p>
+{% endfor %}
+{% endif %}
+<h3>Languages</h3>
+{% if languages_details.exists %}
+{% for l in language_details %}
+<p>{{l.id}}/{{l.language}}/{{l.proficiency}}</p>
+{% endfor %}
+{% endif %}
+<h3>Social Links</h3>
+{% if social_links.exists %}
+{% for sl in social_links %}
+<p>{{sl.id}} / {{sl.linkedin}} / {{sl.github}}</p>
+{% endfor %}
+{% endif %}
+
+<a href="{% url 'shortlistCandidate' details.user_id %}">Shortlist</a>
+
+
+

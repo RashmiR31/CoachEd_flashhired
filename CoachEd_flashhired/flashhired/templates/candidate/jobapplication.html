@@ -1,0 +1,11 @@
+{% if applied %}
+<p>You have applied for {{job.job_title}} </p>
+{% else %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{apply_form.as_table}}
+        <td><button type="submit" name="submit"  >Save</button></td>
+    </table>
+</form>
+{% endif %}

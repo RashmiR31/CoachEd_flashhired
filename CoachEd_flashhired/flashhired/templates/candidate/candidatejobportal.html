@@ -6,7 +6,7 @@
         <td>{{job.job_title}}</td>
         <td>{{job.functional_area}}</td>
         <td>{{job.salary}}</td>
-        <td><a href="jobportal/viewjob/{{job.id}}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
+        <td><a href="{% url 'candidateViewJob' job.id %}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
     </tr>
     <tr>
         <td></td>

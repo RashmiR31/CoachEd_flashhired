@@ -164,7 +164,6 @@ def candidateEditProfile(request):
             if len(request.FILES['profile_pic']) > 0:
                 os.remove(details.profile_pic.path)
             details.profile_pic = request.FILES['profile_pic']
-
             # if len(request.FILES['recent_marks_card']) > 0:
             #     os.remove(details.recent_marks_card.path)
             # details.recent_marks_card = request.FILES['recent_marks_card']
@@ -431,9 +430,49 @@ def candidateViewJob(request,job_id):
     if request.user.is_authenticated and request.user.is_candidate:
         try:
             job_details = JobPosting.objects.get(id=job_id)
+            applied_to_job_details = JobApplication.objects.all()
+            candidate = Candidate.objects.get(pk=request.user)
+            job = JobPosting.objects.get(id=job_id)
+            try:
+                if JobApplication.objects.get(candidate=candidate,job=job):
+                    print("applied")
+                    applied = True
+            except JobApplication.DoesNotExist:
+                print("not applied")
+                applied = False
         except JobPosting.DoesNotExist:
             return redirect('candidateJobPortal')
-    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details})
+    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details,'applied':applied})
+
+def candidateJobApplication(request,job_id):
+    job_id = int(job_id)
+    try: 
+        candidate = Candidate.objects.get(pk=request.user)
+        if JobApplication.objects.get(candidate=candidate,job=job_id):
+            applied=True
+    except JobApplication.DoesNotExist:
+        print("not applied")
+        applied = False
+    if request.method=="POST" and request.user.is_candidate:
+        apply_form = JobApplicationForm(request.POST)
+        if apply_form.is_valid():
+            print("inside application form valid")
+            saveInfo = apply_form.save(commit=False)
+            candidate = Candidate.objects.get(pk=request.user)
+            job = JobPosting.objects.get(id=job_id)
+            saveInfo.candidate = candidate
+            saveInfo.job = job
+            saveInfo.status = "Applied"
+            saveInfo.save()
+            return redirect('candidateViewJob',job_id)
+        else:
+            return HttpResponse("application form not valid")
+    else:
+        apply_form= JobApplicationForm()
+    current_job = JobPosting.objects.get(id=job_id)
+    return render(request,'candidate/jobapplication.html',{'apply_form':apply_form,'applied':applied,'job':current_job})
+        
+    
 
 ######################## Recruiter Section #####################
  
@@ -534,6 +573,63 @@ def viewJob(request,job_id):
     job_id = int(job_id)
     try:
         job_details = JobPosting.objects.get(id=job_id)
+        try:
+            candidate_ids = JobApplication.objects.all().filter(job=job_id).values('candidate')
+            print(candidate_ids)
+            applicants=[]
+            for value in candidate_ids:
+                c_id=value['candidate']
+                applicants.append(Candidate.objects.get(user_id=c_id))
+            print(applicants)
+        except JobApplication.DoesNotExist:
+            print("No applicants")
     except JobPosting.DoesNotExist:
         return redirect("RecruiterHome")
-    return render(request,'recruiter/viewjob.html',{'job_details':job_details})
+    
+    return render(request,'recruiter/viewjob.html',{'job_details':job_details,'applicants':applicants})
+
+def viewCandidateProfile(request,user_id):
+    if request.user.is_authenticated:
+        try:
+            c_id=int(user_id)
+            details = Candidate.objects.get(user_id=c_id)
+            try:
+                exp_details = Experience.objects.all().filter(candidate=details)
+            except Experience.DoesNotExist:
+                print("No experience")
+            try:
+                acc_details = Accomplishments.objects.all().filter(candidate=details)
+            except Accomplishments.DoesNotExist:
+                print("No accomplishments")
+            try:
+                project_details = Projects.objects.all().filter(candidate=details)
+            except Projects.DoesNotExist:
+                print("No Projects")
+            try:
+                skill_details = Skills.objects.all().filter(candidate=details)
+            except Skills.DoesNotExist:
+                print("No skills")
+            try:
+                language_details = Languages.objects.all().filter(candidate=details)
+            except Languages.DoesNotExist:
+                print("No languages")
+            try:
+                social_links = SocialLinks.objects.all().filter(candidate=details)
+            except SocialLinks.DoesNotExist:
+                print("no social links")
+            context={
+                'details':details,
+                'exp_details':exp_details,
+                'acc_details':acc_details,
+                'project_details':project_details,
+                'skill_details':skill_details,
+                'language_details':language_details,
+                'social_links':social_links,
+            }
+        except Candidate.DoesNotExist:
+            print(" candidate doesn't exist")
+    return render(request,'recruiter/viewCandidateProfile.html',context)
+
+def shortlistCandidate(request,user_id,job_id):
+
+    return redirect('viewJob')

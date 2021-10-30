@@ -57,15 +57,16 @@ urlpatterns = [
     path('candidate/editskills/<int:skill_id>',views.editSkills,name="editSkills"),
     path('candidate/deleteskills/<int:skill_id>',views.deleteSkills,name="deleteSkills"),
     # languages 
-    path('candidate/languages',views.candidateLanguages,name='candidateLanguages'),
+    path('candidate/languages/',views.candidateLanguages,name='candidateLanguages'),
     path('candidate/editlanguages/<int:lan_id>',views.editLanguages,name="editLanguages"),
     path('candidate/deletelanguages/<int:lan_id>',views.deleteLanguages,name="deleteLanguages"),
     # sociallinks
-    path('candidate/sociallinks',views.candidateSocialLinks,name='candidateSocialLinks'),
+    path('candidate/sociallinks/',views.candidateSocialLinks,name='candidateSocialLinks'),
     path('candidate/editsociallinks/<int:sl_id>',views.editSocialLinks,name="editSocialLinks"),
     # Job Portal
-    path('candidate/jobportal',views.candidateJobPortal,name="candidateJobPortal"),
+    path('candidate/jobportal/',views.candidateJobPortal,name="candidateJobPortal"),
     path('candidate/jobportal/viewjob/<int:job_id>',views.candidateViewJob,name="candidateViewJob"),
+    path('candidate/jobportal/application/<int:job_id>',views.candidateJobApplication,name='candidateJobApplication'),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
@@ -74,7 +75,8 @@ urlpatterns = [
     path('recruiter/addjob',views.addJob,name="addJob"),
     path('recruiter/editjob/<int:job_id>',views.editJob,name="editJob"),
     path('recruiter/deletejob/<int:job_id>',views.deleteJob,name="deleteJob"),
-    path('recruiter/viewjob/<int:job_id>',views.viewJob,name='viewJob')
-
+    path('recruiter/viewjob/<int:job_id>',views.viewJob,name='viewJob'),
+    path('recruiter/view_candidate_profile/<int:user_id>',views.viewCandidateProfile,name='viewCandidateProfile'),
+    path('recruiter/shortlist_candidate/<int:user_id>/<int:job_id>',views.shortlistCandidate,name='shortlistCandidate'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

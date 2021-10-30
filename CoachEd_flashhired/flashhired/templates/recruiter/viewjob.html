@@ -7,3 +7,7 @@
 <p>{{job_details.salary}}</p>
 <p>{{job_details.date_posted}}</p>
 <a href="{{job_details.upload_doc.url}}" target="_blank">view JD</a>
+<p>-----------------------</p>
+{% for a in applicants %}
+<p> {{a.user_id}} / {{a.first_name}} {{a.last_name}} / <a href="{% url 'viewCandidateProfile' a.user_id %}">View Profile</a></p>
+{% endfor %}

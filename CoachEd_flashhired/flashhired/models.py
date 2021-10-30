@@ -185,3 +185,8 @@ class SocialLinks(models.Model):
     twitter=models.URLField(max_length=500,blank=True)
     dribble=models.URLField(max_length=500,blank=True)
     other=models.URLField(max_length=500,blank=True)
+
+class JobApplication(models.Model):
+    candidate = models.ForeignKey("Candidate",on_delete=models.CASCADE)
+    job = models.ForeignKey("JobPosting",on_delete=models.CASCADE)
+    status = models.CharField(max_length=20)

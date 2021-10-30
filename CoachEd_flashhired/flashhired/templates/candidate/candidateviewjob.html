@@ -8,5 +8,8 @@
 <p>{{job_details.salary}}</p>
 <p>{{job_details.date_posted}}</p>
 <a href="{{job_details.upload_doc.url}}" target="_blank">view JD</a>
-
-<p><a href="">Apply</a></p>
+{% if applied %}
+<p>You have applied for this job</p>
+{% else %}
+<p><a href="{% url 'candidateJobApplication' job_details.id %}" class="btn btn-warning" id = '{{job_details.id}}'>Apply</a></p>
+{% endif %}
