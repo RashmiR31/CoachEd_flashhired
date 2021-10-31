@@ -114,7 +114,19 @@ def CandidateHome(request):
             details = Candidate.objects.get(pk=request.user)
         except Candidate.DoesNotExist:
             return HttpResponse("Create profile to continue")
-        return render(request,'candidate/CandidateHome.html',{'details':details})
+        try:
+            application = JobApplication.objects.all().filter(candidate=details)
+            shortlisted_jobs=[]
+            print(application)
+            for app in application:
+                if app.status=="Shortlisted":
+                    print("shortlisted for",app.job)
+                    shortlisted_jobs.append(app.job)
+                    
+        except JobApplication.DoesNotExist:
+            print("not applied to any jobs")
+
+        return render(request,'candidate/CandidateHome.html',{'details':details,'shortlisted_jobs':shortlisted_jobs})
     else:
         return HttpResponse("Login as Candidate to continue")
 
@@ -430,19 +442,24 @@ def candidateViewJob(request,job_id):
     if request.user.is_authenticated and request.user.is_candidate:
         try:
             job_details = JobPosting.objects.get(id=job_id)
-            applied_to_job_details = JobApplication.objects.all()
             candidate = Candidate.objects.get(pk=request.user)
             job = JobPosting.objects.get(id=job_id)
             try:
-                if JobApplication.objects.get(candidate=candidate,job=job):
+                application = JobApplication.objects.get(candidate=candidate,job=job)
+                if application:
                     print("applied")
                     applied = True
+                if application.status =="Shortlisted":
+                    shortlisted = True
+                else: 
+                    shortlisted=False
             except JobApplication.DoesNotExist:
                 print("not applied")
                 applied = False
+
         except JobPosting.DoesNotExist:
             return redirect('candidateJobPortal')
-    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details,'applied':applied})
+    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details,'applied':applied,'shortlisted':shortlisted})
 
 def candidateJobApplication(request,job_id):
     job_id = int(job_id)

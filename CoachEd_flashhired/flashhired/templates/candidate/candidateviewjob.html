@@ -9,7 +9,11 @@
 <p>{{job_details.date_posted}}</p>
 <a href="{{job_details.upload_doc.url}}" target="_blank">view JD</a>
 {% if applied %}
-<p>You have applied for this job</p>
+    {% if shortlisted %}
+        <p>Congratulations you have been shortlisted for this job</p>
+    {% else %}
+        <p>You have applied for this job</p>
+    {% endif %}
 {% else %}
 <p><a href="{% url 'candidateJobApplication' job_details.id %}" class="btn btn-warning" id = '{{job_details.id}}'>Apply</a></p>
 {% endif %}

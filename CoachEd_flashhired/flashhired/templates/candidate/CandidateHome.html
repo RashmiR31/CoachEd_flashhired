@@ -6,3 +6,10 @@
 <p><a href="{% url 'candidateProfile' %}">Profile</a></p>
 <p><a href="{% url 'candidateJobPortal' %}">Job Portal</a></p>
 <p><a href="{% url 'logout_view' %}">Logout</a></p>
+
+{% if shortlisted_jobs %}
+<h2>Shortlisted Jobs</h2>
+{% for job in shortlisted_jobs %}
+<p> {{job.id}}/{{job.job_title}}/{{job.job_type}} / <a href="{% url 'candidateViewJob' job.id %}">View job</a> </p>
+{% endfor %}
+{% endif %}
