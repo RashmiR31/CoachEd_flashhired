@@ -76,7 +76,7 @@ urlpatterns = [
     path('recruiter/editjob/<int:job_id>',views.editJob,name="editJob"),
     path('recruiter/deletejob/<int:job_id>',views.deleteJob,name="deleteJob"),
     path('recruiter/viewjob/<int:job_id>',views.viewJob,name='viewJob'),
-    path('recruiter/view_candidate_profile/<int:user_id>',views.viewCandidateProfile,name='viewCandidateProfile'),
+    path('recruiter/view_candidate_profile/<int:user_id>/<int:job_id>',views.viewCandidateProfile,name='viewCandidateProfile'),
     path('recruiter/shortlist_candidate/<int:user_id>/<int:job_id>',views.shortlistCandidate,name='shortlistCandidate'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

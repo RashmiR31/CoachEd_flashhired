@@ -46,7 +46,9 @@
 {% endfor %}
 {% endif %}
 
-<a href="{% url 'shortlistCandidate' details.user_id %}">Shortlist</a>
-
-
+{% if shortlisted %}
+<p>You have shortlisted this candidate</p>
+{% else %}
+<a href="{% url 'shortlistCandidate' c_id job_id %}">Shortlist</a>
+{% endif %}
 

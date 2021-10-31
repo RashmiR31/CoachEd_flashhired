@@ -9,5 +9,10 @@
 <a href="{{job_details.upload_doc.url}}" target="_blank">view JD</a>
 <p>-----------------------</p>
 {% for a in applicants %}
-<p> {{a.user_id}} / {{a.first_name}} {{a.last_name}} / <a href="{% url 'viewCandidateProfile' a.user_id %}">View Profile</a></p>
+<p> {{a.user_id}} / {{a.first_name}} {{a.last_name}} / <a href="{% url 'viewCandidateProfile' a.user_id job_details.id %}">View Profile</a></p>
+{% endfor %}
+<p>------------------------</p>
+<h2>Shortlisted candidates</h2>
+{% for s in shortlisted_candidates %}
+<p> {{s.user_id}} / {{s.first_name}} {{s.last_name}} /<a href="{% url 'viewCandidateProfile' s.user_id job_details.id %}">View Profile</a> </p>
 {% endfor %}

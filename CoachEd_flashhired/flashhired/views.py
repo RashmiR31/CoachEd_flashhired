@@ -577,20 +577,29 @@ def viewJob(request,job_id):
             candidate_ids = JobApplication.objects.all().filter(job=job_id).values('candidate')
             print(candidate_ids)
             applicants=[]
+            shortlisted_candidates =[]
             for value in candidate_ids:
                 c_id=value['candidate']
                 applicants.append(Candidate.objects.get(user_id=c_id))
-            print(applicants)
+                application = JobApplication.objects.get(candidate=c_id,job=job_id)
+                if application.status == "Shortlisted":
+                    shortlisted= True
+                    shortlisted_candidates.append(Candidate.objects.get(user_id=c_id))
+                    print(application.candidate,'candidate is shortlisted')
+                else: 
+                    shortlisted = False
+    
         except JobApplication.DoesNotExist:
             print("No applicants")
     except JobPosting.DoesNotExist:
         return redirect("RecruiterHome")
     
-    return render(request,'recruiter/viewjob.html',{'job_details':job_details,'applicants':applicants})
+    return render(request,'recruiter/viewjob.html',{'job_details':job_details,'applicants':applicants,'shortlisted_candidates':shortlisted_candidates})
 
-def viewCandidateProfile(request,user_id):
+def viewCandidateProfile(request,user_id,job_id):
     if request.user.is_authenticated:
         try:
+            job_id = int(job_id)
             c_id=int(user_id)
             details = Candidate.objects.get(user_id=c_id)
             try:
@@ -617,6 +626,14 @@ def viewCandidateProfile(request,user_id):
                 social_links = SocialLinks.objects.all().filter(candidate=details)
             except SocialLinks.DoesNotExist:
                 print("no social links")
+            try:
+                application = JobApplication.objects.get(candidate=user_id,job=job_id)
+                if application.status == "Shortlisted":
+                    shortlisted= True
+                else: 
+                    shortlisted = False
+            except JobApplication.DoesNotExist:
+                print("job not applied")
             context={
                 'details':details,
                 'exp_details':exp_details,
@@ -625,11 +642,21 @@ def viewCandidateProfile(request,user_id):
                 'skill_details':skill_details,
                 'language_details':language_details,
                 'social_links':social_links,
+                'c_id':c_id,
+                'job_id':job_id,
+                'shortlisted':shortlisted
             }
         except Candidate.DoesNotExist:
-            print(" candidate doesn't exist")
+            print(" candidate doesn't exist")     
+                
     return render(request,'recruiter/viewCandidateProfile.html',context)
 
 def shortlistCandidate(request,user_id,job_id):
-
-    return redirect('viewJob')
+    try:
+        applicant = JobApplication.objects.get(candidate=user_id,job=job_id)
+        applicant.status = "Shortlisted"
+        print(applicant.status)
+        applicant.save()
+    except JobApplication.DoesNotExist:
+        print("No Applicants")
+    return redirect('viewJob',job_id)

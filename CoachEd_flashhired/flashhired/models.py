@@ -131,7 +131,8 @@ class Candidate(models.Model):
     tenth_yop = models.DateField(default=timezone.now)
     tenth_percentage = models.DecimalField(max_digits=4,decimal_places=2)
     tenth_marks_card = models.FileField(upload_to='candidate/tenth/marks_card/')
-    #Work Experience
+    #Resume
+    Resume = models.FileField(upload_to='candidate/resume/')
 
 
 class Accomplishments(models.Model):
