@@ -80,6 +80,7 @@ class JobPosting(models.Model):
     job_title = models.CharField(max_length=255)
     functional_area = models.CharField(max_length=255)
     jd = models.TextField()
+    required_cgpa = models.DecimalField(max_digits=4,decimal_places=2,default=6)
     required_skills = models.TextField()
     required_experience = models.IntegerField()
     required_education = models.TextField()

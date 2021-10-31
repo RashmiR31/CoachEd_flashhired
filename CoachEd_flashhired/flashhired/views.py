@@ -592,9 +592,10 @@ def viewJob(request,job_id):
         job_details = JobPosting.objects.get(id=job_id)
         try:
             candidate_ids = JobApplication.objects.all().filter(job=job_id).values('candidate')
-            print(candidate_ids)
             applicants=[]
             shortlisted_candidates =[]
+            suggested_candidates=[]
+            ordered_candidates = Candidate.objects.order_by('recent_cgpa_equivalent').reverse()[:5]
             for value in candidate_ids:
                 c_id=value['candidate']
                 applicants.append(Candidate.objects.get(user_id=c_id))
@@ -602,16 +603,24 @@ def viewJob(request,job_id):
                 if application.status == "Shortlisted":
                     shortlisted= True
                     shortlisted_candidates.append(Candidate.objects.get(user_id=c_id))
-                    print(application.candidate,'candidate is shortlisted')
                 else: 
                     shortlisted = False
-    
+                applicant = Candidate.objects.get(user_id = c_id)
+                if applicant in ordered_candidates:
+                    suggested_candidates.append(applicant)
+            print(suggested_candidates)
+            
         except JobApplication.DoesNotExist:
             print("No applicants")
     except JobPosting.DoesNotExist:
         return redirect("RecruiterHome")
-    
-    return render(request,'recruiter/viewjob.html',{'job_details':job_details,'applicants':applicants,'shortlisted_candidates':shortlisted_candidates})
+    context={
+        'job_details':job_details,
+        'applicants':applicants,
+        'shortlisted_candidates':shortlisted_candidates,
+        'suggested_candidates':suggested_candidates,
+        }
+    return render(request,'recruiter/viewjob.html',context)
 
 def viewCandidateProfile(request,user_id,job_id):
     if request.user.is_authenticated:

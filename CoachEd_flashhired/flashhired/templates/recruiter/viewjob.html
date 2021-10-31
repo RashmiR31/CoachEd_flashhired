@@ -7,12 +7,23 @@
 <p>{{job_details.salary}}</p>
 <p>{{job_details.date_posted}}</p>
 <a href="{{job_details.upload_doc.url}}" target="_blank">view JD</a>
-<p>-----------------------</p>
+
+{% if applicants %}
 {% for a in applicants %}
 <p> {{a.user_id}} / {{a.first_name}} {{a.last_name}} / <a href="{% url 'viewCandidateProfile' a.user_id job_details.id %}">View Profile</a></p>
 {% endfor %}
-<p>------------------------</p>
+{% endif %}
+
+{% if shortlisted_candidates %}
 <h2>Shortlisted candidates</h2>
 {% for s in shortlisted_candidates %}
 <p> {{s.user_id}} / {{s.first_name}} {{s.last_name}} /<a href="{% url 'viewCandidateProfile' s.user_id job_details.id %}">View Profile</a> </p>
 {% endfor %}
+{% endif %}
+
+{% if suggested_candidates %}
+<h2>Suggestions</h2>
+{% for sug in suggested_candidates %}
+<p> {{sug.user_id}} / {{sug.first_name}} {{sug.last_name}} /<a href="{% url 'viewCandidateProfile' sug.user_id job_details.id %}">View Profile</a> </p>
+{% endfor %}
+{% endif %}
