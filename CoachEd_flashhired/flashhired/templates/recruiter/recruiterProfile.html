@@ -79,6 +79,7 @@
        margin-left:1030px;
        margin-top:-800px;
        height:750px;
+       z-index:-1;
    }
    #name{
     position:absolute;
@@ -145,7 +146,12 @@
     margin-top: -320px;
     padding-left:650px;
    }
-
+   #profile_pic{
+     margin-top: -700px;
+     margin-left: 1250px;
+     width:150px;
+    height:150px;
+   }
 
 </style>
 <html>
@@ -178,20 +184,10 @@
         <p id="mail"><i class="far fa-envelope"></i> {{ details.work_email }}</p>
         <p id="company_name"><i class="far fa-building"></i> {{ details.company_name }}</p>
         <p id="gender"><i class="fas fa-male"></i> {{ details.gender }}</p>
-        <p id="experience"><i class="fas fa-chart-line"></i> {{ details.experience }} Months</p>
-        <img src="{{details.profile_pic.url}}" alt="profile_pic" width="100px" height="100px">
+        <p id="experience"><i class="fas fa-chart-line"></i> {{ details.experience }} Years</p>
+        <img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic" >
     </body>
 </html>
-        <!--
-               
-        <div id="notification"><i class="far fa-bell"></i></div>
         
-        
-        
-        
-        
-        
-
-         -->
 
 

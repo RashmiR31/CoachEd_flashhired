@@ -1,48 +1,203 @@
-<h1>{{ user.username }} is the user</h1>
-<!--
-<form method = 'POST' enctype="multipart/form-data">
-  {% csrf_token %}
-  <table>
-    <tr>
-      <td>name:</td>
-      <td><input name="Name-field" placeholder="Enter your Username" {{ form.name }}</td>
-    </tr>
-    <tr>
-      <td>gender:</td>
-      <td name="gender-field">{{ form.gender }}</td>
-    </tr>
-    <tr>
-      <td>email</td>
-      <td><input name="email-field" type= "Email" placeholder="Enter your Email" {{ form.work_email }}</td>
-    </tr>
-      <td>DOB:</td>
-      <td><input name="date-field" type= "Date" placeholder="Date of Birth" {{ form.dob }}</td>
-    <tr>
-      <td>role:</td>
-      <td><input name="role-field" placeholder="Enter your Username" {{ form.role }}</td>
-    </tr>
-    <tr>
-      <td>company_name:</td>
-      <td><input name="companyName-field" placeholder="Enter your Username" {{ form.company_name }}</td>
-    </tr>
-    <tr>
-      <td>experience:</td>
-      <td><input name="experience-field" placeholder="Enter your Username" {{ form.experience }}</td>
-    </tr>
-    <tr> 
-      <td><input id="createAccount" type="submit"  />Save</td>
-  </tr>
-  </table>
-</form>
+{% extends 'account/acc_base.html' %}
 
--->
+{% block content %} 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+  .main{
+    margin-left:700px;
+  }
+  #name{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:100px;
+    font-family: poppins,sans-serif;
+  }
+  #gender{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:100px;
+    margin-left:400px;
+    font-family: poppins,sans-serif;
+  }
+  #phNo{                 
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    margin-top:180px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: poppins,sans-serif;
+  }
+  #email{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:180px;
+    margin-left:400px;
+    font-family: poppins,sans-serif;
+  }
+  #date{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:260px;
+    font-family: poppins,sans-serif;
+
+  }
+  #companyname{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:257px;
+    margin-left:400px;
+    font-family: poppins,sans-serif;
+  }
+  #role{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:340px;
+    font-family: poppins,sans-serif;
+    
+  }
+  #experience{
+    position: absolute;
+    width: 380px;
+    height: 50px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:344px;
+    margin-left:400px;
+    font-family: poppins,sans-serif;
+  }
+  #label1{
+    font-size: 20px;
+    font-family:poppins,sans-serif;
+    margin-top: 430px;
+  }
+  #auth_doc{
+    margin-top: -40px;
+    margin-left: 300px;
+    font-family: poppins,sans-serif;
+  }
+  #label2{
+    font-size: 20px;
+    font-family:poppins,sans-serif;
+    margin-top:20px;
+  }
+  #profile_pic{
+    margin-top: -40px;
+    margin-left: 300px;
+    font-family: poppins,sans-serif;
+  }
+  #submit{
+    border-radius: 5px;
+        background-color: #461FBE;
+        margin-left:250px;
+        font-size: 24px;
+        width:200px;
+        height:60px;
+        color:white;
+        margin-top:50px;
+  }
+
+</style>
+
+<html>
+  {% block title %} Candidate Create profile{% endblock %}
+  {% block text_in_blue_box %} Hey {{ user.username }}, let's setup you ASAP! {% endblock %}
+  <body>
+    <div class="main">
+    
+
 
 <form method="POST" enctype="multipart/form-data">
 {% csrf_token %}
 <table>
-{{ form.as_table }}
+<tr>
+  <td><input id="name" placeholder="Enter your Name" required {{form.name.label}}:{{form.name}}</td>
+</tr>
+<tr>
+  <td><select id="gender" required {{form.gender}}</select></td>
+</tr>
+<tr>
+  <td><input id="phno" placeholder="+910000000000" required {{form.phone_number.label}}:{{form.phone_number}}</td>
+</tr>
+<tr>
+  <td><input id="email" type="email" required placeholder="Enter your Work Email"{{form.work_email.label}}:{{form.work_email}}</td>
+</tr>
+<tr>
+  <td><input id="date" type="date" required  min="1960-01-01" max="2000-12-12" placeholder="yyyy-mm-dd"{{form.dob.label}}:{{form.dob}}</td>
+</tr>
+
+<tr>
+  <td><input id="experience" type="number" required  placeholder="Experience in years"{{form.experience.label}}:{{form.experience}}</td>
+</tr>
+
+
+<tr>
+  <td><input id="companyname" required placeholder="Company Name"{{form.company_name.label}}:{{form.company_name}}</td>
+</tr>
+<tr>
+  <td><input id="role" required Placeholder="Enter your Role"{{form.role.label}}:{{form.role}}</td>
+</tr>
+
+<tr>
+  <td id="auth_doc"><p id="label1">Authentication Documents:</p> {{form.auth_doc}}</td>
+</tr>
+<tr>
+  <td id="profile_pic"><p id="label2">Profile Picture:</p>{{form.profile_pic}}</td>
+</tr>
 <tr> 
-  <td><input type="submit"/>Save</td>
+  <td><input id="submit" type="submit"/></td>
 </tr>
 </table>
 </form>
+
+    </div>
+  </body>
+</html>
+
+
+{% endblock %}
+
+
+<!--<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <table >
+  <p class="design">{{ form.as_table }}</p>
+  <tr> 
+    <td><input type="submit"/>Save</td>
+  </tr>
+  </table>
+  </form>   -->

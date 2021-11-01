@@ -499,7 +499,7 @@ def RecruiterHome(request):
             details = Recruiter.objects.get(pk=request.user)
             jobs = JobPosting.objects.all().filter(recruiter=details)
         except Recruiter.DoesNotExist:
-            return HttpResponse("Create profile to continue")
+            return render(request,'recruiter/message.html')
         return render(request,'recruiter/RecruiterHome.html',{'details':details,'jobs':jobs})
     else:
         return HttpResponse("Login as recruiter to continue")
@@ -521,6 +521,7 @@ def recruiterCreateProfile(request):
     else:
         form = RecruiterForm()
     return render(request,'recruiter/createprofile.html',{'form':form})
+
 
 def recruiterProfile(request):
     if request.user.is_authenticated:
