@@ -88,6 +88,7 @@ class JobPosting(models.Model):
     is_negotiable = models.BooleanField(default=False)
     job_location = models.TextField()
     date_posted = models.DateField(default=timezone.now)
+    last_date_to_apply = models.DateField(default=timezone.now)
     upload_doc = models.FileField(upload_to='recruiter/jobs/docs/')
     
 
