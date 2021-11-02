@@ -1,4 +1,300 @@
-<form method="POST" enctype="multipart/form-data">
+{% extends 'recruiter/base_recruiter.html' %}
+{% load static %}
+{% block title %}Add Job{% endblock %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+#ellipse1{
+    width:1570px;
+}
+#ellipse2{
+    margin-top: -120px;
+    width:1570px;
+}
+#heading{
+    margin-top:-110px;
+    font-size:56px;
+    margin-left: 200px;
+    font-family:poppins,sans-serif;
+}
+#addjob{
+    margin-top:-150px;
+    margin-left:1050px;
+    width:380px;
+    height:380px;
+}
+.main{
+    margin-left:250px;
+}
+#jobtype{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:-200px;
+    font-family:poppins,sans-serif;
+}
+#functionalarea{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:-204px;
+    margin-left: 320px;
+    font-family:poppins,sans-serif;
+}
+#jobtitle{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:-130px;
+    font-family:poppins,sans-serif;
+}
+#location{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:-134px;
+    margin-left: 320px;
+    font-family:poppins,sans-serif;
+}
+#jd{
+    position: absolute;
+    width: 400px;
+    height: 120px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: -60px;
+    font-family:poppins,sans-serif;
+}
+#skills{
+    position: absolute;
+    width: 400px;
+    height: 120px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: -64px;
+    margin-left:420px;
+    font-family:poppins,sans-serif;
+}
+#education{
+    position: absolute;
+    width:300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:90px;
+    font-family:poppins,sans-serif;
+}
+#salary{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:150px;
+    margin-top:86px;
+    margin-left: 320px;
+    font-family:poppins,sans-serif;
+}
+#neg{
+    margin-top:130px;
+    margin-left:320px;
+}
+#neg_text{
+    margin-top:125px;
+    margin-left:-350px;
+    font-family:poppins,sans-serif;
+    font-size:15px;
+}
+#cgpa{
+    position: absolute;
+    width:300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:10px;
+    font-family:poppins,sans-serif;
+}
+#experience{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 320px;
+    margin-top: 6px;
+    font-family:poppins,sans-serif;
+    
+}
+#posted_text{
+    font-size: 20px;
+    font-family:poppins,sans-serif;
+    margin-top:90px;
+}
+#dateposted{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:-55px;
+    margin-left: 140px;
+    font-family:poppins,sans-serif;
+}
+#last_text{
+    font-size: 20px;
+    font-family:poppins,sans-serif;
+    margin-top:-34px;
+    margin-left: 500px;
+}
+#lastdate{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:-55px;
+    margin-left:700px;
+    font-family:poppins,sans-serif;
+}
+#last_text{
+    font-size: 20px;
+    font-family:poppins,sans-serif;
+    margin-top:-34px;
+    margin-left: 500px;
+}
+#doc_text{
+    margin-top:30px;
+    font-family:poppins,sans-serif;
+    font-size:20px;
+}
+#doc{
+    margin-top:-45px;
+    margin-left:280px;
+}
+#submit{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    background: #461FBE;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family:poppins,sans-serif;
+    color:white;
+    margin-top:40px;
+    margin-left: 500px;
+}
+#bottom{
+    height: 100px;
+}
+</style>
+<html>
+    <body>
+        <img id="ellipse1" src="{% static 'ellipse1.png' %}">
+        <img id="ellipse2" src="{% static 'ellipse.png' %}">
+        <h1 id="heading">Create Job</h1>
+        <img id="addjob" src="{% static 'addjob.png' %}"> 
+        <div class="main">
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td><select id="jobtype" required{{form.job_type}}</select></td>
+                </tr>
+                <tr>
+                    <td><input id="functionalarea" placeholder="Functional Area" required{{form.functional_area}}</td>
+                </tr>
+                <tr>
+                    <td><input id="jobtitle" placeholder="Job Title" required{{form.job_title}}</td>
+                </tr>
+                <tr>
+                    <td><input id="location" placeholder="Job Location" required{{form.job_location}}</td>
+                </tr>
+                <tr>
+                    <td><textarea id="jd" placeholder="Job Description" required{{form.jd}}</td>
+                </tr>
+                <tr>
+                    <td><textarea id="skills" placeholder="Required Skills" required{{form.required_skills}}</td>
+                </tr>
+                <tr>
+                    <td><textarea id="education" placeholder="Required Education" required{{form.required_education}}</td>
+                </tr>
+                <tr>
+                    <td><input id="salary" placeholder="Salary" required{{form.salary}}</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="neg" {{form.is_negotiable}}</td>
+                    <td><p id="neg_text">Negotiable</p></td>
+                </tr>
+                <tr>
+                    <td><input id="CGPA"  placeholder="Required CGPA" required{{form.required_cgpa}}</td>
+                </tr>
+                <tr>
+                    <td><input id="experience" placeholder="Experience in Years" type="number" required{{form.required_experience}}</td>
+                </tr>
+                <tr>
+                    <td><p id="posted_text">Date Posted:</p><input id="dateposted" type="date" placeholder="Date Posted" required{{form.date_posted}}</td>
+                </tr>
+                <tr>
+                    <td><p id="last_text">Last Date to Apply:</p><input id="lastdate" type="date" placeholder="Last Date To Apply" required{{form.last_date_to_apply}}</td>
+                </tr>
+                <tr>
+                    <td><p id="doc_text">Authentication Documents:</p><div id="doc">{{form.upload_doc}}</div></td>
+                </tr>
+                <tr>
+                    <td><div id="bottom"><input id="submit" type="submit"></div></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </body>
+</html>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
         {{form.as_table}}
@@ -6,4 +302,4 @@
         <td><input type="submit"/>Save</td>
         </tr>
     </table>
-</form>
+</form> -->
