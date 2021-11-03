@@ -1,3 +1,7 @@
+{% url 'RecruiterHome' as RecruiterHome %}
+{% url 're recruiterProfile' as recruiterProfile %}
+{% url 'Jobs' as Jobs %}
+
 <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
@@ -78,10 +82,10 @@
         <div class="sideNav">
           <ul id="list">
             <p id="supportingText">Tools</p>
-            <li id="navBar"><a class="active" href="{% url 'RecruiterHome' %}"><i class="fas fa-home"> </i> Home</a></li>
-            <li id="navBar"><a href="{% url 'recruiterProfile' %}"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li id="navBar"><a class= "{% if request.path == RecruiterHome %} active {% endif %}" href="{% url 'RecruiterHome' %}"><i class="fas fa-home"> </i> Home</a></li>
+            <li id="navBar"><a class= "{% if request.path == recruiterProfile %} active {% endif %}" href="{% url 'recruiterProfile' %}"><i class="fas fa-user-circle"></i> Profile</a></li>
             <li id="navBar"><a href ="#home" ><i class="fas fa-rocket"> </i> Onboarding</a></li>
-            <li id="navBar"><a href="{% url 'addJob' %}"><i class="fas fa-chalkboard-teacher"> </i>Jobs</a></li>
+            <li id="navBar"><a class= "{% if request.path == Jobs %} active {% endif %}" href="{% url 'Jobs' %}"><i class="fas fa-chalkboard-teacher"> </i>Jobs</a></li>
             <li id="navBar"><a href="#about"><i class="far fa-chart-bar"> </i> Assessments</a></li>
             <li id="navBar"><a href="#news"><i class="fas fa-file"> </i> Documents</a></li>
     

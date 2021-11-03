@@ -72,6 +72,7 @@ urlpatterns = [
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
     path('recruiter/profile',views.recruiterProfile,name='recruiterProfile'),
     path('recruiter/profile/edit',views.recruiterEditProfile,name='recruiterEditProfile'),
+    path('recruiter/jobs',views.jobs,name="Jobs"),
     path('recruiter/addjob',views.addJob,name="addJob"),
     path('recruiter/editjob/<int:job_id>',views.editJob,name="editJob"),
     path('recruiter/deletejob/<int:job_id>',views.deleteJob,name="deleteJob"),

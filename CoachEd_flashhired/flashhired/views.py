@@ -504,6 +504,17 @@ def RecruiterHome(request):
     else:
         return HttpResponse("Login as recruiter to continue")
 
+def jobs(request):
+    if request.user.is_authenticated and request.user.is_recruiter:
+        try:
+            details = Recruiter.objects.get(pk=request.user)
+            jobs = JobPosting.objects.all().filter(recruiter=details)
+        except Recruiter.DoesNotExist:
+            return render(request,'recruiter/message.html')
+        return render(request,'recruiter/jobs.html',{'details':details,'jobs':jobs})
+    else:
+        return HttpResponse("Login as recruiter to continue")
+
 
 def recruiterCreateProfile(request):
     if request.method=='POST':
