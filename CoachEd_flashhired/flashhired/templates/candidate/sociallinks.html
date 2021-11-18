@@ -2,7 +2,51 @@
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
-        {{ form.as_table }}
+        <tr>
+            <td>Facebook:</td>
+            <td>{{form.facebook}}</td>
+        </tr>
+        <tr>
+            <td>Instagram:</td>
+            <td>{{form.instagram}}</td>
+        </tr>
+        <tr>
+            <td>LinkedIN:</td>
+            <td>{{form.linkedin}}</td>
+        </tr>
+        <tr>
+            <td>GitHub:</td>
+            <td>{{form.github}}</td>
+        </tr>
+        <tr>
+            <td>Personal Website:</td>
+            <td>{{form.personal_website}}</td>
+        </tr>
+        <tr>
+            <td>CodeChef:</td>
+            <td>{{form.codechef}}</td>
+        </tr>
+        <tr>
+            <td>HackerRank:</td>
+            <td>{{form.hackerrank}}</td>
+        </tr>
+        <tr>
+            <td>Kaggle:</td>
+            <td>{{form.kaggle}}</td>
+        </tr>
+        <tr>
+            <td>Twitter:</td>
+            <td>{{form.twitter}}</td>
+        </tr>
+        <tr>
+            <td>Dribble:</td>
+            <td>{{form.dribble}}</td>
+        </tr>
+        <tr>
+            <td>Other:</td>
+            <td>{{form.other}}</td>
+        </tr>
+        {{ form.errors }}
         <td><button type="submit" name="submit"  >Save</button></td>
     </table>
 </form>

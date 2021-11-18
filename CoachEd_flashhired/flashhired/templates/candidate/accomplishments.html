@@ -2,7 +2,27 @@
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
-        {{ form.as_table }}
+        <tr>
+            <td>Name of the certificate</td>
+            <td>{{form.certificate_name}}</td>
+        </tr>
+        <tr>
+            <td>Issued by:</td>
+            <td>{{form.certificate_issued_by}}</td>
+        </tr>
+        <tr>
+            <td>Issue Date:</td>
+            <td>{{form.certificate_issue_date}}</td>
+        </tr>
+        <tr>
+            <td>Link:</td>
+            <td>{{form.certificate_link}}</td>
+        </tr>
+        <tr>
+            <td>Supporting document</td>
+            <td>{{form.certificate_doc}}</td>
+        </tr>
+        {{ form.errors }}
         <td><button type="submit" name="submit"  >Save</button></td>
     </table>
 </form>

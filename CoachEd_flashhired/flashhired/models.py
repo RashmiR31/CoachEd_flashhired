@@ -144,8 +144,7 @@ class Accomplishments(models.Model):
     certificate_issue_date= models.DateField(default=timezone.now,null=True)
     certificate_link = models.CharField(max_length=5000,null=True)
     certificate_doc = models.FileField(upload_to='candidate/certificates/')
-    award_name = models.CharField(max_length=255)
-    award_issued_by = models.CharField(max_length=255)
+
 
 class Projects(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
