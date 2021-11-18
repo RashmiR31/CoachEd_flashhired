@@ -449,13 +449,14 @@ def candidateViewJob(request,job_id):
                 if application:
                     print("applied")
                     applied = True
-                if application.status =="Shortlisted":
-                    shortlisted = True
-                else: 
-                    shortlisted=False
+                    if application.status =="Shortlisted":
+                        shortlisted = True
+                    else: 
+                        shortlisted=False
             except JobApplication.DoesNotExist:
                 print("not applied")
                 applied = False
+                shortlisted=False
 
         except JobPosting.DoesNotExist:
             return redirect('candidateJobPortal')
