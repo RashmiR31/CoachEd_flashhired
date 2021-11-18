@@ -2,7 +2,112 @@
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
+        <tr>
+            <td><input id="name" placeholder="First Name" required {{form.first_name}}</td>
+        </tr>
+        <tr>
+            <td><input id="name" placeholder="Last Name" required {{form.last_name}}</td>
+        </tr>
+        <tr>
+            <td><input id="DOB" type="date" min="1980-01-01" max="2005-12-12" placeholder="DOB" required {{form.dob}}</td>
+        </tr>
+        <tr>
+            <td><select id="gender" required {{form.gender}}</select></td>
+        </tr>
+        <tr>
+            <td><input id="phno" placeholder="+910000000000" required {{form.phone_number}}</td>
+        </tr>
+        <tr>
+            <td><input id="email" type="email" required placeholder="Enter your Email" {{form.email_id}}</td>
+        </tr>
+        <tr>
+            <td><input id="email" type="email" required placeholder="Alternative Email" {{form.alternate_email_id}}</td>
+        </tr>
+        <tr>
+            <td><textarea id="current address" placeholder="Current Address" required {{form.current_address}}</td>
+        </tr>
+        <tr>
+            <td><textarea id="permanent address" placeholder="permanent Address" required {{form.permanent_address}}</td>
+        </tr>
+        <tr>
+            <td id="profile_pic"><p id="label2">Profile Picture:</p>{{form.profile_pic}}</td>
+        </tr>
+
+        <!--recent-->
+
+        <tr>
+            <td><input id="recent_degree" placeholder="recent_degree" required {{form.recent_degree}}</td>
+        </tr>
+        <tr>
+            <td><input id="recent_stream" placeholder="recent_stream" required {{form.recent_stream}}</td>
+        </tr>
+        <tr>
+            <td><input id="recent_college_name" placeholder="recent_college_name" required {{form.recent_college_name}}</td>
+        </tr>
+        <tr>
+            <td><input id="recent_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.recent_yop}}</td>
+        </tr>
+        <tr>
+            <td><input id="recent_cgpa" type="number" step="0.01" placeholder="recent_cgpa" required {{form.recent_cgpa_equivalent}}</td>
+        </tr>
+        <tr>
+            <td id="recent_marks_card"><p id="label2">recent_marks_card:</p>{{form.recent_marks_card}}</td>
+        </tr>
+
+        <!--pu-->
+
+        <tr>
+            <td><input id="combination" placeholder="combination" required {{form.pu_combination}}</td>
+        </tr>
+        <tr>
+            <td><input id="pu_college_name" placeholder="pu_college_name" required {{form.pu_college_name}}</td>
+        </tr>
+        <tr>
+            <td><input id="pu_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.pu_yop}}</td>
+        </tr>
+        <tr>
+            <td><input id="pu_percentage" type="number" step="0.01" placeholder="percentage" required {{form.pu_percentage}}</td>
+        </tr>
+        <tr>
+            <td id="pu_marks_card"><p id="label2">pu_marks_card:</p>{{form.pu_marks_card}}</td>
+        </tr>
+        
+
+
+        <!--10th-->
+
+        <tr>
+            <td><input id="tenth_school_name" placeholder="tenth_school_name" required {{form.tenth_school_name}}</td>
+        </tr>
+        <tr>
+            <td><input id="tenth_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.tenth_yop}}</td>
+        </tr>
+        <tr>
+            <td><input id="tenth_percentage" type="number" step="0.01" placeholder="percentage" required {{form.tenth_percentage}}</td>
+        </tr>
+        <tr>
+            <td id="tenth_marks_card"><p id="label2">tenth_marks_card:</p>{{form.tenth_marks_card}}</td>
+        </tr>
+
+        <!--resume-->
+        <tr>
+            <td id="resume"><p id="label2">Resume:</p>{{form.Resume}}</td>
+        </tr>
+        <tr> 
+            <td><input id="submit" type="submit"/></td>
+          </tr>
+    </table>
+    
+    
+    
+
+
+
+<!-- <h1>Candidate Form</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
         {{ form.as_table }}
         <td><button type="submit" name="submit"  >Save</button></td>
     </table>
-</form>
+</form> -->
