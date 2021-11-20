@@ -113,7 +113,7 @@ def CandidateHome(request):
         try:
             details = Candidate.objects.get(pk=request.user)
         except Candidate.DoesNotExist:
-            return HttpResponse("Create profile to continue")
+            return render(request,'candidate/message.html')
         try:
             application = JobApplication.objects.all().filter(candidate=details)
             shortlisted_jobs=[]

@@ -1,39 +1,116 @@
-{% extends 'account/acc_base.html' %}
+
 
 {% block content %} 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-  .main{
-    margin-left:700px;
+  .blueRectangle{
+        /* Blue Box Border */
+        position: absolute;
+        width:550px;
+        height: 100%;
+        left: -152px;
+        background: #461FBE;
+        border-radius: 30px;
+    }
+    #flash{
+        /* flashhired. */
+        position: absolute;
+        left: 220px;
+        top: 45%;
+        font-family: 'Italiana',serif;
+        font-size: 30px;
+        font-weight:lighter;
+        color: #FFFFFF;
+    }
+    #bold{
+        /* flashhired. */
+        position: absolute;
+        left: 275px;
+        top: 45%;
+        font-family:Roboto, sans-serif;
+        font-size: 30px;
+        font-weight: bolder;
+        color: #FFFFFF;
+    }
+    #sq1{
+            /* Rectangle 1 */
+            position: absolute;
+            width: 10%;
+            height: 20%;
+            left: -10px;
+            background: #301488;
+        }
+        #sq2{
+            /* Rectangle 2 */
+            position: absolute;
+            width: 10%;
+            height: 20%;
+            left: 20px;
+            top: 20px;
+            background: #40159B;
+        }
+        #pg1{
+            /* Polygon 1 */
+            position: absolute;
+            width: 8%;
+            height: 15%;
+            left: 115px;
+            top: -10px;
+            background: rgba(250, 246, 244, 0.72);
+            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
+        }
+        #pg2{
+            /* Polygon 2 */
+            position: absolute;
+            width: 8%;
+            height: 15%;
+            left: -10px;
+            top: 18%;
+            background: #FAF6F4;
+            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
+        }
+        #textInBlueBox{
+        position: absolute;
+        left: 220px;
+        top: 55%;
+        width:300px;
+        font-family: 'Poppins',sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        color: #FFFFFF;
+    }
+    .main{
+    margin-left:450px;
   }
   #name{
     position: absolute;
-    width: 380px;
-    height: 50px;  
+    width: 300px;
+    height: 40px;  
     background: rgba(251, 248, 248, 0.87);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
-    margin-top:100px;
+    margin-top:50px;
     font-family: poppins,sans-serif;
   }
   #gender{
     position: absolute;
-    width: 380px;
-    height: 50px;  
+    width: 300px;
+    height: 40px;  
     background: rgba(251, 248, 248, 0.87);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
-    margin-top:100px;
-    margin-left:400px;
+    margin-top:48px;
+    margin-left:350px;
     font-family: poppins,sans-serif;
   }
   #phNo{                 
     position: absolute;
-    width: 380px;
-    height: 50px;  
-    margin-top:180px;
+    width: 300px;
+    height: 40px;  
+    margin-top:120px;
     background: rgba(251, 248, 248, 0.87);
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -42,82 +119,84 @@
   }
   #email{
     position: absolute;
-    width: 380px;
-    height: 50px;  
+    width: 300px;
+    height: 40px;  
     background: rgba(251, 248, 248, 0.87);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
-    margin-top:180px;
-    margin-left:400px;
+    margin-top:118px;
+    margin-left:350px;
     font-family: poppins,sans-serif;
   }
   #date{
     position: absolute;
-    width: 380px;
-    height: 50px;  
+    width: 300px;
+    height: 40px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:190px;
+    font-family: poppins,sans-serif;
+
+  }
+  #companyname{
+    position: absolute;
+    width: 300px;
+    height: 40px;  
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:188px;
+    margin-left:350px;
+    font-family: poppins,sans-serif;
+  }
+  #role{
+    position: absolute;
+    width: 300px;
+    height: 40px;  
     background: rgba(251, 248, 248, 0.87);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
     margin-top:260px;
     font-family: poppins,sans-serif;
-
-  }
-  #companyname{
-    position: absolute;
-    width: 380px;
-    height: 50px;  
-    background: rgba(251, 248, 248, 0.87);
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin-top:257px;
-    margin-left:400px;
-    font-family: poppins,sans-serif;
-  }
-  #role{
-    position: absolute;
-    width: 380px;
-    height: 50px;  
-    background: rgba(251, 248, 248, 0.87);
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin-top:340px;
-    font-family: poppins,sans-serif;
     
   }
   #experience{
     position: absolute;
-    width: 380px;
-    height: 50px;  
+    width: 300px;
+    height: 40px;  
     background: rgba(251, 248, 248, 0.87);
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
-    margin-top:344px;
-    margin-left:400px;
+    margin-top:264px;
+    margin-left:350px;
     font-family: poppins,sans-serif;
   }
   #label1{
-    font-size: 20px;
+    font-size: 18px;
     font-family:poppins,sans-serif;
-    margin-top: 430px;
+    margin-top: 340px;
   }
   #auth_doc{
     margin-top: -40px;
     margin-left: 300px;
+    font-size:14px;
     font-family: poppins,sans-serif;
   }
   #label2{
-    font-size: 20px;
+    font-size: 18px;
     font-family:poppins,sans-serif;
     margin-top:20px;
   }
   #profile_pic{
     margin-top: -40px;
     margin-left: 300px;
+    font-size:14px;
     font-family: poppins,sans-serif;
   }
   #submit{
@@ -125,17 +204,39 @@
         background-color: #461FBE;
         margin-left:250px;
         font-size: 24px;
-        width:200px;
-        height:60px;
+        width:150px;
+        height:40px;
         color:white;
-        margin-top:40px;
+        margin-top:20px;
   }
 
 </style>
 
 <html>
-  {% block title %} Candidate Create profile{% endblock %}
-  {% block text_in_blue_box %} Hey {{ user.username }}, let's setup you ASAP! {% endblock %}
+  <head>
+    <title>Candidate Create profile</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+</head>
+<div class="form"> <!--class form not defined, just declared-->
+
+  
+  <form method="POST">
+      {% csrf_token %}
+
+      <div class = "blueRectangle">
+          <shape id="vector"></shape>
+          <p id="flash">flash</p>
+          <p id="bold">hired.</p>
+          <p id="textInBlueBox">Hey {{ user.username }}, let's setup you ASAP!</p>
+      </div>
+      <area id="sq1"></area>
+      <area id="sq2"></area>
+      <area id="pg1"></area>
+      <area id="pg2"></area>
+   
   <body>
     <div class="main">
     
