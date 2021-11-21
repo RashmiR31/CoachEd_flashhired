@@ -7,9 +7,9 @@
     
 
 #left_rect{
-    height:650px;
-    margin-top:140px;
-    width:1000px;
+    height:500;
+    margin-top:130px;
+    width:700px;
     margin-left: -10px;
 }
 
@@ -17,7 +17,8 @@
     
      
     .sideNav{
-     width:200px;
+      position:fixed;
+     width:180px;
      border-radius:10px;
      background: rgba(255, 255, 255, 0.918);
      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -25,7 +26,7 @@
      opacity: .85;
      margin-left:-20px;
      padding-top:80px;
-     margin-top:-870px;
+     margin-top:-720px;
     }
     
     #supportingText{
@@ -40,7 +41,7 @@
      list-style-type: none;
      padding-left: 10px;
      border-radius:10px;
-     width: 180px;
+     width: 160px;
      background: rgba(255, 255, 255, 0.85);
    }
    
@@ -76,81 +77,84 @@
    }
    #right_rect{
        position:absolute;
-       margin-left:1030px;
-       margin-top:-800px;
-       height:750px;
+       margin-left:132px;
+       height:600px;
        z-index:-1;
+       margin-top:-7px;
    }
    #name{
     position:absolute;
     font-family: Roboto;
-    font-size: 64px;
+    font-size: 50px;
     line-height: 75px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -640px;
-    padding-left:320px;
+    margin-top: -520px;
+    padding-left:200px;
    }
 
    #role{
     position:absolute;
     font-family: Roboto;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 42px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -570px;
-    padding-left:380px;
+    margin-top: -460px;
+    padding-left:240px;
    }
    #mail{
     position:absolute;
     font-family: Roboto;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -445px;
-    padding-left:480px;
+    margin-top: -345px;
+    padding-left:330px;
    }
    #company_name{
     position:absolute;
     font-family: Roboto;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -400px;
-    padding-left:540px;
+    margin-top: -305px;
+    padding-left:380px;
    }
    #gender{
     position:absolute;
     font-family: Roboto;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -360px;
-    padding-left:600px;
+    margin-top: -265px;
+    padding-left:430px;
    }
    #experience{
     position:absolute;
     font-family: Roboto;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -320px;
-    padding-left:650px;
+    margin-top: -225px;
+    padding-left:480px;
    }
    #profile_pic{
-     margin-top: -700px;
-     margin-left: 1250px;
-     width:150px;
-    height:150px;
+     margin-top: -550px;
+     margin-left: 1010px;
+     border-radius: 50%;
+     border-color:white;
+     border-style:solid;
+     width:120px;
+    height:120px;
    }
 
 </style>
@@ -181,11 +185,11 @@
         <p id="name">{{ details.name }} <a href="{% url 'recruiterEditProfile' %}"><i class="fas fa-edit" style="color:black;font-size: 20px;"></i></a></p>
         
         <p id="role">{{ details.role }}</p>
-        <p id="mail"><i class="far fa-envelope"></i> {{ details.work_email }}</p>
-        <p id="company_name"><i class="far fa-building"></i> {{ details.company_name }}</p>
-        <p id="gender"><i class="fas fa-male"></i> {{ details.gender }}</p>
-        <p id="experience"><i class="fas fa-chart-line"></i> {{ details.experience }} Years</p>
-        <img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic" >
+        <p id="mail"><i class="far fa-envelope" style="color:white"></i> {{ details.work_email }}</p>
+        <p id="company_name"><i class="far fa-building" style="color:white"></i> {{ details.company_name }}</p>
+        <p id="gender"><i class="fas fa-male" style="color:white" ></i> {{ details.gender }}</p>
+        <p id="experience"><i class="fas fa-chart-line" style="color:white"></i> {{ details.experience }} Years</p>
+        <img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic" > 
     </body>
 </html>
         

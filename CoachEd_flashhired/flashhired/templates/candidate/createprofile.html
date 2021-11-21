@@ -1,72 +1,577 @@
-<h1>Candidate Form</h1>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+.card{
+    width:850px;
+    height:2300px;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 220px;
+    border-radius:10px;
+    margin-top: 50px;
+}
+#about{
+    font-family:'poppins',sans-serif;
+    font-size:28px;
+    font-weight:bolder;
+    color:black;
+    padding-left:340px;
+    margin-top:20px;
+}
+#fname{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#lname{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#first_name{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#last_name{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#dob_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#gender_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#DOB{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#gender{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#phNo_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#phNo{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#email_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#alternate_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#email{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#alternate{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#current_a_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#permanent_a_text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#current_address{
+    position: absolute;
+    width: 320px;
+    height: 150px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#permanent_address{
+    position: absolute;
+    width: 320px;
+    height: 150px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#profile_pic{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    padding-top: 170px;
+}
+
+/* recent */
+
+#education{
+    font-family:'poppins',sans-serif;
+    font-size:28px;
+    font-weight:bolder;
+    color:black;
+    margin-top: 50px;
+    padding-left:300px;
+}
+#edu_level{
+    font-family:'poppins',sans-serif;
+    font-size:20px;
+    font-weight:bolder;
+    color:black;
+    margin-top: 50px;
+    padding-left:50px;
+}
+#degree{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#stream{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#recent_degree{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#recent_stream{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#degree_college{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#recent_college_name{
+    position: absolute;
+    width: 635px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#degree_yop{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#degree_cgpa{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#recent_yop{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#recent_cgpa{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#recent_marks_card{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    padding-top: 50px;
+}
+
+/*PU*/
+#combination{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#pu12_yop{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#pu_combination{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#pu_yop{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#pu_college{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#pu_college_name{
+    position: absolute;
+    width: 635px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#percentage{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+    padding-left: 50px;
+}
+#pu_percentage{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 50px;
+
+}
+#pu_marks_card{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    padding-top: 50px;
+}
+
+/*school*/
+
+#school{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#tenth_school_name{
+    position: absolute;
+    width: 635px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#x_yop{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+
+#x_cgpa{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+}
+#tenth_yop{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#tenth_percentage{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#tenth_marks_card{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    padding-top: 50px;
+}
+#resume{
+    font-family:'poppins',sans-serif;
+    font-size:18px;
+    font-weight:bolder;
+    color:black;
+    padding-top: 50px;
+    padding-left:50px;
+}
+#submit{
+    border-radius: 5px;
+        background-color: #461FBE;
+        margin-left:350px;
+        font-size: 20px;
+        width:120px;
+        height:30px;
+        color:white;
+        margin-top:50px;
+}
+</style>
+<html>
+<title>Candidate Create profile</title>
+<body>
+    
+    <div class="card">
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
+        <tr><td><p id="about">Basic</p></td></tr>
         <tr>
-            <td><input id="name" placeholder="First Name" required {{form.first_name}}</td>
+            <td><p id="fname">First Name</p></td>
+            <td><p id="lname">Last Name</p></td>
         </tr>
         <tr>
-            <td><input id="name" placeholder="Last Name" required {{form.last_name}}</td>
+            <td><input id="first_name" placeholder="First Name" required {{form.first_name}}</td>
+            <td><input id="last_name" placeholder="Last Name" required {{form.last_name}}</td>
+        </tr>
+        <tr>
+            <td><p id="dob_text">Date of Birth</p></td>
+            <td><p id="gender_text">Gender</p></td>
         </tr>
         <tr>
             <td><input id="DOB" type="date" min="1980-01-01" max="2005-12-12" placeholder="DOB" required {{form.dob}}</td>
+            <td><select id="gender" required {{form.gender}}</select></td>
         </tr>
         <tr>
-            <td><select id="gender" required {{form.gender}}</select></td>
+            <td><p id="phno_text">Contact Number</p></td>
         </tr>
         <tr>
             <td><input id="phno" placeholder="+910000000000" required {{form.phone_number}}</td>
         </tr>
         <tr>
+            <td><p id="email_text">Email</p></td>
+            <td><p id="alternate_text">Alternate Email</p></td>
+        </tr>
+        <tr>
             <td><input id="email" type="email" required placeholder="Enter your Email" {{form.email_id}}</td>
+            <td><input id="alternate" type="email" required placeholder="Alternative Email" {{form.alternate_email_id}}</td>
         </tr>
         <tr>
-            <td><input id="email" type="email" required placeholder="Alternative Email" {{form.alternate_email_id}}</td>
+            <td><p id="current_a_text">Current Address</p></td>
+            <td><p id="permanent_a_text">Permanent Address</p></td>
         </tr>
         <tr>
-            <td><textarea id="current address" placeholder="Current Address" required {{form.current_address}}</td>
+            <td><textarea id="current_address" placeholder="Current Address" required {{form.current_address}}</td>
+            <td><textarea id="permanent_address" placeholder="permanent Address" required {{form.permanent_address}}</td>
         </tr>
         <tr>
-            <td><textarea id="permanent address" placeholder="permanent Address" required {{form.permanent_address}}</td>
+            <td id="profile_pic"><p>Profile Picture:</p>{{form.profile_pic}}</td>
         </tr>
-        <tr>
-            <td id="profile_pic"><p id="label2">Profile Picture:</p>{{form.profile_pic}}</td>
-        </tr>
+
+
+
 
         <!--recent-->
 
+        <tr><td><p id="education">Education</p></td></tr>
+
+        <tr><td><p id="edu_level">I. Graduation Details</p></td></tr>
+
         <tr>
-            <td><input id="recent_degree" placeholder="recent_degree" required {{form.recent_degree}}</td>
+            <td><p id="degree">Degree</p></td>
+            <td><p id="stream">Stream</p></td>
         </tr>
         <tr>
-            <td><input id="recent_stream" placeholder="recent_stream" required {{form.recent_stream}}</td>
+            <td><input id="recent_degree"  required {{form.recent_degree}}</td>
+            <td><input id="recent_stream"  required {{form.recent_stream}}</td>
         </tr>
         <tr>
-            <td><input id="recent_college_name" placeholder="recent_college_name" required {{form.recent_college_name}}</td>
+            <td><p id="degree_college">College</p></td>
         </tr>
         <tr>
-            <td><input id="recent_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.recent_yop}}</td>
+            <td><input id="recent_college_name"  required {{form.recent_college_name}}</td>
         </tr>
         <tr>
-            <td><input id="recent_cgpa" type="number" step="0.01" placeholder="recent_cgpa" required {{form.recent_cgpa_equivalent}}</td>
+            <td><p id="degree_yop">Completion Year</p></td>
+            <td><p id="degree_cgpa">CGPA/Equivalent Percentage</p></td>
+        </tr>
+        <tr>
+            <td><input id="recent_yop" type="date" min="1990-01-01" required {{form.recent_yop}}</td>
+            <td><input id="recent_cgpa" type="number" step="0.01" required {{form.recent_cgpa_equivalent}}</td>
         </tr>
         <tr>
             <td id="recent_marks_card"><p id="label2">recent_marks_card:</p>{{form.recent_marks_card}}</td>
         </tr>
 
+        
+        
+        
         <!--pu-->
 
+
+        <tr><td><p id="edu_level">II. Grade XII/Diploma Details</p></td></tr>
+
         <tr>
-            <td><input id="combination" placeholder="combination" required {{form.pu_combination}}</td>
+            <td><p id="combination">Combination</p></td>
+            <td><p id="pu12_yop">Completion Year</p></td>
         </tr>
         <tr>
-            <td><input id="pu_college_name" placeholder="pu_college_name" required {{form.pu_college_name}}</td>
+            <td><input id="pu_combination"  required {{form.pu_combination}}</td>
+            <td><input id="pu_yop" type="date" min="1990-01-01"   required {{form.pu_yop}}</td>
         </tr>
         <tr>
-            <td><input id="pu_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.pu_yop}}</td>
+            <td><p id="pu_college">College</p></td>
         </tr>
         <tr>
-            <td><input id="pu_percentage" type="number" step="0.01" placeholder="percentage" required {{form.pu_percentage}}</td>
+            <td><input id="pu_college_name" required {{form.pu_college_name}}</td>
+        </tr>
+        <tr>
+            <td><p id="percentage">CGPA/Equivalent Percentage</p></td>
+        </tr>
+        <tr>
+            <td><input id="pu_percentage" type="number" step="0.01"  required {{form.pu_percentage}}</td>
         </tr>
         <tr>
             <td id="pu_marks_card"><p id="label2">pu_marks_card:</p>{{form.pu_marks_card}}</td>
@@ -76,13 +581,20 @@
 
         <!--10th-->
 
+        <tr><td><p id="edu_level">III. Grade X Details</p></td></tr>
+
         <tr>
-            <td><input id="tenth_school_name" placeholder="tenth_school_name" required {{form.tenth_school_name}}</td>
+            <td><p id="school">School</p></td>
+        </tr>
+        <tr>
+            <td><input id="tenth_school_name" required {{form.tenth_school_name}}</td>
+        </tr>
+        <tr>
+            <td><p id="x_yop">Completion Year</p></td>
+            <td><p id="x_cgpa">CGPA/Equivalent Percentage</p></td>
         </tr>
         <tr>
             <td><input id="tenth_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.tenth_yop}}</td>
-        </tr>
-        <tr>
             <td><input id="tenth_percentage" type="number" step="0.01" placeholder="percentage" required {{form.tenth_percentage}}</td>
         </tr>
         <tr>
@@ -91,13 +603,17 @@
 
         <!--resume-->
         <tr>
-            <td id="resume"><p id="label2">Resume:</p>{{form.Resume}}</td>
+            <td id="resume"><p>Resume:</p>{{form.Resume}}</td>
         </tr>
         <tr> 
             <td><input id="submit" type="submit"/></td>
           </tr>
     </table>
-    
+    </form>
+    </div>
+
+    </body>
+    </html>
     
     
 
