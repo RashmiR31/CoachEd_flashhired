@@ -1,28 +1,128 @@
-<h1>Candidate Accomplishments</h1>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>Name of the certificate</td>
-            <td>{{form.certificate_name}}</td>
-        </tr>
-        <tr>
-            <td>Issued by:</td>
-            <td>{{form.certificate_issued_by}}</td>
-        </tr>
-        <tr>
-            <td>Issue Date:</td>
-            <td>{{form.certificate_issue_date}}</td>
-        </tr>
-        <tr>
-            <td>Link:</td>
-            <td>{{form.certificate_link}}</td>
-        </tr>
-        <tr>
-            <td>Supporting document</td>
-            <td>{{form.certificate_doc}}</td>
-        </tr>
-        {{ form.errors }}
-        <td><button type="submit" name="submit"  >Save</button></td>
-    </table>
-</form>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+.card{
+    width:650px;
+    height:580px;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 350px;
+    border-radius:10px;
+    margin-top: 50px;
+}
+#about{
+    font-family:'poppins',sans-serif;
+    font-size:28px;
+    font-weight:bolder;
+    color:black;
+    padding-left:175px;
+    margin-top:20px;
+}
+#lname{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#rname{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    margin-top:50px;
+    margin-left:-100px;
+}
+#lbox{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#rbox{
+    position: absolute;
+    width: 240px;
+    height: 35px;
+    margin-left:-100px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#supporting_doc{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    padding-top: 50px;
+}
+
+#link{
+    position: absolute;
+    width: 520px;
+    height: 35px;
+    margin-left:-100px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 50px;
+}
+#submit{
+
+position: absolute;
+width: 80px;
+height: 45px;
+margin-left:500px;
+margin-top:50px;
+color:white;
+font-family: 'poppins',sans-serif;
+background: #40159B;
+}
+</style>
+<html>
+    <title>Accomplishments</title>
+    <body>
+        <div class="card">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <tr><td><p id="about">Accomplishments</p></td></tr>
+                    <tr>
+                        <td><p id="lname">Name of the certificate</p></td>
+                        <td><p id="rname">Issued By</p></td>
+
+                    </tr>
+                    <tr>
+                        <td><input id="lbox"  required {{form.certificate_name}}</td>
+                        <td><input id="rbox"  required {{form.certificate_issued_by}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id="lname">Issue Date</p></td>
+                    </tr>
+                    <tr>
+                        <td><input id="lbox"  required {{form.certificate_issue_date}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id="lname">Link</p></td>
+                    </tr>
+                    <tr>
+                        <td><input id="link"  required {{form.certificate_link}}</td>
+                        
+                    </tr>
+                    <tr>
+                        <td id="supporting_doc"><p>Supporting Document:</p>{{form.certificate_doc}}</td>
+                    </tr>
+                    {{ form.errors }}
+                    <td><button id="submit" type="submit"  >Save</button></td>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

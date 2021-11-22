@@ -1,20 +1,87 @@
-<h1>Candidate Skills</h1>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+.card{
+    width:500px;
+    height:500px;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 350px;
+    border-radius:10px;
+    margin-top: 80px;
+}
+#about{
+    font-family:'poppins',sans-serif;
+    font-size:28px;
+    font-weight:bolder;
+    color:black;
+    padding-left:210px;
+    margin-top:20px;
+}
+#lname{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#lbox{
+    position: absolute;
+    width: 300px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#supporting_doc{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    padding-top: 50px;
+}
+#submit{
+
+position: absolute;
+width: 80px;
+height: 45px;
+margin-left:380px;
+margin-top:50px;
+color:white;
+font-family: 'poppins',sans-serif;
+background: #40159B;
+}
+</style>
+<html>
+    <title>Skills</title>
+    <body>
+        <div class="card">
+            
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
+        <tr><td><p id="about">Skills</p></td></tr>
         <tr>
-            <td>Skill Name:</td>
-            <td>{{form.skill_name}}</td>
+            <td><p id="lname">Skill Name</p></td>
         </tr>
         <tr>
-            <td>Rating:</td>
-            <td>{{form.rating}}</td>
+            <td><input id="lbox" required {{form.skill_name}}</td>
         </tr>
         <tr>
-            <td>Supporting Doc:</td>
-            <td>{{form.supporting_doc}}</td>
+            <td><p id="lname">Rating</p></td>
+        </tr>
+        <tr>
+            <td><input id="lbox" required {{form.rating}}</td>
+        </tr>
+        <tr>
+            <td id="supporting_doc"><p>Supporting Document</p>{{form.supporting_doc}}</td>
         </tr>
         {{ form.errors }}
-        <td><button type="submit" name="submit"  >Save</button></td>
+        <td><button id="submit" type="submit">Save</button></td>
     </table>
 </form>
+        </div>
+    </body>
+</html>

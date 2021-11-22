@@ -4,7 +4,7 @@
 
 .card{
     width:850px;
-    height:2300px;
+    height:2400px;
     box-shadow: 2px 2px 5px grey;
     margin-left: 220px;
     border-radius:10px;
@@ -15,7 +15,7 @@
     font-size:28px;
     font-weight:bolder;
     color:black;
-    padding-left:340px;
+    margin-left:380px;
     margin-top:20px;
 }
 #fname{
@@ -30,6 +30,7 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
 }
 #first_name{
     position: absolute;
@@ -46,6 +47,7 @@
     position: absolute;
     width: 240px;
     height: 35px;
+    margin-left:-100px;
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -65,6 +67,8 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
+
 }
 #DOB{
     position: absolute;
@@ -81,6 +85,7 @@
     position: absolute;
     width: 240px;
     height: 35px;
+    margin-left:-100px;
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -118,10 +123,12 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
+
 }
 #email{
     position: absolute;
-    width: 240px;
+    width: 300px;
     height: 35px;
     margin-left:50px;
 
@@ -132,8 +139,10 @@
 }
 #alternate{
     position: absolute;
-    width: 240px;
+    width: 300px;
     height: 35px;
+    margin-left:-100px;
+
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -153,6 +162,8 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
+
 }
 #current_address{
     position: absolute;
@@ -169,6 +180,7 @@
     position: absolute;
     width: 320px;
     height: 150px;
+    margin-left:-100px;
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -191,7 +203,7 @@
     font-weight:bolder;
     color:black;
     margin-top: 50px;
-    padding-left:300px;
+    padding-left:350px;
 }
 #edu_level{
     font-family:'poppins',sans-serif;
@@ -214,6 +226,8 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
+
 }
 #recent_degree{
     position: absolute;
@@ -230,6 +244,8 @@
     position: absolute;
     width: 240px;
     height: 35px;
+    margin-left:-100px;
+
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -267,6 +283,8 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
+
 }
 #recent_yop{
     position: absolute;
@@ -283,6 +301,8 @@
     position: absolute;
     width: 240px;
     height: 35px;
+    margin-left:-100px;
+
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -311,6 +331,8 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
+
 }
 #pu_combination{
     position: absolute;
@@ -327,6 +349,8 @@
     position: absolute;
     width: 240px;
     height: 35px;
+    margin-left:-100px;
+
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -411,6 +435,7 @@
     font-size:15px;
     color:#777474;
     margin-top:50px;
+    margin-left:-100px;
 }
 #tenth_yop{
     position: absolute;
@@ -422,11 +447,14 @@
     border: 0.5px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
+
 }
 #tenth_percentage{
     position: absolute;
     width: 240px;
     height: 35px;
+    margin-left:-100px;
+
 
     background: #FFFFFF;
     border: 0.5px solid #000000;
@@ -449,14 +477,15 @@
     padding-left:50px;
 }
 #submit{
-    border-radius: 5px;
-        background-color: #461FBE;
-        margin-left:350px;
-        font-size: 20px;
-        width:120px;
-        height:30px;
+
+        position: absolute;
+        width: 100px;
+        height: 52px;
+        margin-left:650px;
+        margin-top:20px;
         color:white;
-        margin-top:50px;
+        font-family: 'poppins',sans-serif;
+        background: #40159B;
 }
 </style>
 <html>
@@ -606,7 +635,7 @@
             <td id="resume"><p>Resume:</p>{{form.Resume}}</td>
         </tr>
         <tr> 
-            <td><input id="submit" type="submit"/></td>
+            <td><input id="submit" type="submit" value="Save"/></td>
           </tr>
     </table>
     </form>

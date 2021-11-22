@@ -1,16 +1,80 @@
-<h1>Candidate Languages</h1>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+.card{
+    width:500px;
+    height:500px;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 350px;
+    border-radius:10px;
+    margin-top: 80px;
+}
+#about{
+    font-family:'poppins',sans-serif;
+    font-size:28px;
+    font-weight:bolder;
+    color:black;
+    padding-left:180px;
+    margin-top:20px;
+}
+#text{
+    font-family:'poppins',sans-serif;
+    font-size:15px;
+    color:#777474;
+    padding-left:50px;
+    margin-top: 50px;
+}
+#box{
+    position: absolute;
+    width: 300px;
+    height: 35px;
+    margin-left:50px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+#submit{
+
+position: absolute;
+width: 80px;
+height: 45px;
+margin-left:380px;
+margin-top:170px;
+color:white;
+font-family: 'poppins',sans-serif;
+background: #40159B;
+}
+
+</style>
+<html>
+    <title>Language</title>
+    <body>
+        <div class="card">
+            
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
         <tr>
-            <td>Language:</td>
-            <td>{{form.language}}</td>
+            <td><p id="about">Language</p></td>
         </tr>
         <tr>
-            <td>Proficiency:</td>
-            <td>{{form.proficiency}}</td>
+            <td><p id="text">Language</p></td>
+        </tr>
+        <tr>
+            <td><input id="box" required {{form.language}}</td>
+        </tr>
+        <tr>
+            <td><p id="text">Proficiency</p></td>
+        </tr>
+        <tr>
+            <td><input id="box" required {{form.proficiency}}</td>
         </tr>
         {{ form.errors }}
-        <td><button type="submit" name="submit"  >Save</button></td>
+        <td><button type="submit" id="submit"  >Save</button></td>
     </table>
 </form>
+        </div>
+    </body>
+</html>
