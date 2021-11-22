@@ -1,15 +1,15 @@
 <style>
-body{background: rgba(64, 21, 155, 0.08);}
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
 .card {
     position: absolute;
     width: 760px;
     height: 700px;
-    left: 304px;
+    left: 250px;
     top: 82px;
     background: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
 }
 .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
 
@@ -20,7 +20,6 @@ body{background: rgba(64, 21, 155, 0.08);}
     color:black;
     padding-left:300px;
     margin-top:20px;
-    text-shadow: 0 3px 0 rgb(64, 21, 155, 0.08);
 }
 #company{
     font-family:'poppins',sans-serif;
@@ -34,8 +33,8 @@ body{background: rgba(64, 21, 155, 0.08);}
     width: 670px;
     height: 35px;
     left: 50px;
-    top: 135px;
-    background: #f5f5f5;
+    top: 150px;
+    background: #ffffff;
     border: 0.5px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
@@ -52,8 +51,8 @@ body{background: rgba(64, 21, 155, 0.08);}
     width: 670px;
     height: 35px;
     left: 50px;
-    top: 235px;
-    background: #f5f5f5;
+    top: 250px;
+    background: #ffffff;
     border: 0.5px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
@@ -70,8 +69,8 @@ body{background: rgba(64, 21, 155, 0.08);}
     width: 670px;
     height: 35px;
     left: 50px;
-    top: 338px;
-    background: #f5f5f5;
+    top: 360px;
+    background: #ffffff;
     border: 0.5px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
@@ -88,33 +87,27 @@ body{background: rgba(64, 21, 155, 0.08);}
     width: 670px;
     height: 35px;
     left: 50px;
-    top: 440px;
-    background: #f5f5f5;
+    top: 470px;
+    background: #ffffff;
     border: 0.5px solid #000000;
     box-sizing: border-box;
     border-radius: 5px;
 }
-#doc{
+#supporting_doc{
     font-family:'poppins',sans-serif;
     font-size:15px;
     color:#777474;
     padding-left:50px;
-    margin-top: 80px;
+    padding-top: 80px;
 }
-#supporting_doc{
-    position: absolute;
-    left: 50px;
-    top: 540px;
-    background: #f5f5f5;
-}
+
 #submit{
     position: absolute;
-    width: 115px;
-    height: 52px;
-    left: 550px;
+    width: 100px;
+    height: 45px;
+    left: 580px;
     top: 620px;
     background: #40159B;
-    border-radius:5px;
     color:white;
 }
 #submit:hover {box-shadow: 0 8px 5px 0 rgba(0,0,0,0.7);}
@@ -127,7 +120,7 @@ body{background: rgba(64, 21, 155, 0.08);}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
-            <tr><td><p id="head">Internships</p></td></tr>
+            <tr><td><p id="head">Experience</p></td></tr>
             <tr>
                 <td><p id="company">Company Name:</p></td>
                 <td><input id="company_name" required {{form.company_name}}</td>
@@ -145,8 +138,7 @@ body{background: rgba(64, 21, 155, 0.08);}
                 <td><input id="description" placeholder="Experience gained, location, company contact" required {{form.description}}</td>
             </tr>
             <tr>
-                <td><p id="doc">Supporting Doc:</p></td>
-                <td><input id="supporting_doc" required {{form.supporting_doc}}</td>
+                <td id="supporting_doc"><p>Supporting Document:</p>{{form.supporting_doc}}</td>
             </tr>
             {{ form.errors }}
             <td><button id="submit" type="submit">Save</button></td>
