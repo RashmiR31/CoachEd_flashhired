@@ -1,3 +1,6 @@
+{% extends 'candidate/base.html' %}
+{% block content %}
+
 <h1>Job Portal</h1>
 <table>
     {% for job in job_details %}
@@ -13,3 +16,5 @@
     </tr>
     {% endfor %}
 </table>
+
+{% endblock %}

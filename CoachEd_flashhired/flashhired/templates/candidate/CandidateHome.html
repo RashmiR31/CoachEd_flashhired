@@ -1,11 +1,20 @@
-<title>Candidate Home</title>
-<h1>Candidate Home</h1>
-
-{{details.first_name}} is the candidate
+{% extends 'candidate/base.html' %}
+{% block content %}
+<style>
+#heading{
+    margin-left:500px;
+}
+#name{
+    margin-left:600px;
+}
+</style>
+<html>
+    <title> Candidate Home</title>
+    <body>
+        <h1 id="heading">Candidate Home</h1>
+    <p id="name">{{details.first_name}} is the candidate</p>
 <br>
-<p><a href="{% url 'candidateProfile' %}">Profile</a></p>
-<p><a href="{% url 'candidateJobPortal' %}">Job Portal</a></p>
-<p><a href="{% url 'logout_view' %}">Logout</a></p>
+
 
 {% if shortlisted_jobs %}
 <h2>Shortlisted Jobs</h2>
@@ -13,3 +22,6 @@
 <p> {{job.id}}/{{job.job_title}}/{{job.job_type}} / <a href="{% url 'candidateViewJob' job.id %}">View job</a> </p>
 {% endfor %}
 {% endif %}
+    </body>
+</html>
+{% endblock %}
