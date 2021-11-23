@@ -570,7 +570,7 @@
         </tr>
         <tr>
             <td><input id="recent_yop" type="date" min="1990-01-01" required {{form.recent_yop}}</td>
-            <td><input id="recent_cgpa" type="number" step="0.01" required {{form.recent_cgpa_equivalent}}</td>
+            <td><input id="recent_cgpa" type="number" step="0.01" max="100.00" required {{form.recent_cgpa_equivalent}}</td>
         </tr>
         <tr>
             <td id="recent_marks_card"><p id="label2">recent_marks_card:</p>{{form.recent_marks_card}}</td>
@@ -602,7 +602,7 @@
             <td><p id="percentage">CGPA/Equivalent Percentage</p></td>
         </tr>
         <tr>
-            <td><input id="pu_percentage" type="number" step="0.01"  required {{form.pu_percentage}}</td>
+            <td><input id="pu_percentage" type="number" step="0.01" max="100.00" required {{form.pu_percentage}}</td>
         </tr>
         <tr>
             <td id="pu_marks_card"><p id="label2">pu_marks_card:</p>{{form.pu_marks_card}}</td>
@@ -626,7 +626,7 @@
         </tr>
         <tr>
             <td><input id="tenth_yop" type="date" min="1990-01-01"  placeholder="Year of pass" required {{form.tenth_yop}}</td>
-            <td><input id="tenth_percentage" type="number" step="0.01" placeholder="percentage" required {{form.tenth_percentage}}</td>
+            <td><input id="tenth_percentage" type="number" step="0.01" max="100.00" placeholder="percentage" required {{form.tenth_percentage}}</td>
         </tr>
         <tr>
             <td id="tenth_marks_card"><p id="label2">tenth_marks_card:</p>{{form.tenth_marks_card}}</td>
