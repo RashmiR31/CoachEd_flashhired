@@ -78,7 +78,7 @@
     font-size: 12px;
     line-height: 18px;
     font-weight: bold;
-
+    text-decoration: none;
     color: #40159B;
     
 }
@@ -135,6 +135,19 @@
     font-size: 12px;
     line-height: 18px;
     margin-top:-20px;
+    color: rgba(0, 0, 0, 0.71);
+}
+#content2{
+    position: absolute;
+    width: 300px;
+    height: 80px;
+    margin-left: 300px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top:-5px;
+    line-height: 18px;
     color: rgba(0, 0, 0, 0.71);
 }
 #edit{
@@ -198,6 +211,7 @@
         {% for p in project_details %}
         <p id="sub_heading">{{p.project_name}}</p>
         <p id="content">{{p.technologies_used}}</p>
+        <p id="content2">{{p.start_date}} - {{p.end_date}}</p>
         <a id="edit" href="editprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'><i class="fas fa-pencil-alt"></i></a>
         <a id="delete" href="deleteprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'><i class="fas fa-trash"></i></a>
         {% endfor %}
