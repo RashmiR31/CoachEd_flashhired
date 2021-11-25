@@ -51,6 +51,13 @@ COMBINATION_CHOICES= (
     ('pcme','PCME'),
 )
 
+PROFICIENCY = {
+    ( 'elementaryproficiency','Elementary Proficiency'),
+    ('limitedworkingproficiency','Limited Working Proficiency'),
+    ('professionalworkingproficiency','Professional Working Proficiency'),
+    ('fullprofessionalproficiency','Full Professional Proficiency'),
+    ('native/bilingualproficiency','Native/Bilingual Proficiency'),
+}
 #################################################################################
 ##################### Recruiter Side ############################################
 #################################################################################
@@ -172,7 +179,7 @@ class Skills(models.Model):
 class Languages(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
     language = models.CharField(max_length=50)
-    proficiency = models.CharField(max_length=50)
+    proficiency = models.CharField(max_length=100,choices=PROFICIENCY,blank=True)
 
 class SocialLinks(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete=models.CASCADE)

@@ -2,10 +2,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
 .card{
-    width:500px;
-    height:500px;
+    width:700px;
+    height:550px;
     box-shadow: 2px 2px 5px grey;
-    margin-left: 350px;
+    margin-left: 300px;
     border-radius:10px;
     margin-top: 80px;
 }
@@ -24,11 +24,11 @@
     font-size:15px;
     color:#777474;
     padding-left:50px;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 #box{
     position: absolute;
-    width: 300px;
+    width: 600px;
     height: 35px;
     margin-left:50px;
 
@@ -42,7 +42,7 @@
 position: absolute;
 width: 80px;
 height: 45px;
-margin-left:380px;
+margin-left:570px;
 margin-top:170px;
 color:white;
 font-family: 'poppins',sans-serif;
@@ -62,16 +62,17 @@ background: #40159B;
             <td><p id="about">Language</p></td>
         </tr>
         <tr>
-            <td><p id="text">Language</p></td>
+            <td><p id="text">Add Language</p></td>
         </tr>
         <tr>
             <td><input id="box" required {{form.language}}</td>
         </tr>
         <tr>
-            <td><p id="text">Proficiency</p></td>
+            <td><p id="text">How would you rate yourself on this Language?</p></td>
         </tr>
         <tr>
-            <td><input id="box" required {{form.proficiency}}</td>
+            <td><select id="box" required {{form.proficiency}}</select></td>
+
         </tr>
         {{ form.errors }}
         <td><button type="submit" id="submit"  >Save</button></td>
