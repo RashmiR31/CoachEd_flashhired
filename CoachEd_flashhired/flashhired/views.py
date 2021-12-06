@@ -128,7 +128,7 @@ def CandidateHome(request):
 
         return render(request,'candidate/CandidateHome.html',{'details':details,'shortlisted_jobs':shortlisted_jobs})
     else:
-        return HttpResponse("Login as Candidate to continue")
+        return render(request,'candidate/loginrequired.html',{})
 
 def candidateCreateProfile(request):
     if request.method=="POST":
@@ -504,7 +504,7 @@ def RecruiterHome(request):
             return render(request,'recruiter/message.html')
         return render(request,'recruiter/RecruiterHome.html',{'details':details,'jobs':jobs})
     else:
-        return HttpResponse("Login as recruiter to continue")
+        return render(request,'recruiter/loginrequired.html',{})
 
 def jobs(request):
     if request.user.is_authenticated and request.user.is_recruiter:
@@ -515,7 +515,7 @@ def jobs(request):
             return render(request,'recruiter/message.html')
         return render(request,'recruiter/jobs.html',{'details':details,'jobs':jobs})
     else:
-        return HttpResponse("Login as recruiter to continue")
+        return render(request,'recruiter/loginrequired.html',{})
 
 
 def recruiterCreateProfile(request):
