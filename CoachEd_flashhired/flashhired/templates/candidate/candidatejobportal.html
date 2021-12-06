@@ -1,20 +1,108 @@
 {% extends 'candidate/base.html' %}
 {% block content %}
 
-<h1>Job Portal</h1>
-<table>
-    {% for job in job_details %}
-    <tr>
-        <td>{{job.job_type}}</td>
-        <td>{{job.job_title}}</td>
-        <td>{{job.functional_area}}</td>
-        <td>{{job.salary}}</td>
-        <td><a href="{% url 'candidateViewJob' job.id %}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
-    </tr>
-    <tr>
-        <td></td>
-    </tr>
-    {% endfor %}
-</table>
+<style>
+    .main{
+        margin-left:160px;
+        margin-top:80px;
+    }
+#top{
+    height:110px;
+}
+#profile_pic{
+    width:70px;
+    height:70px;
+    padding-left:950px;
+    border-radius:50%;
+    margin-top:-50px
+}
+.jobs{
+    background: rgba(251, 251, 251, 0.82);
+}
+.design{
+    width:200px;
+    height:300px;
+    margin-left:30px;
+    margin-top:50px;
+}
 
+</style>
+<html>
+    <head>
+    <title>Jobs</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="main">
+        <div id="top">
+            <img id = "profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic">
+            <br><br><br><br>
+            <hr>
+        </div>
+
+
+
+
+       
+    <div class="card-columns">
+        {% for job in job_details %}
+    <div class="card design" style="width: 18rem;">
+  
+  <div class="card-body">
+    
+    <h5 class="card-title">{{ job.job_title }}</h5>
+    <p class="card-text">{{ job.job_type }}</p>
+    <p class="card-text">{{job.functional_area}}</p>
+   <div class="card-footer bg-transparent border-dark">
+   <p class="card-title">{{job.salary}}</p>
+   <center>
+    <td><a href="{% url 'candidateViewJob' job.id %}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
+    
+    </center>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="jobs">
+            <table>
+                {% for job in job_details %}
+               
+                <tr class="card design">
+                    <td><p>{{job.job_title}}</p></td>
+                    <td><p>{{job.job_type}}</p></td>
+                    <td><p>{{job.functional_area}}</p></td>
+                    <td><p>{{job.salary}}</p></td>
+                    <td><a href="{% url 'candidateViewJob' job.id %}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </table> -->
+            
+        </div>
+        </div>
+    </body>
+</html>
 {% endblock %}
