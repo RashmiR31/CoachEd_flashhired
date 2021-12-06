@@ -175,7 +175,7 @@ def candidateEditProfile(request):
         if len(request.FILES) != 0:
             if len(request.FILES['profile_pic']) > 0:
                 os.remove(details.profile_pic.path)
-            details.profile_pic = request.FILES['profile_pic']
+                details.profile_pic = request.FILES['profile_pic']
             # if len(request.FILES['recent_marks_card']) > 0:
             #     os.remove(details.recent_marks_card.path)
             # details.recent_marks_card = request.FILES['recent_marks_card']
