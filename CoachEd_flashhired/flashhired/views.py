@@ -432,10 +432,11 @@ def editSocialLinks(request,sl_id):
 def candidateJobPortal(request):
     if request.user.is_authenticated and request.user.is_candidate:
         try:
+            candidate_details = Candidate.objects.get(pk=request.user)
             job_details = JobPosting.objects.all()
         except JobPosting.DoesNotExist:
             return redirect("candidateHome")
-    return render(request,'candidate/candidatejobportal.html',{'job_details':job_details})
+    return render(request,'candidate/candidatejobportal.html',{'job_details':job_details,'candidate_details':candidate_details})
 
 def candidateViewJob(request,job_id):
     job_id=int(job_id)
@@ -460,7 +461,7 @@ def candidateViewJob(request,job_id):
 
         except JobPosting.DoesNotExist:
             return redirect('candidateJobPortal')
-    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details,'applied':applied,'shortlisted':shortlisted})
+    return render(request,'candidate/candidateviewjob.html',{'job_details':job_details,'applied':applied,'shortlisted':shortlisted,'candidate':candidate})
 
 def candidateJobApplication(request,job_id):
     job_id = int(job_id)
@@ -488,7 +489,7 @@ def candidateJobApplication(request,job_id):
     else:
         apply_form= JobApplicationForm()
     current_job = JobPosting.objects.get(id=job_id)
-    return render(request,'candidate/jobapplication.html',{'apply_form':apply_form,'applied':applied,'job':current_job})
+    return render(request,'candidate/jobapplication.html',{'apply_form':apply_form,'applied':applied,'job':current_job,'candidate':candidate})
         
     
 
