@@ -7,14 +7,17 @@
         margin-top:80px;
     }
 #top{
-    height:110px;
+    height:53px;
 }
 #profile_pic{
     width:70px;
     height:70px;
-    padding-left:950px;
-    border-radius:50%;
-    margin-top:-50px
+    margin-left:980px;
+    margin-top: -60px;
+    border-radius: 50%;
+}
+#container{
+    background-color:#FBFBFB;
 }
 .jobs{
     background: rgba(251, 251, 251, 0.82);
@@ -37,15 +40,15 @@
     <body>
         <div class="main">
         <div id="top">
-            <img style="width: 100px; height: 100px;" src="{{candidate_details.profile_pic.url}}" alt="profile_pic">
-            <br><br><br><br>
+            <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{candidate_details.profile_pic.url}}" alt="profile_pic"></a>
+            <br><br>
             <hr>
         </div>
 
 
 
 
-       
+    <div id="container">
     <div class="card-columns">
         {% for job in job_details %}
     <div class="card design" style="width: 18rem;">
@@ -67,9 +70,9 @@
     {% endfor %}
 </div>
 
+</div>
 
-
-
+{% endblock %}
 
 
 
@@ -104,4 +107,3 @@
         </div>
     </body>
 </html>
-{% endblock %}
