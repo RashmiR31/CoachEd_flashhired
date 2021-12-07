@@ -1,32 +1,183 @@
-<h1>Candidate Projects</h1>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>Project Name:</td>
-            <td>{{form.project_name}}</td>
-        </tr>
-        <tr>
-            <td>Technologies used</td>
-            <td>{{form.technologies_used}}</td>
-        </tr>
-        <tr>
-            <td>Start date:</td>
-            <td>{{form.start_date}}</td>
-        </tr>
-        <tr>
-            <td>End date:</td>
-            <td>{{form.end_date}}</td>
-        </tr>
-        <tr>
-            <td>Description:</td>
-            <td>{{form.description}}</td>
-        </tr>
-        <tr>
-            <td>supporting link:</td>
-            <td>{{form.supporting_media_or_link}}</td>
-        </tr>
-        {{ form.errors }}
-        <td><button type="submit" name="submit"  >Save</button></td>
-    </table>
-</form>
+<style>
+    .card {
+        position: absolute;
+        width: 760px;
+        height: 800px;
+        left: 250px;
+        top: 82px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    body {white-space:normal;margin-top: 200px;} 
+    
+    #title{
+        position: absolute;
+        font-family: poppins;
+        margin-top:20px;
+        padding-left: 285px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #project1{
+        font-family:'poppins';
+        font-size:15px;
+        color:#777474;
+        margin-left:50px;
+        margin-top: 110px;
+    }
+    #project2{
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        border-radius: 5px;
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        top: 140px;  
+        left:50px;
+    }
+    #tech_used1{
+        font-family:'poppins';
+        font-size:15px;
+        color:#777474;
+        margin-left:50px;
+        margin-top: 70px;
+    }
+    #tech_used2{
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        border-radius: 5px;
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        margin-top: 50px;  
+        left:50px;
+    }
+    #start_date1{
+        font-family:'poppins';
+        font-size:15px;
+        color:#777474;
+        margin-left:50px;
+        margin-top: 70px;
+    }
+    #start_date2{
+        position: absolute;
+        width: 300px;
+        height: 35px;
+        border-radius: 5px;
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        margin-top: 50px;  
+        left:50px;
+    }
+    #end_date1{
+        font-family:'poppins';
+        font-size:15px;
+        color:#777474;
+        margin-left:50px;
+        margin-top: 70px;
+    }
+    #end_date2{
+        position: absolute;
+        width: 300px;
+        height: 35px;
+        border-radius: 5px;
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        margin-top: 50px;  
+        left:50px;
+    }
+    #description1{
+        font-family:'poppins';
+        font-size:15px;
+        color:#777474;
+        margin-left:50px;
+        margin-top: 70px;
+    }
+    #description2{
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        border-radius: 5px;
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        margin-top: 50px;  
+        left:50px;
+    }
+    #link1{
+    font-family:'poppins';
+        font-size:15px;
+        color:#777474;
+        margin-left:50px;
+        margin-top: 70px;
+    }
+    #link2{
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        border-radius: 5px;
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        margin-top: 50px;  
+        left:50px;
+    }
+    #submit{
+        position: absolute;
+        width: 100px;
+        height: 45px;
+        left: 580px;
+        top: 690px;
+        background: #40159B;
+        color:white;
+    }
+    #submit:hover {box-shadow: 0 8px 5px 0 rgba(0,0,0,0.7);}
+    
+    
+    
+    </style>
+    <html>
+    <title>Projects</title>
+    <body>
+        <div class="card">
+        <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <p id = "title" >Project Details</p>
+                    <tr>
+                        <td><p id = "project1">Project Name:</p></td>
+                        <td><input id = "project2" required {{form.project_name}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id = "tech_used1">Technologies used</p></td>
+                        <td><input id = "tech_used2" required {{form.technologies_used}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id = "start_date1">Start date:</p></td>
+                        <td><input id = "start_date2" required {{form.start_date}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id = "end_date1">End date:</p></td>
+                        <td><input id = "end_date2" required {{form.end_date}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id = "description1">Description:</p></td>
+                        <td><input id = "description2" required {{form.description}}</td>
+                    </tr>
+                    <tr>
+                        <td><p id = "link1">supporting link:</p></td>
+                        <td><input id = "link2"{{form.supporting_media_or_link}}</td>
+                    </tr>
+                    {{ form.errors }}
+                    <td><button id = "submit" type="submit" name="submit"  >Save</button></td>
+                </table>
+            </form>
+            </div>
+        </body>
+    </html>

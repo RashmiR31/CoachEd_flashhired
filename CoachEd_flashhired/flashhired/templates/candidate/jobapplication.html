@@ -1,12 +1,137 @@
-<img style="width: 100px; height: 100px;" src="{{candidate.profile_pic.url}}" alt="profile_pic">
-{% if applied %}
-<p>You have applied for {{job.job_title}} </p>
-{% else %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{apply_form.as_table}}
-        <td><button type="submit" name="submit" >Save</button></td>
-    </table>
-</form>
+
+{% extends 'candidate/base.html' %}
+{% block content %}
+
+<style>
+.main{
+    margin-left:160px;
+    margin-top:80px;
+}
+.card {
+    position: absolute;
+    width: 1100px;
+    margin-left:135px;
+    margin-top:20px;
+    height: 600px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+#helpme{
+    position: absolute;
+    padding-left:60px;
+    margin-top:270px;
+}
+.card2 {
+    position: absolute;
+    width: 1100px;
+    margin-left:135px;
+    margin-top:20px;
+    height: 600px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.card2:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+#applied {
+position: absolute;
+left: 40px;
+top: 230px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+color: rgba(0, 0, 0, 0.81);
+}
+
+
+#top{
+        height:53px;
+    }
+    #profile_pic{
+        width:70px;
+        height:70px;
+        margin-left:980px;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
+#confirm {
+position: absolute;
+left: 475px;
+top: 360px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+color: rgba(0, 0, 0, 0.81);
+}
+
+#submit{
+    position: absolute;
+    width: 168px;
+    height: 55px;
+    left: 660px;
+    top: 440px;
+    background: rgba(40, 7, 109, 0.81);
+    color:white;
+    border-radius: 5px;
+}
+#submit:hover {box-shadow: 0 8px 5px 0 rgba(0,0,0,0.7);}
+
+#submit2{
+    position: absolute;
+    width: 168px;
+    height: 55px;
+    left: 890px;
+    top: 440px;
+    background: rgba(197, 61, 81, 0.87);
+    color:white;
+    border-radius: 5px;
+}
+#submit2:hover {box-shadow: 0 8px 5px 0 rgba(0,0,0,0.7);} 
+
+</style>
+<html>
+<title>Apply Confirmation</title>
+<body>
+    <div class="main">
+        <div id="top">
+            <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{candidate.profile_pic.url}}" alt="profile_pic"></a>
+            <br><br>
+            <hr>
+        </div>
+    
+        
+        {% if applied %} 
+        <div class="card2"> 
+        <p id="applied">You have now applied for the {{job.job_title}} job. Please keep an eye out on the updates on your email and the notifications. You can reach out to&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if any queries about the same. </p>
+        <a id= "helpme" href="mailto:support@coached.co.in">support@coached.co.in</a>
+        </div>
+        {% else %}
+        <div class="card"></div>               
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{apply_form.as_table}}
+                <td><p id="confirm" >You are now applying for the job: {{job.job_title}}. Are you sure you want to continue to apply for this job role? </p></td>
+                <td><button id = "submit" type="submit" name="submit"  >Yes,lets apply!</button></td>
+        
+                <td>
+                    <a href="{% url 'candidateJobPortal' %}"><button id = "submit2">No, let me think some more</button></a></td>
+
+            </table>
+        </form>
+        
+    </div>
+</div>
+</body>
+</html>
 {% endif %}
+{% endblock %}
