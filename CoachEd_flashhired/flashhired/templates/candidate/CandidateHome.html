@@ -1,19 +1,51 @@
 {% extends 'candidate/base.html' %}
 {% block content %}
 <style>
-#heading{
-    margin-left:500px;
+     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+.main{
+    margin-left:160px;
+    margin-top:80px;
+}
+#top{
+height:53px;
+}
+#profile_pic{
+width:70px;
+height:70px;
+margin-left:980px;
+margin-top: -90px;
+border-radius: 50%;
 }
 #name{
-    margin-left:600px;
-}
+    margin-left:50px;
+    font-family: 'poppins',sans-serif;
+    font-size: 36px;
+    font-weight: bolder;
+    line-height: 25px;
+    color: #28076D;
+    text-transform: capitalize;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
 </style>
 <html>
-    <title> Candidate Home</title>
-    <body>
-        <h1 id="heading">Candidate Home</h1>
-    <p id="name">{{details.first_name}} is the candidate</p>
-    <img style="width: 100px; height: 100px;" src="{{details.profile_pic.url}}" alt="profile_pic">
+    <head>
+        <title> Candidate Home</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        </head>
+        <body>
+            <div class="main">
+            <div id="top">
+                <p id="name">Welcome {{details.first_name}}!! </p>
+                <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic"></a>
+                <br><br>
+                <hr>
+            </div>
+    
+    
+   
 <br>
 
 <h2>Applied jobs</h2>
@@ -27,6 +59,7 @@
 <p> {{job.id}}/{{job.recruiter.company_name}}/{{job.job_title}}/{{job.job_type}} / <a href="{% url 'candidateViewJob' job.id %}">View job</a> </p>
 {% endfor %}
 {% endif %}
+        </div>
     </body>
 </html>
 {% endblock %}

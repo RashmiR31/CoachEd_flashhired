@@ -2,6 +2,8 @@
 {% block content %}
 
 <style>
+            @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
     .main{
         margin-left:160px;
         margin-top:80px;
@@ -23,12 +25,96 @@
     background: rgba(251, 251, 251, 0.82);
 }
 .design{
-    width:200px;
-    height:300px;
+    width:300px;
+    height:320px;
     margin-left:30px;
     margin-top:50px;
+    text-transform: capitalize;
+
+    background: rgba(255, 250, 250, 0.84);
+border: 1px solid rgba(0, 0, 0, 0.44);
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
 }
 
+.design:hover{box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);}
+.card-title{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 27px;
+
+color: #000000;
+}
+
+.role{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-transform: capitalize;
+color: #28076D;
+}
+
+#salary{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 200;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
+#offered{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+color: #131313;
+}
+
+#date{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+
+color: #131313;
+
+}
+
+#jd{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 300;
+font-size: 13px;
+line-height: 19px;
+height:10px;
+
+color: rgba(0, 0, 0, 0.71);
+}
+
+.go{
+    color: #28076D;
+    font-size:40px;
+    margin-left:200px;
+    
+}
 </style>
 <html>
     <head>
@@ -56,12 +142,15 @@
   <div class="card-body">
     
     <h5 class="card-title">{{ job.job_title }}</h5>
-    <p class="card-text">{{ job.job_type }}</p>
-    <p class="card-text">{{job.functional_area}}</p>
-   <div class="card-footer bg-transparent border-dark">
-   <p class="card-title">{{job.salary}}</p>
+    <p class="card-text role">{{job.recruiter.company_name}}</p>
+    <p id="salary">Salary Offered</p>
+    <p id="offered">{{job.salary}} LPA</p>
+    <p class="date "><i class="fas fa-clock"></i> {{job.last_date_to_apply}}</p>
+    <p id="jd">{{job.jd}}</p>
+    <br>
+   <div>
    <center>
-    <td><a href="{% url 'candidateViewJob' job.id %}" class="btn btn-warning" id = '{{job.id}}'>View</a></td>
+    <td><a href="{% url 'candidateViewJob' job.id %}" class="go" id = '{{job.id}}'><i class="fas fa-arrow-circle-right"></i></a></td>
     
     </center>
     </div>
