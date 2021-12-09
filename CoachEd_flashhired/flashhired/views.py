@@ -126,7 +126,7 @@ def CandidateHome(request):
         except JobApplication.DoesNotExist:
             print("not applied to any jobs")
 
-        return render(request,'candidate/CandidateHome.html',{'details':details,'shortlisted_jobs':shortlisted_jobs})
+        return render(request,'candidate/CandidateHome.html',{'details':details,'shortlisted_jobs':shortlisted_jobs,'application':application})
     else:
         return render(request,'candidate/loginrequired.html',{})
 

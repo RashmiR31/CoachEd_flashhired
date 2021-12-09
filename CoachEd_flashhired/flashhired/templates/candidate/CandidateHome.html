@@ -16,11 +16,15 @@
     <img style="width: 100px; height: 100px;" src="{{details.profile_pic.url}}" alt="profile_pic">
 <br>
 
+<h2>Applied jobs</h2>
+{% for j in application %}
+<p> {{j.job.id}}/{{j.job.job_title}}/{{j.job.job_type}}/{{j.job.recruiter.company_name}} </p>
+{% endfor %}
 
 {% if shortlisted_jobs %}
 <h2>Shortlisted Jobs</h2>
 {% for job in shortlisted_jobs %}
-<p> {{job.id}}/{{job.job_title}}/{{job.job_type}} / <a href="{% url 'candidateViewJob' job.id %}">View job</a> </p>
+<p> {{job.id}}/{{job.recruiter.company_name}}/{{job.job_title}}/{{job.job_type}} / <a href="{% url 'candidateViewJob' job.id %}">View job</a> </p>
 {% endfor %}
 {% endif %}
     </body>
