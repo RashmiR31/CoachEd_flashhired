@@ -604,6 +604,7 @@ def viewJob(request,job_id):
     job_id = int(job_id)
     try:
         job_details = JobPosting.objects.get(id=job_id)
+        recruiter_details = Recruiter.objects.get(pk=request.user)
         try:
             candidate_ids = JobApplication.objects.all().filter(job=job_id).values('candidate')
             applicants=[]
@@ -633,6 +634,7 @@ def viewJob(request,job_id):
         'applicants':applicants,
         'shortlisted_candidates':shortlisted_candidates,
         'suggested_candidates':suggested_candidates,
+        'recruiter_details':recruiter_details,
         }
     return render(request,'recruiter/viewjob.html',context)
 

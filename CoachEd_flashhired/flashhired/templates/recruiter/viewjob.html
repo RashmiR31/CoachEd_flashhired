@@ -1,30 +1,384 @@
-<h1>{{job_details.job_title}}</h1>
+{% extends 'recruiter/base_recruiter.html' %}
+{% block title %}View Job{% endblock %}
+{% block content %}
 
-<p>{{job_details.job_type}}</p>
-<p>{{job_details.functional_area}}</p>
-<p>{{job_details.jd}}</p>
-<p>{{job_details.required_skills}}</p>
-<p>{{job_details.salary}}</p>
-<p>{{job_details.date_posted}}</p>
-<p>{{job_details.last_date_to_apply}}</p>
-<a href="{{job_details.upload_doc.url}}" target="_blank">view JD</a>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-{% if applicants %}
-{% for a in applicants %}
-<p> {{a.user_id}} / {{a.first_name}} {{a.last_name}} / <a href="{% url 'viewCandidateProfile' a.user_id job_details.id %}">View Profile</a></p>
-{% endfor %}
-{% endif %}
+        .main{
+   margin-left:160px;
+   padding-top:80px;
+   margin-bottom:100px;
+}
+#top{
+height:53px;
+}
+#profile_pic{
+width:70px;
+height:70px;
+margin-left:980px;
+margin-top: -60px;
+border-radius: 50%;
+} 
+    #title{
+        padding-top:50px ;
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        padding-left:50px;
+        color: #28076D;
+    }
+    #location{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-size: 24px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        padding-left:50px ;
+        color: #000000;
+    }
+    #lastdate{
+        font-style: normal;
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        padding-left:50px;
+        color: #3F3D56;
+    }
+    #job_type{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        padding-left:50px;
+        margin-top:50px;
+        color: #3F3D56;
+    }
+    #functional_area{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        padding-left:50px;
+        margin-top:50px;
+        color: #3F3D56;
+    }
+    .vl {
+        border-left: 1.5px solid #000000;
+        height: 200px;
+        margin-left:300px;
+        margin-top: -120px;
+    }
+    #skill{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-left:350px;
+        margin-top:-185px;
+        color: #3F3D56;
+    }
+    #cgpa{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-left:350px;
+        margin-top:50px;
+        color: #3F3D56;
+    }
+    #salary{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-left:350px;
+        margin-top:50px;
+        color: #3F3D56;
+    }
+    #answer{
+        margin-left:500px;
+        margin-top:-35px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
 
-{% if shortlisted_candidates %}
-<h2>Shortlisted candidates</h2>
-{% for s in shortlisted_candidates %}
-<p> {{s.user_id}} / {{s.first_name}} {{s.last_name}} /<a href="{% url 'viewCandidateProfile' s.user_id job_details.id %}">View Profile</a> </p>
-{% endfor %}
-{% endif %}
+        color: #28076D;
+    }
+    .vl2{
+        border-left: 1.5px solid #000000;
+        height: 200px;
+        margin-left:700px;
+        margin-top: -190px;
+    }
+    #experience{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-left:750px;
+        margin-top:-185px;
+        color: #3F3D56;
+    }
+    #answer2{
+        margin-left:870px;
+        margin-top:-35px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
 
-{% if suggested_candidates %}
-<h2>Suggestions</h2>
-{% for sug in suggested_candidates %}
-<p> {{sug.user_id}} / {{sug.first_name}} {{sug.last_name}} /<a href="{% url 'viewCandidateProfile' sug.user_id job_details.id %}">View Profile</a> </p>
-{% endfor %}
-{% endif %}
+        color: #28076D;
+    }
+    #job_description{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-top: 200px;
+        padding-left: 50px;
+        color: #000000;
+    }
+    #job{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        padding-left:50px;
+        width:700px;
+        height:150px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    #jd{
+        font-family: 'poppins',sans-serif;
+        width: 180px;
+        height: 40px;
+        margin-left:750px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: -50px;
+        color:#000000;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+    }
+    #jd:hover{box-shadow: 4px 4px 4px grey;}
+    #message{
+        margin-left: -500px;
+        margin-top: -850px;
+        font-family: 'Poppins',sans-serif;
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        color: #28076D;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    #heading{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 50px;
+        color: #000000;
+        margin-top: 50px;
+    }
+    .design{
+        width:900px;
+        margin-left: 50px;
+        margin-top:30px;
+    }
+    .card:hover{box-shadow: 0px 8px 8px grey;}
+    .table_heading{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 50px;
+        color: #000000;
+        padding-top:20px;
+    }
+    #name{
+        padding-left: 200px;
+    }
+    .table_content{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+        margin-left:60px;
+    }
+    #name_content{
+        padding-left: 180px;
+        text-transform: capitalize;
+    }
+    #shortlisted{
+        background: #45CD39;
+        border-radius: 10px;
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        width:150px;
+        height:40px;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        margin-left:250px;
+        cursor:pointer;
+        margin-bottom: 20px;
+        border-color: #45CD39;
+        border-style: solid;
+        padding-left: 25px;
+        color: #000000;
+    }
+    #shortlisted:hover{box-shadow: 2px 2px 2px grey;}
+
+    #applied{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        width:150px;
+        height:40px;
+        align-items: center;
+        text-align: center;
+        margin-left: 250px;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        color: #000000;
+    }
+    #applied:hover{
+        color:white;
+        background: rgba(40, 7, 109, 0.88);
+        padding-left: 30px;
+        border-radius: 10px;
+    }
+</style>
+
+
+<html>
+     <body>
+        <div class="main">
+        <div id="top">
+            <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{recruiter_details.profile_pic.url}}" alt="profile_pic"></a>
+            <br><br>
+            <hr>
+        </div> 
+
+        <p id="title">{{job_details.job_title}}</p>
+        <a href="{{job_details.upload_doc.url}}" target="_blank"><button id="jd">VIEW JD</button></a>       
+        <p id="location">{{recruiter_details.company_name}}|{{job_details.job_location}}|{{job_details.date_posted}}</p>
+        <p id="lastdate">Apply by {{job_details.last_date_to_apply}}</p>
+        <p id="job_type"><i class="fas fa-briefcase"></i> {{job_details.job_type}}</p>
+        <p id="functional_area"><i class="fas fa-chart-area"></i> {{job_details.functional_area}}</p>
+        <div class="vl"></div>
+        <p id="skill">Skills Required <p id="answer">{{job_details.required_skills}}</p></p>
+        <p id="cgpa">Required CGPA <p id="answer">{{job_details.required_cgpa}}</p></p>
+        <p id="salary">Salary <p id="answer">{{job_details.salary}} LPA</p></p>
+        <div class="vl2"></div>
+        <p id="experience">Experience <p id="answer2">{{job_details.required_experience}} Years</p></p>
+        
+        <p id="job_description">Job Description</p>
+        <p id="job">{{job_details.jd}}</p>
+        
+        {% if shortlisted_candidates %}
+        <h2 id="heading">Shortlisted candidates</h2>
+        <div class="card design">
+        <div class="table_heading"><p id="job_id">Job ID</p>
+        <p id="name"> Name</p>
+        </div>
+        <hr>
+        {% for s in shortlisted_candidates %}
+        <div class="table_content">
+        <p> {{s.user_id}} </p>
+        <p id="name_content"> {{s.first_name}} {{s.last_name}} </p>
+        <a  href="{% url 'viewCandidateProfile' s.user_id job_details.id %}"><button id="shortlisted">View Profile</button></a>
+        {% endfor %}
+        {% endif %}
+        </div>
+        </div>
+
+        {% if applicants %}
+        <h2 id="heading">Applied candidates</h2>
+        <div class="card design">
+        <div class="table_heading"><p id="job_id">Job ID</p>
+        <p id="name"> Name</p>
+        </div>
+        <hr>
+        {% for a in applicants %}
+        <div class="table_content">
+        <p> {{a.user_id}} </p>
+        <p id="name_content"> {{a.first_name}} {{a.last_name}} </p>
+        <a id="applied" href="{% url 'viewCandidateProfile' a.user_id job_details.id %}">View Profile</a>
+        {% endfor %}
+        {% endif %}
+        </div>
+        </div>
+
+        {% if suggested_candidates %}
+        <h2 id="heading">Suggested candidates</h2>
+        <div class="card design">
+        <div class="table_heading"><p id="job_id">Job ID</p>
+        <p id="name"> Name</p>
+        </div>
+        <hr>
+        {% for sug in suggested_candidates %}
+        <div class="table_content">
+        <p> {{sug.user_id}} </p>
+        <p id="name_content">{{sug.first_name}} {{sug.last_name}} </p>
+        <a id="applied" href="{% url 'viewCandidateProfile' sug.user_id job_details.id %}">View Profile</a> </p>
+        {% endfor %}
+        {% endif %}
+        </div>
+        </div>
+        {% endblock %}
+    </body>
+</html> 
+
+
+
+
+
+
