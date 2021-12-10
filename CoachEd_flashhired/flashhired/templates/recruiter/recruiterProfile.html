@@ -193,5 +193,15 @@
     </body>
 </html>
         
-
+<script>
+  function myFunction() {
+  var url;
+  if (confirm("Are you sure?")) {
+    url = "{% url 'logout_view' %}";
+  } else {
+    url = "{% url 'CandidateHome' %}";
+  }
+  document.location.href = url;
+  }
+  </script>
 
