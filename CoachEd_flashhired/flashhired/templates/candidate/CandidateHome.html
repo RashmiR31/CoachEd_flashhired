@@ -47,11 +47,12 @@ border-radius: 50%;
     
    
 <br>
-
+{% if application %}
 <h2>Applied jobs</h2>
 {% for j in application %}
 <p> {{j.job.id}}/{{j.job.job_title}}/{{j.job.job_type}}/{{j.job.recruiter.company_name}} </p>
 {% endfor %}
+{% endif %}
 
 {% if shortlisted_jobs %}
 <h2>Shortlisted Jobs</h2>
