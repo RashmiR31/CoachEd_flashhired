@@ -1,3 +1,4 @@
+{% load static %}
 {% url 'RecruiterHome' as RecruiterHome %}
 {% url 're recruiterProfile' as recruiterProfile %}
 {% url 'Jobs' as Jobs %}
@@ -18,7 +19,6 @@
       height:103%;
       margin-left:-20px;
       padding-top:80px;
-      margin-top:-100px;
       opacity:0.85;
      }
      
@@ -28,7 +28,12 @@
        padding-left:30px;
        padding-top: 30px;
      }
-    
+    #logo{
+      opacity: 1;
+      padding-left:30px;
+      margin-top:-40px;
+      width:160px;
+    }
      #list {
       
       list-style-type: none;
@@ -77,9 +82,13 @@
     
     <html>
       <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
         <title>{% block title %} {% endblock %}</title>
         <div class="sideNav">
+          <img id="logo" src="{% static 'logo_card.png' %}">
           <ul id="list">
             <p id="supportingText">Tools</p>
             <li id="navBar"><a class= "{% if request.path == RecruiterHome %} active {% endif %}" href="{% url 'RecruiterHome' %}"><i class="fas fa-home"> </i> Home</a></li>

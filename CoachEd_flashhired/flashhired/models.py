@@ -174,12 +174,12 @@ class Skills(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
     skill_name = models.CharField(max_length=50)
     rating = models.IntegerField()
-    supporting_doc = models.FileField(upload_to='candidate/skills')
+    supporting_doc = models.FileField(upload_to='candidate/skills',blank=True)
 
 class Languages(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
     language = models.CharField(max_length=50)
-    proficiency = models.CharField(max_length=100,choices=PROFICIENCY,blank=True)
+    proficiency = models.CharField(max_length=100,choices=PROFICIENCY)
 
 class SocialLinks(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete=models.CASCADE)

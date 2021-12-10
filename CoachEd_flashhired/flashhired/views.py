@@ -356,7 +356,7 @@ def deleteSkills(request,skill_id):
         skill_details = Skills.objects.get(id=skill_id)
     except Skills.DoesNotExist:
         return redirect("candidateProfile")
-    if len(skill_details.supporting_doc)>0:
+    if (skill_details.supporting_doc):
         os.remove(skill_details.supporting_doc.path)
     skill_details.delete()
     return redirect("candidateProfile")
@@ -642,6 +642,7 @@ def viewCandidateProfile(request,user_id,job_id):
             job_id = int(job_id)
             c_id=int(user_id)
             details = Candidate.objects.get(user_id=c_id)
+            recruiter_details = Recruiter.objects.get(pk=request.user)
             try:
                 exp_details = Experience.objects.all().filter(candidate=details)
             except Experience.DoesNotExist:
@@ -684,7 +685,8 @@ def viewCandidateProfile(request,user_id,job_id):
                 'social_links':social_links,
                 'c_id':c_id,
                 'job_id':job_id,
-                'shortlisted':shortlisted
+                'shortlisted':shortlisted,
+                'recruiter_details':recruiter_details,
             }
         except Candidate.DoesNotExist:
             print(" candidate doesn't exist")     
