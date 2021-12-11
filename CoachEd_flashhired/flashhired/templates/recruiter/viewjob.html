@@ -64,6 +64,7 @@ border-radius: 50%;
         padding-left:50px;
         margin-top:50px;
         color: #3F3D56;
+        text-transform: capitalize;
     }
     #functional_area{
         font-style: normal;
@@ -75,6 +76,8 @@ border-radius: 50%;
         padding-left:50px;
         margin-top:50px;
         color: #3F3D56;
+        text-transform: capitalize;
+
     }
     .vl {
         border-left: 1.5px solid #000000;
@@ -237,7 +240,7 @@ border-radius: 50%;
     #name{
         padding-left: 200px;
     }
-    .table_content{
+    #user_id{
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-style: normal;
         font-size: 16px;
@@ -249,7 +252,8 @@ border-radius: 50%;
         margin-left:60px;
     }
     #name_content{
-        padding-left: 180px;
+        margin-left: 260px;
+        margin-top:-40px;
         text-transform: capitalize;
     }
     #shortlisted{
@@ -258,12 +262,13 @@ border-radius: 50%;
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         width:150px;
         height:40px;
+        margin-left:550px;
+        margin-top:-40px;
         align-items: center;
         font-weight: bold;
         font-size: 16px;
         line-height: 19px;
         display: flex;
-        margin-left:250px;
         cursor:pointer;
         margin-bottom: 20px;
         border-color: #45CD39;
@@ -284,9 +289,10 @@ border-radius: 50%;
         height:40px;
         align-items: center;
         text-align: center;
-        margin-left: 250px;
+        margin-left: 550px;
+        margin-top: -40px;
+        padding-left: 25px;
         margin-bottom: 20px;
-        padding-left: 30px;
         color: #000000;
     }
     #applied:hover{
@@ -311,8 +317,8 @@ border-radius: 50%;
         <a href="{{job_details.upload_doc.url}}" target="_blank"><button id="jd">VIEW JD</button></a>       
         <p id="location">{{recruiter_details.company_name}}|{{job_details.job_location}}|{{job_details.date_posted}}</p>
         <p id="lastdate">Apply by {{job_details.last_date_to_apply}}</p>
-        <p id="job_type"><i class="fas fa-briefcase"></i> {{job_details.job_type}}</p>
-        <p id="functional_area"><i class="fas fa-chart-area"></i> {{job_details.functional_area}}</p>
+        <p id="job_type"><i class="fas fa-briefcase"></i>&nbsp; {{job_details.job_type}}</p>
+        <p id="functional_area"><i class="fas fa-chart-area"></i>&nbsp; {{job_details.functional_area}}</p>
         <div class="vl"></div>
         <p id="skill">Skills Required <p id="answer">{{job_details.required_skills}}</p></p>
         <p id="cgpa">Required CGPA <p id="answer">{{job_details.required_cgpa}}</p></p>
@@ -331,13 +337,12 @@ border-radius: 50%;
         </div>
         <hr>
         {% for s in shortlisted_candidates %}
-        <div class="table_content">
-        <p> {{s.user_id}} </p>
+        <p id="user_id"> {{s.user_id}} </p>
         <p id="name_content"> {{s.first_name}} {{s.last_name}} </p>
-        <a  href="{% url 'viewCandidateProfile' s.user_id job_details.id %}"><button id="shortlisted">View Profile</button></a>
+        <a style="text-decoration:none" href="{% url 'viewCandidateProfile' s.user_id job_details.id %}"><button id="shortlisted">View Profile</button></a>
         {% endfor %}
         {% endif %}
-        </div>
+      
         </div>
 
         {% if applicants %}
@@ -348,13 +353,12 @@ border-radius: 50%;
         </div>
         <hr>
         {% for a in applicants %}
-        <div class="table_content">
-        <p> {{a.user_id}} </p>
+        <p id="user_id"> {{a.user_id}} </p>
         <p id="name_content"> {{a.first_name}} {{a.last_name}} </p>
-        <a id="applied" href="{% url 'viewCandidateProfile' a.user_id job_details.id %}">View Profile</a>
+        <a id="applied" style="text-decoration:none" href="{% url 'viewCandidateProfile' a.user_id job_details.id %}">View Profile</a>
         {% endfor %}
         {% endif %}
-        </div>
+
         </div>
 
         {% if suggested_candidates %}
@@ -365,13 +369,11 @@ border-radius: 50%;
         </div>
         <hr>
         {% for sug in suggested_candidates %}
-        <div class="table_content">
-        <p> {{sug.user_id}} </p>
+        <p id="user_id"> {{sug.user_id}} </p>
         <p id="name_content">{{sug.first_name}} {{sug.last_name}} </p>
-        <a id="applied" href="{% url 'viewCandidateProfile' sug.user_id job_details.id %}">View Profile</a> </p>
+        <a id="applied" style="text-decoration:none" href="{% url 'viewCandidateProfile' sug.user_id job_details.id %}">View Profile</a> </p>
         {% endfor %}
         {% endif %}
-        </div>
         </div>
         {% endblock %}
     </body>
