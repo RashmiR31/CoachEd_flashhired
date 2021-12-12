@@ -576,7 +576,7 @@ def editJob(request,job_id):
     try:
         job_details = JobPosting.objects.get(id=job_id)
     except JobPosting.DoesNotExist:
-        return redirect("RecruiterHome")
+        return redirect("Jobs")
     update_jobform = JobPostingForm(request.POST or None,instance=job_details)
     if update_jobform.is_valid():
         if len(request.FILES) != 0:
@@ -584,7 +584,7 @@ def editJob(request,job_id):
                 os.remove(job_details.upload_doc.path)
             job_details.upload_doc = request.FILES['upload_doc']
         update_jobform.save()
-        return redirect("RecruiterHome")
+        return redirect("Jobs")
     else:
         print("form not valid")
     return render(request,'recruiter/addJob.html',{'form':update_jobform})
@@ -598,7 +598,7 @@ def deleteJob(request,job_id):
     if len(job_details.upload_doc)>0:
         os.remove(job_details.upload_doc.path)
     job_details.delete()
-    return redirect("RecruiterHome")
+    return redirect("Jobs")
 
 def viewJob(request,job_id):
     job_id = int(job_id)

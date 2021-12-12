@@ -69,8 +69,8 @@ border-radius: 50%;
 }
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
 }
 
 
@@ -149,7 +149,7 @@ border-radius: 50%;
                 {% if jobs %}
                 {% for j in jobs %}
                 <div class="card design2">
-                <p>{{j.job_title}}</p>
+                <p>{{j.vacancies}}&nbsp;&nbsp;&nbsp;{{j.job_title}}</p>
                 </div>
                 {% endfor %}
                 {% endif %}
