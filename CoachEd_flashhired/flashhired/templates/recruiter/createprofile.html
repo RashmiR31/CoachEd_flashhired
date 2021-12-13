@@ -216,7 +216,7 @@
 
 <html>
   <head>
-    <title>Candidate Create profile</title>
+    <title>Recruiter Create profile</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
@@ -225,8 +225,7 @@
 <div class="form"> <!--class form not defined, just declared-->
 
   
-  <form method="POST">
-      {% csrf_token %}
+ 
 
       <div class = "blueRectangle">
           <shape id="vector"></shape>
@@ -248,31 +247,31 @@
 {% csrf_token %}
 <table>
 <tr>
-  <td><input id="name" placeholder="Enter your Name" required {{form.name.label}}:{{form.name}}</td>
+  <td><input id="name" placeholder="Enter your Name" required {{form.name}}</td>
 </tr>
 <tr>
   <td><select id="gender" required {{form.gender}}</select></td>
 </tr>
 <tr>
-  <td><input id="phno" placeholder="+910000000000" required {{form.phone_number.label}}:{{form.phone_number}}</td>
+  <td><input id="phno" placeholder="+910000000000" required {{form.phone_number}}</td>
 </tr>
 <tr>
-  <td><input id="email" type="email" required placeholder="Enter your Work Email"{{form.work_email.label}}:{{form.work_email}}</td>
+  <td><input id="email" type="email" required placeholder="Enter your Work Email" {{form.work_email}}</td>
 </tr>
 <tr>
-  <td><input id="date" type="date" required  min="1960-01-01" max="2000-12-12" placeholder="DOB"{{form.dob.label}}:{{form.dob}}</td>
-</tr>
-
-<tr>
-  <td><input id="experience" type="number" required  placeholder="Experience in years"{{form.experience.label}}:{{form.experience}}</td>
+  <td><input id="date" type="date" required  min="1960-01-01" max="2000-12-12" placeholder="DOB" {{form.dob}}</td>
 </tr>
 
+<tr>
+  <td><input id="experience" type="number" required  placeholder="Experience in years" {{form.experience}}</td>
+</tr>
+
 
 <tr>
-  <td><input id="companyname" required placeholder="Company Name"{{form.company_name.label}}:{{form.company_name}}</td>
+  <td><input id="companyname" required placeholder="Company Name" {{form.company_name}}</td>
 </tr>
 <tr>
-  <td><input id="role" required Placeholder="Enter your Role"{{form.role.label}}:{{form.role}}</td>
+  <td><input id="role" required Placeholder="Enter your Role" {{form.role}}</td>
 </tr>
 
 <tr>

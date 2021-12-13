@@ -153,11 +153,21 @@
     margin-top: 6px;
     font-family:poppins,sans-serif;
 }
-
+#vacancy{
+    position: absolute;
+    width:280px;
+    height: 40px;
+    background: rgba(251, 248, 248, 0.87);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top:90px;
+    font-family:poppins,sans-serif;
+}
 #posted_text{
     font-size: 18px;
     font-family:poppins,sans-serif;
-    margin-top:90px;
+    margin-top:180px;
 }
 #dateposted{
     position: absolute;
@@ -195,19 +205,8 @@
     margin-top:-34px;
     margin-left: 500px;
 }
-#vacancy{
-    position: absolute;
-    width:280px;
-    height: 40px;
-    background: rgba(251, 248, 248, 0.87);
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin-top:10px;
-    font-family:poppins,sans-serif;
-}
 #doc_text{
-    margin-top:100px;
+    margin-top:30px;
     font-family:poppins,sans-serif;
     font-size:18px;
 }
@@ -267,7 +266,7 @@
                     <td><textarea id="education" placeholder="Required Education" required{{form.required_education}}</td>
                 </tr>
                 <tr>
-                    <td><input id="salary" placeholder="Salary" required{{form.salary}}</td>
+                    <td><input id="salary" placeholder="Salary (LPA)" required{{form.salary}}</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" id="neg" {{form.is_negotiable}}</td>
@@ -280,13 +279,13 @@
                     <td><input id="experience" placeholder="Experience in Years" type="number" required{{form.required_experience}}</td>
                 </tr>
                 <tr>
+                    <td><input id="vacancy" placeholder="Number of Positions Available" type="number" required {{form.vacancies}}</td>
+                </tr>
+                <tr>
                     <td><p id="posted_text">Date Posted:</p><input id="dateposted" type="date" placeholder="Date Posted" required{{form.date_posted}}</td>
                 </tr>
                 <tr>
                     <td><p id="last_text">Last Date to Apply:</p><input id="lastdate" type="date" placeholder="Last Date To Apply" required{{form.last_date_to_apply}}</td>
-                </tr>
-                <tr>
-                    <td><input id="vacancy" placeholder="Number of Positions Available" type="number" required {{form.vacancies}}</td>
                 </tr>
                 <tr>
                     <td><p id="doc_text">Authentication Documents:</p><div id="doc">{{form.upload_doc}}</div></td>
