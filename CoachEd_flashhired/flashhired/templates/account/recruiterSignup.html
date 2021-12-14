@@ -308,15 +308,19 @@
         }
     </style>
 
-<html>
+<>
     <head>
         <title> Recruiter Signup </title>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
         <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
         <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
     </head>
-        <p id="trouble"> Already have an Account? <a href="{% url 'login_view' %}">Login </a></p>
+        
+    <body>
+    <p id="trouble"> Already have an Account? <a href="{% url 'login_view' %}">Login </a></p>
 
         <form method="post" >
             {% csrf_token %}
