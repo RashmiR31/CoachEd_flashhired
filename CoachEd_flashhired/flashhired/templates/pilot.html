@@ -3,10 +3,15 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-
+    #logo{
+        width:300px;
+        margin-top:50px;
+        margin-left:50px;
+    }
     .btns {
-        padding-left: 600px;
+        padding-left: 650px;
         width: 700px;
+        margin-top:-100px;
     }
 
     #recruiter {
@@ -18,9 +23,11 @@
         font-family: 'Poppins', sans-serif;
         font-size: 23px;
         background-color: #461FBE;
-        margin-top: 20px
+        margin-top: 20px;
+        border-radius:10px;
+        cursor:pointer;
     }
-
+    #recruiter:hover{box-shadow: 4px 8px 8px grey;}
     #signup {
         height: 70px;
         width: 175px;
@@ -32,8 +39,10 @@
         margin-top: -70px;
         margin-left: 195px;
         font-family: 'Poppins', sans-serif;
+        border-radius:10px;
+        cursor:pointer;
     }
-
+    #signup:hover{box-shadow: 4px 8px 8px grey;}
     #getstarted {
         height: 70px;
         width: 180px;
@@ -45,11 +54,13 @@
         margin-top: -70px;
         margin-left: 390px;
         font-family: 'Poppins', sans-serif;
+        border-radius:10px;
+        cursor:pointer;
     }
-
+    #getstarted:hover{box-shadow: 4px 8px 8px grey;}
     .head1 {
         width: 600px;
-        margin-top: 200px;
+        margin-top: 100px;
     }
 
     .head2 {
@@ -281,13 +292,15 @@
         font-size: 40px;
     }
 
-    .card {
+    .card_design {
         width: 300px;
         height: 350px;
         margin-top: 100px;
         margin-left: 100px;
     }
-
+    .card_design:hover{
+        box-shadow: 0px 8px 8px grey;
+    }
     #card2 {
         margin-left: 400px;
         margin-top: -450px;
@@ -385,6 +398,7 @@
 
 <body>
     <header>
+        <img id="logo" src="{% static 'Logo_card.png' %}">
         <div class="btns">
             <a href="{% url 'rechome' %}"><button type="button" class="btn btn-light"
                     id="recruiter">Recruiter?</button></a>
@@ -499,52 +513,58 @@
         </center>
 
         <div id="card1">
-            <div class="card">
+            <a style="text-decoration:none" href="{% url 'login_view' %}">
+            <div class="card card_design ">
                 <center><img class="card-img-top" src="{% static 'logitech.png' %}"
                         style="width:70%;margin-top:5px;margin-left: 5px;"></center>
                 <div class="card-body">
-                    <h3 class="card-title" style="margin-top:-20px;font-size: 25px;">Associate Technology Consultant
+                    <h3 class="card-title" style="margin-top:-20px;font-size: 25px;color:black;">Associate Technology Consultant
                     </h3>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
                             aria-valuemax="100" style="width: 75%;background-color:#53DD9B;"></div>
                     </div>
-                    <p style="font-size:16px;margin-top: 10px;"><b>32 applied</b> out of 40 open positions</p>
+                    <p style="font-size:16px;margin-top: 10px;color:black;"><b>32 applied</b> out of 40 open positions</p>
                 </div>
             </div>
+            </a>
         </div>
 
 
         <div id="card2">
-            <div class="card">
+            <a style="text-decoration:none" href="{% url 'login_view' %}">
+            <div class="card card_design ">
                 <center><img class="card-img-top" src="{% static 'abylle.png' %}"
                         style="width:70%;margin-top:50px;margin-left:5px"></center>
                 <div class="card-body">
-                    <h3 class="card-title" style="margin-top: 10px;font-size: 25px;">Associate Technology Consultant
+                    <h3 class="card-title" style="margin-top: 10px;font-size: 25px;color:black;">Associate Technology Consultant
                     </h3>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
                             aria-valuemax="100" style="width: 60%;background-color: #53DD9B;"></div>
                     </div>
-                    <p style="font-size:16px;margin-top: 10px;"><b>30 applied</b> out of 50 open positions</p>
+                    <p style="font-size:16px;margin-top: 10px;color:black;"><b>30 applied</b> out of 50 open positions</p>
                 </div>
             </div>
+            </a>
         </div>
 
 
         <div id="card3">
-            <div class="card">
+            <a style="text-decoration:none" href="{% url 'login_view' %}">
+            <div class="card card_design ">
                 <center><img class="card-img-top" src="{% static 'hitachi.png' %}"
                         style="width:70%;margin-top:5px;margin-left:5px"></center>
                 <div class="card-body">
-                    <h3 class="card-title" style="margin-top:-5px;font-size: 25px;">Associate Technology Consultant</h3>
+                    <h3 class="card-title" style="margin-top:-5px;font-size: 25px;color:black;">Associate Technology Consultant</h3>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
                             aria-valuemax="100" style="width: 40%;background-color: #53DD9B;"></div>
                     </div>
-                    <p style="font-size:16px;margin-top: 10px;"><b>8 applied</b> out of 20 open positions</p>
+                    <p style="font-size:16px;margin-top: 10px;color:black;"><b>8 applied</b> out of 20 open positions</p>
                 </div>
             </div>
+            </a>
         </div>
 
     </div>

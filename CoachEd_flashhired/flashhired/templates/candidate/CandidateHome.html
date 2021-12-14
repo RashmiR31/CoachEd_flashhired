@@ -62,7 +62,7 @@
         line-height: 16px;
         display: flex;
         align-items: center;
-        margin-left: 210px;
+        margin-left: 50px;
         margin-top: 50px;
         color: rgba(0, 0, 0, 0.69);
     }
@@ -86,7 +86,7 @@
 
     .design {
         width: 800px;
-        margin-left: 210px;
+        margin-left: 50px;
     }
 
     #user_id {
@@ -176,6 +176,21 @@
 
         <br>
 
+        
+        {% if application %}
+        <p id="support">You have applied for</p>
+        <br>
+        <div class="card design">
+            <br>
+            {% for j in application %}
+            <br>
+            <p id="user_id"> {{j.job.job_title}}/{{j.job.job_type}}</p>
+            <p id="name_content"> {{j.job.recruiter.company_name}} </p>
+            <a style="text-decoration:none" href="{% url 'candidateViewJob' j.id %}"><button id="shortlisted">View
+                    Job</button></a>
+            {% endfor %}
+            {% endif %}
+        </div>
         {% if shortlisted_jobs %}
         <p id="support">Congratulations!! You have been Shortlisted</p>
         <br>
@@ -190,22 +205,7 @@
             {% endif %}
         </div>
 
-        {% if application %}
-        <p id="support">You have applied for</p>
-        <br>
-        <div class="card design">
-            <br>
-            {% for j in application %}
-            <br>
-            <p id="user_id"> {{j.job.job_title}}/{{j.job.job_type}}</p>
-            <p id="name_content"> {{j.job.recruiter.company_name}} </p>
-            <a style="text-decoration:none" href="{% url 'candidateViewJob' j.id %}"><button id="shortlisted">View
-                    Job</button></a>
-            {% endfor %}
-            {% endif %}
-
-
-        </div>
+        
         <script>
             n = new Date();
             y = n.getFullYear();

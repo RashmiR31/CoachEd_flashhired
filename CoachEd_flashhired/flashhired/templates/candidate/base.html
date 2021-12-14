@@ -1,6 +1,7 @@
 {% url 'CandidateHome' as CandidateHome %}
 {% url 'candidateProfile' as candidateProfile %}
 {% url 'candidateJobPortal' as candidateJobPortal %}
+{% load static %}
 
 
 <style>
@@ -18,7 +19,7 @@
     height: 103%;
     margin-left: -20px;
     padding-top: 80px;
-    margin-top: -100px;
+    margin-top: -50px;
     opacity: 0.85;
   }
 
@@ -27,6 +28,12 @@
     font-family: 'Poppins', sans-serif;
     padding-left: 30px;
     padding-top: 30px;
+  }
+  #logo {
+    opacity: 1;
+    padding-left: 30px;
+    margin-top: -20px;
+    width: 160px;
   }
 
   #list {
@@ -80,6 +87,7 @@
 <head>
   <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
   <div class="sideNav">
+    <img id="logo" src="{% static 'logo_card.png' %}">
     <ul id="list">
       <p id="supportingText">Tools</p>
       <li id="navBar"><a class="{% if request.path == CandidateHome %} active {% endif %}"

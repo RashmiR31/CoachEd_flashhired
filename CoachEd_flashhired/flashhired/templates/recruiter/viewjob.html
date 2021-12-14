@@ -237,14 +237,14 @@
         display: flex;
         align-items: center;
         text-align: center;
-        margin-left: 160px;
+        margin-left: 50px;
         color: #000000;
         margin-top: 50px;
     }
 
     .design {
         width: 900px;
-        margin-left: 160px;
+        margin-left: 50px;
         margin-top: 30px;
     }
 
@@ -376,24 +376,6 @@
         <p id="job_description">Job Description</p>
         <p id="job">{{job_details.jd}}</p>
 
-        {% if shortlisted_candidates %}
-        <h2 id="heading">Shortlisted candidates</h2>
-        <div class="card design">
-            <div class="table_heading">
-                <p id="job_id">Job ID</p>
-                <p id="name"> Name</p>
-            </div>
-            <hr>
-            {% for s in shortlisted_candidates %}
-            <p id="user_id"> {{s.user_id}} </p>
-            <p id="name_content"> {{s.first_name}} {{s.last_name}} </p>
-            <a style="text-decoration:none" href="{% url 'viewCandidateProfile' s.user_id job_details.id %}"><button
-                    id="shortlisted">View Profile</button></a>
-            {% endfor %}
-            {% endif %}
-
-        </div>
-
         {% if applicants %}
         <h2 id="heading">Applied candidates</h2>
         <div class="card design">
@@ -427,6 +409,24 @@
                 href="{% url 'viewCandidateProfile' sug.user_id job_details.id %}">View Profile</a> </p>
             {% endfor %}
             {% endif %}
+        </div>
+        
+        {% if shortlisted_candidates %}
+        <h2 id="heading">Shortlisted candidates</h2>
+        <div class="card design">
+            <div class="table_heading">
+                <p id="job_id">Job ID</p>
+                <p id="name"> Name</p>
+            </div>
+            <hr>
+            {% for s in shortlisted_candidates %}
+            <p id="user_id"> {{s.user_id}} </p>
+            <p id="name_content"> {{s.first_name}} {{s.last_name}} </p>
+            <a style="text-decoration:none" href="{% url 'viewCandidateProfile' s.user_id job_details.id %}"><button
+                    id="shortlisted">View Profile</button></a>
+            {% endfor %}
+            {% endif %}
+
         </div>
         {% endblock %}
 </body>

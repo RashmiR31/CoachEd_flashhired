@@ -37,12 +37,13 @@
 
     #jtitle {
         position: absolute;
-        padding-left: 200px;
+        padding-left: 50px;
         padding-top: 50px;
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
         font-size: 18px;
+        text-transform: capitalize;
     }
 
     #posted {
@@ -54,16 +55,16 @@
         display: flex;
         align-items: center;
         padding-top: 80px;
-        padding-left: 500px;
+        padding-left: 350px;
         color: rgba(0, 0, 0, 0.51);
     }
 
     #jtype {
         position: absolute;
-        padding-left: 225px;
+        padding-left: 80px;
         font-family: Poppins;
         text-transform: capitalize;
-        margin-top: -15px;
+        margin-top: -10px;
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
@@ -72,18 +73,18 @@
 
     #date {
         position: absolute;
-        padding-left: 500px;
+        padding-left: 350px;
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
-        margin-top: -15px;
+        margin-top: -10px;
         font-size: 14px;
         color: #28076D;
     }
 
     #jarea {
         position: absolute;
-        margin-left: 225px;
+        margin-left: 80px;
         margin-top: 40px;
         font-family: Poppins;
         font-style: normal;
@@ -94,7 +95,7 @@
 
     #jpositions {
         position: absolute;
-        margin-left: 500px;
+        margin-left: 350px;
         margin-top: 40px;
         font-family: Poppins;
         font-style: normal;
@@ -105,7 +106,7 @@
 
     .view {
         position: absolute;
-        margin-left: 700px;
+        margin-left: 600px;
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
@@ -120,7 +121,7 @@
 
     .edit {
         position: absolute;
-        margin-left: 800px;
+        margin-left: 700px;
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
@@ -135,7 +136,7 @@
 
     .delete {
         position: absolute;
-        margin-left: 900px;
+        margin-left: 800px;
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
@@ -159,7 +160,7 @@
             <br><br>
             <hr>
         </div>
-        <p id="job">{{ user.username }} Looking to create new job?<a href="{% url 'addJob' %}">Add Job</a></p>
+        <p id="job">{{ user.username }} Looking to create new job?<a href="{% url 'addJob' %}"> Add Job</a></p>
         {% for job in jobs %}
         <p id="jtitle">{{job.job_title}}</p>
         <p id="posted">Posted on</p>
