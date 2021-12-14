@@ -1,3 +1,4 @@
+{% load static %}
 <style>
     .card {
         position: absolute;
@@ -144,6 +145,8 @@
     </style>
     <html>
     <title>Projects</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+
     <body>
         <div class="card">
         <form method="POST" enctype="multipart/form-data">

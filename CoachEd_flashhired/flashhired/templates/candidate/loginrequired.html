@@ -1,4 +1,5 @@
 {% extends 'account/acc_base.html' %}
+{% load static %}
 {% block content %}
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
@@ -21,6 +22,9 @@
     }
 </style>
 <html>
+    <title>Message</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+
     <body>
         <p id="message">Login as a candidate to continue</p>
         <a href="{% url 'login_view' %}"><button id="message_btn">Login</button></a>
