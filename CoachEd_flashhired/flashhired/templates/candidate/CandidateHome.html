@@ -2,198 +2,218 @@
 {% load static %}
 {% block content %}
 <style>
-     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-.main{
-    margin-left:160px;
-    margin-top:80px;
-}
-#top{
-height:53px;
-}
-#profile_pic{
-width:70px;
-height:70px;
-margin-left:980px;
-margin-top: -60px;
-border-radius: 50%;
-}
-#dashboard{
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 37px;
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: 50px;
-    color: rgba(0, 0, 0, 0.67);
-}
-#rectangle{
-    width:775px;  
-    margin-left: 50px;
-}
-.text_rectangle{
-    font-family: Poppins;
-    font-style: normal;
-    font-size: 16px;
-    margin-left: 70px;
-    margin-top: -200px;
-    color: #FFFFFF;
-}
-#girl{
-    margin-top: -190px;
-    margin-left: 530px;
-    width:220px;
-}
-
-#support{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    margin-left: 210px;
-    margin-top:50px;
-    color: rgba(0, 0, 0, 0.69);
-}
-.design1{
-    width:230px;
-    height:230px;
-    margin-top: -210px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    padding-top:80px;
-    margin-left: 850px;
-    line-height: 27px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid #6D63E7;
-    color: #28076D;
-}
-.design{
-    width:800px;
-    margin-left:210px;
-}
-#user_id{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    text-transform: capitalize;
-    align-items: center;
-    margin-left:60px;
-    color: #000000;
+    .main {
+        margin-left: 160px;
+        margin-top: 80px;
     }
-    #name_content{
-        margin-left: 320px;
-        margin-top:-30px;
+
+    #top {
+        height: 53px;
+    }
+
+    #profile_pic {
+        width: 70px;
+        height: 70px;
+        margin-left: 980px;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
+
+    #dashboard {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 37px;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        margin-left: 50px;
+        color: rgba(0, 0, 0, 0.67);
+    }
+
+    #rectangle {
+        width: 775px;
+        margin-left: 50px;
+    }
+
+    .text_rectangle {
+        font-family: Poppins;
+        font-style: normal;
+        font-size: 16px;
+        margin-left: 70px;
+        margin-top: -200px;
+        color: #FFFFFF;
+    }
+
+    #girl {
+        margin-top: -190px;
+        margin-left: 530px;
+        width: 220px;
+    }
+
+    #support {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        margin-left: 210px;
+        margin-top: 50px;
+        color: rgba(0, 0, 0, 0.69);
+    }
+
+    .design1 {
+        width: 230px;
+        height: 230px;
+        margin-top: -210px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        padding-top: 80px;
+        margin-left: 850px;
+        line-height: 27px;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #6D63E7;
+        color: #28076D;
+    }
+
+    .design {
+        width: 800px;
+        margin-left: 210px;
+    }
+
+    #user_id {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
         text-transform: capitalize;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        align-items: center;
+        margin-left: 60px;
+        color: #000000;
+    }
+
+    #name_content {
+        margin-left: 320px;
+        margin-top: -30px;
+        text-transform: capitalize;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
         line-height: 16px;
         display: flex;
     }
-    #shortlisted{
+
+    #shortlisted {
         background: #45CD39;
         border-radius: 20px;
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        width:200px;
-        height:40px;
-        margin-left:550px;
-        margin-top:-40px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        width: 200px;
+        height: 40px;
+        margin-left: 550px;
+        margin-top: -40px;
         align-items: center;
         font-size: 16px;
         line-height: 19px;
         display: flex;
         font-weight: 500;
-        cursor:pointer;
+        cursor: pointer;
         margin-bottom: 20px;
         border-color: #45CD39;
         border-style: solid;
         padding-left: 60px;
         color: #000000;
     }
-    #shortlisted:hover{box-shadow: 2px 2px 2px grey;}
+
+    #shortlisted:hover {
+        box-shadow: 2px 2px 2px grey;
+    }
 </style>
 <html>
-    <head>
-        <title> Candidate Home</title>
-        <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        </head>
-        <body>
-            <div class="main">
-            <div id="top">
-                <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic"></a>
-                <br><br>
-                <hr>
-            </div>
-            <p id="dashboard">Dashboard</p>
-            <div>
-                <img id="rectangle" src="{% static 'rectangle.png' %}">
-                <div class="text_rectangle">
-                   <p><b>Hello {{ user.username }}!</b></p>
-                   <p>Have a great day finding your first job/internship here!</p>
-                    <p>Wanna start it? Lets gooo! </p>
-                   
-                </div>
-                <img id="girl" src="{% static 'girl_home.png' %}">
-            </div>
-            <div class="card design1">
-                <p>Today is</p>
-                <p id="date"></p>
-            </div>
-   
-            <br>
+<head>
+    <title> Candidate Home</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-            {% if shortlisted_jobs %}
-            <p id="support">Congratulations!! You have been Shortlisted</p>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="main">
+        <div id="top">
+            <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{details.profile_pic.url}}"
+                    alt="profile_pic"></a>
+            <br><br>
+            <hr>
+        </div>
+        <p id="dashboard">Dashboard</p>
+        <div>
+            <img id="rectangle" src="{% static 'rectangle.png' %}">
+            <div class="text_rectangle">
+                <p><b>Hello {{ user.username }}!</b></p>
+                <p>Have a great day finding your first job/internship here!</p>
+                <p>Wanna start it? Lets gooo! </p>
+
+            </div>
+            <img id="girl" src="{% static 'girl_home.png' %}">
+        </div>
+        <div class="card design1">
+            <p>Today is</p>
+            <p id="date"></p>
+        </div>
+
+        <br>
+
+        {% if shortlisted_jobs %}
+        <p id="support">Congratulations!! You have been Shortlisted</p>
+        <br>
+        <div class="card design">
             <br>
-            <div class="card design">      
-                <br>
             {% for job in shortlisted_jobs %}
             <p id="user_id">{{job.job_title}}/{{job.job_type}} </p>
             <p id="name_content"> {{job.recruiter.company_name}} </p>
-            <a style="text-decoration:none" href="{% url 'candidateViewJob' job.id %}"><button id="shortlisted">View Job</button></a>
+            <a style="text-decoration:none" href="{% url 'candidateViewJob' job.id %}"><button id="shortlisted">View
+                    Job</button></a>
             {% endfor %}
             {% endif %}
-            </div>
+        </div>
 
-            {% if application %}
-            <p id="support">You have applied for</p>
+        {% if application %}
+        <p id="support">You have applied for</p>
+        <br>
+        <div class="card design">
             <br>
-            <div class="card design">      
-                <br>
             {% for j in application %}
             <br>
             <p id="user_id"> {{j.job.job_title}}/{{j.job.job_type}}</p>
             <p id="name_content"> {{j.job.recruiter.company_name}} </p>
-            <a style="text-decoration:none" href="{% url 'candidateViewJob' j.id %}"><button id="shortlisted">View Job</button></a>
+            <a style="text-decoration:none" href="{% url 'candidateViewJob' j.id %}"><button id="shortlisted">View
+                    Job</button></a>
             {% endfor %}
             {% endif %}
 
 
         </div>
         <script>
-            n =  new Date();
+            n = new Date();
             y = n.getFullYear();
             m = n.getMonth() + 1;
             d = n.getDate();
             document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
         </script>
-    </body>
+</body>
+
 </html>
 {% endblock %}

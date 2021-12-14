@@ -1,86 +1,93 @@
-
 {% load static %}
-{% block content %} 
+{% block content %}
 <style>
-        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-    
-        .blueRectangle{
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+    .blueRectangle {
         /* Blue Box Border */
         position: absolute;
-        width:550px;
+        width: 550px;
         height: 100%;
         left: -152px;
         background: #461FBE;
         border-radius: 30px;
     }
-    #flash{
+
+    #flash {
         /* flashhired. */
         position: absolute;
         left: 200px;
         top: 45%;
-        font-family: 'Italiana',serif;
+        font-family: 'Italiana', serif;
         font-size: 30px;
-        font-weight:lighter;
+        font-weight: lighter;
         color: #FFFFFF;
     }
-    #bold{
+
+    #bold {
         /* flashhired. */
         position: absolute;
         left: 255px;
         top: 45%;
-        font-family:Roboto, sans-serif;
+        font-family: Roboto, sans-serif;
         font-size: 30px;
         font-weight: bolder;
         color: #FFFFFF;
     }
-    #sq1{
-            /* Rectangle 1 */
-            position: absolute;
-            width: 10%;
-            height: 20%;
-            left: -10px;
-            background: #301488;
-        }
-        #sq2{
-            /* Rectangle 2 */
-            position: absolute;
-            width: 10%;
-            height: 20%;
-            left: 20px;
-            top: 20px;
-            background: #40159B;
-        }
-        #pg1{
-            /* Polygon 1 */
-            position: absolute;
-            width: 8%;
-            height: 15%;
-            left: 115px;
-            top: -10px;
-            background: rgba(250, 246, 244, 0.72);
-            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
-        }
-        #pg2{
-            /* Polygon 2 */
-            position: absolute;
-            width: 8%;
-            height: 15%;
-            left: -10px;
-            top: 18%;
-            background: #FAF6F4;
-            transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
-        }
-        #textInBlueBox{
+
+    #sq1 {
+        /* Rectangle 1 */
+        position: absolute;
+        width: 10%;
+        height: 20%;
+        left: -10px;
+        background: #301488;
+    }
+
+    #sq2 {
+        /* Rectangle 2 */
+        position: absolute;
+        width: 10%;
+        height: 20%;
+        left: 20px;
+        top: 20px;
+        background: #40159B;
+    }
+
+    #pg1 {
+        /* Polygon 1 */
+        position: absolute;
+        width: 8%;
+        height: 15%;
+        left: 115px;
+        top: -10px;
+        background: rgba(250, 246, 244, 0.72);
+        transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
+    }
+
+    #pg2 {
+        /* Polygon 2 */
+        position: absolute;
+        width: 8%;
+        height: 15%;
+        left: -10px;
+        top: 18%;
+        background: #FAF6F4;
+        transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
+    }
+
+    #textInBlueBox {
         position: absolute;
         left: 200px;
         top: 55%;
-        font-family: 'Poppins',sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 20px;
         color: #FFFFFF;
     }
-    #trouble{
+
+    #trouble {
         position: absolute;
         left: 950px;
         top: 10px;
@@ -88,172 +95,184 @@
         font-size: 16px;
         color: #000000;
     }
-        #login_user{
-            position: absolute;
-            left:600px;
-            top: 100px;
-            font-family:'poppins',sans-serif;
-            height:5%; 
-            font-size: 24px;
-            font-weight: bolder;
-            color: rgba(70, 31, 190, 1);
-        }
-        #userName{
-            position: absolute;
-            left:600px;
-            top: 200px;
-            font-family: 'Poppins', sans-serif;
-        }
-        #userName-field{
-            position: absolute;
-            left:600px;
-            top: 230px; 
-            border-radius: 25px;
-            width:400px;
-            height:40px;
-            background-color:#FBF8F8;
-            padding-left: 20px;
-            font-size: 17px;
-            font-family:'poppins',sans-serif;
-        }
-        #Password{
-            position: absolute;
-            left:600px;
-            top: 300px;
-            font-family: 'Poppins', sans-serif;
-        }
-        #Password-field{
-            position: absolute;
-            left:600px;
-            top: 330px; 
-            border-radius: 25px;
-            width:400px;
-            height:40px;
-            background-color:#FBF8F8;
-            padding-left: 20px;
-            font-size: 17px;
-            font-family:'poppins',sans-serif;
-        }
 
-        .eyeShow{
-            position: absolute;
-            color: #000000;
-            left: 950px;
-            top: 338px;
-            cursor:pointer;
-        }
+    #login_user {
+        position: absolute;
+        left: 600px;
+        top: 100px;
+        font-family: 'poppins', sans-serif;
+        height: 5%;
+        font-size: 24px;
+        font-weight: bolder;
+        color: rgba(70, 31, 190, 1);
+    }
 
-        #Login{
-            position: absolute;
-            left: 600px;
-            top: 440px;
-            width:400px;
-            height:40px;
-            padding-left: 20px;
-            font-size: 17px;
-            font-family:'poppins',sans-serif;
-            background: #461FBE;
-            border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 18px;
-            color: #FFFFFF;
-            cursor:pointer;
-        }
-       #forgot{
+    #userName {
         position: absolute;
-            left:850px;
-            top: 375px; 
-            font-size: 14px;
-            font-family:'poppins',sans-serif;
-       }
-       #errors{
+        left: 600px;
+        top: 200px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #userName-field {
         position: absolute;
-            left:650px;
-            top: 405px; 
-            font-size: 14px;
-            font-family:'poppins',sans-serif;
-            color: red;
-            font-weight: bolder;
-       }
+        left: 600px;
+        top: 230px;
+        border-radius: 25px;
+        width: 400px;
+        height: 40px;
+        background-color: #FBF8F8;
+        padding-left: 20px;
+        font-size: 17px;
+        font-family: 'poppins', sans-serif;
+    }
+
+    #Password {
+        position: absolute;
+        left: 600px;
+        top: 300px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #Password-field {
+        position: absolute;
+        left: 600px;
+        top: 330px;
+        border-radius: 25px;
+        width: 400px;
+        height: 40px;
+        background-color: #FBF8F8;
+        padding-left: 20px;
+        font-size: 17px;
+        font-family: 'poppins', sans-serif;
+    }
+
+    .eyeShow {
+        position: absolute;
+        color: #000000;
+        left: 950px;
+        top: 338px;
+        cursor: pointer;
+    }
+
+    #Login {
+        position: absolute;
+        left: 600px;
+        top: 440px;
+        width: 400px;
+        height: 40px;
+        padding-left: 20px;
+        font-size: 17px;
+        font-family: 'poppins', sans-serif;
+        background: #461FBE;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    #forgot {
+        position: absolute;
+        left: 850px;
+        top: 375px;
+        font-size: 14px;
+        font-family: 'poppins', sans-serif;
+    }
+
+    #errors {
+        position: absolute;
+        left: 650px;
+        top: 405px;
+        font-size: 14px;
+        font-family: 'poppins', sans-serif;
+        color: red;
+        font-weight: bolder;
+    }
 </style>
 
 <html>
-    <head>
-        <title>Login Page</title>
-        <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
-        <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
-        <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
-    </head>
-        
-     
-        
-         
-        <div class="form"> <!--class form not defined, just declared-->
-            
-            <p id="login_user">Login</p>
-            
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.non_field_errors }}
-                <div class = "blueRectangle">
-                    <shape id="vector"></shape>
-                    <p id="flash">flash</p>
-                    <p id="bold">hired.</p>
-                    <p id="textInBlueBox">Find your ideal fit</p>
-                </div>
-                <area id="sq1"></area>
-                <area id="sq2"></area>
-                <area id="pg1"></area>
-                <area id="pg2"></area>
-                <p id="trouble">New to flashhired? <a href="{% url 'signupchoice' %}">Signup</a></p>
-                
+<head>
+    <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-                <table>
-                    <tr>
-                        <td id="userName">Username:</td>
-                        <td><input id="userName-field" placeholder="Enter your Username" {{ form.username }}</td>
-                    </tr>
-                    <tr>
-                        <td id="Password">Password:</td>
-                        <td><input id="Password-field" placeholder="Type your Password"{{ form.password }}</td>
-                        <td><a href="{% url 'password_reset' %}" id="forgot">Forgot Password?</a></td>
-                    </tr>
-     
-                    <!-- show and hide create password and confirm password  --> 
-                    <tr>
-                        <td onclick="toggle1()" class=eyeShow> <i id="eyeIcon1" class="fas fa-eye"></i> </td>
-                    </tr>
-                    <script>
-                        function toggle1() {
-                            var temp = document.getElementById("Password-field");
-                            if (temp.type === "password") {
-                                temp.type = "text";
-                            }
-                            else {
-                                temp.type = "password";
-                            }
-            
-                        }
-                    </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+</head>
 
-                        <td></td>
-                        {% if msg %}
-                        <p id="errors">
-                        Your username or password is incorrect. 
-                        </p>
-                        {% endif %}
-                        <td><button id="Login" type="submit" name="submit" value="Login" >Login</button></td>
-                    </tr>
-                </table>
-            </form>
-            
 
+
+
+<div class="form">
+    <!--class form not defined, just declared-->
+
+    <p id="login_user">Login</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="blueRectangle">
+            <shape id="vector"></shape>
+            <p id="flash">flash</p>
+            <p id="bold">hired.</p>
+            <p id="textInBlueBox">Find your ideal fit</p>
         </div>
-        
-    </body>
+        <area id="sq1"></area>
+        <area id="sq2"></area>
+        <area id="pg1"></area>
+        <area id="pg2"></area>
+        <p id="trouble">New to flashhired? <a href="{% url 'signupchoice' %}">Signup</a></p>
+
+
+        <table>
+            <tr>
+                <td id="userName">Username:</td>
+                <td><input id="userName-field" placeholder="Enter your Username" {{ form.username }}</td>
+            </tr>
+            <tr>
+                <td id="Password">Password:</td>
+                <td><input id="Password-field" placeholder="Type your Password" {{ form.password }}</td>
+                <td><a href="{% url 'password_reset' %}" id="forgot">Forgot Password?</a></td>
+            </tr>
+
+            <!-- show and hide create password and confirm password  -->
+            <tr>
+                <td onclick="toggle1()" class=eyeShow> <i id="eyeIcon1" class="fas fa-eye"></i> </td>
+            </tr>
+            <script>
+                function toggle1() {
+                    var temp = document.getElementById("Password-field");
+                    if (temp.type === "password") {
+                        temp.type = "text";
+                    }
+                    else {
+                        temp.type = "password";
+                    }
+
+                }
+            </script>
+
+            <td></td>
+            {% if msg %}
+            <p id="errors">
+                Your username or password is incorrect.
+            </p>
+            {% endif %}
+            <td><button id="Login" type="submit" name="submit" value="Login">Login</button></td>
+            </tr>
+        </table>
+    </form>
+
+
+</div>
+
+</body>
+
 </html>
 
 {% endblock %}

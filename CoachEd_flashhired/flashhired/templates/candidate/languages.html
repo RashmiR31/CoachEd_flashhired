@@ -1,86 +1,98 @@
 {% load static %}
 <style>
-        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-.card{
-    width:700px;
-    height:550px;
-    box-shadow: 2px 2px 5px grey;
-    margin-left: 300px;
-    border-radius:10px;
-    margin-top: 80px;
-}
-.card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    .card {
+        width: 700px;
+        height: 550px;
+        box-shadow: 2px 2px 5px grey;
+        margin-left: 300px;
+        border-radius: 10px;
+        margin-top: 80px;
+    }
 
-#about{
-    font-family:'poppins',sans-serif;
-    font-size:28px;
-    font-weight:bolder;
-    color:black;
-    padding-left:180px;
-    margin-top:20px;
-}
-#text{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    margin-top: 80px;
-}
-#box{
-    position: absolute;
-    width: 600px;
-    height: 35px;
-    margin-left:50px;
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    }
 
-    background: #FFFFFF;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-#submit{
+    #about {
+        font-family: 'poppins', sans-serif;
+        font-size: 28px;
+        font-weight: bolder;
+        color: black;
+        padding-left: 180px;
+        margin-top: 20px;
+    }
 
-position: absolute;
-width: 80px;
-height: 45px;
-margin-left:570px;
-margin-top:170px;
-color:white;
-font-family: 'poppins',sans-serif;
-background: #40159B;
-}
+    #text {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 80px;
+    }
 
+    #box {
+        position: absolute;
+        width: 600px;
+        height: 35px;
+        margin-left: 50px;
+
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    #submit {
+
+        position: absolute;
+        width: 80px;
+        height: 45px;
+        margin-left: 570px;
+        margin-top: 170px;
+        color: white;
+        font-family: 'poppins', sans-serif;
+        background: #40159B;
+    }
 </style>
 <html>
-    <title>Language</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+<title>Language</title>
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-    <body>
-        <div class="card">
-            
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td><p id="about">Language</p></td>
-        </tr>
-        <tr>
-            <td><p id="text">Add Language</p></td>
-        </tr>
-        <tr>
-            <td><input id="box" required {{form.language}}</td>
-        </tr>
-        <tr>
-            <td><p id="text">How would you rate yourself on this Language?</p></td>
-        </tr>
-        <tr>
-            <td><select id="box" required {{form.proficiency}}</select></td>
+<body>
+    <div class="card">
 
-        </tr>
-        {{ form.errors }}
-        <td><button type="submit" id="submit"  >Save</button></td>
-    </table>
-</form>
-        </div>
-    </body>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>
+                        <p id="about">Language</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="text">Add Language</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="box" required {{form.language}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="text">How would you rate yourself on this Language?</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><select id="box" required {{form.proficiency}}</select></td>
+
+                </tr>
+                {{ form.errors }}
+                <td><button type="submit" id="submit">Save</button></td>
+            </table>
+        </form>
+    </div>
+</body>
+
 </html>

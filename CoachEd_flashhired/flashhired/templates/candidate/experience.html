@@ -1,175 +1,202 @@
 {% load static %}
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-.card {
-    position: absolute;
-    width: 760px;
-    height: 1050px;
-    left: 250px;
-    top: 82px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    .card {
+        position: absolute;
+        width: 760px;
+        height: 1050px;
+        left: 250px;
+        top: 82px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
 
-#head{
-    font-family:'poppins',sans-serif;
-    font-size:28px;
-    font-weight:bolder;
-    color:black;
-    padding-left:300px;
-    margin-top:20px;
-}
-#company{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    margin-top: 50px;
-}
-#company_name{
-    position: absolute;
-    width: 670px;
-    height: 35px;
-    left: 50px;
-    top: 150px;
-    background: #ffffff;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-#jobrole{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    margin-top: 80px;
-}
-#role{
-    position: absolute;
-    width: 670px;
-    height: 35px;
-    left: 50px;
-    top: 250px;
-    background: #ffffff;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-#time{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    margin-top: 80px;
-}
-#duration{
-    position: absolute;
-    width: 670px;
-    height: 35px;
-    left: 50px;
-    top: 360px;
-    background: #ffffff;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-#desc{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    margin-top: 80px;
-}
-#desc_support{
-    position: absolute;
-    width: 670px;
-    height: 180px;
-    left: 50px;
-    margin-top: 60px;
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    }
 
-    background: rgba(196, 196, 196, 0.35);
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    box-sizing: border-box;
-    border-radius: 5px;
+    #head {
+        font-family: 'poppins', sans-serif;
+        font-size: 28px;
+        font-weight: bolder;
+        color: black;
+        padding-left: 300px;
+        margin-top: 20px;
+    }
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 21px;
-    display: flex;
-    align-items: center;
+    #company {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 50px;
+    }
 
-    color: rgba(0, 0, 0, 0.54);
+    #company_name {
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        left: 50px;
+        top: 150px;
+        background: #ffffff;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
 
-}
-#description{
-    position: absolute;
-    width: 670px;
-    height:160px;
-    left: 50px;
-    top: 470px;
-    background: #ffffff;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-    margin-top:200px;
+    #jobrole {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 80px;
+    }
 
-    font-family: Poppins;
-    font-size: 13px;
-    line-height: 21px;
-    display: flex;
-    align-items: center;
-}
-#supporting_doc{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    padding-top:400px;
-}
+    #role {
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        left: 50px;
+        top: 250px;
+        background: #ffffff;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
 
-#submit{
-    position: absolute;
-    width: 100px;
-    height: 45px;
-    left: 580px;
-    top: 970px;
-    background: #40159B;
-    color:white;
-}
-#submit:hover {box-shadow: 0 8px 5px 0 rgba(0,0,0,0.7);}
+    #time {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 80px;
+    }
 
+    #duration {
+        position: absolute;
+        width: 670px;
+        height: 35px;
+        left: 50px;
+        top: 360px;
+        background: #ffffff;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    #desc {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 80px;
+    }
+
+    #desc_support {
+        position: absolute;
+        width: 670px;
+        height: 180px;
+        left: 50px;
+        margin-top: 60px;
+
+        background: rgba(196, 196, 196, 0.35);
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        box-sizing: border-box;
+        border-radius: 5px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+
+        color: rgba(0, 0, 0, 0.54);
+
+    }
+
+    #description {
+        position: absolute;
+        width: 670px;
+        height: 160px;
+        left: 50px;
+        top: 470px;
+        background: #ffffff;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-top: 200px;
+
+        font-family: Poppins;
+        font-size: 13px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+    }
+
+    #supporting_doc {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        padding-top: 400px;
+    }
+
+    #submit {
+        position: absolute;
+        width: 100px;
+        height: 45px;
+        left: 580px;
+        top: 970px;
+        background: #40159B;
+        color: white;
+    }
+
+    #submit:hover {
+        box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.7);
+    }
 </style>
 
-<title> Work Experience </title> 
+<title> Work Experience </title>
 <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-<body> 
+<body>
     <div class="card">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <table>
-            <tr><td><p id="head">Experience</p></td></tr>
-            <tr>
-                <td><p id="company">Organization:</p></td>
-                <td><input id="company_name" placeholder="Eg:CoachEd" required {{form.company_name}}</td>
-            </tr>
-            <tr>
-                <td><p id="jobrole">Profile</p></td>
-                <td><input id="role" placeholder="Eg:Web Developer" required {{form.role}}</td>
-            </tr>
-            <tr>
-                <td><p id="time">Duration(months)*</p></td>
-                <td><input id="duration" required {{form.duration}}</td>
-            </tr>
-            <tr>
-                <td><p id="desc">Description(Optional)</p></td>
-                <td><textarea id="desc_support" readonly>
-    
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>
+                        <p id="head">Experience</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="company">Organization:</p>
+                    </td>
+                    <td><input id="company_name" placeholder="Eg:CoachEd" required {{form.company_name}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="jobrole">Profile</p>
+                    </td>
+                    <td><input id="role" placeholder="Eg:Web Developer" required {{form.role}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="time">Duration(months)*</p>
+                    </td>
+                    <td><input id="duration" required {{form.duration}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="desc">Description(Optional)</p>
+                    </td>
+                    <td><textarea id="desc_support" readonly>
+
     Pro Tips:
 
             * Mention key job responsibilities, measurable impact or results you helped 
@@ -177,7 +204,8 @@
             * Use action verbs: Built, Led, Drove, Conceptualized, Learnt, etc.
             * Use numbers and percentages wherever possible Keep it to 3-4 points.
                 </textarea></td>
-                <td><textarea id="description" placeholder="Short Description of Work done (max 250 char)"  {{form.description}}</td>
+                    <td><textarea id="description" placeholder="Short Description of Work done (max 250 char)"
+                            {{form.description}}</td>
             </tr>
             <tr>
                 <td id="supporting_doc"><p>Supporting Document:</p>{{form.supporting_doc}}</td>
