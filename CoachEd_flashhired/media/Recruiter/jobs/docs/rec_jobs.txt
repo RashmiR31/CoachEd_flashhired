@@ -1,0 +1,129 @@
+{% extends 'recruiter/base_recruiter.html' %}
+{% block title %}Jobs{% endblock %} 
+{% block content %}
+{% if user.is_authenticated %}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+#top{
+        height:53px;
+    }
+#profile_pic{
+    width:70px;
+    height:70px;
+    margin-left:980px;
+    margin-top: -60px;
+    border-radius: 50%;
+}
+
+#line {
+    position: absolute;
+    padding-left: 200px;
+    padding-top: 30px;
+}
+#addjob{
+    position: absolute;
+    padding-left: 200px;
+    padding-top: 80px;
+    
+}
+#jtitle {
+    position: absolute;
+    padding-left: 200px;
+    padding-top:50px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+#jtype{
+    position: absolute;
+    padding-left: 225px;
+    padding-top:95px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #28076D;
+}
+#jarea{
+    position: absolute;
+    padding-left: 225px;
+    padding-top:130px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #28076D;
+}
+.view{
+    position: absolute;
+    padding-left:1000px;
+    padding-top:100px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+}
+.edit{
+    position: absolute;
+    padding-left:1100px;
+    padding-top:100px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+}
+.delete{
+    position: absolute;
+    padding-left:1200px;
+    padding-top:100px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+}
+
+
+
+</style>
+<html>
+    
+    <body>
+        <div id="top">
+            <a href="{% url 'RecruiterHome' %}"><img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic"></a>
+            <br><br>
+            <hr>
+        </div>
+        <p id="line"> {{ user.username }} your active jobs are here</p>
+        <!--{{ user.id }} is the userID -->
+        <a id = "addjob" href="{% url 'addJob' %}">Add Job</a>
+        
+        {% for job in jobs %}
+        <br><br><br><br>
+        <p id="jtitle">{{job.job_title}}</p>    
+        <p id="jtype"><i class="fas fa-briefcase"></i> &nbsp;{{job.job_type}}</p>  
+        <p id="jarea"><i class="fab fa-connectdevelop"></i> &nbsp;{{job.functional_area}}</p>
+        
+        <a  href="viewjob/{{job.id}}" class="btn btn-warning view" id = '{{job.id}}'><i class="fas fa-eye"></i>  view</a>
+        <a  href="editjob/{{job.id}}" class="btn btn-warning edit" id = '{{job.id}}'><i class="fas fa-pencil-alt"></i>  edit</a>
+        <a  href="deletejob/{{job.id}}" class="btn btn-warning delete" id = '{{job.id}}'><i class="fas fa-trash"></i>  delete</a>
+        <br><br>
+        <hr>
+        {% endfor %}
+        
+
+
+
+
+        {% else %}
+
+        login
+
+        {% endif %}
+
+        {% endblock %}
+    </body>
+ </html>
