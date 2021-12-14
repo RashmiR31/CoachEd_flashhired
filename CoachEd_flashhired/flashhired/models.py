@@ -167,7 +167,7 @@ class Experience(models.Model):
     candidate = models.ForeignKey("Candidate",on_delete = models.CASCADE)
     company_name = models.CharField(max_length=255)
     role = models.CharField(max_length=100)
-    duration = models.IntegerField(default=0)
+    duration = models.FloatField(default=0)
     description = models.TextField(blank=True)
     supporting_doc = models.FileField(upload_to='candidate/experience/')
 
