@@ -1,39 +1,41 @@
 {% load static %}
-{% block content %} 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-       
-        .blueRectangle{
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+
+    .blueRectangle {
         /* Blue Box Border */
         position: absolute;
-        width:550px;
+        width: 550px;
         height: 100%;
         left: -152px;
         background: #461FBE;
         border-radius: 30px;
     }
-    #flash{
+
+    #flash {
         /* flashhired. */
         position: absolute;
         left: 200px;
         top: 45%;
-        font-family: 'Italiana',serif;
+        font-family: 'Italiana', serif;
         font-size: 30px;
-        font-weight:lighter;
+        font-weight: lighter;
         color: #FFFFFF;
     }
-    #bold{
+
+    #bold {
         /* flashhired. */
         position: absolute;
         left: 255px;
         top: 45%;
-        font-family:Roboto, sans-serif;
+        font-family: Roboto, sans-serif;
         font-size: 30px;
         font-weight: bolder;
         color: #FFFFFF;
     }
-    
-    #sq1{
+
+    #sq1 {
         /* Rectangle 1 */
         position: absolute;
         width: 10%;
@@ -41,7 +43,8 @@
         left: -10px;
         background: #301488;
     }
-    #sq2{
+
+    #sq2 {
         /* Rectangle 2 */
         position: absolute;
         width: 10%;
@@ -50,7 +53,8 @@
         top: 20px;
         background: #40159B;
     }
-    #pg1{
+
+    #pg1 {
         /* Polygon 1 */
         position: absolute;
         width: 8%;
@@ -60,7 +64,8 @@
         background: rgba(250, 246, 244, 0.72);
         transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
     }
-    #pg2{
+
+    #pg2 {
         /* Polygon 2 */
         position: absolute;
         width: 8%;
@@ -70,17 +75,19 @@
         background: #FAF6F4;
         transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
     }
-    #textInBlueBox{
+
+    #textInBlueBox {
         position: absolute;
         left: 200px;
         top: 55%;
-        font-family: 'Poppins',sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 20px;
         color: #FFFFFF;
     }
-    #trouble{
+
+    #trouble {
         position: absolute;
         left: 950px;
         top: 10px;
@@ -88,98 +95,111 @@
         font-size: 16px;
         color: #000000;
     }
-       
-        #situation{
-            position: absolute;
-            left:600px;
-            top: 100px;
-            font-family:'poppins',sans-serif;
-            height:5%; 
-            font-size: 20px;
-            font-weight: bolder;
-            color: rgba(70, 31, 190, 1);
-        }
-        #jobSeeker{
-            position: absolute;
-            width: 400px;
-            left:600px;
-            top: 35%;
-            height:40px; 
-            font-size: 18px;
-            font-weight:bolder;
-            background-color: #FFFFFF;
-            box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
-            font-family: 'poppins',sans-serif;
-            border-color: #FFFFFF;
-        }
-        #recruiter{
-            position: absolute;
-            width:400px;
-            left:600px;
-            top: 50%;
-            height:40px; 
-            font-size: 18px;
-            font-weight:bolder;
-            background-color: #FFFFFF;
-            box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
-            border-color: #FFFFFF;
-            font-family: 'poppins',sans-serif;
-            
-        }
-        #R-LID{
-            width:25px;
-            height:25px;
-            margin-right:25px;
-        }
-        #R-RID{
-            width:25px;
-            height:25px;
-            margin-left:200px;
-        }
-        #J-LID{
-            width:25px;
-            height:25px;
-            margin-right:25px;
-        }
-        #J-RID{
-            width:25px;
-            height:25px;
-            margin-left:200px;
-        }
-    </style>
 
-    <html>
-        <head>
-            <title> Candidate Signup </title>
-            <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
-            <meta charset="UTF-8">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
-            <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
-            <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
-        </head>
-       
-        <body>
-        <div class = "blueRectangle">
-            <shape id="vector"></shape>
-            <p id="flash">flash</p>
-            <p id="bold">hired.</p>
-            <p id="textInBlueBox"> A few clicks away from finding your potential <br>employer or employee </p>
-        </div>
-        <area id="sq1"></area>
-        <area id="sq2"></area>
-        <area id="pg1"></area>
-        <area id="pg2"></area>
-        <p id="trouble"> Already have an Account? <a href="{% url 'login_view' %}">Login </a></p>
-       
-        <div class="">
-            <p id="situation">Tell us what's your situation</p>
-            <a href="{% url 'candidatesignup' %}"><button type="submit" id="jobSeeker"><img src="{% static 'magnifying.jpg' %}" id="J-LID">A job seeker<img src="{% static 'greatertag.png' %}" id="J-RID"></button></a>
-            <a href="{% url 'recruitersignup' %}"><button type="submit" id="recruiter"><img src="{% static 'target.png' %}" id="R-LID">A recruiter<img src="{% static 'greatertag.png' %}" id="R-RID"></button></a>
-           
-        
-        </div>
-    </body>
+    #situation {
+        position: absolute;
+        left: 600px;
+        top: 100px;
+        font-family: 'poppins', sans-serif;
+        height: 5%;
+        font-size: 20px;
+        font-weight: bolder;
+        color: rgba(70, 31, 190, 1);
+    }
+
+    #jobSeeker {
+        position: absolute;
+        width: 400px;
+        left: 600px;
+        top: 35%;
+        height: 40px;
+        font-size: 18px;
+        font-weight: bolder;
+        background-color: #FFFFFF;
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        font-family: 'poppins', sans-serif;
+        border-color: #FFFFFF;
+    }
+
+    #recruiter {
+        position: absolute;
+        width: 400px;
+        left: 600px;
+        top: 50%;
+        height: 40px;
+        font-size: 18px;
+        font-weight: bolder;
+        background-color: #FFFFFF;
+        box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        border-color: #FFFFFF;
+        font-family: 'poppins', sans-serif;
+
+    }
+
+    #R-LID {
+        width: 25px;
+        height: 25px;
+        margin-right: 25px;
+    }
+
+    #R-RID {
+        width: 25px;
+        height: 25px;
+        margin-left: 200px;
+    }
+
+    #J-LID {
+        width: 25px;
+        height: 25px;
+        margin-right: 25px;
+    }
+
+    #J-RID {
+        width: 25px;
+        height: 25px;
+        margin-left: 200px;
+    }
+</style>
+
+<html>
+
+<head>
+    <title> Candidate Signup </title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+</head>
+
+<body>
+    <div class="blueRectangle">
+        <shape id="vector"></shape>
+        <p id="flash">flash</p>
+        <p id="bold">hired.</p>
+        <p id="textInBlueBox"> A few clicks away from finding your potential <br>employer or employee </p>
+    </div>
+    <area id="sq1"></area>
+    <area id="sq2"></area>
+    <area id="pg1"></area>
+    <area id="pg2"></area>
+    <p id="trouble"> Already have an Account? <a href="{% url 'login_view' %}">Login </a></p>
+
+    <div class="">
+        <p id="situation">Tell us what's your situation</p>
+        <a href="{% url 'candidatesignup' %}"><button type="submit" id="jobSeeker"><img
+                    src="{% static 'magnifying.jpg' %}" id="J-LID">A job seeker<img src="{% static 'greatertag.png' %}"
+                    id="J-RID"></button></a>
+        <a href="{% url 'recruitersignup' %}"><button type="submit" id="recruiter"><img src="{% static 'target.png' %}"
+                    id="R-LID">A recruiter<img src="{% static 'greatertag.png' %}" id="R-RID"></button></a>
+
+
+    </div>
+</body>
+
 </html>
 {% endblock %}

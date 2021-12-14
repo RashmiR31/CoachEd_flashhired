@@ -5,175 +5,192 @@
 {% block content %}
 
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-.main{
-   margin-left:160px;
-   padding-top:80px;
-}
-#top{
-height:53px;
-}
-#profile_pic{
-width:70px;
-height:70px;
-margin-left:980px;
-margin-top: -60px;
-border-radius: 50%;
-} 
-#dashboard{
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 37px;
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: 50px;
-    color: rgba(0, 0, 0, 0.67);
-}
-#rectangle{
-    width:775px;  
-    margin-left: 50px;
-}
-.text_rectangle{
-    font-family: Poppins;
-    font-style: normal;
-    font-size: 16px;
-    margin-left: 70px;
-    margin-top: -200px;
-    color: #FFFFFF;
-}
-#girl{
-    margin-top: -190px;
-    margin-left: 530px;
-    width:220px;
-}
+    .main {
+        margin-left: 160px;
+        padding-top: 80px;
+    }
 
-.design1{
-    width:230px;
-    height:230px;
-    margin-top: -210px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    padding-top:80px;
-    margin-left: 850px;
-    line-height: 27px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid #6D63E7;
-    color: #28076D;
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 50px;
-}
+    #top {
+        height: 53px;
+    }
+
+    #profile_pic {
+        width: 70px;
+        height: 70px;
+        margin-left: 980px;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
+
+    #dashboard {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 37px;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        margin-left: 50px;
+        color: rgba(0, 0, 0, 0.67);
+    }
+
+    #rectangle {
+        width: 775px;
+        margin-left: 50px;
+    }
+
+    .text_rectangle {
+        font-family: Poppins;
+        font-style: normal;
+        font-size: 16px;
+        margin-left: 70px;
+        margin-top: -200px;
+        color: #FFFFFF;
+    }
+
+    #girl {
+        margin-top: -190px;
+        margin-left: 530px;
+        width: 220px;
+    }
+
+    .design1 {
+        width: 230px;
+        height: 230px;
+        margin-top: -210px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        padding-top: 80px;
+        margin-left: 850px;
+        line-height: 27px;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #6D63E7;
+        color: #28076D;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 50px;
+    }
 
 
-.cards{
-    font-family: Poppins;
-    font-style: normal;
-    font-size: 25px;
-    line-height: 37px;
-    margin-left: 50px;
-    color: #000000;
-}
-.design2{
-    width: 300px;
-    height: 100px;
-    text-transform: capitalize;
-    padding-top: 35px;
-    text-align: center;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.26);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-#support{
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    margin-top:50px;
-    margin-left: 50px;
-    color: #000000;
-}
-#button{
-    width: 200px;
-    height: 50px;
-    color:white;
-    font-family: Poppins;
-    background: #6C63FF;
-    border: 1px solid rgba(0, 0, 0, 0.27);
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    cursor:pointer;
-}
-#button:hover{box-shadow: 0 4px 4px grey;}
+    .cards {
+        font-family: Poppins;
+        font-style: normal;
+        font-size: 25px;
+        line-height: 37px;
+        margin-left: 50px;
+        color: #000000;
+    }
+
+    .design2 {
+        width: 300px;
+        height: 100px;
+        text-transform: capitalize;
+        padding-top: 35px;
+        text-align: center;
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.26);
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    #support {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        margin-left: 50px;
+        color: #000000;
+    }
+
+    #button {
+        width: 200px;
+        height: 50px;
+        color: white;
+        font-family: Poppins;
+        background: #6C63FF;
+        border: 1px solid rgba(0, 0, 0, 0.27);
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #button:hover {
+        box-shadow: 0 4px 4px grey;
+    }
 </style>
 <html>
-    <body>
-        {% if user.is_authenticated %}
-        <div class="main">
-            <div id="top">
-                <a href="{% url 'RecruiterHome' %}"><img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic"></a>
-                <br><br>
-                <hr>
-            </div> 
-            <p id="dashboard">Dashboard</p>
-            <div>
-                <img id="rectangle" src="{% static 'rectangle.png' %}">
-                <div class="text_rectangle">
-                   <p><b>Hello {{ user.username }}!</b></p>
-                   <p>Have a great day finding the best fit for your active jobs! </p>
-                    <p>Wanna review it? Lets gooo! </p>
-                </div>
-                <img id="girl" src="{% static 'girl_home.png' %}">
+
+<body>
+    {% if user.is_authenticated %}
+    <div class="main">
+        <div id="top">
+            <a href="{% url 'RecruiterHome' %}"><img id="profile_pic" src="{{details.profile_pic.url}}"
+                    alt="profile_pic"></a>
+            <br><br>
+            <hr>
+        </div>
+        <p id="dashboard">Dashboard</p>
+        <div>
+            <img id="rectangle" src="{% static 'rectangle.png' %}">
+            <div class="text_rectangle">
+                <p><b>Hello {{ user.username }}!</b></p>
+                <p>Have a great day finding the best fit for your active jobs! </p>
+                <p>Wanna review it? Lets gooo! </p>
             </div>
-            <div class="card design1">
-                <p>Today is</p>
-                <p id="date"></p>
-            </div>
-            <p id="dashboard">You need to hire</p>
-            
-            <div class="cards grid-container">
-              
-                {% if jobs %}
-                {% for j in jobs %}
-                <div class="card design2">
+            <img id="girl" src="{% static 'girl_home.png' %}">
+        </div>
+        <div class="card design1">
+            <p>Today is</p>
+            <p id="date"></p>
+        </div>
+        <p id="dashboard">You need to hire</p>
+
+        <div class="cards grid-container">
+
+            {% if jobs %}
+            {% for j in jobs %}
+            <div class="card design2">
                 <p>{{j.vacancies}}&nbsp;&nbsp;&nbsp;{{j.job_title}}</p>
-                </div>
-                {% endfor %}
-                {% endif %}
-           </div>  
-           <p id="support">Looking to create new job? &nbsp;&nbsp;<a href="{% url 'addJob' %}"><button id="button">Create Job</button></a></p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <p id="support">Looking to create new job? &nbsp;&nbsp;<a href="{% url 'addJob' %}"><button id="button">Create
+                    Job</button></a></p>
         <script>
-            n =  new Date();
+            n = new Date();
             y = n.getFullYear();
             m = n.getMonth() + 1;
             d = n.getDate();
             document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
         </script>
-    </body>
+</body>
+
 </html>
 
 
 
 
 
- {% else %}
+{% else %}
 
- login
+login
 
- {% endif %}
- 
- {% endblock %}
+{% endif %}
+
+{% endblock %}

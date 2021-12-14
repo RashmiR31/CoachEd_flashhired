@@ -3,133 +3,145 @@
 {% block content %}
 
 <style>
-            @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-    .main{
-        margin-left:160px;
-        margin-top:80px;
+    .main {
+        margin-left: 160px;
+        margin-top: 80px;
     }
-#top{
-    height:53px;
-}
-#profile_pic{
-    width:70px;
-    height:70px;
-    margin-left:980px;
-    margin-top: -60px;
-    border-radius: 50%;
-}
-#container{
-    background-color:#FBFBFB;
-}
-.jobs{
-    background: rgba(251, 251, 251, 0.82);
-}
-.design{
-    width:300px;
-    height:320px;
-    margin-left:30px;
-    margin-top:50px;
-    text-transform: capitalize;
 
-    background: rgba(255, 250, 250, 0.84);
-border: 1px solid rgba(0, 0, 0, 0.44);
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-}
+    #top {
+        height: 53px;
+    }
 
-.design:hover{box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);}
-.card-title{
-    font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 27px;
+    #profile_pic {
+        width: 70px;
+        height: 70px;
+        margin-left: 980px;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
 
-color: #000000;
-}
+    #container {
+        background-color: #FBFBFB;
+    }
 
-.role{
-    font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-transform: capitalize;
-color: #28076D;
-}
+    .jobs {
+        background: rgba(251, 251, 251, 0.82);
+    }
 
-#salary{
-    font-family: Poppins;
-font-style: normal;
-font-weight: 200;
-font-size: 14px;
-line-height: 21px;
-display: flex;
-align-items: center;
+    .design {
+        width: 300px;
+        height: 320px;
+        margin-left: 30px;
+        margin-top: 50px;
+        text-transform: capitalize;
 
-color: #000000;
+        background: rgba(255, 250, 250, 0.84);
+        border: 1px solid rgba(0, 0, 0, 0.44);
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
 
-}
-#offered{
-    font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 21px;
-display: flex;
-align-items: center;
+    .design:hover {
+        box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+    }
 
-color: #131313;
-}
+    .card-title {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
 
-#date{
-    font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 21px;
-display: flex;
-align-items: center;
+        color: #000000;
+    }
 
-color: #131313;
+    .role {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: #28076D;
+    }
 
-}
+    #salary {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 14px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
 
-#jd{
-    font-family: Poppins;
-font-style: normal;
-font-weight: 300;
-font-size: 13px;
-line-height: 19px;
-height:10px;
+        color: #000000;
 
-color: rgba(0, 0, 0, 0.71);
-}
+    }
 
-.go{
-    color: #28076D;
-    font-size:40px;
-    margin-left:200px;
-    
-}
+    #offered {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+
+        color: #131313;
+    }
+
+    #date {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+
+        color: #131313;
+
+    }
+
+    #jd {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 19px;
+        height: 10px;
+
+        color: rgba(0, 0, 0, 0.71);
+    }
+
+    .go {
+        color: #28076D;
+        font-size: 40px;
+        margin-left: 200px;
+
+    }
 </style>
 <html>
-    <head>
+
+<head>
     <title>Jobs</title>
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="main">
+</head>
+
+<body>
+    <div class="main">
         <div id="top">
-            <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{candidate_details.profile_pic.url}}" alt="profile_pic"></a>
+            <a href="{% url 'CandidateHome' %}"><img id="profile_pic" src="{{candidate_details.profile_pic.url}}"
+                    alt="profile_pic"></a>
             <br><br>
             <hr>
         </div>
@@ -137,34 +149,35 @@ color: rgba(0, 0, 0, 0.71);
 
 
 
-    <div id="container">
-    <div class="card-columns">
-        {% for job in job_details %}
-    <div class="card design" style="width: 18rem;">
-  
-  <div class="card-body">
-    
-    <h5 class="card-title">{{ job.job_title }}</h5>
-    <p class="card-text role">{{job.recruiter.company_name}}</p>
-    <p id="salary">Salary Offered</p>
-    <p id="offered">{{job.salary}} LPA</p>
-    <p class="date "><i class="fas fa-clock"></i> {{job.last_date_to_apply}}</p>
-    <p id="jd">{{job.jd}}</p>
-    <br>
-   <div>
-   <center>
-    <td><a href="{% url 'candidateViewJob' job.id %}" class="go" id = '{{job.id}}'><i class="fas fa-arrow-circle-right"></i></a></td>
-    
-    </center>
-    </div>
-  </div>
-</div>
-    {% endfor %}
-</div>
+        <div id="container">
+            <div class="card-columns">
+                {% for job in job_details %}
+                <div class="card design" style="width: 18rem;">
 
-</div>
+                    <div class="card-body">
 
-{% endblock %}
+                        <h5 class="card-title">{{ job.job_title }}</h5>
+                        <p class="card-text role">{{job.recruiter.company_name}}</p>
+                        <p id="salary">Salary Offered</p>
+                        <p id="offered">{{job.salary}} LPA</p>
+                        <p class="date "><i class="fas fa-clock"></i> {{job.last_date_to_apply}}</p>
+                        <p id="jd">{{job.jd}}</p>
+                        <br>
+                        <div>
+                            <center>
+                                <td><a href="{% url 'candidateViewJob' job.id %}" class="go" id='{{job.id}}'><i
+                                            class="fas fa-arrow-circle-right"></i></a></td>
+
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        {% endblock %}
 
 
 
@@ -194,8 +207,9 @@ color: rgba(0, 0, 0, 0.71);
                 </tr>
                 {% endfor %}
             </table> -->
-            
-        </div>
-        </div>
-    </body>
+
+    </div>
+    </div>
+</body>
+
 </html>

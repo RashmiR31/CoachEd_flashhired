@@ -3,179 +3,192 @@
 {% block content %}
 
 <style>
-        @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-.main{
-    margin-left:160px;
-    background: #FBFBFB;
-    padding-bottom: 20px;
-}
-#top-profile{
-    height: 300px;
-}
-#name{
-    position: absolute;
-    text-transform: capitalize;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 22px;
-    margin-left:50px;
+    .main {
+        margin-left: 160px;
+        background: #FBFBFB;
+        padding-bottom: 20px;
+    }
 
-    color: #000000;
-}
-#email{
-    position: absolute;
-    top:50px;
-    margin-left: 50px;
+    #top-profile {
+        height: 300px;
+    }
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
+    #name {
+        position: absolute;
+        text-transform: capitalize;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        margin-left: 50px;
 
-    color: rgba(0, 0, 0, 0.71);
-}
-#phno{
-    position: absolute;
-    margin-left: 50px;
-    margin-top:70px;
+        color: #000000;
+    }
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
+    #email {
+        position: absolute;
+        top: 50px;
+        margin-left: 50px;
 
-    color: rgba(0, 0, 0, 0.71);
-}
-#address{
-    position: absolute;
-    width: 350px;
-    height: 50px;
-    margin-top: 85px;
-    margin-left:50px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
+        color: rgba(0, 0, 0, 0.71);
+    }
 
-    color: rgba(0, 0, 0, 0.71);
-}
-#resume{
-    position: absolute;
-    width: 291px;
-    height: 80px;
-    margin-top: 130px;
-    margin-left: 50px;
+    #phno {
+        position: absolute;
+        margin-left: 50px;
+        margin-top: 70px;
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #40159B;
-    
-}
-#profile_pic{
-    margin-left: 900px;
-    width:100px;
-    height:100px;
-    border-radius: 50%;
-    margin-top:20px;
-}
-#heading{
-    position: absolute;
-    width: 148px;
-    height: 40px;
-    margin-left: 50px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+
+        color: rgba(0, 0, 0, 0.71);
+    }
+
+    #address {
+        position: absolute;
+        width: 350px;
+        height: 50px;
+        margin-top: 85px;
+        margin-left: 50px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+
+        color: rgba(0, 0, 0, 0.71);
+    }
+
+    #resume {
+        position: absolute;
+        width: 291px;
+        height: 80px;
+        margin-top: 130px;
+        margin-left: 50px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #40159B;
+
+    }
+
+    #profile_pic {
+        margin-left: 900px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+
+    #heading {
+        position: absolute;
+        width: 148px;
+        height: 40px;
+        margin-left: 50px;
 
 
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
 
-    color: #777474;
-    
+        color: #777474;
 
-}
 
-#sub_heading{
-    width: 353px;
-    height: 30px;
-    margin-left:300px;
-    margin-top:30px;
+    }
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 22px;
-    text-transform: capitalize;
-    color: #000000;
-}
-#content{
-    position: absolute;
-    width: 300px;
-    height: 80px;
-    margin-left: 300px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
-    margin-top:-20px;
-    color: rgba(0, 0, 0, 0.71);
-}
-#content2{
-    position: absolute;
-    width: 300px;
-    height: 80px;
-    margin-left: 300px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    margin-top:-3px;
-    line-height: 18px;
-    color: rgba(0, 0, 0, 0.71);
-}
-#edit{
-    color: #28076D;
-    margin-left:900px;
-}
-#delete{
-    color: #28076D;
-    margin-left:50px;
-}
-#add{
-    position: absolute;
-    width: 300px;
-    height: 42px;
-    margin-left:300px;
+    #sub_heading {
+        width: 353px;
+        height: 30px;
+        margin-left: 300px;
+        margin-top: 30px;
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: #28076D;
-}
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        text-transform: capitalize;
+        color: #000000;
+    }
+
+    #content {
+        position: absolute;
+        width: 300px;
+        height: 80px;
+        margin-left: 300px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: -20px;
+        color: rgba(0, 0, 0, 0.71);
+    }
+
+    #content2 {
+        position: absolute;
+        width: 300px;
+        height: 80px;
+        margin-left: 300px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        margin-top: -3px;
+        line-height: 18px;
+        color: rgba(0, 0, 0, 0.71);
+    }
+
+    #edit {
+        color: #28076D;
+        margin-left: 900px;
+    }
+
+    #delete {
+        color: #28076D;
+        margin-left: 50px;
+    }
+
+    #add {
+        position: absolute;
+        width: 300px;
+        height: 42px;
+        margin-left: 300px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        color: #28076D;
+    }
 </style>
 <html>
 <title> Candidate Profile</title>
@@ -184,39 +197,44 @@
 <body>
     <div class="main">
         <div id="top_profile">
-        <p id="name">{{details.first_name}} {{details.last_name}} <a href="{% url 'candidateEditProfile' %}"><i class="fas fa-pencil-alt"></i></a></p>
-        <p id="email">{{details.email_id}}</p>
-        <p id="phno">{{details.phone_number}}</p>
-        <p id="address">{{details.current_address}}</p>
-        <p id="resume"><a href="{{details.Resume.url}}" target="_blank">Resume</a></p>
-        <img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic">
-        
+            <p id="name">{{details.first_name}} {{details.last_name}} <a href="{% url 'candidateEditProfile' %}"><i
+                        class="fas fa-pencil-alt"></i></a></p>
+            <p id="email">{{details.email_id}}</p>
+            <p id="phno">{{details.phone_number}}</p>
+            <p id="address">{{details.current_address}}</p>
+            <p id="resume"><a href="{{details.Resume.url}}" target="_blank">Resume</a></p>
+            <img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic">
+
         </div>
 
         <hr style="margin-top: 50px;">
 
         <p id="heading">Accomplishments</p>
-        
+
         {% for acc in acc_details %}
         <p id="sub_heading">{{acc.certificate_name}}</p>
         <p id="content">{{acc.certificate_issued_by}}</p>
-        <a id="edit" href="editaccomplishments/{{acc.id}}" class="btn btn-warning" id = '{{acc.id}}'><i class="fas fa-pencil-alt"></i></a>
-        <a id="delete" href="deleteaccomplishments/{{acc.id}}" class="btn btn-warning" id = '{{acc.id}}'><i class="fas fa-trash"></i></a>
+        <a id="edit" href="editaccomplishments/{{acc.id}}" class="btn btn-warning" id='{{acc.id}}'><i
+                class="fas fa-pencil-alt"></i></a>
+        <a id="delete" href="deleteaccomplishments/{{acc.id}}" class="btn btn-warning" id='{{acc.id}}'><i
+                class="fas fa-trash"></i></a>
         {% endfor %}
         <br>
-        <a id="add"href="{% url 'candidateAccomplishments' %}"><i class="fas fa-plus"></i> Add Accomplishments</a>
+        <a id="add" href="{% url 'candidateAccomplishments' %}"><i class="fas fa-plus"></i> Add Accomplishments</a>
         <br>
         <br>
         <br>
 
         <p id="heading">Projects</p>
-        
+
         {% for p in project_details %}
         <p id="sub_heading">{{p.project_name}}</p>
         <p id="content">{{p.technologies_used}}</p>
         <p id="content2">{{p.start_date}} - {{p.end_date}}</p>
-        <a id="edit" href="editprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'><i class="fas fa-pencil-alt"></i></a>
-        <a id="delete" href="deleteprojects/{{p.id}}" class="btn btn-warning" id = '{{p.id}}'><i class="fas fa-trash"></i></a>
+        <a id="edit" href="editprojects/{{p.id}}" class="btn btn-warning" id='{{p.id}}'><i
+                class="fas fa-pencil-alt"></i></a>
+        <a id="delete" href="deleteprojects/{{p.id}}" class="btn btn-warning" id='{{p.id}}'><i
+                class="fas fa-trash"></i></a>
         {% endfor %}
         <br>
         <a id="add" href="{% url 'candidateProjects' %}"><i class="fas fa-plus"></i>Add Projects</a>
@@ -229,8 +247,10 @@
         {% for s in skill_details %}
         <p id="sub_heading">{{s.skill_name}}</p>
         <p id="content">{{s.rating}}</p>
-        <a id="edit" href="editskills/{{s.id}}" class="btn btn-warning" id = '{{s.id}}'><i class="fas fa-pencil-alt"></i></a>
-        <a id="delete" href="deleteskills/{{s.id}}" class="btn btn-warning" id = '{{s.id}}'><i class="fas fa-trash"></i></a>
+        <a id="edit" href="editskills/{{s.id}}" class="btn btn-warning" id='{{s.id}}'><i
+                class="fas fa-pencil-alt"></i></a>
+        <a id="delete" href="deleteskills/{{s.id}}" class="btn btn-warning" id='{{s.id}}'><i
+                class="fas fa-trash"></i></a>
         {% endfor %}
         <br>
         <a id="add" href="{% url 'candidateSkills' %}"><i class="fas fa-plus"></i>Add Skills</a>
@@ -244,21 +264,25 @@
         {% for exp in exp_details %}
         <p id="sub_heading">{{exp.company_name}}</p>
         <p id="content">{{exp.role}} </p>
-        <a id="edit" href="editexperience/{{exp.id}}" class="btn btn-warning" id = '{{exp.id}}'><i class="fas fa-pencil-alt"></i></a>
-        <a id="delete" href="deleteexperience/{{exp.id}}" class="btn btn-warning" id = '{{exp.id}}'><i class="fas fa-trash"></i></a>
+        <a id="edit" href="editexperience/{{exp.id}}" class="btn btn-warning" id='{{exp.id}}'><i
+                class="fas fa-pencil-alt"></i></a>
+        <a id="delete" href="deleteexperience/{{exp.id}}" class="btn btn-warning" id='{{exp.id}}'><i
+                class="fas fa-trash"></i></a>
         {% endfor %}
         <br>
         <a id="add" href="{% url 'candidateExperience' %}"><i class="fas fa-plus"></i>Add Experience</a>
         <br>
         <br>
         <br>
-        
+
         <p id="heading">Languages</p>
         {% for l in language_details %}
         <p id="sub_heading">{{l.language}}</p>
         <p id="content">{{l.proficiency}}</p>
-        <a id="edit" href="editlanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'><i class="fas fa-pencil-alt"></i></a>
-        <a id="delete" href="deletelanguages/{{l.id}}" class="btn btn-warning" id = '{{l.id}}'><i class="fas fa-trash"></i></a>
+        <a id="edit" href="editlanguages/{{l.id}}" class="btn btn-warning" id='{{l.id}}'><i
+                class="fas fa-pencil-alt"></i></a>
+        <a id="delete" href="deletelanguages/{{l.id}}" class="btn btn-warning" id='{{l.id}}'><i
+                class="fas fa-trash"></i></a>
         {% endfor %}
         <br>
         <a id="add" href="{% url 'candidateLanguages' %}"><i class="fas fa-plus"></i>Add Languages</a>
@@ -273,7 +297,8 @@
         {% for sl in social_links %}
         <p id="content">{{sl.linkedin}} </p>
         <p id="content"> {{sl.github}}</p>
-        <a id="edit" href="editsociallinks/{{sl.id}}" class="btn btn-warning" id = '{{sl.id}}'><i class="fas fa-pencil-alt"></i></a>
+        <a id="edit" href="editsociallinks/{{sl.id}}" class="btn btn-warning" id='{{sl.id}}'><i
+                class="fas fa-pencil-alt"></i></a>
         {% endfor %}
         {% else %}
         <br>
@@ -282,9 +307,10 @@
         <br>
         <br>
         <br>
-        
-        </div>
-        </body>
-        </html>
+
+    </div>
+</body>
+
+</html>
 
 {% endblock %}

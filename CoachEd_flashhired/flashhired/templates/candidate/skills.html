@@ -2,122 +2,155 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
-.card{
-    width:600px;
-    height:600px;
-    box-shadow: 2px 2px 5px grey;
-    margin-left: 350px;
-    border-radius:10px;
-    margin-top: 30px;
-}
-.card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
+    .card {
+        width: 600px;
+        height: 600px;
+        box-shadow: 2px 2px 5px grey;
+        margin-left: 350px;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
 
-#about{
-    font-family:'poppins',sans-serif;
-    font-size:28px;
-    font-weight:bolder;
-    color:black;
-    padding-left:260px;
-    margin-top:20px;
-}
-#lname{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    margin-top: 60px;
-}
-#skillbox{
-    position: absolute;
-    width: 500px;
-    height: 35px;
-    margin-left:50px;
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    }
 
-    background: #FFFFFF;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-#rating{
-    position: absolute;
-    width: 250px;
-    height: 35px;
-    margin-left:50px;
+    #about {
+        font-family: 'poppins', sans-serif;
+        font-size: 28px;
+        font-weight: bolder;
+        color: black;
+        padding-left: 260px;
+        margin-top: 20px;
+    }
 
-    background: #FFFFFF;
-    border: 0.5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-#rating_support1{
-    font-family:'poppins',sans-serif;
-    font-size:13px;
-    color:#777474;
-    padding-left:50px;
-    margin-top:50px;
-    
-}
-#rating_support2{
-    font-family:'poppins',sans-serif;
-    font-size:13px;
-    color:#777474;
-    padding-left:50px;
-    
-}
-#supporting_doc{
-    font-family:'poppins',sans-serif;
-    font-size:15px;
-    color:#777474;
-    padding-left:50px;
-    padding-top: 50px;
-}
-#submit{
+    #lname {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 60px;
+    }
 
-position: absolute;
-width: 80px;
-height: 45px;
-margin-left:470px;
-margin-top:30px;
-color:white;
-font-family: 'poppins',sans-serif;
-background: #40159B;
-}
+    #skillbox {
+        position: absolute;
+        width: 500px;
+        height: 35px;
+        margin-left: 50px;
+
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    #rating {
+        position: absolute;
+        width: 250px;
+        height: 35px;
+        margin-left: 50px;
+
+        background: #FFFFFF;
+        border: 0.5px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    #rating_support1 {
+        font-family: 'poppins', sans-serif;
+        font-size: 13px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 50px;
+
+    }
+
+    #rating_support2 {
+        font-family: 'poppins', sans-serif;
+        font-size: 13px;
+        color: #777474;
+        padding-left: 50px;
+
+    }
+
+    #supporting_doc {
+        font-family: 'poppins', sans-serif;
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        padding-top: 50px;
+    }
+
+    #submit {
+
+        position: absolute;
+        width: 80px;
+        height: 45px;
+        margin-left: 470px;
+        margin-top: 30px;
+        color: white;
+        font-family: 'poppins', sans-serif;
+        background: #40159B;
+    }
 </style>
 <html>
-    <title>Skills</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+<title>Skills</title>
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
-    <body>
-        <div class="card">
-            
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        <tr><td><p id="about">Skills</p></td></tr>
-        <tr>
-            <td><p id="lname">Add Skill</p></td>
-        </tr>
-        <tr>
-            <td><input id="skillbox" placeholder="Eg:Python" required {{form.skill_name}}</td>
-        </tr>
-        <tr>
-            <td><p id="lname">How would you rate yourself on this skill?</p></td>
-        </tr>
-        <tr>
-            <td><input id="rating" max="10" required {{form.rating}}</td>
-        </tr>
+<body>
+    <div class="card">
 
-        <tr><td><p id="rating_support1">1-4: Beginner</p></td></tr>
-        <tr><td><p id="rating_support2">5-7: Intermediate</p></td></tr>
-        <tr><td><p id="rating_support2">8-10: Advanced</p></td></tr>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>
+                        <p id="about">Skills</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="lname">Add Skill</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="skillbox" placeholder="Eg:Python" required {{form.skill_name}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="lname">How would you rate yourself on this skill?</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="rating" max="10" required {{form.rating}}</td>
+                </tr>
 
-        <tr>
-            <td id="supporting_doc"><p>Upload Relevant Certificate/Document</p>{{form.supporting_doc}}</td>
-        </tr>
-        {{ form.errors }}
-        <td><button id="submit" type="submit">Save</button></td>
-    </table>
-</form>
-        </div>
-    </body>
+                <tr>
+                    <td>
+                        <p id="rating_support1">1-4: Beginner</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="rating_support2">5-7: Intermediate</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="rating_support2">8-10: Advanced</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="supporting_doc">
+                        <p>Upload Relevant Certificate/Document</p>{{form.supporting_doc}}
+                    </td>
+                </tr>
+                {{ form.errors }}
+                <td><button id="submit" type="submit">Save</button></td>
+            </table>
+        </form>
+    </div>
+</body>
+
 </html>

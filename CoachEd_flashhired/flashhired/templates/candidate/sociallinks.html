@@ -1,43 +1,53 @@
 {% load static %}
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-    
-        .card {
-            position: absolute;
-            width: 760px;
-            height: 1450px;
-            left: 250px;
-            top: 82px;
-            background: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        }
-        .card:hover {box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);}
-        body {white-space:normal;margin-top: 1600px;} 
-    
-        #social1{
+
+    .card {
+        position: absolute;
+        width: 760px;
+        height: 1450px;
+        left: 250px;
+        top: 82px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+        white-space: normal;
+        margin-top: 1600px;
+    }
+
+    #social1 {
         position: absolute;
         font-family: poppins;
-        margin-top:1px;
+        margin-top: 1px;
         padding-left: 350px;
         font-size: 30px;
         font-weight: bold;
-        }
-        #social2{
+    }
+
+    #social2 {
         position: absolute;
         font-family: poppins;
-        margin-top:40px;
+        margin-top: 40px;
         padding-left: 225px;
         font-size: 22px;
-        }
-        #facebook1{
-        font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 110px;  
-        }
-        #facebook2{
+    }
+
+    #facebook1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 110px;
+    }
+
+    #facebook2 {
         position: absolute;
         width: 670px;
         height: 35px;
@@ -45,269 +55,320 @@
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        top: 140px;  
-        left:50px;
-        }
-        #instagram1{
-        font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-       }
-       #instagram2{
-            position: absolute;
+        top: 140px;
+        left: 50px;
+    }
+
+    #instagram1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #instagram2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #linkedin1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #linkedin2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #linkedin1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #linkedin2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #github1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #github2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #github1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #github2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #personal_web1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #personal_web2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #personal_web1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #personal_web2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #codechef1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #codechef2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #codechef1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #codechef2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #hackerrank1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #hackerrank2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #hackerrank1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #hackerrank2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #kaggle1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #kaggle2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #kaggle1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #kaggle2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #twitter1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #twitter2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #twitter1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #twitter2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #dribble1{
-            font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        margin-left:50px;
-        margin-top: 70px;    
-        }
-        #dribble2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #dribble1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        margin-left: 50px;
+        margin-top: 70px;
+    }
+
+    #dribble2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 50px;  
-        left:50px;
-        }
-        #other1{
-        font-family:'poppins';
-        font-size:15px;
-        color:#777474;
-        padding-left:50px;
-        margin-top: 70px;    
-        }
-        #other1_1{
-        font-family:'poppins';
-        font-size:15px;
-        padding-left:50px;
-        margin-top: 1px;    
-        }
-        #other2{
-            position: absolute;
+        margin-top: 50px;
+        left: 50px;
+    }
+
+    #other1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        color: #777474;
+        padding-left: 50px;
+        margin-top: 70px;
+    }
+
+    #other1_1 {
+        font-family: 'poppins';
+        font-size: 15px;
+        padding-left: 50px;
+        margin-top: 1px;
+    }
+
+    #other2 {
+        position: absolute;
         width: 670px;
         height: 35px;
         border-radius: 5px;
         background: #FFFFFF;
         border: 0.5px solid #000000;
         box-sizing: border-box;
-        margin-top: 130px;  
-        left:50px;
-        }
-        #submit{
+        margin-top: 130px;
+        left: 50px;
+    }
+
+    #submit {
         position: absolute;
         width: 100px;
         height: 45px;
         left: 580px;
         top: 1350px;
         background: #40159B;
-        color:white;
-        }
-        #submit:hover {box-shadow: 0 8px 5px 0 rgba(0,0,0,0.7);}
-    
-    </style>
-    <html>
-    <title>Socials</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+        color: white;
+    }
 
-    <body>
-        <div class="card">
-            <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <table>
-                        <p id = social1>Socials</p>
-                        <p id = social2>Let’s Wow! your online presence</p>
-                        <tr>
-                            <td><p id = "facebook1">Facebook:</p></td>
-                            <td><input id = "facebook2" {{form.facebook}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "instagram1">Instagram:</p></td>
-                            <td><input id = "instagram2" {{form.instagram}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "linkedin1">LinkedIN:</p></td>
-                            <td><input id = "linkedin2" {{form.linkedin}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "github1">GitHub:</p></td>
-                            <td><input id = "github2" {{form.github}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "personal_web1">Personal Website:</p></td>
-                            <td><input id = "personal_web2" {{form.personal_website}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "codechef1">CodeChef:</p></td>
-                            <td><input id = "codechef2" {{form.codechef}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "hackerrank1">HackerRank:</p></td>
-                            <td><input id = "hackerrank2" {{form.hackerrank}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "kaggle1">Kaggle:</p></td>
-                            <td><input id = "kaggle2" {{form.kaggle}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "twitter1">Twitter:</p></td>
-                            <td><input id = "twitter2" {{form.twitter}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "dribble1">Dribble:</p></td>
-                            <td><input id = "dribble2" {{form.dribble}}</td>
-                        </tr>
-                        <tr>
-                            <td><p id = "other1">Other Work Links:</p></td>
-                            <td><input id = "other2" {{form.other}}</td>
-                        </tr>
-                            <td><p id = "other1_1">Your work samples could be in the form of social media posts, presentations, documents, website etc. If you have multiple work samples, upload them to google drive and add the link here.</p></td>
-                        <tr>
-                        </tr>
-                        {{ form.errors }}
-                        <td><button id="submit" type="submit" name="submit"  >Save</button></td>
-                    </table>
-            </form>
-        </div>
-    </body>
-    </html>
+    #submit:hover {
+        box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.7);
+    }
+</style>
+<html>
+<title>Socials</title>
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+
+<body>
+    <div class="card">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                <p id=social1>Socials</p>
+                <p id=social2>Let’s Wow! your online presence</p>
+                <tr>
+                    <td>
+                        <p id="facebook1">Facebook:</p>
+                    </td>
+                    <td><input id="facebook2" {{form.facebook}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="instagram1">Instagram:</p>
+                    </td>
+                    <td><input id="instagram2" {{form.instagram}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="linkedin1">LinkedIN:</p>
+                    </td>
+                    <td><input id="linkedin2" {{form.linkedin}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="github1">GitHub:</p>
+                    </td>
+                    <td><input id="github2" {{form.github}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="personal_web1">Personal Website:</p>
+                    </td>
+                    <td><input id="personal_web2" {{form.personal_website}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="codechef1">CodeChef:</p>
+                    </td>
+                    <td><input id="codechef2" {{form.codechef}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="hackerrank1">HackerRank:</p>
+                    </td>
+                    <td><input id="hackerrank2" {{form.hackerrank}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="kaggle1">Kaggle:</p>
+                    </td>
+                    <td><input id="kaggle2" {{form.kaggle}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="twitter1">Twitter:</p>
+                    </td>
+                    <td><input id="twitter2" {{form.twitter}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="dribble1">Dribble:</p>
+                    </td>
+                    <td><input id="dribble2" {{form.dribble}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="other1">Other Work Links:</p>
+                    </td>
+                    <td><input id="other2" {{form.other}}</td>
+                </tr>
+                <td>
+                    <p id="other1_1">Your work samples could be in the form of social media posts, presentations,
+                        documents, website etc. If you have multiple work samples, upload them to google drive and add
+                        the link here.</p>
+                </td>
+                <tr>
+                </tr>
+                {{ form.errors }}
+                <td><button id="submit" type="submit" name="submit">Save</button></td>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

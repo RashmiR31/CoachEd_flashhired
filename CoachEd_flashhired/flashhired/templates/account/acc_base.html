@@ -1,37 +1,40 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-    
 
-    .blueRectangle{
+
+    .blueRectangle {
         /* Blue Box Border */
         position: absolute;
-        width:550px;
+        width: 550px;
         height: 100%;
         left: -152px;
         background: #461FBE;
         border-radius: 30px;
     }
-    #flash{
+
+    #flash {
         /* flashhired. */
         position: absolute;
         left: 200px;
         top: 45%;
-        font-family: 'Italiana',serif;
+        font-family: 'Italiana', serif;
         font-size: 30px;
-        font-weight:lighter;
+        font-weight: lighter;
         color: #FFFFFF;
     }
-    #bold{
+
+    #bold {
         /* flashhired. */
         position: absolute;
         left: 255px;
         top: 45%;
-        font-family:Roboto, sans-serif;
+        font-family: Roboto, sans-serif;
         font-size: 30px;
         font-weight: bolder;
         color: #FFFFFF;
     }
-     #sq1{
+
+    #sq1 {
         /* Rectangle 1 */
         position: absolute;
         width: 10%;
@@ -39,7 +42,8 @@
         left: -10px;
         background: #301488;
     }
-    #sq2{
+
+    #sq2 {
         /* Rectangle 2 */
         position: absolute;
         width: 10%;
@@ -48,7 +52,8 @@
         top: 20px;
         background: #40159B;
     }
-    #pg1{
+
+    #pg1 {
         /* Polygon 1 */
         position: absolute;
         width: 8%;
@@ -58,7 +63,8 @@
         background: rgba(250, 246, 244, 0.72);
         transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
     }
-    #pg2{
+
+    #pg2 {
         /* Polygon 2 */
         position: absolute;
         width: 8%;
@@ -68,17 +74,19 @@
         background: #FAF6F4;
         transform: matrix(-0.76, 0.57, -0.74, -0.77, 0, 0);
     }
-    #textInBlueBox{
+
+    #textInBlueBox {
         position: absolute;
         left: 40%;
         top: 55%;
-        font-family: 'Poppins',sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 24px;
         color: #FFFFFF;
     }
-    #trouble{
+
+    #trouble {
         position: absolute;
         left: 85%;
         top: 10px;
@@ -86,19 +94,21 @@
         font-size: 16px;
         color: #000000;
     }
-    
-   
 </style>
 
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5f4420aa09.js" crossorigin="anonymous"></script>
-    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+    <!--load all styles -->
 </head>
-<body> 
-    <div class = "blueRectangle">
+
+<body>
+    <div class="blueRectangle">
         <shape id="vector"></shape>
         <p id="flash">flash</p>
         <p id="bold">hired.</p>
@@ -111,4 +121,5 @@
     <p id="trouble">{% block user_question %} {% endblock %}</p>
     {% block content %} {% endblock %}
 </body>
+
 </html>
