@@ -3,15 +3,17 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
-    #logo{
-        width:300px;
-        margin-top:50px;
-        margin-left:50px;
+
+    #logo {
+        width: 300px;
+        margin-top: 50px;
+        margin-left: 50px;
     }
+
     .btns {
         padding-left: 650px;
         width: 700px;
-        margin-top:-100px;
+        margin-top: -100px;
     }
 
     #recruiter {
@@ -24,10 +26,14 @@
         font-size: 23px;
         background-color: #461FBE;
         margin-top: 20px;
-        border-radius:10px;
-        cursor:pointer;
+        border-radius: 10px;
+        cursor: pointer;
     }
-    #recruiter:hover{box-shadow: 4px 8px 8px grey;}
+
+    #recruiter:hover {
+        box-shadow: 4px 8px 8px grey;
+    }
+
     #signup {
         height: 70px;
         width: 175px;
@@ -39,10 +45,14 @@
         margin-top: -70px;
         margin-left: 195px;
         font-family: 'Poppins', sans-serif;
-        border-radius:10px;
-        cursor:pointer;
+        border-radius: 10px;
+        cursor: pointer;
     }
-    #signup:hover{box-shadow: 4px 8px 8px grey;}
+
+    #signup:hover {
+        box-shadow: 4px 8px 8px grey;
+    }
+
     #getstarted {
         height: 70px;
         width: 180px;
@@ -54,10 +64,14 @@
         margin-top: -70px;
         margin-left: 390px;
         font-family: 'Poppins', sans-serif;
-        border-radius:10px;
-        cursor:pointer;
+        border-radius: 10px;
+        cursor: pointer;
     }
-    #getstarted:hover{box-shadow: 4px 8px 8px grey;}
+
+    #getstarted:hover {
+        box-shadow: 4px 8px 8px grey;
+    }
+
     .head1 {
         width: 600px;
         margin-top: 100px;
@@ -298,9 +312,11 @@
         margin-top: 100px;
         margin-left: 100px;
     }
-    .card_design:hover{
+
+    .card_design:hover {
         box-shadow: 0px 8px 8px grey;
     }
+
     #card2 {
         margin-left: 400px;
         margin-top: -450px;
@@ -309,36 +325,6 @@
     #card3 {
         margin-left: 800px;
         margin-top: -450px;
-    }
-
-    .cardimg {
-        border-radius: 50%;
-    }
-
-    #review_card {
-        background-color: #6D63E7;
-        font-size: 20px;
-        background: rgba(109, 99, 231, 0.17);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-        border-radius: 25px;
-        padding-top: 100px;
-        font-family: 'poppins', sans-serif;
-    }
-
-    .design {
-        width: 400px;
-        height: 400px;
-        border-radius: 25px;
-        margin-top: 120px;
-        margin-left: -50px;
-    }
-
-    .des {
-
-        height: 180px;
-        width: 180px;
-        margin-top: -500px;
-        margin-left: -50px;
     }
 
     #card_text1 {
@@ -355,10 +341,66 @@
         font-family: 'poppins', sans-serif;
     }
 
+
+
+    /* carousel*/
+
+    * {
+        margin-left: .20px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    .carousel {
+        max-width: 1250px;
+    }
+
+    .carousel .card {
+        background: rgba(109, 99, 231, 0.17);
+        margin-bottom: -150px;
+        border-radius: 25px;
+    }
+
+    .design {
+        position: absolute;
+        width: 380px;
+        height: 550px;
+        margin-top: 100px;
+        background: #6D63E7;
+        font-size: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+        padding-top: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-family: 'poppins', sans-serif;
+    }
+
+    #user_name {
+        font-size: 16px;
+        font-family: 'poppins', sans-serif;
+        text-align: right;
+    }
+
+    #user_work {
+        font-size: 16px;
+        font-family: 'poppins', sans-serif;
+        padding-bottom: 20px;
+        margin-top: -10px;
+        text-align: right;
+    }
+
+
+    /* carousel end */
+
     #footer1 {
         height: 250px;
         background-color: #2217A6;
-        margin-top: 450px;
+        margin-top: -200px;
         background: rgba(34, 23, 166, 0.67);
         width: 100%;
     }
@@ -377,10 +419,16 @@
         color: white;
     }
 
+    #links {
+        font-size: 20px;
+        color: white;
+        padding-left: 400px;
+    }
+
     #copyrights {
         font-size: 20px;
-        margin-top: 100px;
         margin-left: 20px;
+        margin-top: 100px;
         color: white;
     }
 </style>
@@ -388,6 +436,12 @@
 
 <head class="flex-container">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -514,56 +568,62 @@
 
         <div id="card1">
             <a style="text-decoration:none" href="{% url 'login_view' %}">
-            <div class="card card_design ">
-                <center><img class="card-img-top" src="{% static 'logitech.png' %}"
-                        style="width:70%;margin-top:5px;margin-left: 5px;"></center>
-                <div class="card-body">
-                    <h3 class="card-title" style="margin-top:-20px;font-size: 25px;color:black;">Associate Technology Consultant
-                    </h3>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100" style="width: 75%;background-color:#53DD9B;"></div>
+                <div class="card card_design ">
+                    <center><img class="card-img-top" src="{% static 'logitech.png' %}"
+                            style="width:70%;margin-top:5px;margin-left: 5px;"></center>
+                    <div class="card-body">
+                        <h3 class="card-title" style="margin-top:-20px;font-size: 25px;color:black;">Associate
+                            Technology Consultant
+                        </h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 75%;background-color:#53DD9B;"></div>
+                        </div>
+                        <p style="font-size:16px;margin-top: 10px;color:black;"><b>32 applied</b> out of 40 open
+                            positions</p>
                     </div>
-                    <p style="font-size:16px;margin-top: 10px;color:black;"><b>32 applied</b> out of 40 open positions</p>
                 </div>
-            </div>
             </a>
         </div>
 
 
         <div id="card2">
             <a style="text-decoration:none" href="{% url 'login_view' %}">
-            <div class="card card_design ">
-                <center><img class="card-img-top" src="{% static 'abylle.png' %}"
-                        style="width:70%;margin-top:50px;margin-left:5px"></center>
-                <div class="card-body">
-                    <h3 class="card-title" style="margin-top: 10px;font-size: 25px;color:black;">Associate Technology Consultant
-                    </h3>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                            aria-valuemax="100" style="width: 60%;background-color: #53DD9B;"></div>
+                <div class="card card_design ">
+                    <center><img class="card-img-top" src="{% static 'abylle.png' %}"
+                            style="width:70%;margin-top:50px;margin-left:5px"></center>
+                    <div class="card-body">
+                        <h3 class="card-title" style="margin-top: 10px;font-size: 25px;color:black;">Associate
+                            Technology Consultant
+                        </h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 60%;background-color: #53DD9B;"></div>
+                        </div>
+                        <p style="font-size:16px;margin-top: 10px;color:black;"><b>30 applied</b> out of 50 open
+                            positions</p>
                     </div>
-                    <p style="font-size:16px;margin-top: 10px;color:black;"><b>30 applied</b> out of 50 open positions</p>
                 </div>
-            </div>
             </a>
         </div>
 
 
         <div id="card3">
             <a style="text-decoration:none" href="{% url 'login_view' %}">
-            <div class="card card_design ">
-                <center><img class="card-img-top" src="{% static 'hitachi.png' %}"
-                        style="width:70%;margin-top:5px;margin-left:5px"></center>
-                <div class="card-body">
-                    <h3 class="card-title" style="margin-top:-5px;font-size: 25px;color:black;">Associate Technology Consultant</h3>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                            aria-valuemax="100" style="width: 40%;background-color: #53DD9B;"></div>
+                <div class="card card_design ">
+                    <center><img class="card-img-top" src="{% static 'hitachi.png' %}"
+                            style="width:70%;margin-top:5px;margin-left:5px"></center>
+                    <div class="card-body">
+                        <h3 class="card-title" style="margin-top:-5px;font-size: 25px;color:black;">Associate Technology
+                            Consultant</h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 40%;background-color: #53DD9B;"></div>
+                        </div>
+                        <p style="font-size:16px;margin-top: 10px;color:black;"><b>8 applied</b> out of 20 open
+                            positions</p>
                     </div>
-                    <p style="font-size:16px;margin-top: 10px;color:black;"><b>8 applied</b> out of 20 open positions</p>
                 </div>
-            </div>
             </a>
         </div>
 
@@ -572,46 +632,98 @@
 
 
     <center>
-        <div class="cardb">
-            <p id="card_text1">Here’s what candidates are saying</p><br>
-            <p id="card_text2">We have some very
-                <b>happy</b> folks
-            </p>
-            <br>
+        <p id="card_text1">Here’s what candidates are saying</p><br>
+        <p id="card_text2">We have some very
+            <b>happy</b> folks
+        </p>
+        <br>
 
 
 
 
-            <div class="card design">
+        <div class="wrapper">
+            <div class="carousel owl-carousel">
+                <div class="card design">
 
-                <div class="card-body" id="review_card">
-                    <p style="font-size:20px;">
-                        " Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis
-                        nostrud exercitation ullamco
-                        laboris nisi "</p>
-                    <br><br><b style="font-size: 16px;font-family:'poppins',sans-serif;margin-left:220px;">
-                        Brian Kelly</b><br>
-                    <b style="font-size: 16px;font-family:'poppins',sans-serif;margin-left: 50px;">Business Development
-                        Executive</b>
+                    <div class="card-body">
+                        <p> " Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut
+                            enim ad minim veniam, quis
+                            nostrud exercitation ullamco
+                            laboris nisi "</p>
+                        <br><br>
+                        <p id="user_name"><b>Brian Kelly</b><br></p>
+                        <p id="user_work"><b>Business Development Executive</b></p>
+
+
+                    </div>
 
                 </div>
+                <div class="card design color">
 
-            </div>
-            <div class="card des" style="border-radius: 50%;">
-                <img class="cardimg" src="{% static 'bottomimg.jpg' %}" alt="Card image" height="180px" width="180px">
-            </div>
+                    <div class="card-body" id="review_card">
+                        <p> " Thanks to Flashhired, I landed my
+                            first job at Tata Technologies as a
+                            Graduate Engineer Trainee! The whole
+                            process was very smooth "</p>
+                        <br><br>
+                        <div style="text-align: right;">
+                            <p id="user_name"><b>Rajashri Javali</b><br></p>
+                            <p id="user_work"><b>Business Development Executive</b></p>
+                        </div>
 
+                    </div>
+
+                </div>
+                <div class="card design color-3">
+                    C
+                </div>
+                <div class="card design color-4">
+                    D
+                </div>
+                <div class="card design color-5">
+                    E
+                </div>
+            </div>
         </div>
+        <script>
+            $(".carousel").owlCarousel({
+                margin: 20,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false
+                    }
+                }
+            });
+        </script>
+
+<p id="links"><a style="color:white;text-decoration:none" href="https://wa.me/916364024069" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:white;text-decoration:none"  href="https://www.linkedin.com/company/flashhired/about/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:white;text-decoration:none"  href="https://instagram.com/flashhired?r=nametag" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
 
 
     </center>
+    
     <footer id="footer1">
         <p id="foot1">flash<b>hired</b></p>
         <p id="foot2">Hiring for everyone</p>
+    
+  
         <p id="copyrights"><span>&copy</span>2021 flashhired. All Rights Reserved.</p>
     </footer>
 </body>
