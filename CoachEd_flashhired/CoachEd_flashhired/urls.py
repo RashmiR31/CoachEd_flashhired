@@ -37,6 +37,7 @@ urlpatterns = [
     ######## Candidate Section #####################
 
     path('candidate/',views.CandidateHome,name='CandidateHome'),
+    path('can_update/',views.can_update,name='can_update'),
     path('candidate/createprofile',views.candidateCreateProfile,name='candidateCreateProfile'),
     path('candidate/profile',views.candidateProfile,name='candidateProfile'),
     path('candidate/profile/edit',views.candidateEditProfile,name='candidateEditProfile'),
@@ -69,6 +70,7 @@ urlpatterns = [
     path('candidate/jobportal/application/<int:job_id>',views.candidateJobApplication,name='candidateJobApplication'),
     ######## Recruiter Section #####################
     path('recruiter/',views.RecruiterHome,name='RecruiterHome'),
+    path('rec_update/',views.rec_update,name='rec_update'),
     path('recruiter/createprofile',views.recruiterCreateProfile,name="recruiterCreateProfile"),
     path('recruiter/profile',views.recruiterProfile,name='recruiterProfile'),
     path('recruiter/profile/edit',views.recruiterEditProfile,name='recruiterEditProfile'),

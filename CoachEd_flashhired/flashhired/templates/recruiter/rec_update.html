@@ -1,0 +1,32 @@
+{% load static %}
+<style>
+    #logo{
+        width:300px;
+        margin-top: 180px;
+    }
+    #message{
+        font-family: poppins, sans-serif;
+        font-size: 30px;
+        color: #28076D;
+    }
+    #button{
+        width:100px;
+        height:45px;
+        font-size: 16px;
+        color:white;
+        background-color:#28076D;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #button:hover{box-shadow: 4px 4px 4px grey;}
+</style>
+<html>
+    <title>Update Message</title>
+    <body>
+        <center>
+        <img id="logo" src="{% static 'Logo_card.png' %}">
+        <p id="message">New Features Coming Soon!!!!!</p>
+        <a href="{% url 'RecruiterHome' %}"><button id="button">Back</button></a>
+        </center>
+    </body>
+</html>

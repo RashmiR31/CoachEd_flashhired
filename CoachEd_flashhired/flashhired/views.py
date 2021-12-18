@@ -129,6 +129,9 @@ def CandidateHome(request):
         return render(request,'candidate/CandidateHome.html',{'details':details,'shortlisted_jobs':shortlisted_jobs,'application':application})
     else:
         return render(request,'candidate/loginrequired.html',{})
+    
+def can_update(request):
+    return render(request,'candidate/can_update.html',{})
 
 def candidateCreateProfile(request):
     if request.method=="POST":
@@ -505,6 +508,9 @@ def RecruiterHome(request):
         return render(request,'recruiter/RecruiterHome.html',{'details':details,'jobs':jobs})
     else:
         return render(request,'recruiter/loginrequired.html',{})
+    
+def rec_update(request):
+    return render(request,'recruiter/rec_update.html',{})
 
 def jobs(request):
     if request.user.is_authenticated and request.user.is_recruiter:

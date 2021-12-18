@@ -11,7 +11,7 @@
 
   .sideNav {
     position: fixed;
-    width: 180px;
+    width: 190px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.918);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -30,9 +30,9 @@
 
   #logo {
     opacity: 1;
-    padding-left: 30px;
-    margin-top: -40px;
-    width: 160px;
+    margin-top: -20px;
+    margin-left: 10px;
+    width: 170px;
   }
 
   #list {
@@ -40,7 +40,8 @@
     list-style-type: none;
     padding-left: 10px;
     border-radius: 10px;
-    width: 160px;
+    width: 180px;
+    margin-top:-10px;
     background: rgba(255, 255, 255, 0.85);
   }
 
@@ -92,23 +93,21 @@
   <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
   <div class="sideNav">
-    <img id="logo" src="{% static 'logo_card.png' %}">
     <ul id="list">
+      <img id="logo" src="{% static 'logo.png' %}">
       <p id="supportingText">Tools</p>
       <li id="navBar"><a class="{% if request.path == RecruiterHome %} active {% endif %}"
           href="{% url 'RecruiterHome' %}"><i class="fas fa-home"> </i> Home</a></li>
       <li id="navBar"><a class="{% if request.path == recruiterProfile %} active {% endif %}"
           href="{% url 'recruiterProfile' %}"><i class="fas fa-user-circle"></i> Profile</a></li>
-      <li id="navBar"><a href="#home"><i class="fas fa-rocket"> </i> Onboarding</a></li>
       <li id="navBar"><a class="{% if request.path == Jobs %} active {% endif %}" href="{% url 'Jobs' %}"><i
             class="fas fa-chalkboard-teacher"> </i> Jobs</a></li>
-      <li id="navBar"><a href="#about"><i class="far fa-chart-bar"> </i> Assessments</a></li>
-      <li id="navBar"><a href="#news"><i class="fas fa-file"> </i> Documents</a></li>
+      <li id="navBar"><a href="{% url 'rec_update' %}"><i class="fas fa-file"> </i> Documents</a></li>
 
       <p id="supportingText">Other</p>
-      <li id="navBar"><a href="#news"><i class="fas fa-comments"> </i> Chat</a></li>
-      <li id="navBar"><a href="#contact"><i class="fas fa-question-circle"> </i> Support</a></li>
-      <li id="navBar"><a href="#about"><i class="fas fa-calendar"> </i> Calender</a></li>
+      <li id="navBar"><a href="{% url 'rec_update' %}"><i class="fas fa-comments"> </i> Chat</a></li>
+      <li id="navBar"><a href="{% url 'rec_update' %}"><i class="fas fa-question-circle"> </i> Support</a></li>
+      <li id="navBar"><a href="{% url 'rec_update' %}"><i class="fas fa-calendar"> </i> Calender</a></li>
       <li id="navBar" onclick="myFunction()"><a href="#about"><i class="fas fa-sign-out-alt"> </i> Logout</a></li>
 
     </ul>
@@ -123,7 +122,7 @@
       if (confirm("Are you sure?")) {
         url = "{% url 'logout_view' %}";
       } else {
-        url = "{% url 'CandidateHome' %}";
+        url = "{% url 'RecruiterHome' %}";
       }
       document.location.href = url;
     }

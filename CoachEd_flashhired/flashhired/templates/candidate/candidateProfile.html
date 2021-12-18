@@ -299,9 +299,9 @@
         <p id="content"> {{sl.github}}</p>
         <a id="edit" href="editsociallinks/{{sl.id}}" class="btn btn-warning" id='{{sl.id}}'><i
                 class="fas fa-pencil-alt"></i></a>
+                <br>
         {% endfor %}
         {% else %}
-        <br>
         <a id="add" href="{% url 'candidateSocialLinks' %}"><i class="fas fa-plus"></i>Add Social Links</a>
         {% endif %}
         <br>

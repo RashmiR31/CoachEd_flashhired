@@ -12,14 +12,14 @@
 
   .sideNav {
     position: fixed;
-    width: 180px;
+    width: 190px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.918);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     height: 103%;
     margin-left: -20px;
     padding-top: 80px;
-    margin-top: -50px;
+    margin-top: -100px;
     opacity: 0.85;
   }
 
@@ -31,9 +31,9 @@
   }
   #logo {
     opacity: 1;
-    padding-left: 30px;
-    margin-top: -20px;
-    width: 160px;
+    width: 170px;
+    margin-top: -10px;
+    margin-left: 10px;
   }
 
   #list {
@@ -41,7 +41,7 @@
     list-style-type: none;
     padding-left: 10px;
     border-radius: 10px;
-    width: 160px;
+    width: 180px;
     background: rgba(255, 255, 255, 0.85);
   }
 
@@ -87,23 +87,22 @@
 <head>
   <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
   <div class="sideNav">
-    <img id="logo" src="{% static 'logo_card.png' %}">
     <ul id="list">
+      <img id="logo" src="{% static 'logo.png' %}">
       <p id="supportingText">Tools</p>
       <li id="navBar"><a class="{% if request.path == CandidateHome %} active {% endif %}"
           href="{% url 'CandidateHome' %}"><i class="fas fa-home"> </i> Home</a></li>
       <li id="navBar"><a class="{% if request.path == candidateProfile %} active {% endif %}"
           href="{% url 'candidateProfile' %}"><i class="fas fa-user-circle"></i> Profile</a></li>
-      <li id="navBar"><a href="#home"><i class="fas fa-rocket"> </i> Onboarding</a></li>
       <li id="navBar"><a class="{% if request.path == candidateJobPortal %} active {% endif %}"
           href="{% url 'candidateJobPortal' %}"><i class="fas fa-chalkboard-teacher"> </i> Jobs</a></li>
-      <li id="navBar"><a href="#about"><i class="far fa-chart-bar"> </i> Assessments</a></li>
-      <li id="navBar"><a href="#news"><i class="fas fa-file"> </i> Documents</a></li>
+      <li id="navBar"><a href="{% url 'can_update' %}"><i class="far fa-chart-bar"> </i> Assessments</a></li>
+      <li id="navBar"><a href="{% url 'can_update' %}"><i class="fas fa-file"> </i> Documents</a></li>
 
       <p id="supportingText">Other</p>
-      <li id="navBar"><a href="#news"><i class="fas fa-comments"> </i> Chat</a></li>
-      <li id="navBar"><a href="#contact"><i class="fas fa-question-circle"> </i> Support</a></li>
-      <li id="navBar"><a href="#about"><i class="fas fa-calendar"> </i> Calender</a></li>
+      <li id="navBar"><a href="{% url 'can_update' %}"><i class="fas fa-comments"> </i> Chat</a></li>
+      <li id="navBar"><a href="{% url 'can_update' %}"><i class="fas fa-question-circle"> </i> Support</a></li>
+      <li id="navBar"><a href="{% url 'can_update' %}"><i class="fas fa-calendar"> </i> Calender</a></li>
       <li id="navBar" onclick="myFunction()"><a href="#about"><i class="fas fa-sign-out-alt"> </i> Logout</a></li>
 
     </ul>

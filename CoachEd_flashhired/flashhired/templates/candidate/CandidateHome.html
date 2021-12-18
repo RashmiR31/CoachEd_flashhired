@@ -186,7 +186,7 @@
             <br>
             <p id="user_id"> {{j.job.job_title}}/{{j.job.job_type}}</p>
             <p id="name_content"> {{j.job.recruiter.company_name}} </p>
-            <a style="text-decoration:none" href="{% url 'candidateViewJob' j.id %}"><button id="shortlisted">View
+            <a style="text-decoration:none" href="{% url 'candidateViewJob' j.job.id %}"><button id="shortlisted">View
                     Job</button></a>
             {% endfor %}
             {% endif %}
