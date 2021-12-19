@@ -41,7 +41,7 @@
     padding-left: 10px;
     border-radius: 10px;
     width: 180px;
-    margin-top:-10px;
+    margin-top: -10px;
     background: rgba(255, 255, 255, 0.85);
   }
 
@@ -83,14 +83,13 @@
 {% if user.is_authenticated %}
 
 <html>
+<link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
-  <title>{% block title %} {% endblock %}</title>
-  <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 
   <div class="sideNav">
     <ul id="list">

@@ -142,30 +142,21 @@
     }
 
     #recruiter:hover { box-shadow: 4px 8px 8px grey; }
-
-    #R-LID {
-        width: 25px;
-        height: 25px;
-        margin-right: 25px;
-    }
-
-    #R-RID {
-        width: 25px;
-        height: 25px;
-        margin-left: 200px;
-    }
-
     #J-LID {
-        width: 25px;
-        height: 25px;
         margin-right: 25px;
     }
 
     #J-RID {
-        width: 25px;
-        height: 25px;
+        margin-left: 180px;
+    }
+    #R-LID {
+        margin-right: 25px;
+    }
+
+    #R-RID {
         margin-left: 200px;
     }
+
 </style>
 
 <html>
@@ -197,10 +188,10 @@
     <div class="">
         <p id="situation">Tell us what's your situation</p>
         <a href="{% url 'candidatesignup' %}"><button type="submit" id="jobSeeker"><img
-                    src="{% static 'magnifying.jpg' %}" id="J-LID">A job seeker<img src="{% static 'greatertag.png' %}"
+                    src="{% static 'magnify.png' %}" id="J-LID">A job seeker<img src="{% static 'right_arrow.png' %}"
                     id="J-RID"></button></a>
-        <a href="{% url 'recruitersignup' %}"><button type="submit" id="recruiter"><img src="{% static 'target.png' %}"
-                    id="R-LID">A recruiter<img src="{% static 'greatertag.png' %}" id="R-RID"></button></a>
+        <a href="{% url 'recruitersignup' %}"><button type="submit" id="recruiter"><img src="{% static 'targett.png' %}"
+                    id="R-LID">A recruiter<img src="{% static 'right_arrow.png' %}" id="R-RID"></button></a>
 
 
     </div>

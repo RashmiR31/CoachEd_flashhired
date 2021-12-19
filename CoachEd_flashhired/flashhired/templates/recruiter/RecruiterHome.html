@@ -1,7 +1,5 @@
 {% extends 'recruiter/base_recruiter.html' %}
 {% load static %}
-
-{% block title %} Recruiter Home {% endblock %}
 {% block content %}
 
 <style>
@@ -132,7 +130,8 @@
     #button:hover {box-shadow: 4px 8px 8px grey;}
 </style>
 <html>
-
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
 <body>
     {% if user.is_authenticated %}
     <div class="main">

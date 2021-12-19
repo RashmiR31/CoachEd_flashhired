@@ -4,15 +4,12 @@
   @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
 
-  #left_rect {
-    height: 500;
-    margin-top: 130px;
-    width: 700px;
-    margin-left: -10px;
+
+
+
+  .main {
+    background: rgba(227, 227, 227, 0.048);
   }
-
-
-
 
   .sideNav {
     position: fixed;
@@ -24,7 +21,7 @@
     opacity: .85;
     margin-left: -20px;
     padding-top: 80px;
-    margin-top: -720px;
+    margin-top:-200px;
   }
 
   #supportingText {
@@ -33,10 +30,12 @@
     padding-left: 30px;
     padding-top: 30px;
   }
+
   #logo {
     opacity: 1;
     width: 170px;
   }
+
   #list {
 
     list-style-type: none;
@@ -71,30 +70,15 @@
     border-radius: 10px;
   }
 
-  .bodyContent {
-    height: 600px;
-    background: #FBFBFB;
-    margin-top: -800px;
-    margin-left: 185px;
-  }
-
-  #right_rect {
-    position: absolute;
-    margin-left: 132px;
-    height: 600px;
-    z-index: -1;
-    margin-top: -7px;
-  }
-
   #name {
     position: absolute;
-    font-family: Roboto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 50px;
     line-height: 75px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -520px;
-    margin-left: 200px;
+    margin-left: 250px;
+    margin-top: -140px;
   }
 
   #name:hover {
@@ -103,78 +87,59 @@
 
   #role {
     position: absolute;
-    font-family: Roboto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 30px;
     line-height: 42px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -460px;
-    padding-left: 240px;
+    margin-left: 350px;
+    margin-top: -70px;
   }
 
-  #mail {
-    position: absolute;
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
+  .design {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    line-height: 42px;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -345px;
-    padding-left: 330px;
+    margin-left: 300px;
+    width: 450px;
+    padding-left:50px;
+    padding-top: 20px;
+    padding-bottom:20px;
+    margin-top:200px;
   }
-
-  #company_name {
-    position: absolute;
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    color: #000000;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -305px;
-    padding-left: 380px;
+  #container{
+    margin-top:-700px;
+    width:210px;
+    margin-left: 1000px;
   }
-
-  #gender {
-    position: absolute;
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    color: #000000;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -265px;
-    padding-left: 430px;
-  }
-
-  #experience {
-    position: absolute;
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 28px;
-    color: #000000;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: -225px;
-    padding-left: 480px;
-  }
-
   #profile_pic {
-    margin-top: -550px;
-    margin-left: 1010px;
     border-radius: 50%;
     border-color: white;
     border-style: solid;
     width: 120px;
     height: 120px;
+    margin-top: -670px;
+    margin-left: -180px;
   }
 </style>
 <html>
-<title>Profile</title>
 
-<body>
-  <img id="left_rect" src="{% static 'left_rectangle.png' %}">
+<head>
+  <title>Profile</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body class="main">
   <script src="https://kit.fontawesome.com/5ddb5485f2.js" crossorigin="anonymous"></script>
   <div class="sideNav">
     <ul id="list">
@@ -194,17 +159,21 @@
 
     </ul>
   </div>
-  <img id="right_rect" src="{% static 'pp_right_temp.png' %}">
 
   <p id="name">{{ details.name }} <a href="{% url 'recruiterEditProfile' %}"><i class="fas fa-edit"
         style="color:black;font-size: 20px;"></i></a></p>
 
   <p id="role">{{ details.role }}</p>
-  <p id="mail"><i class="far fa-envelope" style="color:white"></i> {{ details.work_email }}</p>
-  <p id="company_name"><i class="far fa-building" style="color:white"></i> {{ details.company_name }}</p>
-  <p id="gender"><i class="fas fa-male" style="color:white"></i> {{ details.gender }}</p>
-  <p id="experience"><i class="fas fa-chart-line" style="color:white"></i> {{ details.experience }} Years</p>
+
+  <div class="card design">
+    <p><i class="far fa-envelope" style="color:#40159B;margin-right: 50px;"></i> {{ details.work_email }}</p>
+    <p><i class="far fa-building" style="color:#40159B;margin-right: 52px"></i> {{ details.company_name }}</p>
+    <p><i class="fas fa-calendar" style="color:#40159B;margin-right: 50px"></i> {{ details.dob }}</p>
+    <p><i class="fas fa-chart-line" style="color:#40159B;margin-right: 48px"></i> {{ details.experience }} Years of Experience</p>
+  </div>
+  <img id="container" src="{% static 'rec_profile.png' %}">
   <img id="profile_pic" src="{{details.profile_pic.url}}" alt="profile_pic">
+
 </body>
 
 </html>

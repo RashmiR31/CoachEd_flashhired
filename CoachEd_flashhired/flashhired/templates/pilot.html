@@ -5,15 +5,15 @@
     @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@200;400&display=swap');
 
     #logo {
-        width: 300px;
-        margin-top: 50px;
+        width: 350px;
+        margin-top: 30px;
         margin-left: 50px;
     }
 
     .btns {
         padding-left: 650px;
         width: 700px;
-        margin-top: -100px;
+        margin-top: -130px;
     }
 
     #recruiter {
@@ -32,6 +32,7 @@
 
     #recruiter:hover {
         box-shadow: 4px 8px 8px grey;
+        border-color: white;
     }
 
     #signup {
@@ -70,6 +71,7 @@
 
     #getstarted:hover {
         box-shadow: 4px 8px 8px grey;
+        border-color: white;
     }
 
     .head1 {
@@ -81,7 +83,7 @@
         position: absolute;
         width: 600px;
         margin-left: 650px;
-        margin-top: -400px;
+        margin-top: -280px;
     }
 
     #flash {
@@ -109,6 +111,7 @@
     }
 
     #getstartedup {
+        position: absolute;
         height: 70px;
         width: 300px;
         border-width: 1.25px;
@@ -118,7 +121,13 @@
         background-color: #461FBE;
         margin-top: 10px;
         margin-left: 50px;
+        border-radius: 10px;
         font-family: 'Poppins', sans-serif;
+    }
+
+    #getstartedup:hover {
+        box-shadow: 4px 8px 8px grey;
+        border-color: white;
     }
 
     #img1 {
@@ -363,14 +372,14 @@
 
     .carousel .card {
         background: rgba(109, 99, 231, 0.17);
-        margin-bottom: -150px;
+        margin-bottom: -100px;
         border-radius: 25px;
     }
 
     .design {
         position: absolute;
         width: 380px;
-        height: 550px;
+        height: 450px;
         background: #6D63E7;
         font-size: 20px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -407,7 +416,7 @@
 
     #foot1 {
         font-size: 30px;
-        padding-top: 40px;
+        padding-top: 20px;
         margin-left: 20px;
         color: white;
     }
@@ -420,15 +429,15 @@
     }
 
     #links {
-        font-size: 20px;
+        font-size: 40px;
         color: white;
-        padding-left: 400px;
+        margin-left: -850px;
     }
 
     #copyrights {
         font-size: 20px;
         margin-left: 20px;
-        margin-top: 100px;
+        margin-top: 120px;
         color: white;
     }
 </style>
@@ -452,7 +461,7 @@
 
 <body>
     <header>
-        <img id="logo" src="{% static 'Logo_card.png' %}">
+        <img id="logo" src="{% static 'logo.png' %}">
         <div class="btns">
             <a href="{% url 'rechome' %}"><button type="button" class="btn btn-light"
                     id="recruiter">Recruiter?</button></a>
@@ -472,7 +481,7 @@
         <div class="head2">
             <img src="{% static 'IMGoverWAVE.png' %}" width="90%">
         </div>
-        <img src="{% static 'waves.png' %}" width="100%" style="margin-top:-30%;">
+        <img src="{% static 'waves.png' %}" width="100%" style="margin-top:-25%;">
     </header>
     <img id="img_left1" src="{% static '1.png' %}">
     <div id="id1">
@@ -630,7 +639,6 @@
     </div>
 
 
-
     <center>
         <p id="card_text1">Here’s what candidates are saying</p><br>
         <p id="card_text2">We have some very
@@ -693,14 +701,14 @@
                 margin: 20,
                 loop: true,
                 autoplay: true,
-                autoplayTimeout: 2000,
+                autoplayTimeout: 1500,
                 autoplayHoverPause: true,
                 responsive: {
                     0: {
                         items: 1,
                         nav: false
                     },
-                    600: {
+                    500: {
                         items: 2,
                         nav: false
                     },
@@ -712,18 +720,23 @@
             });
         </script>
 
-<p id="links"><a style="color:white;text-decoration:none" href="https://wa.me/916364024069" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:white;text-decoration:none"  href="https://www.linkedin.com/company/flashhired/about/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:white;text-decoration:none"  href="https://instagram.com/flashhired?r=nametag" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></p>
+        <p id="links"><a style="color:white;text-decoration:none" href="https://wa.me/916364024069" target="_blank"><i
+                    class="fab fa-whatsapp"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:white;text-decoration:none"
+                href="https://www.linkedin.com/company/flashhired/about/?viewAsMember=true" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="color:white;text-decoration:none"
+                href="https://instagram.com/flashhired?r=nametag" target="_blank"><i class="fab fa-instagram"></i></a>
+        </p>
 
 
     </center>
-    
+
     <footer id="footer1">
         <p id="foot1">flash<b>hired</b></p>
         <p id="foot2">Hiring for everyone</p>
-    
-  
+
+
         <p id="copyrights"><span>&copy</span>2021 flashhired. All Rights Reserved.</p>
     </footer>
 </body>

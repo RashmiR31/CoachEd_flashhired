@@ -1,5 +1,5 @@
 {% extends 'recruiter/base_recruiter.html' %}
-{% block title %}Jobs{% endblock %}
+{% load static %}
 {% block content %}
 
 <style>
@@ -150,6 +150,10 @@
     }
 </style>
 <html>
+    
+    <title>Jobs</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+    
 
 <body>
     {% if user.is_authenticated %}

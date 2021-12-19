@@ -136,7 +136,7 @@
 
     #content {
         position: absolute;
-        width: 300px;
+        width: 600px;
         height: 80px;
         margin-left: 300px;
         font-family: Poppins;
@@ -160,6 +160,10 @@
         margin-top: -3px;
         line-height: 18px;
         color: rgba(0, 0, 0, 0.71);
+    }
+
+    #links {
+        margin-top: 40px;
     }
 
     #edit {
@@ -295,11 +299,21 @@
         <p id="heading">Social</p>
         {% if social_links.exists %}
         {% for sl in social_links %}
-        <p id="content">{{sl.linkedin}} </p>
-        <p id="content"> {{sl.github}}</p>
-        <a id="edit" href="editsociallinks/{{sl.id}}" class="btn btn-warning" id='{{sl.id}}'><i
-                class="fas fa-pencil-alt"></i></a>
-                <br>
+        <div id="links">
+            <p id="content"><b>Facebook:</b> {{sl.facebook}} </p><br>
+            <p id="content"><b>Instagram:</b> {{sl.instagram}} </p><br>
+            <p id="content"><b>LinkedIn:</b> {{sl.linkedin}} </p><br>
+            <p id="content"><b>Github:</b> {{sl.github}}</p><br>
+            <p id="content"><b>Personal Website:</b> {{sl.personal_website}} </p><br>
+            <p id="content"><b>CodeChef:</b> {{sl.codechef}} </p><br>
+            <p id="content"><b>HackerRank:</b> {{sl.hackerrank}} </p><br>
+            <p id="content"><b>Kaggle:</b> {{sl.kaggle}} </p><br>
+            <p id="content"><b>Twitter:</b> {{sl.twitter}} </p><br>
+            <p id="content"><b>Dribble:</b> {{sl.dribble}} </p><br>
+            <p id="content"><b>Other Work Links:</b> {{sl.other}} </p><br>
+            <a id="edit" href="editsociallinks/{{sl.id}}" class="btn btn-warning" id='{{sl.id}}'><i
+                    class="fas fa-pencil-alt"></i></a>
+        </div>
         {% endfor %}
         {% else %}
         <a id="add" href="{% url 'candidateSocialLinks' %}"><i class="fas fa-plus"></i>Add Social Links</a>
