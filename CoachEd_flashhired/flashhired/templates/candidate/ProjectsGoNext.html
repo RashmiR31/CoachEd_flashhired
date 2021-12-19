@@ -1,7 +1,39 @@
-Your Projects have been saved!!
-<br>
-<a href="{% url 'candidateProfile' %}"><button>Go to Profile</button></a>
+{% load static %}
+<style>
+    #logo{
+        width:300px;
+        margin-top: 180px;
+    }
+    #message{
+        font-family: poppins, sans-serif;
+        font-size: 30px;
+        color: #28076D;
+    }
+    #blue{
+        width:250px;
+        height:45px;
+        font-size: 16px;
+        color:white;
+        background-color:#28076D;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #blue:hover{box-shadow: 4px 4px 4px grey;}
+</style>
+<html>
+    <title>Update Message</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+    <body>
+        <center>
+        <img id="logo" src="{% static 'Logo_card.png' %}">
+        <p id="message">Your Projects have been saved!!</p>
+        <a href="{% url 'candidateProfile' %}"><button id="blue">Go to Profile</button></a>
 
-<a href="{% url 'candidateProjects' %}"><button>Add another project</button></a>
+        <a  href="{% url 'candidateProjects' %}"><button id="blue">Add another Project</button></a>
 
-<a href="{% url 'candidateSkills' %}"><button>Add Skills</button></a>
+        <a href="{% url 'candidateSkills' %}"><button id="blue">Add Skills</button></a>
+        </center>
+    </body>
+</html>
+
+

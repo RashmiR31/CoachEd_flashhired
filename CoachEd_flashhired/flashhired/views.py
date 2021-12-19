@@ -143,7 +143,7 @@ def candidateCreateProfile(request):
             saveInfo.save()
             return redirect('candidateAccomplishments')
         else:
-            return HttpResponse("Form is not valid")
+            return HttpResponse("Please add '+91' to your mobile number")
     else:
         form=CandidateForm()
     return render(request,'candidate/createprofile.html',{'form':form})

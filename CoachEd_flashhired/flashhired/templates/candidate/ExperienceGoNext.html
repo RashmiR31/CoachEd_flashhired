@@ -1,7 +1,38 @@
-Your Experience have been saved!!
-<br>
-<a href="{% url 'candidateProfile' %}"><button>Go to Profile</button></a>
+{% load static %}
+<style>
+    #logo{
+        width:300px;
+        margin-top: 180px;
+    }
+    #message{
+        font-family: poppins, sans-serif;
+        font-size: 30px;
+        color: #28076D;
+    }
+    #blue{
+        width:250px;
+        height:45px;
+        font-size: 16px;
+        color:white;
+        background-color:#28076D;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    #blue:hover{box-shadow: 4px 4px 4px grey;}
+</style>
+<html>
+    <title>Update Message</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+    <body>
+        <center>
+        <img id="logo" src="{% static 'Logo_card.png' %}">
+        <p id="message">Your Experience have been saved!! </p>
+        <a href="{% url 'candidateProfile' %}"><button id="blue">Go to Profile</button></a>
 
-<a href="{% url 'candidateExperience' %}"><button>Add another experience</button></a>
+        <a  href="{% url 'candidateExperience' %}"><button id="blue">Add another Experience</button></a>
 
-<a href="{% url 'candidateLanguages' %}"><button>Add Languages</button></a>
+        <a href="{% url 'candidateLanguages' %}"><button id="blue">Add Languages</button></a>
+        </center>
+    </body>
+</html>
+

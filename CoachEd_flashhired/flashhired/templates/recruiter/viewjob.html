@@ -1,4 +1,5 @@
 {% extends 'recruiter/base_recruiter.html' %}
+{% load static %}
 {% block content %}
 
 <style>
@@ -356,7 +357,7 @@
 
         <p id="title">{{job_details.job_title}}</p>
         <a href="{{job_details.upload_doc.url}}" target="_blank"><button id="jd">VIEW JD</button></a>
-        <p id="location">{{recruiter_details.company_name}}|{{job_details.job_location}}|{{job_details.date_posted}}</p>
+        <p id="location">{{recruiter_details.company_name}} | {{job_details.job_location}} | {{job_details.date_posted}}</p>
         <p id="lastdate">Apply by {{job_details.last_date_to_apply}}</p>
         <p id="job_type"><i class="fas fa-briefcase"></i>&nbsp; {{job_details.job_type}}</p>
         <p id="functional_area"><i class="fas fa-chart-area"></i>&nbsp; {{job_details.functional_area}}</p>
