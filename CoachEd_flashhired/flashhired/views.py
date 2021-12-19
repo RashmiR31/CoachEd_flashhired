@@ -141,7 +141,7 @@ def candidateCreateProfile(request):
             saveInfo=form.save(commit=False)
             saveInfo.user=request.user
             saveInfo.save()
-            return redirect('CandidateHome')
+            return redirect('candidateAccomplishments')
         else:
             return HttpResponse("Form is not valid")
     else:
@@ -203,7 +203,7 @@ def candidateProjects(request):
             candidate = Candidate.objects.get(pk=request.user)
             saveInfo.candidate = candidate
             saveInfo.save()
-            return redirect('candidateProfile')
+            return redirect('ProjectsGoNext')
         else:
             return HttpResponse("Form not valid")
     else:
@@ -233,6 +233,8 @@ def deleteProjects(request,project_id):
     project_details.delete()
     return redirect("candidateProfile")
 
+def ProjectsGoNext(request):
+    return render(request,'candidate/ProjectsGoNext.html',{})
 ######## ACCOMPLISHMENTS ###############
 
 def candidateAccomplishments(request):
@@ -243,7 +245,7 @@ def candidateAccomplishments(request):
             candidate = Candidate.objects.get(pk=request.user)
             saveInfo.candidate = candidate
             saveInfo.save()
-            return redirect('candidateProfile')
+            return redirect('AccomplishmentsGoNext')
         else:
             return HttpResponse("Form not valid")
     else:
@@ -280,6 +282,9 @@ def deleteAccomplishments(request,acc_id):
         os.remove(acc_details.certificate_doc.path)
     acc_details.delete()
     return redirect("candidateProfile")
+
+def AccomplishmentsGoNext(request):
+    return render(request,'candidate/AccomplishmentsGoNext.html',{})
 ######## CANDIDATE WORK EXPERIENCE ###############
 def candidateExperience(request):
     if request.method=="POST":
@@ -289,7 +294,7 @@ def candidateExperience(request):
             candidate = Candidate.objects.get(pk=request.user)
             saveInfo.candidate = candidate
             saveInfo.save()
-            return redirect('candidateProfile')
+            return redirect('ExperienceGoNext')
         else:
             return HttpResponse("Form not valid")
     else:
@@ -319,6 +324,8 @@ def deleteExperience(request,exp_id):
     exp_details.delete()
     return redirect("candidateProfile")
 
+def ExperienceGoNext(request):
+    return render(request,'candidate/ExperienceGoNext.html',{})
 ############## CANDIDATE SKILLS ##############
 def candidateSkills(request):
     if request.method=="POST":
@@ -328,7 +335,7 @@ def candidateSkills(request):
             candidate = Candidate.objects.get(pk=request.user)
             saveInfo.candidate = candidate
             saveInfo.save()
-            return redirect('candidateProfile')
+            return redirect('SkillsGoNext')
         else:
             return HttpResponse("Form not valid")
     else:
@@ -363,6 +370,9 @@ def deleteSkills(request,skill_id):
         os.remove(skill_details.supporting_doc.path)
     skill_details.delete()
     return redirect("candidateProfile")
+
+def SkillsGoNext(request):
+    return render(request,'candidate/SkillsGoNext.html',{})
 ############ CANDIDATE LANGUAGES KNOWN ################
 def candidateLanguages(request):
     if request.method=="POST":
@@ -372,7 +382,7 @@ def candidateLanguages(request):
             candidate = Candidate.objects.get(pk=request.user)
             saveInfo.candidate = candidate
             saveInfo.save()
-            return redirect('candidateProfile')
+            return redirect('LanguagesGoNext')
         else:
             return HttpResponse("Form not valid")
     else:
@@ -401,6 +411,9 @@ def deleteLanguages(request,lan_id):
         return redirect("candidateProfile")
     lan_details.delete()
     return redirect("candidateProfile")
+
+def LanguagesGoNext(request):
+    return render(request,'candidate/LanguagesGoNext.html',{})
 ############## CANDIDATE SOCIAL HANDLES ###############
 def candidateSocialLinks(request):
     if request.method=="POST":

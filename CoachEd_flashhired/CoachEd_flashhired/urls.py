@@ -45,22 +45,31 @@ urlpatterns = [
     path('candidate/experience',views.candidateExperience,name='candidateExperience'),
     path('candidate/editexperience/<int:exp_id>',views.editExperience,name="editExperience"),
     path('candidate/deleteexperience/<int:exp_id>',views.deleteExperience,name="deleteExperience"),
+    path('candidate/experiencegonext/',views.ExperienceGoNext,name='ExperienceGoNext'),
+
     # accomplishments
     path('candidate/accomplishments',views.candidateAccomplishments,name='candidateAccomplishments'),
     path('candidate/editaccomplishments/<int:acc_id>',views.editAccomplishments,name="editAccomplishments"),
     path('candidate/deleteaccomplishments/<int:acc_id>',views.deleteAccomplishments,name="deleteAccomplishments"),
+    path('candidate/accomplishmentsgonext/',views.AccomplishmentsGoNext,name='AccomplishmentsGoNext'),
     # projects
     path('candidate/projects',views.candidateProjects,name='candidateProjects'),
     path('candidate/editprojects/<int:project_id>',views.editProjects,name="editProjects"),
     path('candidate/deleteprojects/<int:project_id>',views.deleteProjects,name="deleteProjects"),
+    path('candidate/projectsgonext/',views.ProjectsGoNext,name='ProjectsGoNext'),
+
     # skills
     path('candidate/skills',views.candidateSkills,name='candidateSkills'),
     path('candidate/editskills/<int:skill_id>',views.editSkills,name="editSkills"),
     path('candidate/deleteskills/<int:skill_id>',views.deleteSkills,name="deleteSkills"),
+    path('candidate/skillsgonext/',views.SkillsGoNext,name='SkillsGoNext'),
+
     # languages 
     path('candidate/languages/',views.candidateLanguages,name='candidateLanguages'),
     path('candidate/editlanguages/<int:lan_id>',views.editLanguages,name="editLanguages"),
     path('candidate/deletelanguages/<int:lan_id>',views.deleteLanguages,name="deleteLanguages"),
+    path('candidate/languagesgonext/',views.LanguagesGoNext,name='LanguagesGoNext'),
+
     # sociallinks
     path('candidate/sociallinks/',views.candidateSocialLinks,name='candidateSocialLinks'),
     path('candidate/editsociallinks/<int:sl_id>',views.editSocialLinks,name="editSocialLinks"),
