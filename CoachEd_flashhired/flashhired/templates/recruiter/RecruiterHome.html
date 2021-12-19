@@ -101,6 +101,10 @@
         border-radius: 10px;
     }
 
+    .design2:hover{
+        box-shadow:4px 8px 8px grey;
+    }
+
     #support {
         font-family: Poppins;
         font-style: normal;
@@ -161,9 +165,9 @@
 
             {% if jobs %}
             {% for j in jobs %}
-            <div class="card design2">
+            <a style="text-decoration:none;color:black" href="{% url 'viewJob' j.id %}"><div class="card design2">
                 <p>{{j.vacancies}}&nbsp;&nbsp;&nbsp;{{j.job_title}}</p>
-            </div>
+            </div></a>
             {% endfor %}
             {% endif %}
         </div>
