@@ -97,7 +97,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'django-mongo',
         'CLIENT': {
-           'host': 'mongodb+srv://rashmi:admin-123@django-mongo.skbct.mongodb.net/test?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true',
+           'host': 'mongodb+srv://flashhired:Tech_C0ached21@flashhired.t2lq5.mongodb.net/flashhired?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true',
         }
     }
 }
@@ -154,5 +154,5 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT= 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER='rashmishantha31@gmail.com '
-EMAIL_HOST_PASSWORD='Rashmi@2000'
+EMAIL_HOST_USER='tech@coached.co.in'
+EMAIL_HOST_PASSWORD='fqdmysdlsttrpmkv'
