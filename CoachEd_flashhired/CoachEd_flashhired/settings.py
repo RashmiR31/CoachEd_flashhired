@@ -25,7 +25,7 @@ SECRET_KEY = 'r$+o+pli_&m+_%x#&*7uanlle6k-a7xanem((9m1husnnr9=d%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['143.110.253.96']
+ALLOWED_HOSTS = ['143.110.253.96','flashhired.coached.co.in']
 
 
 # Application definition
